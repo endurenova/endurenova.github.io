@@ -1,22 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="subject" content="포트폴리오" />
+        <meta name="title" content="[포트폴리오] 웹 퍼블리셔 최주원" />
+        <meta name="description" content="프론트 엔드를 꿈꾸는" />
+        <meta name="author" content="최주원" />
+        <meta
+            name="keywords"
+            content="웹퍼블리셔, 웹 퍼블리싱, 퍼블리싱, 프론트엔드, 포트폴리오"
+        />
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <meta property="og:locale" content="ko_KR" />
+        <meta property="og:type" content="Website" />
+        <meta property="og:title" content="[포트폴리오] 웹 퍼블리셔 최주원" />
+        <meta property="og:description" content="" />
+        <meta
+            property="og:image"
+            content="https://endurenova.github.io/public/images/shake-og.png"
+        />
+        <meta property="og:image" content="./icon/png_siru.png" />
+        <meta property="og:image:width" content="2048" />
+        <meta property="og:image:height" content="2048" />
+        <meta property="og:url" content="https://endurenova.github.io/" />
+        <meta
+            property="og:site_name"
+            content="[포트폴리오] 웹 퍼블리셔 최주원"
+        />
 
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+        <title>[포트폴리오] 웹 퍼블리셔 최주원</title>
+        <link
+            rel="icon"
+            href="https://endurenova.github.io/public/images/shake-og.png"
+        />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/header-bar.css" />
+        <link rel="stylesheet" href="./css/quick-sidebar.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    </head>
+    <body>
+        <header>
+            <nav class="header-bar">
+                <div class="header__logo-box">
+                    <a class="logo-area" href="javascript:void(0);">
+                        <img src="%PUBLIC_URL%/icon/shake-og.png" alt="" />
+                    </a>
+                </div>
+                <div class="header__menu-box">
+                    <ul class="header__menu-list">
+                        <li>
+                            <a href="#info-1">
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#info-2">
+                                <span>Web-Publishing</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#info-3">
+                                <span>Design</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#info-4">
+                                <span>Skill</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside>
+            <nav class="quick-sidebar">
+                <div class="quick-sidebar__menu">
+                    <input
+                        class="qMenu-toggle"
+                        type="checkbox"
+                        id="qMenuToggle"
+                    />
+                    <ul class="quick-sidebar__menu-list">
+                        <li class="quick-menu">
+                            <a class="quick-menu__btn" href="#profile">
+                                <img
+                                    src="%PUBLIC_URL%/icon/tailed-1.gif"
+                                    alt=""
+                                />
+                                <span>PROFILE</span>
+                            </a>
+                        </li>
+                        <li class="quick-menu">
+                            <a
+                                class="quick-menu__btn quick-inquiry"
+                                href="#web-publishing"
+                            >
+                                <img
+                                    src="%PUBLIC_URL%/icon/tailed-2.gif"
+                                    alt=""
+                                />
+                                <span>PUBLISHING</span>
+                            </a>
+                        </li>
+                        <li class="quick-menu">
+                            <a class="quick-menu__btn" href="#design">
+                                <img
+                                    src="%PUBLIC_URL%/icon/tailed-3.gif"
+                                    alt=""
+                                />
+                                <span>DESIGN</span>
+                            </a>
+                        </li>
+                        <li class="quick-menu">
+                            <a class="quick-menu__btn" href="#skill">
+                                <img
+                                    src="%PUBLIC_URL%/icon/tailed-4.gif"
+                                    alt=""
+                                />
+                                <span>SKILL</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <label class="qMenu-label" for="qMenuToggle"></label>
+                </div>
+                <div class="quick-sidebar__top">
+                    <a class="qTop-toggle" href="#">
+                        <span>TOP</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main id="portfolio">
+            <section id="profile" class="profile">
+                <div class="wrap">
+                    <h1>PROFILE</h1>
+                    <div class="article-box"></div>
+                </div>
+            </section>
+            <section id="web-publishing" class="web-publishing">
+                <div class="wrap">
+                    <h1>WEB PUBLISHING</h1>
+                    <div class="slide-box"></div>
+                </div>
+            </section>
+            <section id="design" class="design">
+                <div class="wrap">
+                    <h1>DESIGN</h1>
+                    <div class="slide-box"></div>
+                </div>
+            </section>
+            <section id="skill" class="skill">
+                <div class="wrap">
+                    <h1>SKILL</h1>
+                    <div class="skill-box"></div>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>

@@ -1,0 +1,84 @@
+@import url(./common.css);
+header {
+  position: sticky;
+  z-index: 100;
+  width: 100%;
+  height: 6vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: var(--normal-speed);
+}
+header.hidden {
+  transform: translateY(-6vh);
+}
+header .header-bar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: var(--wrapper-width);
+  height: inherit;
+}
+header .header-bar .header__logo-box {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: fit-content;
+  height: inherit;
+}
+header .header-bar .header__logo-box .logo-area {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+header .header-bar .header__logo-box .logo-area > img {
+  display: block;
+  object-fit: contain;
+}
+header .header-bar .header__menu-box {
+  display: flex;
+  position: relative;
+  width: 75%;
+  height: inherit;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--regular-text-size);
+}
+header .header-bar .header__menu-box .header__menu-list {
+  display: flex;
+  position: relative;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+header .header-bar .header__menu-box .header__menu-list > li {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 25%;
+}
+header .header-bar .header__menu-box .header__menu-list > li > a {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: inherit;
+}
+header .header-bar .header__menu-box .header__menu-list > li > a > span {
+  color: var(--theme-text);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+header .header-bar .header__menu-box .header__menu-list > li > a:hover > span {
+  color: var(--grayScale-n5);
+}
