@@ -1,0 +1,178 @@
+@import url(./common.css);
+
+$sidebar-icon-size: (
+    square-size: 11vmin,
+    round-percent: 100%,
+);
+
+$qMenu-gap: (
+    updown-gap: 5% 0%,
+);
+
+@mixin set-icon {
+    width: map-get($map: $sidebar-icon-size, $key: square-size);
+    height: map-get($map: $sidebar-icon-size, $key: square-size);
+    border-radius: map-get($map: $sidebar-icon-size, $key: round-percent);
+}
+
+@mixin mini-text-center {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-weight: 900;
+    font-size: var(--mini-text-size);
+    text-align: center;
+    line-height: 1.2;
+}
+
+@mixin normal-text-center {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: var(--normal-text-size);
+    text-align: center;
+    line-height: 1.2;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+aside {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    z-index: 100;
+    transition: var(--transition-normal) cubic-bezier(0, 0, 0.2, 1);
+    .quick-sidebar {
+        width: fit-content;
+        .quick-sidebar {
+            // 메뉴 리스트
+            &__menu {
+                @include mini-text-center;
+                display: flex;
+                flex-flow: column;
+                color: var(--grayScale-n1);
+                .qMenu-toggle {
+                    display: none;
+                }
+                .qMenu-label {
+                    @include set-icon;
+                    order: 2;
+                    cursor: pointer;
+                    background-image: url(../icon/tailed-0.gif);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    margin: map-get($map: $qMenu-gap, $key: updown-gap);
+                    z-index: 10;
+                }
+                .qMenu-toggle:checked ~ .quick-sidebar__menu-list {
+                    display: flex;
+                    .quick-menu {
+                        position: relative;
+                        top: unset;
+                        transform: unset;
+                    }
+                }
+                &-list {
+                    order: 1;
+                    display: none;
+                    position: relative;
+                    flex-flow: column;
+                    align-items: center;
+                    .quick-menu {
+                        @include set-icon;
+                        display: flex;
+                        position: absolute;
+                        flex-flow: column;
+                        align-items: center;
+                        margin: map-get($map: $qMenu-gap, $key: updown-gap);
+                        transition: var(--normal-speed);
+                        &:nth-of-type(1){
+                            background-color: var(--tailed-n1);
+                        }                    
+                        &:nth-of-type(2){
+                            background-color: var(--tailed-n2);
+                        }
+                        &:nth-of-type(3){
+                            background-color: var(--tailed-n3);
+                        }
+                        &:nth-of-type(4){
+                            background-color: var(--tailed-n4);
+                        }
+                        &:nth-of-type(5){
+                            background-color: var(--tailed-n5);
+                        }
+                        &__btn {
+                            display: flex;
+                            flex-flow: column;
+                            align-items: center;
+                            position: relative;
+                            img {
+                                @include set-icon;
+                                position: relative;
+                                z-index: 2;
+                                transition: var(--normal-speed);
+                            }
+                            span {
+                                // opacity: 0;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                transition: opacity var(--normal-speed) 0s;
+                            }
+                        }
+                        &__btn:hover {
+                            img {
+                                transform: rotateX(-90deg);
+                            }
+                            span {
+                                opacity: 1;
+                                transition: opacity var(--normal-speed) var(--fast-speed);
+                            }
+                        }
+                    }
+                }
+            }
+            // 탑 버튼
+            &__top {
+                @include flex-center;
+                padding: map-get($map: $qMenu-gap, $key: updown-gap);
+                .qTop-toggle {
+                    display: flex;
+                    position: relative;
+                    flex-flow: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 75%;
+                    height: 6vmin;
+                    padding: map-get($map: $qMenu-gap, $key: updown-gap);
+                    background-color: var(--grayScale-n5);
+                    border: 0.0625vmin solid var(--grayScale-n3);
+                    border-radius: 1vmin;
+                    span {
+                        @include normal-text-center;
+                        color: var(--grayScale-n2);
+                        &::before {
+                            content: '';
+                            display: block;
+                            rotate: 180deg;
+                            height: var(--normal-text-size);                            
+                            margin: 0 auto;
+                            background-color: var(--grayScale-n2);
+                            mask: url(../icon/top-btn.svg) no-repeat center;
+                            -webkit-mask: url(../icon/top-btn.svg) no-repeat center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

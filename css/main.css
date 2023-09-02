@@ -1,0 +1,629 @@
+@charset "UTF-8";
+@import url(./common.css);
+body {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: var(--grayScale-n1);
+}
+body header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 6vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: var(--normal-speed);
+}
+body header.hidden {
+  transform: translateY(-6vh);
+}
+body header .header-bar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: var(--wrapper-width);
+  height: inherit;
+}
+body header .header-bar .header__logo-box {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: fit-content;
+  height: inherit;
+}
+body header .header-bar .header__logo-box .logo-area {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body header .header-bar .header__logo-box .logo-area > img {
+  display: block;
+  object-fit: contain;
+}
+body header .header-bar .header__menu-box {
+  display: flex;
+  position: relative;
+  width: 75%;
+  height: inherit;
+  align-items: center;
+  justify-content: center;
+}
+body header .header-bar .header__menu-box .header__menu-list {
+  display: flex;
+  position: relative;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+body header .header-bar .header__menu-box .header__menu-list > li {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 25%;
+}
+body header .header-bar .header__menu-box .header__menu-list > li > a {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: inherit;
+}
+body header .header-bar .header__menu-box .header__menu-list > li > a > span {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--normal-text-size);
+  line-height: 1.4;
+  color: var(--theme-text);
+}
+body header .header-bar .header__menu-box .header__menu-list > li > a:hover > span {
+  color: var(--grayScale-n5);
+}
+body aside {
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+  z-index: 100;
+  transition: var(--transition-normal) cubic-bezier(0, 0, 0.2, 1);
+}
+body aside .quick-sidebar {
+  width: fit-content;
+}
+body aside .quick-sidebar .quick-sidebar__menu {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-size: var(--mini-text-size);
+  text-align: center;
+  line-height: 1.2;
+  display: flex;
+  flex-flow: column;
+  color: var(--grayScale-n1);
+}
+body aside .quick-sidebar .quick-sidebar__menu .qMenu-toggle {
+  display: none;
+}
+body aside .quick-sidebar .quick-sidebar__menu .qMenu-label {
+  width: 11vmin;
+  height: 11vmin;
+  border-radius: 100%;
+  order: 2;
+  cursor: pointer;
+  background-image: url(../icon/tailed-0.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 5% 0%;
+  z-index: 10;
+}
+body aside .quick-sidebar .quick-sidebar__menu .qMenu-toggle:checked ~ .quick-sidebar__menu-list {
+  display: flex;
+}
+body aside .quick-sidebar .quick-sidebar__menu .qMenu-toggle:checked ~ .quick-sidebar__menu-list .quick-menu {
+  position: relative;
+  top: unset;
+  transform: unset;
+}
+body aside .quick-sidebar .quick-sidebar__menu-list {
+  order: 1;
+  display: none;
+  position: relative;
+  flex-flow: column;
+  align-items: center;
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu {
+  width: 11vmin;
+  height: 11vmin;
+  border-radius: 100%;
+  display: flex;
+  position: absolute;
+  flex-flow: column;
+  align-items: center;
+  margin: 5% 0%;
+  transition: var(--normal-speed);
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu:nth-of-type(1) {
+  background-color: var(--tailed-n1);
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu:nth-of-type(2) {
+  background-color: var(--tailed-n2);
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu:nth-of-type(3) {
+  background-color: var(--tailed-n3);
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu:nth-of-type(4) {
+  background-color: var(--tailed-n4);
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu:nth-of-type(5) {
+  background-color: var(--tailed-n5);
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu__btn {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu__btn img {
+  width: 11vmin;
+  height: 11vmin;
+  border-radius: 100%;
+  position: relative;
+  z-index: 2;
+  transition: var(--normal-speed);
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu__btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--normal-speed) 0s;
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu__btn:hover img {
+  transform: rotateX(-90deg);
+}
+body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu__btn:hover span {
+  opacity: 1;
+  transition: opacity var(--normal-speed) var(--fast-speed);
+}
+body aside .quick-sidebar .quick-sidebar__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0%;
+}
+body aside .quick-sidebar .quick-sidebar__top .qTop-toggle {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 6vmin;
+  padding: 5% 0%;
+  background-color: var(--grayScale-n5);
+  border: 0.0625vmin solid var(--grayScale-n3);
+  border-radius: 1vmin;
+}
+body aside .quick-sidebar .quick-sidebar__top .qTop-toggle span {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--normal-text-size);
+  text-align: center;
+  line-height: 1.2;
+  color: var(--grayScale-n2);
+}
+body aside .quick-sidebar .quick-sidebar__top .qTop-toggle span::before {
+  content: "";
+  display: block;
+  rotate: 180deg;
+  height: var(--normal-text-size);
+  margin: 0 auto;
+  background-color: var(--grayScale-n2);
+  mask: url(../icon/top-btn.svg) no-repeat center;
+  -webkit-mask: url(../icon/top-btn.svg) no-repeat center;
+}
+body #portfolio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+body #portfolio section {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--grayScale-n1);
+  color: var(--grayScale-n5);
+  border-bottom: 1px solid var(--theme-text);
+}
+body #portfolio section .wrap {
+  position: relative;
+  margin: 0 auto;
+  width: var(--wrapper-width);
+}
+body #portfolio section .wrap h1 {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--large-text-size);
+  line-height: 2;
+}
+body #portfolio section.profile {
+  flex-flow: column;
+}
+body #portfolio section.profile h2 {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--medium-text-size);
+  line-height: 1.4;
+  line-height: 2;
+}
+body #portfolio section.profile .article-box {
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  width: 100%;
+  height: 75%;
+  border: 1px solid var(--theme-text);
+  overflow: hidden;
+}
+body #portfolio section.profile .article-box .about-box {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  justify-content: center;
+  padding-left: 4%;
+  margin: 0 auto;
+  width: 40%;
+  height: 100%;
+}
+body #portfolio section.profile .article-box .about-box > img {
+  width: 50%;
+}
+body #portfolio section.profile .article-box .about-box .about-name strong {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--medium-text-size);
+  line-height: 1.6;
+  display: inline-block;
+}
+body #portfolio section.profile .article-box .about-box .about-name span {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  color: var(--theme-text);
+  margin: 0% 2%;
+}
+body #portfolio section.profile .article-box .about-box .about-info ul li span:nth-of-type(1) {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--normal-text-size);
+  line-height: 1.4;
+  display: inline-block;
+  width: 20%;
+  margin: 0% 2%;
+}
+body #portfolio section.profile .article-box .about-box .about-info ul li span:nth-of-type(2) {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  color: var(--theme-text);
+}
+body #portfolio section.profile .article-box .history-box {
+  position: relative;
+  border: 1px solid var(--theme-text);
+  width: 60%;
+  height: 80vmin;
+  overflow-y: scroll;
+}
+body #portfolio section.profile .article-box .history-box .resume-divider {
+  margin: 0;
+}
+body #portfolio section.profile .article-box .history-box::-webkit-scrollbar {
+  width: 1vmin; /* 스크롤바의 너비 */
+}
+body #portfolio section.profile .article-box .history-box::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background-color: var(--theme-main);
+  border-radius: 10px;
+}
+body #portfolio section.profile .article-box .history-box::-webkit-scrollbar-track {
+  background-color: var(--theme-text-op);
+}
+body #portfolio section.profile .article-box .history-box .experience-list,
+body #portfolio section.profile .article-box .history-box .education-list {
+  display: grid;
+  position: relative;
+  width: 100%;
+  row-gap: 1vmin;
+  padding: 1%;
+}
+body #portfolio section.profile .article-box .history-box .experience-list > li,
+body #portfolio section.profile .article-box .history-box .education-list > li {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  width: inherit;
+}
+body #portfolio section.profile .article-box .history-box .experience-list > li span,
+body #portfolio section.profile .article-box .history-box .education-list > li span {
+  padding: 0.5%;
+}
+body #portfolio section.profile .article-box .history-box .experience-list > li span:nth-of-type(1),
+body #portfolio section.profile .article-box .history-box .education-list > li span:nth-of-type(1) {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  grid-area: 1/1/2/4;
+}
+body #portfolio section.profile .article-box .history-box .experience-list > li span:nth-of-type(2),
+body #portfolio section.profile .article-box .history-box .education-list > li span:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  position: relative;
+  text-align: center;
+  grid-area: 1/4/3/6;
+}
+body #portfolio section.profile .article-box .history-box .experience-list > li span:nth-of-type(2)::after,
+body #portfolio section.profile .article-box .history-box .education-list > li span:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 75%;
+  width: 100%;
+  border-left: 0.1px solid var(--theme-text-op);
+}
+body #portfolio section.profile .article-box .history-box .experience-list > li span:nth-of-type(3),
+body #portfolio section.profile .article-box .history-box .education-list > li span:nth-of-type(3) {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  grid-area: 2/1/3/4;
+  color: var(--theme-text);
+}
+body #portfolio section.web-publishing {
+  background-image: url(../images/publishing-1.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body #portfolio section.web-publishing::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blackLayer-opacity);
+}
+body #portfolio section.web-publishing .slide-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75%;
+}
+body #portfolio section.web-publishing .slide-box .project-list {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 1px solid var(--grayScale-n2);
+}
+body #portfolio section.web-publishing .slide-box .project-list > li > ul {
+  width: auto;
+  height: 8vmin;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+body #portfolio section.web-publishing .slide-box .project-list > li > ul > li {
+  --window-ml: 30%;
+  --window-mt: 25%;
+  --window-mb: 75%;
+  --window-mr: 70%;
+  clip-path: polygon(0% 0%, 0% 100%, var(--window-ml) 100%, var(--window-ml) var(--window-mt), var(--window-mr) var(--window-mt), var(--window-mr) var(--window-mb), var(--window-ml) var(--window-mb), var(--window-ml) 100%, 100% 100%, 100% 0%);
+  width: 100%;
+  height: 100%;
+  background-color: var(--grayScale-n1);
+  box-shadow: 0px -1vmax 0px 1vmax var(--grayScale-n1);
+}
+body #portfolio section.web-publishing .slide-box .project-list > li .project-item {
+  width: 70vmin;
+  height: fit-content;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: var(--grayScale-n2);
+  border: 1vmin solid var(--grayScale-n1);
+  border-top: 0;
+  border-bottom: 0;
+}
+body #portfolio section.web-publishing .slide-box .project-list > li .project-item > span {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  background-color: var(--grayScale-n1);
+}
+body #portfolio section.web-publishing .slide-box .project-list > li .project-item > span:nth-of-type(1) {
+  justify-content: center;
+}
+body #portfolio section.web-publishing .slide-box .project-list > li .project-item > span:nth-of-type(1) > img {
+  width: 100%;
+  height: auto;
+}
+body #portfolio section.web-publishing .slide-box .project-list > li .project-item > span:nth-of-type(2) {
+  padding: 1%;
+}
+body #portfolio section.web-publishing .slide-box .project-list > li .project-item > span:nth-of-type(2) > h3 {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--regular-text-size);
+  line-height: 1.4;
+}
+body #portfolio section.web-publishing .slide-box .project-list > li .project-item > span:nth-of-type(2) > p {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  width: 100%;
+  height: auto;
+  color: var(--theme-text);
+}
+body #portfolio section.design .slide-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75%;
+}
+body #portfolio section.design .slide-box .project-list {
+  display: flex;
+  flex-flow: row nowrap;
+  width: fit-content;
+}
+body #portfolio section.design .slide-box .project-list li {
+  margin: auto 1%;
+}
+body #portfolio section.design .slide-box .project-list li .project-item {
+  width: 45vmin;
+  height: 60vmin;
+  padding: 1vw;
+  background-color: var(--theme-text);
+}
+body #portfolio section.design .slide-box .project-list li .project-item > span {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  background-color: var(--grayScale-n1);
+}
+body #portfolio section.design .slide-box .project-list li .project-item > span:nth-of-type(1) {
+  padding: 1%;
+}
+body #portfolio section.design .slide-box .project-list li .project-item > span:nth-of-type(1) > h3 {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--regular-text-size);
+  line-height: 1.4;
+}
+body #portfolio section.design .slide-box .project-list li .project-item > span:nth-of-type(1) > p {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  width: 100%;
+  height: auto;
+}
+body #portfolio section.design .slide-box .project-list li .project-item > span:nth-of-type(2) > img {
+  width: 100%;
+  height: auto;
+}
+body #portfolio section.skill .skill-box {
+  width: 100%;
+  height: 75%;
+}
+body #portfolio section.skill .skill-box .skill-list {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+body #portfolio section.skill .skill-box .skill-list li {
+  display: flex;
+  position: relative;
+  flex-flow: row;
+  width: 90%;
+  height: 5vmin;
+  margin: 0.5vmin 0;
+  overflow: hidden;
+}
+body #portfolio section.skill .skill-box .skill-list li .skill-badge {
+  z-index: 1;
+}
+body #portfolio section.skill .skill-box .skill-list li .skill-level {
+  position: absolute;
+  left: 0.2vmin;
+  width: 85%;
+  height: 100%;
+}
+body #portfolio section.skill .skill-box .skill-list li .skill-level__progress {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  border-top-right-radius: 1.5vmin;
+  border-bottom-right-radius: 1.5vmin;
+  transition: 2s;
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(1) .skill-level__progress {
+  background: linear-gradient(to right, rgba(227, 79, 38, 0.5333333333), #e34f26);
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(2) .skill-level__progress {
+  background: linear-gradient(to right, rgba(21, 115, 182, 0.5333333333), #1572b6);
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(3) .skill-level__progress {
+  background: linear-gradient(to right, rgba(204, 102, 153, 0.5333333333), #CC6699);
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(4) .skill-level__progress {
+  background: linear-gradient(to right, rgba(247, 223, 30, 0.5333333333), #f7df1e);
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(5) .skill-level__progress {
+  background: linear-gradient(to right, rgba(97, 218, 251, 0.5333333333), #61DAFB);
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(6) .skill-level__progress {
+  background: linear-gradient(to right, rgba(7, 105, 173, 0.5333333333), #0769ad);
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(7) .skill-level__progress {
+  background: linear-gradient(to right, rgba(55, 118, 171, 0.5333333333), #3776ab);
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(8) .skill-level__progress {
+  background: linear-gradient(to right, rgba(49, 168, 255, 0.5333333333), #31a8ff);
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(9) .skill-level__progress {
+  background: linear-gradient(to right, rgba(255, 154, 0, 0.5333333333), #ff9a00);
+}
+body #portfolio section.skill .skill-box .skill-list li:nth-of-type(10) .skill-level__progress {
+  background: linear-gradient(to right, rgba(242, 78, 30, 0.5333333333), #f24e1e);
+}
+body #portfolio section.skill .skill-box .skill-list li .skill-percent {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  right: 0;
+  color: var(--grayScale-n5);
+  height: inherit;
+  width: 15%;
+}
+body #portfolio section.skill .skill-box .skill-list li .skill-percent__binder {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--regular-text-size);
+  line-height: 1.4;
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  text-shadow: 0.5px 0.5px 0 var(--grayScale-n2);
+}
+
+/* Skill 시작 -------------------------------------------------------------------------------- */
+/* Skill 끝 -------------------------------------------------------------------------------- */

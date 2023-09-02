@@ -1,0 +1,93 @@
+@import url(./common.css);
+
+$header-area: (
+    header-height: 6vh,
+);
+
+header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: map-get($map: $header-area, $key: header-height);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: var(--normal-speed);
+    &.hidden {
+        transform: translateY(-1 * map-get($map: $header-area, $key: header-height));
+    }
+    .header-bar {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: var(--wrapper-width);
+        height: inherit;
+        .header_ {
+            &_logo-box {
+                display: flex;
+                position: relative;
+                justify-content: center;
+                width: fit-content;
+                height: inherit;
+                .logo-area {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    > img {
+                        display: block;
+                        object-fit: contain;
+                    }
+                }
+            }
+            &_menu-box {
+                display: flex;
+                position: relative;
+                width: 75%;
+                height: inherit;
+                align-items: center;
+                justify-content: center;
+                font-size: var(--regular-text-size);
+                .header__menu-list {
+                    display: flex;
+                    position: relative;
+                    flex-flow: row;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    > li {
+                        display: flex;
+                        position: relative;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        height: 100%;
+                        width: calc(100% / 4);
+                        > a {
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            height: inherit;
+                            > span {
+                                color: var(--theme-text);
+                                font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+                                font-weight: 500;
+                            }
+                            &:hover {
+                                > span {
+                                    color: var(--grayScale-n5);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

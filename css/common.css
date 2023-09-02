@@ -1,0 +1,114 @@
+:root {
+    --wrapper-width: 90%;
+
+    --mini-text-size: 14px; /* quick-menu text */
+    --small-text-size: 16px;
+    --normal-text-size: 20px;
+    --regular-text-size: 28px; /* project-item title */
+    --medium-text-size: 36px; /* sub-title */
+    --big-text-size: 44px; /* strong,  sub-title */
+    --large-text-size: 60px; /* main-title (h1) */
+
+    --slow-speed: 0.6s;
+    --normal-speed: 0.3s;
+    --fast-speed: 0.1s;
+
+    --tailed-n0: #cedb5b;
+    --tailed-n1: #eabecf;
+    --tailed-n2: #a3a8d6;
+    --tailed-n3: #ebc251;
+    --tailed-n4: #96a3ad;
+
+    /* rgb (43, 43, 43) */
+    --background-main: #2b2b2b;
+
+    /* rgb (244, 186, 86) */
+    --theme-main: #fff5f3;
+
+    /* rgb (203, 109, 47) */
+    --theme-sub: #cfada3;
+
+    /* rgb (206, 218, 224) */
+    --theme-text: #cedae0;
+    --theme-text-op: #cedae0cc;
+
+    /* rgb (68, 24, 16) */
+    --book-main: #441810;
+
+    --grayScale-n5: #efefef;
+    --grayScale-n4: #d5d5d5;
+    --grayScale-n3: #808080;
+    --grayScale-n2: #2b2b2b;
+    --grayScale-n1: #111111;
+
+    --abs-grayScale-n5: #efefef;
+    --abs-grayScale-n4: #d5d5d5;
+    --abs-grayScale-n3: #808080;
+    --abs-grayScale-n2: #2b2b2b;
+    --abs-grayScale-n1: #111111;
+
+    --blackLayer-opacity: rgba(0, 0, 0, 0.3);
+    /* 
+    싱글투게더
+    background-color: #31AF79;
+    background-color: #EAC99D;
+    background-color: #B8A292;
+    background-color: rgb(49, 175, 121);
+    background-color: rgb(234, 201, 157);
+    background-color: rgb(184, 162, 146);
+    
+    파인트잡
+    background-color: #7DBBAD;
+    background-color: #493630;
+    background-color: #B8A292;
+    background-color: rgb(125, 187, 173);
+    background-color: rgb(73, 54, 48);
+    background-color: rgb(184, 162, 146);
+    
+    오버톤즈
+    background-color: #794C4C;
+    background-color: #E1CAA7;
+    background-color: #E7DBC8; (50% E1CAA7)
+    background-color: rgb(121, 76, 76);
+    background-color: rgb(225, 202, 167);
+    background-color: rgb(231, 219, 200);
+
+    도토리숲
+    background-color: #50661E;
+    background-color: #543E23;
+    background-color: #C1512C;
+    background-color: rgb(80, 102, 30);
+    background-color: rgb(84, 62, 35);
+    background-color: rgb(193, 81, 44);
+
+    달력
+    background-color: #bf9589;
+    background-color: #fff5f3;
+    background-color: #c8c3b3;
+    background-color: #859a9d;
+    background-color: rgb(191, 149, 137);
+    background-color: rgb(255, 245, 243);
+    background-color: rgb(200, 195, 179);
+    background-color: rgb(133, 154, 157);
+
+    비엔시스템
+    background-color: #040214;
+    background-color: #B82120;
+    background-color: #C35C5C;
+    background-color: rgb(4, 2, 20);
+    background-color: rgb(184, 33, 32);
+    background-color: rgb(195, 92, 92);
+
+*/
+}
+body::-webkit-scrollbar {
+    width: 0.3vmin; /* 스크롤바의 너비 */
+}
+body::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background-color: var(--theme-main);
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+    background-color: var(--theme-text-op);
+}
