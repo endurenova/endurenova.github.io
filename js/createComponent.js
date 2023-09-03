@@ -147,7 +147,7 @@ createPublishing = () => {
                 </ul>
                 <div class="project-item">
                     <div>
-                        <img src=${pub.imgSrc} alt="" />
+                        <img src=${pub.imgSrc} alt="웹퍼블리싱 프로젝트 이미지-${idx}" />
                     </div>
                     <div>
                         <h3>${pub.title}</h3>
@@ -204,7 +204,7 @@ createDesign = () => {
             }
     ];
     let design = '';
-    designProject.forEach((deg) => {
+    designProject.forEach((deg, idx) => {
         design += `
             <li>
                 <div class="project-item">
@@ -213,7 +213,7 @@ createDesign = () => {
                         <p>${deg.tool}</p>
                     </div>
                     <div>
-                        <img src=${deg.imgSrc} alt="" />
+                        <img src=${deg.imgSrc} alt="디자인 프로젝트 이미지-${idx}" />
                     </div>
                 </div>
             </li>
@@ -236,10 +236,10 @@ createSkill = () => {
         'https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white',
     ];
     let badges = '';
-    badgeList.forEach((badge) => {
+    badgeList.forEach((badge, idx) => {
         badges += `
             <li>
-                <img class="skill-badge" src=${badge} alt="" />
+                <img class="skill-badge" src=${badge} alt="툴 뱃지 이미지-${idx}" />
                 <span class="skill-level">
                     <span class="skill-level__progress"></span>
                 </span>

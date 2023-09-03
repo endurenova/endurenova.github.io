@@ -70,13 +70,13 @@ $skill-color: (
 }
 @mixin contentBox-size {
     width: 100%;
-    height: 75%;
+    height: 70%;
 }
 @mixin main-title {
     font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
     font-weight: 700;
     font-size: var(--large-text-size);
-    line-height: 2;
+    line-height: 2.4;
 }
 @mixin strong {
     font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
@@ -359,7 +359,6 @@ body {
             background-color: var(--grayScale-n1);
             color: var(--grayScale-n5);
             border-bottom: 1px solid var(--theme-text);
-            
             transition: var(--normal-speed);
             .wrap {
                 position: relative;
@@ -626,19 +625,31 @@ body {
                 .slide-box {
                     @include flex-center;
                     @include contentBox-size;
+                    background-color: var(--grayScale-n5);
+                    box-shadow: 1px 10px 20px 10px inset rgba(0, 0, 0, 0.7);
+                    overflow: hidden;
                     .project-list { /* 프로젝트 리스트 (카드 모양) */
                         display: flex;
-                        width: fit-content;
+                        position: relative;
                         cursor: grab;
                         user-select: none;
                         &.grabbing {
                             cursor: grabbing;
                         }
-                        li {
+                        li { /* 프로젝트 리스트 (카드 모양) */
                             margin: auto 1%;
-                            .project-item {
+                            .project-item {                                
                                 @include dg-project-box;
+                                position: relative;
                                 background-color: var(--theme-text);
+                                box-shadow: 5px 5px 20px 5px var(--grayScale-n2);
+                                &::before {
+                                    @include absolute-center;
+                                    content: '';                                    
+                                    width: inherit;
+                                    height: inherit;
+                                    box-shadow: 0px 0px 20px 10px inset var(--color-navy3);
+                                }
                                 > div {
                                     width: 100%;
                                     display: flex;
