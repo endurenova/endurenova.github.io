@@ -1,7 +1,5 @@
 $(document).ready(function(){
     let swipeItemWidth = document.querySelector(".web-publishing .project-film").clientWidth;
-    
-    
     // count 만큼 스와이프 해주는 함수
     const swipeItem = function (cur, prev) {
         if (cur > prev) {
@@ -22,14 +20,9 @@ $(document).ready(function(){
             }
         }
     }
-    // 백그라운드 체인지
-    backgroundChager = () => {
-        
-    }
-    
-
     // 슬라이드 버튼
     $("span.direction").on("click",function(){
+        itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;
         if ($(this).hasClass("next-right")) {
             $(".web-publishing .project-list").stop().animate({left:"+=" + swipeItemWidth},"fast",function(){
                 $(".web-publishing .project-list").css("left", (swipeItemWidth));
@@ -42,8 +35,7 @@ $(document).ready(function(){
                 $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
                 paginateActive();
             });
-        }
-
+        }        
     });
     
     $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
@@ -55,12 +47,12 @@ $(document).ready(function(){
         itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;
         $(".pagination-list li").siblings().removeClass("active");
         $(".pagination-list li").eq(itemIdx).addClass("active");
+        $(".web-publishing").css("backgroundImage", `url(../images/publishing-${itemIdx}.png)`);
     }
-
     $(".pagination-list li").on("click",function(){
         let pageIdx = $(this).index();
         let prevActive = document.querySelector(".pagination-list li.active").dataset.pageIndex;
-        itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;        
+        itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;
         if(!$(this).hasClass("active")) {
             $(".pagination-list li").siblings().removeClass("active");
             $(".pagination-list li").eq(pageIdx).addClass("active");
