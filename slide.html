@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        li {
+            list-style: none;
+        }
+        .main-slider,
+        .success-case__tab-wrap,
+        .success-case__tab-list,
+        .success-case__header,
+        .success-case__body,
+        .success-case__slider,
+        .success-case__wrap,
+        .success-case__direction,
+        .success-case__type,
+        .success-case__type .project-list,
+        .project-list>.project-list__header,
+        .project-list>.project-list__body,
+        .project-list__header,
+        .project-list__header-wrap,
+        .project-list__header-title,
+        .project-list__header-divider,
+        .project-list__header-part,
+        .project-list__body,
+        .project-list__body-wrap,
+        .project-list__body-purpose,
+        .project-list__body-process,
+        .project-list__body-result,
+        .project-list__body-detail,
+        .project-list__body-detail ul li,
+        .success-case__footer,
+        .success-case__pagination {
+            display: flex;
+        }
+        
+        .success-case__tab-list,
+        .success-case__wrap,
+        .success-case__type,
+        .success-case__type .project-list {
+            flex-flow: row nowrap;
+            -ms-flex-flow: row nowrap;
+        }
+        .success-case__body,
+        .success-case__slider,
+        .success-case__wrap,
+        .success-case__type,
+        .project-list__header,
+        .project-list__body {
+            align-items: center;
+        }
+        .main-slider,
+        .success-case__tab-wrap,
+        .success-case__tab-list,
+        .success-case__body,
+        .success-case__slider {
+            justify-content: center;
+        }
+        .main-slider {
+            flex-flow: column;
+            position: relative;
+            width: 100%;
+            height: 700px;   
+            justify-content: flex-start;
+            background-image: url(./image/bdrs_slider_bg.png);
+            background-repeat: no-repeat;
+            background-position: center 0;
+        }
+        .success-case__header {
+            position: relative;
+            height: 25%;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .success-case__menu {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        .success-case__tab-wrap {
+            position: relative;
+            width: 100%;
+        }
+        .success-case__tab-list {
+            max-width: 400px;
+            width: 80%;
+            height: 100%;
+            position: relative;
+            color: #fff;
+            justify-content: space-between;
+            z-index: 10;
+        }
+        .success-case__tab-list li {
+            display: block;
+            height: 100%;
+            line-height: 25px;
+            width: calc(100% / 3);
+            text-align: center;
+        }
+        .success-case__tab-list li span {
+            display: block;
+            font-size: 18px;
+            cursor: pointer;
+            word-break: keep-all;
+            transition: 0.2s;
+        }
+        .success-case__tab-list li span.active {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .success-case__body {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+        .success-case__slider {
+            position: relative;
+            width: 100%;
+            max-width: 1300px;
+            height: 100%;
+            align-items: center;
+        }
+        .success-case__direction {
+            position: absolute;
+            width: 98.5%;
+            justify-content: space-between;
+            z-index: 10;
+        }
+        .success-case__direction li {
+            cursor: pointer;     
+            position: relative;
+            height: fit-content;       
+        }   
+        .success-case__direction li img {
+            display: block;
+        }
+        .success-case__wrap {
+            position: relative;
+            max-width: 1300px;
+            width: 100%;
+            height: 100%;
+        }
+        .success-case__type {
+            display: none;
+            position: absolute;
+            width: 300%;
+            height: 100%;
+        }
+        .success-case__type.active {
+            display: flex;
+            position: absolute;
+            z-index: 1;
+        }
+        .success-case__type .project-list {
+            cursor: pointer;
+            padding: 0 50px;
+            height: 80%;
+            width: 100%;
+            max-width: 1300px;
+            filter: drop-shadow(10px 10px 6px rgba(0, 0, 0, 0.16));
+        }
+        
+        .success-case__type:first-child .project-list__header {background-color: hsl(44, 98%, 49%);}
+        .success-case__type:nth-child(2) .project-list__header {background-color: hwb(71 45% 19%);}
+        .success-case__type:last-child .project-list__header {background-color: hsl(335, 43%, 47%);}
+        .project-list>.project-list__header {
+            position: relative;         
+            width: 35%;
+            height: 100%;
+            border-top-left-radius: 290px;
+            border-bottom-left-radius: 290px;
+        }
+        .project-list>.project-list__body {
+            position: relative;
+            width: 65%;
+            height: 100%;
+            background-color: #ffffff;
+            border-top-right-radius: 290px;
+            border-bottom-right-radius: 290px;
+        }
+        .project-list__header-wrap {
+            position: relative;
+            width: 77%;
+            height: 62%;
+            flex-direction: column;
+            margin: 0% 3% 0% 20%;
+            justify-content: space-between;
+        }
+        .project-list__body-wrap {
+            position: relative;
+            width: 94%;
+            height: 62%;
+            flex-direction: column;
+            margin: 0% 3% 0% 3%;
+            justify-content: space-between;
+        }
+        .project-list__body-purpose,
+        .project-list__body-detail,
+        .project-list__body-process,
+        .project-list__body-result {
+            flex-direction: column;
+        }
+        
+        .success-case__title {
+            font-size: 34px;
+            word-break: keep-all;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            width: 100%;
+            padding: 30px 10px;            
+        }
+        .project-list__header-title {width:100%; height: 48%;}
+        .project-list__header-part {align-items: flex-start; width:100%; height: 48%;}
+        .project-list__header-divider {align-items: center; height: 4%; padding: 2% 0;}
+        .project-list__header-divider hr {width: 50px;}
+        .project-list__header-title h3,
+        .project-list__header-part h4 {
+            font-weight: bold;
+            padding-left: 2%;
+            word-break: keep-all;
+            color: #ffffff;
+        }
+        .project-list__header-title h3 {
+            font-size: 28px;
+        }
+        .project-list__header-part h4 {
+            font-size: 20px;
+        }
+        .project-list__body-detail ul li {
+            font-size: 20px;
+        }
+        .project-list__body-detail ul li span {
+            line-height: 1.5em;
+        }
+        .project-list__body-detail ul li span:first-child {
+            white-space: nowrap;
+        }
+        .project-list__body-purpose h4,        
+        .project-list__body-process h4,
+        .project-list__body-result h4 {
+            font-weight: bold;
+            font-size: 22px;
+            color: #f65303;
+            line-height: 1.5em;
+            word-break: keep-all;
+        }
+        .project-list__body-purpose p,        
+        .project-list__body-process p,
+        .project-list__body-result p {
+            font-size: 20px;
+            letter-spacing: -0.04em;
+            word-break: keep-all;
+        }
+        .success-case__footer {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .success-case__pagination {
+            background-color: #ffffff;
+            width: fit-content;      
+            height: 100%;
+            align-items: center;
+        }
+        .success-case__pagination li{
+            display: inline-block;
+            background-color: #f65303;
+            opacity: 0.2;
+            width: 8px;
+            height: 8px;
+            margin: 0 4px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .success-case__pagination li.active{   
+            background-color: #f65303;
+            opacity: 1;         
+            width: 20px;
+            border-radius: 20px;
+        }
+        .success-case__wrap {
+            overflow-x: hidden;
+        }
+        @media (max-width: 1200px) {
+            .project-list__header-wrap,
+            .project-list__body-wrap {
+                justify-content: space-evenly;
+            }
+            h4.success-case__title {
+                font-size: clamp(28px, 3.182vw, 34px);
+                align-items: flex-end;
+            }
+            .success-case__tab-list li span.active {
+                font-size: clamp(21px, 2.386vw, 25px);
+            }
+            .success-case__tab-list li span {
+                font-size: clamp(16px, 1.818vw, 18px);
+            }
+            .project-list__body {
+                justify-content: space-evenly;
+            }
+            .project-list__header-title {
+                align-items: flex-end;
+            }
+            .project-list__header-title h3 {
+                height: fit-content;
+                font-size: clamp(20px, 2.273vw, 28px);
+            }
+            .project-list__header-divider {
+                font-size: clamp(4px, 0.333vw, 5px);
+            }
+            .project-list__header-part h4 {
+                font-size: clamp(16px, 1.818vw, 22px);
+            }
+            .project-list__body-detail ul li,
+            .project-list__body-purpose p,
+            .project-list__body-process p,
+            .project-list__body-result p {
+                font-size: clamp(14px, 1.591vw, 20px);
+            }
+            .project-list__header-title h3 {
+                font-size: clamp(20px, 2.273vw, 28px);
+            }
+            .project-list__body-purpose h4,        
+            .project-list__body-process h4,
+            .project-list__body-result h4 {
+                font-size: clamp(20px, 2.273vw, 22px);
+            }
+            .success-case__header {
+                align-items:center;
+            }
+            .success-case__body {
+                align-items:flex-start;
+                height: 400px;
+            }
+            .success-case__footer {
+                align-items:flex-start;
+            }        
+            .project-list__header-wrap {
+                width: 77%;
+                height: 75%;
+                justify-content: space-evenly;
+                
+            }
+            .project-list__body-wrap {
+                height: 75%;
+                justify-content: space-evenly;
+            }
+        }        
+        @media (max-width: 880px) {
+            .success-case__title {
+                padding: 5% 2%;
+            }
+            .success-case__type.active {
+                height: 500px;
+            }            
+            .success-case__slider {
+                position: relative;
+                width: 100%;
+                max-width: 880px;
+                height: 100%;
+            }
+            .success-case__header {
+                position: relative;
+                height: 20%;
+            }
+            .success-case__body {
+                height: 80%;
+            }
+            .success-case__wrap {
+                position: relative;
+                max-width: 880px;
+                width: 100%;
+                height: 100%;
+                overflow-x: hidden;
+            }
+            .success-case__direction {
+                width: 90%;
+            }
+            .success-case__type .project-list {
+                display: flex;
+                position: relative;
+                flex-flow: column wrap;                
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                padding: 0;
+                padding: 0 6%;
+            }
+            .project-list>.project-list__header {
+                display: flex;
+                position: relative;
+                width: 100%; 
+                height: 45%;
+                border-radius: 0;
+                border-top-left-radius: 50% 50%;
+                border-top-right-radius: 50% 50%;
+                justify-content: center;
+                align-items: flex-end;
+                text-align: center;
+            }
+            .project-list__header-wrap {
+                align-items: center;
+                margin: 0;
+                height: fit-content;
+                width: 80%;
+                height: 60%;
+            }
+            .project-list__header-part {
+                margin-bottom: 2%;
+            }
+            .project-list__header-title h3,
+            .project-list__header-part h4 {
+                padding: 0;
+            }
+            .project-list__body-wrap {
+                padding: 2% 0;
+                justify-content: flex-start;                
+                width: 80%;
+            }
+            .project-list__body-purpose {
+                margin-bottom: 2%;
+            }
+            .project-list__header-title {width:100%; height: 48%;}
+            .project-list__header-part {justify-content: center; width:100%; height: 48%;}
+            .project-list__header-divider {justify-content: center; height: 2%; padding: 2% 0; font-size: 5px;}
+            .project-list__header-divider hr {width: 50px;}
+            .project-list>.project-list__body {
+                width: 100%;
+                height: 55%;
+                background-color: #ffffff;
+                border-radius: 0;
+                border-bottom-left-radius: 50% 50%;
+                border-bottom-right-radius: 50% 50%;
+                justify-content: center;
+                align-items: flex-start;
+                text-align: center;
+            }
+            .project-list__body-detail ul li {
+                text-align: left;
+            }
+            .project-list__body-detail ul li,
+            .project-list__body-purpose p,        
+            .project-list__body-process p,
+            .project-list__body-result p {
+                font-size: clamp(13px, 1.477vw, 14px);
+            }
+        }        
+        @media (max-width: 560px) {
+            .success-case__direction {
+                display: none;
+            }
+            .success-case__type .project-list {
+                padding: 0 2%;
+            }
+            
+            .project-list>.project-list__header {
+                display: flex;
+                position: relative;
+                width: 100%; 
+                height: 40%;
+                border-top-left-radius: 50% 50%;
+                border-top-right-radius: 50% 50%;
+            }
+            .project-list>.project-list__body {
+                width: 100%;
+                height: 60%;
+                background-color: #ffffff;
+                border-bottom-left-radius: 50% 50%;
+                border-bottom-right-radius: 50% 50%;
+            }
+        }
+        @media (max-width: 400px) {
+            .project-list__header-wrap {
+                height: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-slider">
+        <div class="success-case__header">
+            <div class="success-case__menu">
+                <h4 class="success-case__title">
+                    Slide
+                </h4>
+                <div class="success-case__tab-wrap">
+                    <ul class="success-case__tab-list">
+                        <li class="case-tab"><span class="tab-interview active">Group-1</span></li>
+                        <li class="case-tab"><span class="activetab-employment">Group-2</span></li>
+                        <li class="case-tab"><span class="tab-lecture">Group-3</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="success-case__body">
+            <div class="success-case__slider">
+                <ul class="success-case__direction">
+                    <li class="prev-left"><img src="./image/bdrs_arr_left.png" alt="#"></li>
+                    <li class="next-right"><img src="./image/bdrs_arr_right.png" alt="#"></li>
+                </ul>
+                <div class="success-case__wrap">
+                    <ul class="success-case__type active">
+                        <li class="idxNum0 project-list swipe-item__interview" data-slide-item-index="0">
+                            <div class="project-list__header">
+                                <div class="project-list__header-wrap">
+                                    <div class="project-list__header-title">
+                                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                                    </div>
+                                    <div class="project-list__header-divider">
+                                        <hr>
+                                    </div>
+                                    <div class="project-list__header-part">
+                                        <h4>①</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-list__body">
+                                <div class="project-list__body-wrap">
+                                    <div class="project-list__body-purpose">
+                                        <h4>Description</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                    </div>
+                                    <div class="project-list__body-detail">
+                                        <ul>
+                                            <li><span>- 인터뷰 요청 기간 :&nbsp;</span><span>14일 이내 완료 목표</span></li>
+                                            <li><span>- 전문가 섭외 조건 :&nbsp;</span><span>글로벌 P사 구매담당자, 영업담당자(현직자) 또는 전직 1년 이내인 자</span></li>
+                                            <li><span>- 전문가 섭외 결과 :&nbsp;</span><span>3일 이내 총 5명 섭외하여 화상 인터뷰 3회, 서면 인터뷰 1회 진행</span></li>
+                                            <li><span>- Result :&nbsp;</span><span>인터뷰 진행 후 해당 기업 구매처와 연결 완료</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="idxNum1 project-list swipe-item__interview" data-slide-item-index="1">
+                            <div class="project-list__header">
+                                <div class="project-list__header-wrap">
+                                    <div class="project-list__header-title">
+                                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                                    </div>
+                                    <div class="project-list__header-divider">
+                                        <hr>
+                                    </div>
+                                    <div class="project-list__header-part">
+                                        <h4>②</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-list__body">
+                                <div class="project-list__body-wrap">
+                                    <div class="project-list__body-purpose">
+                                        <h4>Description</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                            보상제도 수립</p>
+                                    </div>
+                                    <div class="project-list__body-detail">
+                                        <ul>
+                                            <li><span>- 인터뷰 요청 기간 :&nbsp;</span><span>7일 이내 완료 목표</span></li>
+                                            <li><span>- 전문가 섭외 조건 :&nbsp;</span><span>국내외 9개 업체 HR 현직 실무자 또는 임원</span></li>
+                                            <li><span>- 전문가 섭외 결과 :&nbsp;</span><span>3일 간 총 7명 섭외하여 화상 인터뷰 4회, 서면인터뷰 2회 진행</span></li>
+                                            <li><span>- Result :&nbsp;</span><span>인터뷰 자문 진행 후 내부 정책 확립 완료</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="idxNum2 project-list swipe-item__interview" data-slide-item-index="2">
+                            <div class="project-list__header">
+                                <div class="project-list__header-wrap">
+                                    <div class="project-list__header-title">
+                                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                                    </div>
+                                    <div class="project-list__header-divider">
+                                        <hr>
+                                    </div>
+                                    <div class="project-list__header-part">
+                                        <h4>③</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-list__body">
+                                <div class="project-list__body-wrap">
+                                    <div class="project-list__body-purpose">
+                                        <h4>Description</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                    </div>
+                                    <div class="project-list__body-detail">
+                                        <ul>
+                                            <li><span>- 인터뷰 요청 기간 :&nbsp;</span><span>30일 이내 완료 목표</span></li>
+                                            <li><span>- 전문가 섭외 조건 :&nbsp;</span><span>글로벌 N사, D사 본사 전략기획 담당자, 컨텐츠 개발자, 언론인, 교수 등 다수</span></li>
+                                            <li><span>- 전문가 섭외 결과 :&nbsp;</span><span>7일 간 총 10명 섭외하여 화상 인터뷰 6회, 서면 인터뷰 4회 진행</span></li>
+                                            <li><span>- Result :&nbsp;</span><span>인터뷰 자문 진행 후 신사업 전략 확립 완료</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="success-case__type">
+                        <li class="idxNum0 project-list swipe-item__employment" data-slide-item-index="0">
+                            <div class="project-list__header">
+                                <div class="project-list__header-wrap">
+                                    <div class="project-list__header-title">
+                                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                                    </div>
+                                    <div class="project-list__header-divider">
+                                        <hr>
+                                    </div>
+                                    <div class="project-list__header-part">
+                                        <h4>영업, 구매</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-list__body">
+                                <div class="project-list__body-wrap">
+                                    <div class="project-list__body-purpose">
+                                        <h4>Description</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                    </div>
+                                    <div class="project-list__body-detail">
+                                        <ul>
+                                            <li><span>- 전문가 섭외 조건 :&nbsp;</span><span>MBA 출신, 해당 산업에서 관련 경험 및 다수 프로젝트 경험, ⠀컨설팅펌 Top Tier 출신</span></li>
+                                            <li><span>- 전문가 섭외 결과 :&nbsp;</span><span>7일 간 총 6명의 후보자 추천하여 3명 면접</span></li>
+                                            <li><span>- 장단기 채용 결과 :&nbsp;</span><span>1명의 후보자가 최종 확정되어 계약 후 즉시 프로젝트 투입</span></li>                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>                        
+                        <li class="idxNum1 project-list swipe-item__employment" data-slide-item-index="1">
+                            <div class="project-list__header">
+                                <div class="project-list__header-wrap">
+                                    <div class="project-list__header-title">
+                                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                                    </div>
+                                    <div class="project-list__header-divider">
+                                        <hr>
+                                    </div>
+                                    <div class="project-list__header-part">
+                                        <h4>영업, 구매</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-list__body">
+                                <div class="project-list__body-wrap">
+                                    <div class="project-list__body-purpose">
+                                        <h4>Description</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                    </div>
+                                    <div class="project-list__body-detail">
+                                        <ul>
+                                            <li><span>- 전문가 섭외 조건 :&nbsp;</span><span>특정 대기업 출신 구매, 전략기획 담당자, 전직 임원급</span></li>
+                                            <li><span>- 전문가 섭외 결과 :&nbsp;</span><span>7일 간 총 3명의 후보자 추천 후 2명 면접 진행</span></li>
+                                            <li><span>- Result :&nbsp;</span><span>1명의 후보자가 최종 확정되어 계약 후 3개월 간 MOU 투입</span></li>                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="idxNum2 project-list swipe-item__employment" data-slide-item-index="2">
+                            <div class="project-list__header">
+                                <div class="project-list__header-wrap">
+                                    <div class="project-list__header-title">
+                                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                                    </div>
+                                    <div class="project-list__header-divider">
+                                        <hr>
+                                    </div>
+                                    <div class="project-list__header-part">
+                                        <h4>장기</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-list__body">
+                                <div class="project-list__body-wrap">
+                                    <div class="project-list__body-purpose">
+                                        <h4>Description</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                    </div>
+                                    <div class="project-list__body-detail">
+                                        <ul>
+                                            <li><span>- 전문가 섭외 조건 :&nbsp;</span><span>현지 관련산업 법률, 정부정책, 기업운영 등에 경험이 많고 네트워크를⠀보유한 인력</span></li>
+                                            <li><span>- 전문가 섭외 결과 :&nbsp;</span><span>3개월간 약 15명의 산업 전문가 추천 후 5명 면접 진행</span></li>
+                                            <li><span>- Result :&nbsp;</span><span>1명의 후보자가 최종 확정되어 계약 후 현지에서 10개월 간 법인 설립 서포트</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="success-case__type">
+                        <li class="idxNum0 project-list swipe-item__lecture" data-slide-item-index="0">
+                            <div class="project-list__header">
+                                <div class="project-list__header-wrap">
+                                    <div class="project-list__header-title">
+                                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                                    </div>
+                                    <div class="project-list__header-divider">
+                                        <hr>
+                                    </div>
+                                    <div class="project-list__header-part">
+                                        <h4>리테일 전략 강의</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-list__body">
+                                <div class="project-list__body-wrap">
+                                    <div class="project-list__body-purpose">
+                                        <h4>Description</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                    </div>
+                                    <div class="project-list__body-process">
+                                        <h4>Process</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                    </div>
+                                    <div class="project-list__body-result">
+                                        <h4>Result</h4>
+                                        <p>강연에서 얻은 인사이트를 바탕으로 사업 개발 전략 수립 추진</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="idxNum1 project-list swipe-item__lecture" data-slide-item-index="1">
+                            <div class="project-list__header">
+                                <div class="project-list__header-wrap">
+                                    <div class="project-list__header-title">
+                                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                                    </div>
+                                    <div class="project-list__header-divider">
+                                        <hr>
+                                    </div>
+                                    <div class="project-list__header-part">
+                                        <h4>브랜드 전략 강연</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-list__body">
+                                <div class="project-list__body-wrap">
+                                    <div class="project-list__body-purpose">
+                                        <h4>Description</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                    </div>
+                                    <div class="project-list__body-process">
+                                        <h4>Process</h4>
+                                        <p>3일 내 해외 글로벌 화장품 회사의 임원급 현직 전문가 3명, 전직자 2명 추천하여 이 중 한 명의 해외 전문가와 비대면 강연 진행</p>
+                                    </div>
+                                    <div class="project-list__body-result">
+                                        <h4>Result</h4>
+                                        <p>상품 & 컨텐츠의 현지화 전략 및 브랜딩 사례 탐구, 자사 글로벌 시장 진출 전략 검토</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="idxNum2 project-list swipe-item__lecture" data-slide-item-index="2">
+                            <div class="project-list__header">
+                                <div class="project-list__header-wrap">
+                                    <div class="project-list__header-title">
+                                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                                    </div>
+                                    <div class="project-list__header-divider">
+                                        <hr>
+                                    </div>
+                                    <div class="project-list__header-part">
+                                        <h4></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-list__body">
+                                <div class="project-list__body-wrap">
+                                    <div class="project-list__body-purpose">
+                                        <h4>Description</h4>
+                                        <p>Est eligendi praesentium commodi delectus obcaecati aut quos nulla quod, magni numquam, repudiandae deleniti?</p>
+                                    </div>
+                                    <div class="project-list__body-process">
+                                        <h4>Process</h4>
+                                        <p>3일 내 고객사에서 요청한 현직 S대 교수 및 해당 분야 교수 4명 추천</p>
+                                    </div>
+                                    <div class="project-list__body-result">
+                                        <h4>Result</h4>
+                                        <p>탄소 중립에 대한 글로벌 현황과 이슈 파악, 고객사 맞춤 솔루션 및 Q&A 세션 제공</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="success-case__footer">
+            <ul class="success-case__pagination">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Tab 클릭시 해당 슬라이드 리스트 목록 호출
+        var swipeItemWidth = document.querySelector(".success-case__type.active .project-list").clientWidth;
+        $(".case-tab").on("click",function(){
+            $(this).siblings().children("span").removeClass("active");
+            $(this).children().addClass("active");
+            $(".success-case__type").siblings().removeClass("active");
+            $(".success-case__type").eq($(this).index()).addClass("active");
+            resetItemSequence();
+            paginateActive();
+        });
+    
+        // count 만큼 스와이프 해주는 함수
+        const swipeItem = function (count) {
+            var idx = 0;
+            if (idx <= count){
+                $(".success-case__type.active .project-list").last().prependTo($(".success-case__type.active"));
+                $(".success-case__type.active").css("left", (-swipeItemWidth));
+                idx++;
+            }
+        }
+        // 슬라이드 버튼
+        $(".success-case__direction li").on("click",function(){
+            if ($(this).hasClass("prev-left")) {
+                $(".success-case__type.active").stop().animate({left:"+=" + swipeItemWidth},"slow",function(){
+                    $(".success-case__type.active").css("left", (-swipeItemWidth));
+                    $(".success-case__type.active .project-list").last().prependTo($(".success-case__type.active"));
+                    paginateActive();
+                });
+            } else if ($(this).hasClass("next-right")) {
+                $(".success-case__type.active").stop().animate({left:"-=" + swipeItemWidth},"slow",function(){
+                    $(".success-case__type.active").css("left", (-swipeItemWidth));
+                    $(".success-case__type.active .project-list").first().appendTo($(".success-case__type.active"));
+                    paginateActive();
+                });
+            }
+        });
+    
+        // 탭 이동시 슬라이드 리스트 리셋
+        const resetItemSequence = function () {
+            var itemLength = document.querySelector(".success-case__type.active").children.length;
+            for (var idx = 0; idx < itemLength; idx++) {
+                var seq = $(".success-case__type.active").find(".idxNum" + idx);
+                $(".success-case__type.active").append(seq);      
+            }
+            swipeItem(0);
+            paginateActive();
+        }
+        
+        window.addEventListener('resize', function(){
+            swipeItemWidth = document.querySelector(".success-case__type.active .project-list").clientWidth;
+            resetItemSequence();
+        });
+        // 슬라이드 기능
+        swipeItem(0);
+        setInterval(function(){
+            $(".success-case__type.active").animate({left:"-=" + swipeItemWidth},"slow",function(){
+                $(".success-case__type.active").css("left", (-swipeItemWidth));
+                $(".success-case__type.active .project-list").first().appendTo($(".success-case__type.active"));
+                paginateActive();
+            });
+        }, 4000);
+    
+        // 페이지 자동 액티브
+        var itemIdx = document.querySelector(".success-case__type.active").children[1].dataset.slideItemIndex;
+        function paginateActive() {
+            itemIdx = document.querySelector(".success-case__type.active").children[1].dataset.slideItemIndex;
+            $(".success-case__pagination li").siblings().removeClass("active");
+            $(".success-case__pagination li").eq(itemIdx).addClass("active");
+        }
+    
+        // 페이지 클릭시 이동
+        $(".success-case__pagination li").on("click",function(){
+            var pageIdx = $(this).index();
+            itemIdx = document.querySelector(".success-case__type.active").children[1].dataset.slideItemIndex;
+            if($(this).hasClass("active") == false) {
+                $(".success-case__pagination li").siblings().removeClass("active");
+                $(".success-case__pagination li").eq(pageIdx).addClass("active");
+                swipeItem(pageIdx);
+            } 
+        });
+    </script>
+</body>
+</html>

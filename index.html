@@ -25,34 +25,37 @@
         <link rel="stylesheet" href="./css/reset.css" />
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/main.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
+        <style>
+        </style>
     </head>
     <body>
         <header>
             <nav class="header-bar">
-                <div class="header__logo-box">
+                <!-- <div class="header__logo-box">
                     <a class="logo-area" href="javascript:void(0);">
                         <img src="./icon/shake-og.png" alt="" />
                     </a>
-                </div>
+                </div> -->
                 <div class="header__menu-box">
                     <ul class="header__menu-list">
                         <li>
-                            <a href="#info-1">
+                            <a href="#profile">
                                 <span>Profile</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#info-2">
+                            <a href="#web-publishing">
                                 <span>Web-Publishing</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#info-3">
+                            <a href="#design">
                                 <span>Design</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#info-4">
+                            <a href="#skill">
                                 <span>Skill</span>
                             </a>
                         </li>
@@ -100,36 +103,37 @@
             </nav>
         </aside>
         <main id="portfolio">
+            <!-- 프로필 -->
             <section id="profile" class="profile">
                 <div class="wrap">
                     <h1>PROFILE</h1>
                     <div class="article-box">
                         <article class="about-box">
+                            <h2 style="display: none;">　</h2>
                             <img src="./images/profile.jpg" alt=""></img>
+                            <!-- 개인정보 -->
                             <ul class="about-list">
                                 <li class="about-name">
-                                    <strong>최주원</strong>
-                                    <span>Choi Juwon</span>
+                                    <strong>최주원</strong><span>Choi Juwon</span>
                                 </li>
                                 <li class="about-info">
-                                    <ul>
+                                    <ol>
                                         <li>
-                                            <span>Birth</span>
-                                            <span>1993.10.26</span>
+                                            <span>Birth</span><span>1993.10.26</span>
                                         </li>
                                         <li>
-                                            <span>Phone</span>
-                                            <span>010-4593-8054</span>
+                                            <span>Phone</span><span>010-4593-8054</span>
                                         </li>
                                         <li>
-                                            <span>E-mail</span>
-                                            <span>endurenova@gmail.com</span>
+                                            <span>E-mail</span><span>endurenova@gmail.com</span>
                                         </li>
-                                    </ul>
+                                    </ol>
                                 </li>
                             </ul>
                         </article>
+                        <!-- 경험 & 교육 -->
                         <article class="history-box">
+                            <h2 style="display: none;">　</h2>
                             <div class="wrap">
                                 <h2>Experience</h2>
                                 <div class="list-box experience"></div>
@@ -143,18 +147,32 @@
                     </div>
                 </div>
             </section>
+            <!-- 웹 퍼블리싱 -->
             <section id="web-publishing" class="web-publishing">
+
                 <div class="wrap">
                     <h1>WEB PUBLISHING</h1>
-                    <div class="slide-box"></div>
+                    <div class="slide-box">
+                        <span class="direction prev-left">&#10094;</span>
+                        <span class="direction next-right">&#10095;</span>
+                    </div>
+                    <div class="pagination-box">
+                        <ul class="pagination-list">
+                            <li class="active" data-page-index="0"></li>
+                            <li data-page-index="1"></li>
+                            <li data-page-index="2"></li>
+                        </ul>
+                    </div>
                 </div>
             </section>
+            <!-- 디자인 -->
             <section id="design" class="design">
                 <div class="wrap">
                     <h1>DESIGN</h1>
                     <div class="slide-box"></div>
                 </div>
             </section>
+            <!-- 스킬 -->
             <section id="skill" class="skill">
                 <div class="wrap">
                     <h1>SKILL</h1>
@@ -165,4 +183,6 @@
     </body>
     <script src="./js/createComponent.js"></script>
     <script src="./js/interactive.js"></script>
+    <script src="./js/filmSlide.js"></script>
+    <script src="./js/grabSlide.js"></script>
 </html>

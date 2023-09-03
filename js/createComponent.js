@@ -97,24 +97,19 @@ createProfile = () => {
         `;
     });
     experienceBox.insertAdjacentHTML('afterbegin', `
-            <ul class="experience-list">
+            <ol class="experience-list">
                 ${experience}
-            </ul>
+            </ol>
     `);
     educationBox.insertAdjacentHTML('afterbegin', `
-        <ul class="education-list">
+        <ol class="education-list">
             ${education}
-        </ul>
+        </ol>
     `);
 };
 createPublishing = () => {
     const publishingBox = document.querySelector('.web-publishing .slide-box');
     const publishingProject = [
-        {
-            title: 'PINTJOB',
-            imgSrc: './images/project-singletogether-main.png',
-            tool: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
-        },
         {
             title:'BNSYSTEM',
             imgSrc: './images/project-bnsystem-main.png',
@@ -124,47 +119,52 @@ createPublishing = () => {
             title: 'SINGLETOGETHER',
             imgSrc: './images/project-singletogether-main.png',
             tool: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
-        }
+        },
+        {
+            title: 'PINTJOB',
+            imgSrc: './images/project-pintjob-main.png',
+            tool: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
+        },
     ];
     let publishing = '';
-    publishingProject.forEach((pub) => {
+    publishingProject.forEach((pub, idx) => {
         publishing += `
-            <ul class="project-list">
-                <li>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <div class="project-item">
-                        <span>
-                            <img src=${pub.imgSrc} alt="" />
-                        </span>
-                        <span>
-                            <h3>${pub.title}</h3>
-                            <p>${pub.tool}</p>
-                        </span>
+            <li class="project-film" data-item-index="${idx}">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="project-item">
+                    <div>
+                        <img src=${pub.imgSrc} alt="" />
                     </div>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </li>
-            </ul>
+                    <div>
+                        <h3>${pub.title}</h3>
+                        <p>${pub.tool}</p>
+                    </div>
+                </div>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </li>
         `;
     });
-    publishingBox.insertAdjacentHTML('afterbegin', `<ul class="project-list">${publishing}</ul>`);
+    publishingBox.insertAdjacentHTML('afterbegin', `
+        <ul class="project-list">${publishing}</ul>
+    `);
 };
 createDesign = () => {
     const designBox = document.querySelector('.design .slide-box');
@@ -205,18 +205,18 @@ createDesign = () => {
         design += `
             <li>
                 <div class="project-item">
-                    <span>
+                    <div>
                         <h3>${deg.title}</h3>
                         <p>${deg.tool}</p>
-                    </span>
-                    <span>
+                    </div>
+                    <div>
                         <img src=${deg.imgSrc} alt="" />
-                    </span>
+                    </div>
                 </div>
             </li>
         `;
     });
-    designBox.insertAdjacentHTML('afterbegin', `<ul class="project-list">${design}</ul>`);
+    designBox.insertAdjacentHTML('afterbegin', `<ul id="drag-element" class="project-list">${design}</ul>`);
 };
 createSkill = () => {
     const skillBox = document.querySelector('.skill .skill-box');
@@ -246,7 +246,7 @@ createSkill = () => {
             </li>
         `;
     });
-    skillBox.insertAdjacentHTML('afterbegin', `<ul class="skill-list">${badges}</ul>`);
+    skillBox.insertAdjacentHTML('afterbegin', `<ol class="skill-list">${badges}</ol>`);
 };
 
 createProfile();
