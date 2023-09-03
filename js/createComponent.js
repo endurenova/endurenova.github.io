@@ -97,9 +97,9 @@ createProfile = () => {
         `;
     });
     experienceBox.insertAdjacentHTML('afterbegin', `
-            <ol class="experience-list">
-                ${experience}
-            </ol>
+        <ol class="experience-list">
+            ${experience}
+        </ol>
     `);
     educationBox.insertAdjacentHTML('afterbegin', `
         <ol class="education-list">
@@ -162,9 +162,7 @@ createPublishing = () => {
             </li>
         `;
     });
-    publishingBox.insertAdjacentHTML('afterbegin', `
-        <ul class="project-list">${publishing}</ul>
-    `);
+    publishingBox.insertAdjacentHTML('afterbegin', `<ul class="project-list">${publishing}</ul>`);
 };
 createDesign = () => {
     const designBox = document.querySelector('.design .slide-box');

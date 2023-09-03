@@ -142,6 +142,7 @@ body {
         bottom: 0;
         right: 0;
         transition: var(--normal-speed);
+        background-color: var(--blackLayer-opacity);
         &.hidden {
             transform: translateY(-1 * map-get($map: $header-area, $key: header-height));
         }
@@ -358,6 +359,8 @@ body {
             background-color: var(--grayScale-n1);
             color: var(--grayScale-n5);
             border-bottom: 1px solid var(--theme-text);
+            
+            transition: var(--normal-speed);
             .wrap {
                 position: relative;
                 margin: 0 auto;
@@ -404,7 +407,7 @@ body {
                             }
                         }
                         // 개인정보
-                        .about-info ul li span{
+                        .about-info ol li span{
                             &:nth-of-type(1) {
                                 @include sub-subject;
                                 display: inline-block;
@@ -437,8 +440,8 @@ body {
                         &::-webkit-scrollbar-track {
                             background-color: var(--grayScale-n2);
                         }
-                        .experience-list,
-                        .education-list { /* 경험 & 교육 리스트 */
+                        ol.experience-list,
+                        ol.education-list { /* 경험 & 교육 리스트 */
                             display: grid;
                             position: relative;
                             width: 100%;
@@ -482,9 +485,9 @@ body {
                 }
             }
             &.web-publishing { /* 웹 퍼블리싱 섹션 */
-                background-image: url(../images/publishing-1.gif);
-                background-repeat: no-repeat;
-                background-size: cover;
+                background-image: url(../images/publishing-0.png);
+                background-color: var(--grayScale-n4);
+                background-size: map-get($map: $sidebar-icon-size, $key: square-size);
                 &::before {
                     content: '';
                     display: block;
@@ -501,7 +504,6 @@ body {
                         display: flex;
                         @include absolute-center;
                         flex-flow: row nowrap;
-                        border: 1px solid var(--grayScale-n2);
                         width: inherit;
                         .project-film { /* 프로젝트 (영화 필름 칸) */
                             display: flex;
@@ -509,7 +511,6 @@ body {
                             flex-flow: column nowrap;
                             width: auto;
                             cursor: pointer;
-                            border: 1px solid var(--grayScale-n2);
                             > ul {
                                 width: auto;
                                 height: 8vmin;
@@ -583,8 +584,10 @@ body {
                         top: 50%;                        
                         transform: translateY(-50%);                        
                         font-size: 8vmin;
-                        color: var(--grayScale-n5);
-                        text-shadow: 0 1px 0 var(--grayScale-n3), 0 2px 0 var(--grayScale-n3), 0 3px 0 var(--grayScale-n3), 0 4px 0 var(--grayScale-n3), 0 5px 0 var(--grayScale-n3), 0 6px 0 var(--grayScale-n3), 0 7px 0 var(--grayScale-n3), 0 8px 0 var(--grayScale-n3), 0 9px 0 var(--grayScale-n3), 0 50px 30px rgba(0, 0, 0, 0.3);
+                        font-weight: 900;
+                        color: var(--theme-text);
+                        cursor: pointer;
+                        text-shadow: 0 1px 0 var(--grayScale-n1), 0 2px 0 var(--grayScale-n1), 0 3px 0 var(--grayScale-n1), 0 4px 0 var(--grayScale-n1), 0 5px 0 var(--grayScale-n1), 0 6px 0 var(--grayScale-n1), 0 7px 0 var(--grayScale-n1), 0 8px 0 var(--grayScale-n1), 0 9px 0 var(--grayScale-n1), 0 50px 30px rgba(0, 0, 0, 0.3);
                         &.prev-left {
                             left: 0;
                         }
@@ -607,14 +610,15 @@ body {
                             height: 2.4vmin;
                             margin: auto 1.2vmin;
                             border-radius: 50%;
+                            background-color: var(--grayScale-n5);
                             box-shadow: 1px 1px 3px 1px inset var(--grayScale-n2);
                             cursor: pointer;
-                            &.active { /* 프로젝트 슬라이드 페이지네이션 액티브 */
-                                box-shadow: 2px 1px 3px 1px inset var(--grayScale-n2);
-                                background-color: var(--grayScale-n5);
-                                opacity: 1;         
+                            &.active { /* 프로젝트 슬라이드 페이지네이션 액티브 */                                
+                                opacity: 1;
                                 width: 4.8vmin;
-                                border-radius: 2.4vmin;
+                                border-radius: 2.4vmin;                                
+                                background-color: var(--theme-text);
+                                box-shadow: 2px 1px 3px 1px inset var(--grayScale-n2);
                             }                
                         }
                     }            

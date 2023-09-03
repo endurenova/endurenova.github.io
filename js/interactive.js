@@ -1,18 +1,7 @@
-const headerBar = document.querySelector('header');
-let prevScrollpos = window.scrollY;
-let currentScrollPos;
-window.addEventListener('scroll', event => {
-    event.preventDefault();
-    currentScrollPos = window.scrollY;
-    prevScrollpos <= currentScrollPos ? headerBar.classList.add('hidden') : headerBar.classList.remove('hidden');
-    prevScrollpos = currentScrollPos;
-});
+
 
 const skillList = document.querySelector('.skill-list');
 const skillLevelList = [85, 90, 85, 80, 50, 70, 80, 85, 85, 90];
-
-
-
 skillLoading = () => {
     const counter = ($counter, max, progress) => {
         var i = 0;
@@ -56,19 +45,28 @@ skillLoadRemove = () => {
     });
 };
 
+const headerBar = document.querySelector('header');
+const mainBottom = document.querySelector("main").getBoundingClientRect().bottom;
+const designBottom = document.querySelector("#design").getBoundingClientRect().bottom;
+let currentTop = 0;
+let prevScrollpos = 0;
 let skillToggle = 0;
-checkSkillActive = () => {
-    if (skillToggle === 0) {
+
+window.addEventListener('scroll', event => {
+    event.preventDefault();
+    const currentScrollPos = window.scrollY;
+    if(prevScrollpos < currentScrollPos){
+        headerBar.classList.add('hidden');        
+    }
+    else{
+        headerBar.classList.remove('hidden');
+    }
+    if (window.scrollY >= mainBottom - designBottom / 2 && skillToggle === 0) {
         skillLoading();
         skillToggle = 1;
-        document.querySelector(".skill").removeEventListener("mouseover", checkSkillActive);
-        document.querySelector(".skill").addEventListener("mouseleave", checkSkillActive);
-    } else {
+    } else if (window.scrollY < mainBottom - designBottom / 2 && skillToggle === 1) {
         skillLoadRemove();
         skillToggle = 0;
-        document.querySelector(".skill").removeEventListener("mouseleave", checkSkillActive);
-        document.querySelector(".skill").addEventListener("mouseover", checkSkillActive);
     }
-}
-document.querySelector(".skill").addEventListener("mouseover", checkSkillActive);
-document.querySelector(".skill").addEventListener("mouseleave", checkSkillActive);
+    prevScrollpos = currentScrollPos;
+});

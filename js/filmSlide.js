@@ -31,13 +31,13 @@ $(document).ready(function(){
     // 슬라이드 버튼
     $("span.direction").on("click",function(){
         if ($(this).hasClass("next-right")) {
-            $(".web-publishing .project-list").stop().animate({left:"+=" + swipeItemWidth},"slow",function(){
+            $(".web-publishing .project-list").stop().animate({left:"+=" + swipeItemWidth},"fast",function(){
                 $(".web-publishing .project-list").css("left", (swipeItemWidth));
                 $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
                 paginateActive();
             });
         } else if ($(this).hasClass("prev-left")) {
-            $(".web-publishing .project-list").stop().animate({left:"-=" + swipeItemWidth},"slow",function(){
+            $(".web-publishing .project-list").stop().animate({left:"-=" + swipeItemWidth},"fast",function(){
                 $(".web-publishing .project-list").css("left", (swipeItemWidth));
                 $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
                 paginateActive();
@@ -57,13 +57,6 @@ $(document).ready(function(){
         $(".pagination-list li").eq(itemIdx).addClass("active");
     }
 
-    
-    const filmBg = [
-        "url(../images/publishing-1.gif)",
-        "url(../images/publishing-2.png)",
-        "url(../images/publishing-3.png)"
-    ];
-    
     $(".pagination-list li").on("click",function(){
         let pageIdx = $(this).index();
         let prevActive = document.querySelector(".pagination-list li.active").dataset.pageIndex;
@@ -72,7 +65,7 @@ $(document).ready(function(){
             $(".pagination-list li").siblings().removeClass("active");
             $(".pagination-list li").eq(pageIdx).addClass("active");
             swipeItem(pageIdx, prevActive);
-            $(".web-publishing").css("background", filmBg[pageIdx]);
+            $(".web-publishing").css("backgroundImage", `url(../images/publishing-${pageIdx}.png)`);
         } 
     });
 });
