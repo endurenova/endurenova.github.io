@@ -13,8 +13,9 @@ $(document).ready(function(){
         } else if (cur < prev) {
             while (cur < prev){
                 $(".web-publishing .project-list").animate({left:"+=" + swipeItemWidth},"fast",function(){
-                    $(".web-publishing .project-list").css("left", (swipeItemWidth));
                     $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
+                    $(".web-publishing .project-list").css("left", (swipeItemWidth));
+                    
                 });
                 prev--;
             }
@@ -25,14 +26,14 @@ $(document).ready(function(){
         itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;
         if ($(this).hasClass("next-right")) {
             $(".web-publishing .project-list").stop().animate({left:"+=" + swipeItemWidth},"fast",function(){
-                $(".web-publishing .project-list").css("left", (swipeItemWidth));
                 $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
+                $(".web-publishing .project-list").css("left", (swipeItemWidth));                
                 paginateActive();
             });
         } else if ($(this).hasClass("prev-left")) {
-            $(".web-publishing .project-list").stop().animate({left:"-=" + swipeItemWidth},"fast",function(){
-                $(".web-publishing .project-list").css("left", (swipeItemWidth));
+            $(".web-publishing .project-list").stop().animate({left:"-=" + swipeItemWidth},"fast",function(){                
                 $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
+                $(".web-publishing .project-list").css("left", (swipeItemWidth));
                 paginateActive();
             });
         }        

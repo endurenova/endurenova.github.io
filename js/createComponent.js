@@ -125,6 +125,11 @@ createPublishing = () => {
             imgSrc: './images/project-pintjob-main.png',
             tool: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
         },
+        {
+            title: 'ROOM-3D',
+            imgSrc: './images/project-room3d-main.png',
+            tool: 'HTML　CSS　JavaScript',
+        },
     ];
     let publishing = '';
     publishingProject.forEach((pub, idx) => {

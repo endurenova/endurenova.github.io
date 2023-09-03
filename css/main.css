@@ -340,7 +340,7 @@ body #portfolio section.profile .article-box .history-box::-webkit-scrollbar { /
 }
 body #portfolio section.profile .article-box .history-box::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */
-  background-color: var(--theme-text);
+  background-color: var(--tailed-n0);
   border-radius: 10px;
 }
 body #portfolio section.profile .article-box .history-box::-webkit-scrollbar-track {
@@ -407,7 +407,7 @@ body #portfolio section.profile .article-box .history-box ol.education-list > li
 body #portfolio section.web-publishing { /* 웹 퍼블리싱 섹션 */
   background-image: url(../images/publishing-0.png);
   background-color: var(--grayScale-n4);
-  background-size: 11vmin;
+  background-size: 20vmin;
 }
 body #portfolio section.web-publishing::before {
   content: "";
@@ -537,15 +537,13 @@ body #portfolio section.web-publishing .pagination-list > li {
   margin: auto 1.2vmin;
   border-radius: 50%;
   background-color: var(--grayScale-n5);
-  box-shadow: 1px 1px 3px 1px inset var(--grayScale-n2);
   cursor: pointer;
 }
 body #portfolio section.web-publishing .pagination-list > li.active { /* 프로젝트 슬라이드 페이지네이션 액티브 */
   opacity: 1;
   width: 4.8vmin;
   border-radius: 2.4vmin;
-  background-color: var(--theme-text);
-  box-shadow: 2px 1px 3px 1px inset var(--grayScale-n2);
+  background-color: var(--tailed-n0);
 }
 body #portfolio section.design { /* 디자인 섹션 */ }
 body #portfolio section.design .slide-box {
