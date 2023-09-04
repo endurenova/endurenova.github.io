@@ -69,6 +69,6 @@ $(document).ready(function(){
         "",
     ]
     document.querySelector(".web-publishing .project-list").children[1].addEventListener('click', (event) => {
-        window.location.href="https://endurenova.github.io/" + link[event.target.dataset.itemIndex];
+        window.location.href="https://endurenova.github.io/" + link[document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex];
     });
 });

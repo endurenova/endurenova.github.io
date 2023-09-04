@@ -134,7 +134,7 @@ createPublishing = () => {
     let publishing = '';
     publishingProject.forEach((pub, idx) => {
         publishing += `
-            <li class="project-film" target="_blank" data-item-index="${idx}">
+            <li class="project-film" data-item-index="${idx}">
                 <ul>
                     <li></li>
                     <li></li>
