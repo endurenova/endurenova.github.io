@@ -24,13 +24,13 @@ $(document).ready(function(){
     // 슬라이드 버튼
     $("span.direction").on("click",function(){
         itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;
-        if ($(this).hasClass("next-right")) {
+        if ($(this).hasClass("prev-left")) {
             $(".web-publishing .project-list").stop().animate({left:"+=" + swipeItemWidth},"fast",function(){
                 $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
                 $(".web-publishing .project-list").css("left", (swipeItemWidth));                
                 paginateActive();
             });
-        } else if ($(this).hasClass("prev-left")) {
+        } else if ($(this).hasClass("next-right")) {
             $(".web-publishing .project-list").stop().animate({left:"-=" + swipeItemWidth},"fast",function(){                
                 $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
                 $(".web-publishing .project-list").css("left", (swipeItemWidth));
@@ -60,5 +60,15 @@ $(document).ready(function(){
             swipeItem(pageIdx, prevActive);
             $(".web-publishing").css("backgroundImage", `url(../images/publishing-${pageIdx}.png)`);
         } 
+    });
+
+    const link = [
+        "ROOM-3D/index.html",
+        "",
+        "",
+        "",
+    ]
+    document.querySelector(".web-publishing .project-list").children[1].addEventListener('click', (event) => {
+        window.location.href="https://endurenova.github.io/" + link[event.target.dataset.itemIndex];
     });
 });

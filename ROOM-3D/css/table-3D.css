@@ -1,0 +1,272 @@
+@import url(./common.css);
+.wooden-table__box {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    width: var(--table-width);
+    height: var(--table-total-height);
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom;
+    transform: translateY(-100vw) rotateX(-90deg);
+}
+.wooden-table__box > .scene {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    width: var(--table-width);
+    height: var(--table-total-height);
+    transform-style: preserve-3d;
+}
+.wooden-table {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(calc(0.5 * var(--table-height)));
+}
+.table__face {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    font-family: 'maplestory-bold';
+}
+.table__face--top,
+.table__face--bottom {
+    width: var(--table-width);
+    height: var(--table-height);
+    border-radius: var(--table-face-border-radius) var(--table-face-border-radius);
+}
+.table__face--left,
+.table__face--right {
+    left: var(--table-face-border-radius);
+    width: calc(var(--table-height) - (var(--table-face-border-radius) * 2));
+    height: var(--table-thick);
+}
+.table__face--front,
+.table__face--back {
+    left: var(--table-face-border-radius);
+    width: calc(var(--table-width) - (var(--table-face-border-radius) * 2));
+    height: var(--table-thick);
+}
+.table__face--top {
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateZ(calc(0.5 * var(--table-height)));
+}
+.table__face--bottom {
+    transform: rotateX(-90deg) translateZ(calc(-0.5 * var(--table-height) + var(--table-thick)));
+}
+.table__face--front {
+    transform: rotateY(0deg) translateZ(calc(var(--table-height) / 2));
+}
+.table__face--back {
+    transform: rotateY(180deg) translateZ(calc(var(--table-height) / 2));
+}
+.table__face--right {
+    transform: rotateY(90deg) translateZ(calc(var(--table-width) - (var(--table-height) / 2)));
+}
+.table__face--left {
+    transform: rotateY(-90deg) translateZ(calc(var(--table-height) / 2));
+}
+.table__leg-list {
+    display: flex;
+    position: relative;
+    width: var(--table-width);
+    height: var(--table-height);
+    transform-style: preserve-3d;
+    top: calc(var(--table-thick));
+    font-family: 'maplestory-bold';
+    font-size: fit-content;
+}
+.table__leg {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+.table__leg-front-left {
+    transform: translateX(var(--table-leg-thick)) translateZ(calc(var(--table-height) / 2 - var(--table-leg-thick)));
+}
+.table__leg-back-left {
+    transform: translateX(var(--table-leg-thick))
+        translateZ(calc(-1 * (var(--table-height) / 2 - var(--table-leg-thick))));
+}
+.table__leg-front-right {
+    right: var(--table-leg-thick);
+    transform: translateX(calc(-1 * var(--table-leg-thick)))
+        translateZ(calc((var(--table-height) / 2 - var(--table-leg-thick))));
+}
+.table__leg-back-right {
+    right: var(--table-leg-thick);
+    transform: translateX(calc(-1 * var(--table-leg-thick)))
+        translateZ(calc(-1 * ((var(--table-height) / 2 - var(--table-leg-thick)))));
+}
+.leg__face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: var(--table-leg-thick);
+    height: var(--table-leg-height);
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+.leg__face--top,
+.leg__face--bottom {
+    width: var(--table-leg-thick);
+    height: var(--table-leg-thick);
+}
+.leg__face--left,
+.leg__face--right {
+    width: var(--table-leg-thick);
+    height: var(--table-leg-height);
+}
+.leg__face--front,
+.leg__face--back {
+    width: var(--table-leg-thick);
+    height: var(--table-leg-height);
+}
+.leg__face--top {
+    transform: rotateX(90deg) translateZ(calc(0.5 * var(--table-leg-thick)));
+}
+.leg__face--bottom {
+    transform: rotateX(-90deg) translateZ(calc(-0.5 * var(--table-leg-thick) + var(--table-leg-height)));
+}
+.leg__face--front {
+    transform: rotateY(0deg) translateZ(calc(var(--table-leg-thick) / 2));
+}
+.leg__face--back {
+    transform: rotateY(180deg) translateZ(calc(var(--table-leg-thick) / 2));
+}
+.leg__face--right {
+    transform: rotateY(90deg) translateZ(calc(var(--table-leg-thick) / 2));
+}
+.leg__face--left {
+    transform: rotateY(-90deg) translateZ(calc(var(--table-leg-thick) / 2));
+}
+
+.table-cr {
+    position: absolute;
+    transform-style: preserve-3d;
+    width: calc(var(--table-face-border-radius));
+}
+.table-cr-Fr-Rt {
+    left: 100%;
+    background-color: var(--theme-sub);
+    transform: translate3D(
+        calc(-50% - (var(--table-face-border-radius) / 2) - (var(--table-radius-corner-width) / 2)),
+        0,
+        calc(var(--table-height) / 2 - var(--table-face-border-radius))
+    );
+}
+
+.table-cr-Bk-Rt {
+    left: 100%;
+    transform: translate3D(
+        calc(-50% - (var(--table-face-border-radius) / 2) - (var(--table-radius-corner-width) / 2)),
+        0,
+        calc(-1 * var(--table-height) / 2 + var(--table-face-border-radius))
+    );
+}
+
+.table-cr-Bk-Lt {
+    left: 0%;
+    transform: translate3D(
+        calc(50% + (var(--table-face-border-radius) / 2) - (var(--table-radius-corner-width) / 2)),
+        0,
+        calc(-1 * var(--table-height) / 2 + var(--table-face-border-radius))
+    );
+}
+.table-cr-Fr-Lt {
+    left: 0%;
+    transform: translate3D(
+        calc(50% + (var(--table-face-border-radius) / 2) - (var(--table-radius-corner-width) / 2)),
+        0,
+        calc(var(--table-height) / 2 - var(--table-face-border-radius))
+    );
+}
+.table-cr .side {
+    position: absolute;
+    width: var(--table-radius-corner-width);
+    height: var(--table-thick);
+    background-color: var(--theme-text);
+}
+.table-cr-Fr-Rt .s0 {
+    transform: rotateY(9deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Fr-Rt .s1 {
+    transform: rotateY(27deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Fr-Rt .s2 {
+    transform: rotateY(45deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Fr-Rt .s3 {
+    transform: rotateY(63deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Fr-Rt .s4 {
+    transform: rotateY(81deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Rt .s0 {
+    transform: rotateY(99deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Rt .s1 {
+    transform: rotateY(117deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Rt .s2 {
+    transform: rotateY(135deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Rt .s3 {
+    transform: rotateY(153deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Rt .s4 {
+    transform: rotateY(171deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Lt .s0 {
+    transform: rotateY(189deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Lt .s1 {
+    transform: rotateY(207deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Lt .s2 {
+    transform: rotateY(225deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Lt .s3 {
+    transform: rotateY(243deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Bk-Lt .s4 {
+    transform: rotateY(261deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Fr-Lt .s0 {
+    transform: rotateY(279deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Fr-Lt .s1 {
+    transform: rotateY(297deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Fr-Lt .s2 {
+    transform: rotateY(315deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Fr-Lt .s3 {
+    transform: rotateY(333deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table-cr-Fr-Lt .s4 {
+    transform: rotateY(351deg) translate3D(0%, 0, var(--table-face-border-radius));
+}
+.table__face, .table-cr .face {
+    /* border: 2px solid rgba(22, 11, 1, 0.7);
+    background-image: url(../images/woodenH.png);
+    background-size: cover; */
+    background-color:rgb(220, 219, 224);
+    
+}
+.table__face.table__face--top {
+    background-color: rgb(238, 237, 243);
+    border: 1px solid rgba(22, 11, 1, 0.7);
+}
+.leg__face {
+    /* filter: contrast(150%) sepia(80%) saturate(150%);
+    background-image: url(../images/woodenH.png);
+    background-size: cover; */
+    background: rgb(63,63,63);
+    background: linear-gradient(89deg, rgba(120,120,120,1) 50%, rgba(239,239,239,1) 100%);
+}

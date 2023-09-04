@@ -111,6 +111,11 @@ createPublishing = () => {
     const publishingBox = document.querySelector('.web-publishing .slide-box');
     const publishingProject = [
         {
+            title: 'ROOM-3D',
+            imgSrc: './images/project-room3d-main.png',
+            tool: 'HTML　CSS　JavaScript',
+        },
+        {
             title:'BNSYSTEM',
             imgSrc: './images/project-bnsystem-main.png',
             tool:'HTML　CSS　JavaScript　Photoshop'
@@ -125,16 +130,11 @@ createPublishing = () => {
             imgSrc: './images/project-pintjob-main.png',
             tool: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
         },
-        {
-            title: 'ROOM-3D',
-            imgSrc: './images/project-room3d-main.png',
-            tool: 'HTML　CSS　JavaScript',
-        },
     ];
     let publishing = '';
     publishingProject.forEach((pub, idx) => {
         publishing += `
-            <li class="project-film" data-item-index="${idx}">
+            <li class="project-film" target="_blank" data-item-index="${idx}">
                 <ul>
                     <li></li>
                     <li></li>

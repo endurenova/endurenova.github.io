@@ -407,7 +407,6 @@ body #portfolio section.profile .article-box .history-box ol.education-list > li
 body #portfolio section.web-publishing { /* 웹 퍼블리싱 섹션 */
   background-image: url(../images/publishing-0.png);
   background-color: var(--grayScale-n4);
-  background-size: 20vmin;
 }
 body #portfolio section.web-publishing::before {
   content: "";
@@ -424,14 +423,14 @@ body #portfolio section.web-publishing .slide-box {
   width: 100%;
   height: 70%;
   position: relative;
+  width: 70vmin;
+  overflow: hidden;
+  margin: 0 auto;
 }
 body #portfolio section.web-publishing .slide-box .project-list { /* 프로젝트 리스트 (영화 필름 띠) */
   display: flex;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  flex-flow: row nowrap;
+  transform: translateX(-140vmin);
   width: inherit;
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film { /* 프로젝트 (영화 필름 칸) */
@@ -502,7 +501,7 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film .p
   height: auto;
   color: var(--theme-text);
 }
-body #portfolio section.web-publishing .slide-box .direction {
+body #portfolio section.web-publishing .direction {
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -513,10 +512,10 @@ body #portfolio section.web-publishing .slide-box .direction {
   cursor: pointer;
   text-shadow: 0 1px 0 var(--grayScale-n1), 0 2px 0 var(--grayScale-n1), 0 3px 0 var(--grayScale-n1), 0 4px 0 var(--grayScale-n1), 0 5px 0 var(--grayScale-n1), 0 6px 0 var(--grayScale-n1), 0 7px 0 var(--grayScale-n1), 0 8px 0 var(--grayScale-n1), 0 9px 0 var(--grayScale-n1), 0 50px 30px rgba(0, 0, 0, 0.3);
 }
-body #portfolio section.web-publishing .slide-box .direction.prev-left {
+body #portfolio section.web-publishing .direction.prev-left {
   left: 0;
 }
-body #portfolio section.web-publishing .slide-box .direction.next-right {
+body #portfolio section.web-publishing .direction.next-right {
   right: 0;
 }
 body #portfolio section.web-publishing .pagination { /* 프로젝트 슬라이드 페이지네이션 */ }
