@@ -63,7 +63,7 @@ $(document).ready(function(){
     });
 
     const link = [
-        "ROOM-3D/index.html",
+        "ROOM-3D",
         "",
         "",
         "",
