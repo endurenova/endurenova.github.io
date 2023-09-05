@@ -689,7 +689,7 @@ publishingDetail = () =>{
             "SINGLETOGETHER",
             "PINTJOB",
         ];
-        window.location.href="https://endurenova.github.io/PUBLISHING" + link[projectIdx];
+        window.location.href="https://endurenova.github.io/PUBLISHING/" + link[projectIdx];
     };
 };
 
