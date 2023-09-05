@@ -360,8 +360,8 @@ body {
                         flex-flow: column;
                         align-items: center;
                         justify-content: center;
-                        width: 5vmin;
-                        height: 5vmin;
+                        width: 6vmin;
+                        height: 6vmin;
                         background-color: var(--grayScale-n5);
                         border: 0.0625vmin solid var(--grayScale-n3);
                         border-radius: 1vmin;
@@ -373,7 +373,7 @@ body {
                                 background-color: var(--grayScale-n2);
                             }
                         &.qhome-toggle {
-                            &::before {
+                            &::before {                                
                                 mask: url(../icon/home-btn.svg) no-repeat center;
                                 -webkit-mask: url(../icon/home-btn.svg) no-repeat center;
                             }
@@ -411,7 +411,6 @@ body {
             height: 100vh;
             background-color: var(--grayScale-n1);
             color: var(--grayScale-n5);
-            border-bottom: 1px solid var(--theme-text);
             transition: var(--normal-speed);
             .wrap {
                 position: relative;
@@ -555,7 +554,7 @@ body {
                     overflow-x: scroll;
                     overflow-y: hidden;
                     &::-webkit-scrollbar { /* 스크롤바의 너비 */
-                        height: 1vmin;
+                        height: 0.6vmin;
                         &-thumb {
                             height: 30%; /* 스크롤바의 길이 */
                             background-color: var(--tailed-n0);
@@ -744,8 +743,8 @@ body {
                         width: fit-content;
                         > li{
                             display: inline-block;
-                            width: 2.4vmin;
-                            height: 2.4vmin;
+                            width: 1.8vmin;
+                            height: 1.8vmin;
                             margin: auto 1.2vmin;
                             border-radius: 50%;
                             background-color: var(--grayScale-n5);
@@ -764,8 +763,6 @@ body {
                 .slide-box {
                     @include flex-center;
                     @include contentBox-size;
-                    background-color: var(--grayScale-n5);
-                    box-shadow: 1px 10px 20px 10px inset rgba(0, 0, 0, 0.7);
                     overflow: hidden;
                     .project-list { /* 프로젝트 리스트 (카드 모양) */
                         display: flex;
@@ -781,13 +778,11 @@ body {
                                 @include dg-project-box;
                                 position: relative;
                                 background-color: var(--theme-text);
-                                box-shadow: 5px 5px 20px 5px var(--grayScale-n2);
                                 &::before {
                                     @include absolute-center;
                                     content: '';                                    
                                     width: inherit;
                                     height: inherit;
-                                    box-shadow: 0px 0px 20px 10px inset var(--color-navy3);
                                 }
                                 > div {
                                     width: 100%;
