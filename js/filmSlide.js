@@ -61,14 +61,4 @@ $(document).ready(function(){
             $(".web-publishing").css("backgroundImage", `url(../images/publishing-${pageIdx}.png)`);
         } 
     });
-
-    const link = [
-        "ROOM-3D",
-        "",
-        "",
-        "",
-    ]
-    document.querySelector(".web-publishing .project-list").children[1].addEventListener('click', (event) => {
-        window.location.href="https://endurenova.github.io/" + link[document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex];
-    });
 });

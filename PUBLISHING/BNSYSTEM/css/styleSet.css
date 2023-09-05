@@ -1,0 +1,170 @@
+@font-face {
+  font-family: 'Pretendard-light';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  }
+@font-face {
+  font-family: 'Pretendard-medium';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  /* Main color */
+  --color-red: #B82120;
+  /* --color-red: #D2261F; */
+
+  /* Main color - Sub */
+  --color-scarlet: #C35C5C;
+  --color-scarlet-hov: rgba(195, 92, 92, 0.5);
+
+  /* Sub color */
+  --color-navy: #040214;
+  --color-navy-hov: rgba(4, 2, 20, 0.5);
+  
+
+  --color-navy2: #27374d8f;
+  --color-navy3: #526D828f;
+  --color-navy4: #9DB2BF8f;
+  --color-navy5: #DDE6ED75;
+  --color-navy2-abs:  #27374d;
+  --color-navy3-abs:  #526D82;
+  --color-navy4-abs:  #9DB2BF;
+  --color-navy5-abs: #DDE6ED;
+
+  /* Sub color */
+  --color-navy-footer: #080816;
+  
+  /* Sub color (absolute) */
+  --color-navy-abs: #040214;
+
+  /* GrayScale W */
+  --color-white: #ffffff;
+  
+  /* GrayScale W (head)*/
+  --color-white-head: #ffffff;
+
+  /* GrayScale W (absolute) */
+  --color-white-abs: #ffffff;
+
+  /* GrayScale N5 */
+  --color-n5: #efefef;
+
+  /* GrayScale N5 (absolute) */
+  --color-n5-abs: #efefef;
+  
+  /* GrayScale N4 */
+  --color-n4: #cccccc;
+
+  /* GrayScale N3 */
+  --color-n3: #808080;
+
+  /* GrayScale N2 */
+  --color-n2: #505050;
+  
+  /* GrayScale N1 */
+  --color-n1: #171717;
+  
+  /* GrayScale N1 (absolute) */
+  --color-n1-abs: #171717;
+
+  /* GrayScale B */
+  --color-black: #000000;
+
+  /* GrayScale B (absolute) */
+  --color-black-abs: #000000;
+
+  --fontWeight-light: 300;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-bold: 700;
+
+  --fontSize-large: 24px;
+  --fontSize-regular: 14px;
+  --fontSize-small: 12px;
+  --fontSize-minimum: 11px;
+
+  --logoLine-height: 80px;
+  --wrapper-width: 80%;
+  --toggle-degree: 0deg;
+  --transition-normal: 0.3s;
+}
+
+/* 스크롤바 넓이 */
+::-webkit-scrollbar {
+  width: 6px;
+} 
+
+/* 스크롤바 막대 바깥 바탕색 */
+::-webkit-scrollbar-track {
+  background-color: var(--color-scarlet-hov);
+}
+
+/* 스크롤바 막대색 */
+::-webkit-scrollbar-thumb {
+  height: 30%;
+  background-color: var(--color-red);
+  border-radius: 3px;
+}
+
+/* 리셋 영역  -------------------------------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard-Regular';
+  color: var(--color-text);
+}
+ul {list-style-type: none;}
+li {list-style: none;}
+a { text-decoration: none; color: inherit;}
+img {vertical-align: top;}
+
+/*  -------------------------------------------------- 리셋 영역 */
+.zero-t{transition: 0;}
+
+@media (max-width: 1024px){
+  :root {
+    --logoLine-height: 70px;
+  }
+}
+@font-face {
+  font-family: 'Pretendard-light';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-medium';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}

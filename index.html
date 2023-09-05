@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/main.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
-        <style>
-        </style>
     </head>
     <body>
         <header>
@@ -96,6 +94,23 @@
                     </a>
                 </div>
             </nav>
+            <nav class="open-detail">
+                <div class="open-detail__home toggle-box">
+                    <a class="qhome-toggle toggle" href="javascript:recoveryHome();">
+                        <span></span>
+                    </a>
+                </div>
+                <div class="open-detail__link toggle-box">
+                    <a class="qlink-toggle toggle" href="javascript:enterProject();">
+                        <span></span>
+                    </a>
+                </div>
+                <div class="open-detail__first toggle-box">
+                    <a class="qfirst-toggle toggle" href="#project-first">
+                        <span></span>
+                    </a>
+                </div>
+            </nav>
         </aside>
         <main id="portfolio">
             <!-- 프로필 -->
@@ -143,40 +158,13 @@
                 </div>
             </section>
             <!-- 웹 퍼블리싱 -->
-            <section id="web-publishing" class="web-publishing">
-                <div class="wrap">
-                    <h1>WEB PUBLISHING</h1>
-                    <div class="slide-box"></div>                    
-                    <span class="direction prev-left">&#10094;</span>
-                    <span class="direction next-right">&#10095;</span>
-                    <div class="pagination-box">
-                        <ul class="pagination-list">
-                            <li class="active" data-page-index="0"></li>
-                            <li data-page-index="1"></li>
-                            <li data-page-index="2"></li>
-                            <li data-page-index="3"></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <section id="web-publishing" class="web-publishing"></section>
             <!-- 디자인 -->
-            <section id="design" class="design">
-                <div class="wrap">
-                    <h1>DESIGN</h1>
-                    <div class="slide-box"></div>
-                </div>
-            </section>
+            <section id="design" class="design"></section>
             <!-- 스킬 -->
-            <section id="skill" class="skill">
-                <div class="wrap">
-                    <h1>SKILL</h1>
-                    <div class="skill-box"></div>
-                </div>
-            </section>
+            <section id="skill" class="skill"></section>
         </main>
         <script src="./js/createComponent.js"></script>
-        <script src="./js/interactive.js"></script>
-        <script src="./js/filmSlide.js" defer></script>
         <script src="./js/grabSlide.js" defer></script>
     </body>
 </html>

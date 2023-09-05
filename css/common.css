@@ -1,5 +1,6 @@
 :root {
     --wrapper-width: 90%;
+    --inner-wrapper-width: 95%;
 
     --mini-text-size: 14px; /* quick-menu text */
     --small-text-size: 16px;

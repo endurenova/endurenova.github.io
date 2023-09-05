@@ -3,6 +3,7 @@
 $header-area: (
     header-height: 6vh,
 );
+
 $sidebar-icon-size: (
     square-size: 11vmin,
     round-percent: 100%,
@@ -26,7 +27,12 @@ $skill-color: (
     illustrator: linear-gradient(to right, #ff9a0088, #ff9a00),
     figma: linear-gradient(to right, #f24e1e88, #f24e1e),
 );
-
+@mixin quick-menu {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    z-index: 100;
+}
 @mixin set-icon {
     width: map-get($map: $sidebar-icon-size, $key: square-size);
     height: map-get($map: $sidebar-icon-size, $key: square-size);
@@ -219,10 +225,7 @@ body {
         }
     }
     aside {
-        position: fixed;
-        bottom: 5%;
-        right: 2%;
-        z-index: 100;
+        @include quick-menu;
         transition: var(--transition-normal) cubic-bezier(0, 0, 0.2, 1);
         .quick-sidebar {
             width: fit-content;
@@ -343,6 +346,54 @@ body {
                 }
             }
         }
+        &.detail-active { /* 프로젝트 디테일 오픈 시 */
+            .quick-sidebar {
+                display: none;
+            }
+            .open-detail {
+                .toggle-box { /* 퍼스트 버튼 */
+                    @include flex-center;
+                    padding: map-get($map: $qMenu-gap, $key: updown-gap);
+                    .toggle {
+                        display: flex;
+                        position: relative;
+                        flex-flow: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 5vmin;
+                        height: 5vmin;
+                        background-color: var(--grayScale-n5);
+                        border: 0.0625vmin solid var(--grayScale-n3);
+                        border-radius: 1vmin;
+                            &::before {
+                                content: '';
+                                display: block;
+                                width: 5vmin;
+                                height: var(--normal-text-size);
+                                background-color: var(--grayScale-n2);
+                            }
+                        &.qhome-toggle {
+                            &::before {
+                                mask: url(../icon/home-btn.svg) no-repeat center;
+                                -webkit-mask: url(../icon/home-btn.svg) no-repeat center;
+                            }
+                        }
+                        &.qlink-toggle {
+                            &::before {
+                                mask: url(../icon/link-btn.svg) no-repeat center;
+                                -webkit-mask: url(../icon/link-btn.svg) no-repeat center;
+                            }
+                        }
+                        &.qfirst-toggle {
+                            &::before {
+                                mask: url(../icon/first-btn.svg) no-repeat center;
+                                -webkit-mask: url(../icon/first-btn.svg) no-repeat center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     #portfolio { /* 포트폴리오(메인) */
         @include flex-center;
@@ -350,10 +401,12 @@ body {
         width: 100%;
         height: auto;
         overflow: hidden;
+        section:not(.open) {
+            justify-content: center;
+        }
         section { /* 공통 섹션 */
             display: flex;
             position: relative;
-            justify-content: center;
             width: 100vw;
             height: 100vh;
             background-color: var(--grayScale-n1);
@@ -484,16 +537,102 @@ body {
                 }
             }
             &.web-publishing { /* 웹 퍼블리싱 섹션 */
-                background-image: url(../images/publishing-0.png);
-                background-color: var(--grayScale-n4);
-                
-                &::before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: var(--blackLayer-opacity);
+                &:not(.open) {
+                    background-image: url(../images/publishing-0.png);
+                    background-color: var(--grayScale-n4);
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: var(--blackLayer-opacity);
+                    }
+                }
+                &.open {
+                    display: flex;
+                    flex-flow: row;
+                    position: relative;
+                    background-image: unset;
+                    background-color: var(--grayScale-n1);
+                    overflow-x: scroll;
+                    overflow-y: hidden;
+                    &::-webkit-scrollbar { /* 스크롤바의 너비 */
+                        height: 1vmin;
+                        &-thumb {
+                            height: 30%; /* 스크롤바의 길이 */
+                            background-color: var(--tailed-n0);
+                            border-radius: 10px;
+                        }
+                        &-track {
+                            background-color: var(--grayScale-n2);
+                        }
+                    }                    
+                    height: 100vh;
+                    .publishing-detail-box {
+                        display: flex;
+                        flex-flow: row;
+                        .description { /* 디테일 설명 */                            
+                            width: 50vw;
+                            > .wrap {
+                                display: flex;
+                                flex-flow: column;
+                                justify-content: space-between;
+                                width: var(--inner-wrapper-width);
+                                height: 100%;
+                                padding: 3% 0;
+                                > .subject { /* 주제 */
+                                    @include subject-sub-title;                                    
+                                    color: var(--theme-text);
+                                }
+                                > .title { /* 프로젝트 제목 */
+                                    @include main-title;
+                                    color: var(--grayScale-n5);
+                                    border: 1px solid #fff;
+                                }
+                                > ul {  /* 프로젝트 설명 */
+                                    display: flex;
+                                    flex-flow: column;
+                                    justify-content: space-evenly;
+                                    height: 24vmin;
+                                    > li {
+                                        display: flex;
+                                        position: relative;
+                                        > span {                                            
+                                            @include sub-subject;
+                                            &:nth-of-type(1){
+                                                @include flex-center;
+                                                width: 12.6vmin;
+                                                height: 5.4vmin;
+                                                border: 1px solid var(--grayScale-n5);
+                                                margin-right: 3vmin;
+                                            }
+                                            &:nth-of-type(2){
+                                                display: flex;
+                                                flex-flow: row;                                                
+                                                align-items: center;
+                                                width: 100%;
+                                                padding: 0 1%;
+                                            }
+                                        }
+                                        &:nth-of-type(2) {  /* 사용 툴 뱃지 */
+                                            img {                                                
+                                                height: 3vmin;
+                                                margin-right: 1%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .main-image {
+                            img {
+                                display: block;
+                                position: relative;
+                                height: 100%;
+                            }
+                        }
+                    }
                 }
                 .slide-box {
                     @include flex-center;
@@ -675,6 +814,22 @@ body {
                                             width: 100%;
                                             height: auto;
                                         }
+                                    }
+                                }
+                                > button {
+                                    z-index: 20;
+                                    cursor: pointer;
+                                    @include sub-subject;
+                                    background-color: #7fccde;
+                                    box-shadow: 0 0 0 1px #7fccde inset,
+                                        0 0 0 2px rgba(255,255,255,0.15) inset,
+                                        0 8px 0 0 rgba(102, 164, 178, .6),
+                                        0 8px 0 1px rgba(0,0,0,.4),
+                                        0 8px 8px 1px rgba(0,0,0,0.5);
+                                    &:active {
+                                        box-shadow: 0 0 0 1px #7fccde inset,
+                                            0 0 0 2px rgba(255,255,255,0.15) inset,
+                                            0 0 0 1px rgba(0,0,0,0.4);
                                     }
                                 }
                             }
