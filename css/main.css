@@ -375,9 +375,6 @@ body #portfolio section.profile .article-box .history-box {
   height: 80vmin;
   overflow-y: scroll;
 }
-body #portfolio section.profile .article-box .history-box .resume-divider {
-  margin: 0;
-}
 body #portfolio section.profile .article-box .history-box::-webkit-scrollbar { /* 스크롤바의 너비 */
   width: 1vmin;
 }
@@ -727,10 +724,10 @@ body #portfolio section.design .slide-box .project-list li .project-item > div {
   display: flex;
   position: relative;
   flex-flow: column;
-  background-color: var(--grayScale-n1);
+  background-color: var(--grayScale-n2);
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) {
-  padding: 1%;
+  padding: 3%;
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > h3 {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
@@ -746,21 +743,35 @@ body #portfolio section.design .slide-box .project-list li .project-item > div:n
   width: 100%;
   height: auto;
 }
+body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  height: 50%;
+  overflow: hidden;
+}
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) > img {
   width: 100%;
   height: auto;
 }
-body #portfolio section.design .slide-box .project-list li .project-item > button {
-  z-index: 20;
-  cursor: pointer;
+body #portfolio section.design .slide-box .project-list li .project-item > button.design-modal-btn {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--normal-text-size);
   line-height: 1.4;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 20vmin;
+  height: 6vmin;
+  cursor: pointer;
   background-color: #7fccde;
   box-shadow: 0 0 0 1px #7fccde inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 rgba(102, 164, 178, 0.6), 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 }
-body #portfolio section.design .slide-box .project-list li .project-item > button:active {
+body #portfolio section.design .slide-box .project-list li .project-item > button.design-modal-btn:active {
   box-shadow: 0 0 0 1px #7fccde inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
 }
 body #portfolio section.skill { /* 스킬 섹션 */ }
@@ -850,4 +861,86 @@ body #portfolio section.skill .skill-box .skill-list li .skill-percent__binder {
   justify-content: flex-end;
   width: 50%;
   text-shadow: 0.5px 0.5px 0 var(--grayScale-n2);
+}
+body .designModal__layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+body .designModal__layer.active {
+  display: unset;
+}
+body .designModal__layer .exit-layer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--blackLayer-opacity);
+}
+body .designModal__window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+}
+body .designModal__window .window-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  overflow-y: scroll;
+}
+body .designModal__window .window-body::-webkit-scrollbar { /* 스크롤바의 너비 */
+  width: 0vmin;
+}
+body .designModal__window .window-body > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+body .designModal__window .window-body .windo__inner {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 1000px;
+}
+body .designModal__window .window-body .window-body__inner {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+}
+body .designModal__tool {
+  position: absolute;
+  top: 0;
+  right: 25%;
+  transform: translateX(11vmin);
+  width: 11vmin;
+  background-color: var(--theme-text);
+}
+body .designModal__tool > .close {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--medium-text-size);
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  color: var(--grayScale-n2);
+}
+body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
 }

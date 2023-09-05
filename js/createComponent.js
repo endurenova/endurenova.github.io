@@ -254,35 +254,35 @@ createPublishing = () => {
     `;
 };
 createDesign = () => {
-    const designProject =[
+    const designProject = [
             {
                 title: 'CALENDAR',
-                imgSrc: './images/design-calendar.png', 
+                mainImg: './images/design-calendar-main.png', 
                 tool: 'Photoshop　Illustrator'
             },
             {
                 title: 'OVERTONES',
-                imgSrc: './images/design-overtones-main.png', 
+                mainImg:  './images/design-overtones-modal.png', 
                 tool: 'Figma'
             },
             {
                 title: 'DOTORISUP',
-                imgSrc: './images/design-dotorisup-main.png', 
+                mainImg: './images/design-dotorisup-modal.png', 
                 tool: 'Figma'
             },
             {
                 title: 'Totoro',
-                imgSrc: './images/design-totoro.png', 
+                mainImg: './images/design-totoro-modal.png', 
                 tool: 'HTML　CSS　JavaScript　jQuery'
             },
             {
                 title: 'HANATOUR',
-                imgSrc: './images/design-hanatour-main.png', 
+                mainImg: './images/design-hanatour-modal.png', 
                 tool: 'Photoshop'
             },
             {
                 title: 'LEQUIPSHOP',
-                imgSrc: './images/design-lequipshop-main.png', 
+                mainImg: './images/design-lequipshop-modal.png', 
                 tool: 'Photoshop'
             }
     ];
@@ -296,9 +296,9 @@ createDesign = () => {
                         <p>${deg.tool}</p>
                     </div>
                     <div>
-                        <img src=${deg.imgSrc} alt="디자인 프로젝트 이미지-${idx}" />
+                        <img src=${deg.mainImg} alt="디자인 프로젝트 이미지-${idx}" />
                     </div>
-                    <button>DETAIL</button>
+                    <button  onclick="designModal()" class="design-modal-btn" data-design-index="${idx}">DETAIL</button>
                 </div>
             </li>
         `;
@@ -311,6 +311,41 @@ createDesign = () => {
             </div>
         </div>
     `;
+
+    const designModalLayer = document.querySelector(".designModal__layer");
+    designModal = () => {
+        let idx = event.target.dataset.designIndex;
+        let designContent = `
+            <div class="exit-layer"></div>
+            <div class="designModal__window">
+                <div class="window-body">
+                    <img src=${designProject[idx].mainImg} alt="">
+                    <div class="windo__inner">
+                        작업중
+                    </div>
+                    <div class="window-body__inner">
+                    </div>
+                </div>
+            </div>
+            <div class="designModal__tool">
+                <span class="close">&times;</span>
+            </div>
+        `
+        designModalLayer.innerHTML = designContent;
+        designModalLayer.classList.add("active");
+        document.body.style.overflow = "hidden";
+        
+        designModalLayer.querySelector(".close").addEventListener('click', () => {
+            designModalLayer.classList.remove("active");
+            designModalLayer.innerHTML = "";
+            document.body.style.overflow = "unset"; 
+        });
+        designModalLayer.querySelector(".exit-layer").addEventListener('click', () => {
+            designModalLayer.classList.remove("active");
+            designModalLayer.innerHTML = "";
+            document.body.style.overflow = "unset"; 
+        });
+    };
 };
 
 scrollEvent = () =>{
@@ -538,7 +573,6 @@ initPage = ()=>{
                     $(".web-publishing .project-list").animate({left:"+=" + swipeItemWidth},"fast",function(){
                         $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
                         $(".web-publishing .project-list").css("left", (swipeItemWidth));
-                        
                     });
                     prev--;
                 }
