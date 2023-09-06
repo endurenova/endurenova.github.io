@@ -776,16 +776,20 @@ body {
                         display: flex;
                         position: relative;
                         width: auto;
-                        height: 100%;                        
-                        cursor: grab;
+                        height: 100%;
                         user-select: none;
                         overflow-x: scroll;
                         &::-webkit-scrollbar { /* 스크롤바의 너비 */
-                            width: 0vmin;
-                        }
-                        &.grabbing {
-                            cursor: grabbing;
-                        }
+                            height: 0.8vmin;
+                            &-thumb {
+                                height: 30%; /* 스크롤바의 길이 */
+                                background-color: var(--tailed-n0);
+                                border-radius: 10px;
+                            }
+                            &-track {
+                                background-color: var(--grayScale-n2);
+                            }
+                        }        
                         li { /* 프로젝트 리스트 (카드 모양) */
                             margin: auto 1%;
                             .project-item {
