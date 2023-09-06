@@ -265,21 +265,21 @@ createDesign = () => {
             },
             {
                 title: 'OVERTONES',
-                mainImg:  './images/design-overtones-modal.png', 
+                mainImg:  './images/design-overtones-mockup.png', 
                 toolList: `
                     <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
                 `
             },
             {
                 title: 'DOTORISUP',
-                mainImg: './images/design-dotorisup-modal.png', 
+                mainImg: './images/design-dotorisup-mockup.png', 
                 toolList: `
                     <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
                 `
             },
             {
                 title: 'Totoro',
-                mainImg: './images/design-totoro-modal.png', 
+                mainImg: './images/design-totoro-mockup.png', 
                 toolList: `
                     <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
@@ -289,14 +289,14 @@ createDesign = () => {
             },
             {
                 title: 'HANATOUR',
-                mainImg: './images/design-hanatour-modal.png',
+                mainImg: './images/design-hanatour-mockup.png',
                 toolList: `
                     <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
                 `
             },
             {
                 title: 'LEQUIPSHOP',
-                mainImg: './images/design-lequipshop-modal.png',
+                mainImg: './images/design-lequipshop-mockup.png',
                 toolList: `
                     <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
                 `
@@ -655,11 +655,11 @@ initPage = ()=>{
         e.preventDefault();
         if (isDragging) {
             dragElement.style.transform = `translateX(${e.clientX - initialX}px)`;
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-                dragElement.classList.remove('grabbing');
-            });
         }
+    });
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        dragElement.classList.remove('grabbing');
     });
 }; initPage();
 

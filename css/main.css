@@ -292,15 +292,13 @@ body #portfolio section { /* 공통 섹션 */
   background-color: var(--grayScale-n1);
   color: var(--grayScale-n5);
   transition: var(--normal-speed);
-  border: 1px solid yellow;
 }
 body #portfolio section .wrap {
   position: relative;
   margin: 0 auto;
   width: var(--wrapper-width);
-  border: 1px solid red;
 }
-body #portfolio section .wrap h1 {
+body #portfolio section .wrap x h1 {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--large-text-size);
@@ -557,7 +555,6 @@ body #portfolio section.web-publishing .slide-box {
   justify-content: center;
   width: 100%;
   height: 80%;
-  border: 1px solid #fff;
   position: relative;
   width: 70vmin;
   overflow: hidden;
@@ -687,7 +684,6 @@ body #portfolio section.design .slide-box {
   justify-content: center;
   width: 100%;
   height: 80%;
-  border: 1px solid #fff;
   overflow: hidden;
 }
 body #portfolio section.design .slide-box .project-list { /* 프로젝트 리스트 (카드 모양) */
@@ -776,7 +772,6 @@ body #portfolio section.skill { /* 스킬 섹션 */ }
 body #portfolio section.skill .skill-box {
   width: 100%;
   height: 80%;
-  border: 1px solid #fff;
 }
 body #portfolio section.skill .skill-box .skill-list { /* 스킬 리스트 */
   display: flex;

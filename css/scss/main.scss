@@ -77,7 +77,6 @@ $skill-color: (
 @mixin contentBox-size {
     width: 100%;
     height: 80%;
-    border: 1px solid #fff;
 }
 @mixin main-title {
     font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
@@ -413,13 +412,10 @@ body {
             background-color: var(--grayScale-n1);
             color: var(--grayScale-n5);
             transition: var(--normal-speed);
-            border: 1px solid yellow;
             .wrap {
                 position: relative;
                 margin: 0 auto;
-                width: var(--wrapper-width);
-                
-                border: 1px solid red;
+                width: var(--wrapper-width);x
                 h1 {
                     @include main-title;
                 }
