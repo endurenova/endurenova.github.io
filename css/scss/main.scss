@@ -76,7 +76,8 @@ $skill-color: (
 }
 @mixin contentBox-size {
     width: 100%;
-    height: 70%;
+    height: 80%;
+    border: 1px solid #fff;
 }
 @mixin main-title {
     font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
@@ -412,10 +413,13 @@ body {
             background-color: var(--grayScale-n1);
             color: var(--grayScale-n5);
             transition: var(--normal-speed);
+            border: 1px solid yellow;
             .wrap {
                 position: relative;
                 margin: 0 auto;
                 width: var(--wrapper-width);
+                
+                border: 1px solid red;
                 h1 {
                     @include main-title;
                 }
@@ -766,7 +770,7 @@ body {
                     overflow: hidden;
                     .project-list { /* 프로젝트 리스트 (카드 모양) */
                         display: flex;
-                        position: relative;
+                        position: relative;                        
                         cursor: grab;
                         user-select: none;
                         &.grabbing {
@@ -774,64 +778,66 @@ body {
                         }
                         li { /* 프로젝트 리스트 (카드 모양) */
                             margin: auto 1%;
-                            .project-item {                                
+                            .project-item {
                                 @include dg-project-box;
+
+                                display: flex;
+                                flex-flow: column;
                                 position: relative;
-                                background-color: var(--theme-text);
-                                &::before {
-                                    @include absolute-center;
-                                    content: '';                                    
-                                    width: inherit;
-                                    height: inherit;
-                                }
+                                justify-content: center;
+                                background-color: var(--grayScale-n2);
+                                width: 38vw;
+                                height: 70vh;
+                                box-shadow: 0px 0px 3px 4px var(--grayScale-n3);
+                                padding: 0% 5%;
                                 > div {
-                                    width: 100%;
-                                    display: flex;
-                                    position: relative;
+                                    display: flex;                                    
                                     flex-flow: column;
+                                    position: relative;
+                                    justify-content: space-evenly;
                                     background-color: var(--grayScale-n2);
-                                    &:nth-of-type(1) {
-                                        padding: 3%;
-                                        > h3 {
-                                            @include subject-title;
+                                    &:nth-of-type(1) { /* 디자인 타이틀 & 툴 */
+                                        height: 18%;
+                                        justify-content: center;
+                                        > h3 {  /* 디자인 타이틀 */
+                                            @include sub-title;
                                         }
-                                        > p {
-                                            @include sub-tag;
+                                        > span { /* 툴 뱃지 리스트 */
+                                            display: flex;
+                                            flex-flow: row;
+                                            align-items: center;
                                             width: 100%;
-                                            height: auto;
+                                            height: 35%;
+                                            > img {
+                                                height: 2.6vmin;
+                                                margin-right: 1%;
+                                            }
                                         }
                                     }
-                                    &:nth-of-type(2) {
-                                        @include flex-center;
-                                        background-color: black;
-                                        height: 50%;
+                                    &:nth-of-type(2) { /* 디자인 메인 이미지 */
+                                        height: 64%;                                        
                                         overflow: hidden;
+                                        background-color: var(--grayScale-n1);
                                         > img {
                                             width: 100%;
                                             height: auto;
                                         }
                                     }
-                                }
-                                > button.design-modal-btn {
-                                    @include sub-subject;
-                                    position: absolute;
-                                    left: 50%;
-                                    bottom: 5%;
-                                    transform: translate(-50%, -50%);
-                                    z-index: 20;
-                                    width: 20vmin;
-                                    height: 6vmin;
-                                    cursor: pointer;                                    
-                                    background-color: #7fccde;
-                                    box-shadow: 0 0 0 1px #7fccde inset,
-                                        0 0 0 2px rgba(255,255,255,0.15) inset,
-                                        0 8px 0 0 rgba(102, 164, 178, .6),
-                                        0 8px 0 1px rgba(0,0,0,.4),
-                                        0 8px 8px 1px rgba(0,0,0,0.5);
-                                    &:active {
-                                        box-shadow: 0 0 0 1px #7fccde inset,
-                                            0 0 0 2px rgba(255,255,255,0.15) inset,
-                                            0 0 0 1px rgba(0,0,0,0.4);
+                                    &:nth-of-type(3) { /* 디테일 버튼 */
+                                        height: 18%;                                        
+                                        button.design-modal-btn {
+                                            @include sub-tag;
+                                            z-index: 20;
+                                            width: 12vmin;
+                                            height: 5vmin;
+                                            margin: auto 0;
+                                            cursor: pointer;
+                                            color: var(--grayScale-n4);
+                                            border: 1px solid var(--grayScale-n5);
+                                            &:hover {
+                                                color: var(--grayScale-n5);
+                                            }
+                                        }
                                     }
                                 }
                             }

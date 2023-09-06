@@ -258,32 +258,48 @@ createDesign = () => {
             {
                 title: 'CALENDAR',
                 mainImg: './images/design-calendar-main.png', 
-                tool: 'Photoshop　Illustrator'
+                toolList: `
+                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" /> 
+                    <img src=${badgeList[8].tool} alt="툴 뱃지 이미지-${8}" />                  
+                `
             },
             {
                 title: 'OVERTONES',
                 mainImg:  './images/design-overtones-modal.png', 
-                tool: 'Figma'
+                toolList: `
+                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
+                `
             },
             {
                 title: 'DOTORISUP',
                 mainImg: './images/design-dotorisup-modal.png', 
-                tool: 'Figma'
+                toolList: `
+                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
+                `
             },
             {
                 title: 'Totoro',
                 mainImg: './images/design-totoro-modal.png', 
-                tool: 'HTML　CSS　JavaScript　jQuery'
+                toolList: `
+                    <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
+                    <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
+                    <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
+                    <img src=${badgeList[5].tool} alt="툴 뱃지 이미지-${5}" />                    
+                `
             },
             {
                 title: 'HANATOUR',
-                mainImg: './images/design-hanatour-modal.png', 
-                tool: 'Photoshop'
+                mainImg: './images/design-hanatour-modal.png',
+                toolList: `
+                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
+                `
             },
             {
                 title: 'LEQUIPSHOP',
-                mainImg: './images/design-lequipshop-modal.png', 
-                tool: 'Photoshop'
+                mainImg: './images/design-lequipshop-modal.png',
+                toolList: `
+                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
+                `
             }
     ];
     let design = '';
@@ -293,12 +309,14 @@ createDesign = () => {
                 <div class="project-item">
                     <div>
                         <h3>${deg.title}</h3>
-                        <p>${deg.tool}</p>
+                        <span>${deg.toolList}</span>
                     </div>
                     <div>
                         <img src=${deg.mainImg} alt="디자인 프로젝트 이미지-${idx}" />
                     </div>
-                    <button  onclick="designModal()" class="design-modal-btn" data-design-index="${idx}">DETAIL</button>
+                    <div>
+                        <button  onclick="designModal()" class="design-modal-btn" data-design-index="${idx}">DETAIL</button>
+                    </div>
                 </div>
             </li>
         `;

@@ -292,11 +292,13 @@ body #portfolio section { /* 공통 섹션 */
   background-color: var(--grayScale-n1);
   color: var(--grayScale-n5);
   transition: var(--normal-speed);
+  border: 1px solid yellow;
 }
 body #portfolio section .wrap {
   position: relative;
   margin: 0 auto;
   width: var(--wrapper-width);
+  border: 1px solid red;
 }
 body #portfolio section .wrap h1 {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
@@ -554,7 +556,8 @@ body #portfolio section.web-publishing .slide-box {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70%;
+  height: 80%;
+  border: 1px solid #fff;
   position: relative;
   width: 70vmin;
   overflow: hidden;
@@ -683,7 +686,8 @@ body #portfolio section.design .slide-box {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70%;
+  height: 80%;
+  border: 1px solid #fff;
   overflow: hidden;
 }
 body #portfolio section.design .slide-box .project-list { /* 프로젝트 리스트 (카드 모양) */
@@ -702,77 +706,77 @@ body #portfolio section.design .slide-box .project-list li .project-item {
   width: 45vmin;
   height: 60vmin;
   padding: 1vw;
+  display: flex;
+  flex-flow: column;
   position: relative;
-  background-color: var(--theme-text);
-}
-body #portfolio section.design .slide-box .project-list li .project-item::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  content: "";
-  width: inherit;
-  height: inherit;
+  justify-content: center;
+  background-color: var(--grayScale-n2);
+  width: 38vw;
+  height: 70vh;
+  box-shadow: 0px 0px 3px 4px var(--grayScale-n3);
+  padding: 0% 5%;
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div {
-  width: 100%;
   display: flex;
-  position: relative;
   flex-flow: column;
+  position: relative;
+  justify-content: space-evenly;
   background-color: var(--grayScale-n2);
 }
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) {
-  padding: 3%;
+body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) { /* 디자인 타이틀 & 툴 */
+  height: 18%;
+  justify-content: center;
 }
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > h3 {
+body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > h3 { /* 디자인 타이틀 */
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
-  font-size: var(--regular-text-size);
+  font-size: var(--medium-text-size);
   line-height: 1.4;
 }
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > p {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
-  font-weight: 500;
-  font-size: var(--small-text-size);
-  line-height: 1.4;
-  width: 100%;
-  height: auto;
-}
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) {
+body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > span { /* 툴 뱃지 리스트 */
   display: flex;
+  flex-flow: row;
   align-items: center;
-  justify-content: center;
-  background-color: black;
-  height: 50%;
+  width: 100%;
+  height: 35%;
+}
+body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > span > img {
+  height: 2.6vmin;
+  margin-right: 1%;
+}
+body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) { /* 디자인 메인 이미지 */
+  height: 64%;
   overflow: hidden;
+  background-color: var(--grayScale-n1);
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) > img {
   width: 100%;
   height: auto;
 }
-body #portfolio section.design .slide-box .project-list li .project-item > button.design-modal-btn {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
-  font-weight: 700;
-  font-size: var(--normal-text-size);
-  line-height: 1.4;
-  position: absolute;
-  left: 50%;
-  bottom: 5%;
-  transform: translate(-50%, -50%);
-  z-index: 20;
-  width: 20vmin;
-  height: 6vmin;
-  cursor: pointer;
-  background-color: #7fccde;
-  box-shadow: 0 0 0 1px #7fccde inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 rgba(102, 164, 178, 0.6), 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) { /* 디테일 버튼 */
+  height: 18%;
 }
-body #portfolio section.design .slide-box .project-list li .project-item > button.design-modal-btn:active {
-  box-shadow: 0 0 0 1px #7fccde inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) button.design-modal-btn {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  z-index: 20;
+  width: 12vmin;
+  height: 5vmin;
+  margin: auto 0;
+  cursor: pointer;
+  color: var(--grayScale-n4);
+  border: 1px solid var(--grayScale-n5);
+}
+body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) button.design-modal-btn:hover {
+  color: var(--grayScale-n5);
 }
 body #portfolio section.skill { /* 스킬 섹션 */ }
 body #portfolio section.skill .skill-box {
   width: 100%;
-  height: 70%;
+  height: 80%;
+  border: 1px solid #fff;
 }
 body #portfolio section.skill .skill-box .skill-list { /* 스킬 리스트 */
   display: flex;
