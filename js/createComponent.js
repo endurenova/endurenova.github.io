@@ -244,12 +244,12 @@ createPublishing = () => {
             <h1>WEB PUBLISHING</h1>
             <div class="slide-box">
                 <ul class="project-list">${publishing}</ul>
+                <div class="pagination-box">
+                    <ul class="pagination-list">${pagination}</ul>
+                </div>
             </div>                    
             <span class="direction prev-left">&#10094;</span>
             <span class="direction next-right">&#10095;</span>
-            <div class="pagination-box">
-                <ul class="pagination-list">${pagination}</ul>
-            </div>
         </div>
     `;
 };
@@ -576,59 +576,66 @@ initPage = ()=>{
     createSkill();
     $(document).ready(function(){
         let swipeItemWidth = document.querySelector(".web-publishing .project-film").clientWidth;
+        
+        // 슬라이드 최초 세팅
+        $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
+        $(".web-publishing .project-list").css("left", (-swipeItemWidth));
+
+        $nextBtn = () => { // 이전 버튼 이벤트
+            $(".web-publishing .project-list").animate({left:"-=" + swipeItemWidth},"fast", function(){
+                $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
+                $(".web-publishing .project-list").css("left", (-swipeItemWidth));
+            });
+        }
+
+        $prevBtn = () => { // 다음 버튼 이벤트
+            $(".web-publishing .project-list").animate({left:"+=" + swipeItemWidth},"fast", function(){
+                $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
+                $(".web-publishing .project-list").css("left", (-swipeItemWidth));
+            });
+        }
+
         // count 만큼 스와이프 해주는 함수
         const swipeItem = function (cur, prev) {
             if (cur > prev) {
                 while (cur > prev){
-                    $(".web-publishing .project-list").animate({left:"-=" + swipeItemWidth},"fast",function(){
-                        $(".web-publishing .project-list").css("left", (swipeItemWidth));
-                        $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
-                    });
+                    $nextBtn();
                     prev++;
                 }
             } else if (cur < prev) {
                 while (cur < prev){
-                    $(".web-publishing .project-list").animate({left:"+=" + swipeItemWidth},"fast",function(){
-                        $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
-                        $(".web-publishing .project-list").css("left", (swipeItemWidth));
-                    });
+                    $prevBtn();
                     prev--;
                 }
             }
         }
+
         // 슬라이드 버튼
         $("span.direction").on("click",function(){
-            itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;
+            itemIdx = document.querySelector(".web-publishing .project-list").children[2].dataset.itemIndex;
             if ($(this).hasClass("prev-left")) {
-                $(".web-publishing .project-list").stop().animate({left:"+=" + swipeItemWidth},"fast",function(){
-                    $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
-                    $(".web-publishing .project-list").css("left", (swipeItemWidth));                
-                    paginateActive();
-                });
+                $prevBtn();
+                paginateActive();                
             } else if ($(this).hasClass("next-right")) {
-                $(".web-publishing .project-list").stop().animate({left:"-=" + swipeItemWidth},"fast",function(){                
-                    $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
-                    $(".web-publishing .project-list").css("left", (swipeItemWidth));
-                    paginateActive();
-                });
+                $nextBtn();
+                paginateActive();
             }        
         });
         
-        $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
-        $(".web-publishing .project-list").css("left", (swipeItemWidth));
-        
         // 페이지 자동 액티브
-        let itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;
+        let itemIdx = document.querySelector(".web-publishing .project-list").children[2].dataset.itemIndex;
         function paginateActive() {
-            itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;
+            itemIdx = document.querySelector(".web-publishing .project-list").children[2].dataset.itemIndex;
             $(".pagination-list li").siblings().removeClass("active");
             $(".pagination-list li").eq(itemIdx).addClass("active");
             $(".web-publishing").css("backgroundImage", `url(../images/publishing-${itemIdx}.png)`);
         }
+
+        // 페이지네이션 버튼 이벤트
         $(".pagination-list li").on("click",function(){
             let pageIdx = $(this).index();
             let prevActive = document.querySelector(".pagination-list li.active").dataset.pageIndex;
-            itemIdx = document.querySelector(".web-publishing .project-list").children[1].dataset.itemIndex;
+            itemIdx = document.querySelector(".web-publishing .project-list").children[pageIdx].dataset.itemIndex;
             if(!$(this).hasClass("active")) {
                 $(".pagination-list li").siblings().removeClass("active");
                 $(".pagination-list li").eq(pageIdx).addClass("active");
@@ -639,44 +646,46 @@ initPage = ()=>{
     });
     const dragElement = document.getElementById('drag-element');
 
-    let isDragging = false;
-    let initialX;
-    let offsetX;
-
-    dragElement.addEventListener('mousedown', (e) => {
-        e.preventDefault();
-        isDragging = true;
-        initialX = e.clientX;
-        offsetX = initialX + dragElement.getBoundingClientRect().left;
-        dragElement.classList.add('grabbing');
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        e.preventDefault();
-        if (isDragging) {
-            dragElement.style.transform = `translateX(${e.clientX - initialX}px)`;
+    let checkScrollLeft = 0;
+    const designWheelListener = (event) => {
+        event.preventDefault();
+        designList.scrollLeft += event.deltaY;
+        checkScrollLeft = designList.scrollLeft + event.deltaY;
+        console.log(designList.scrollLeft += event.deltaY)
+        console.log(checkScrollLeft)
+        if (checkScrollLeft === designList.scrollLeft + event.deltaY) {
+            console.log(2)
+            designBox.querySelector(".slide-box").removeEventListener("wheel", designWheelListener);
+            setTimeout(() => {
+                designBox.querySelector(".slide-box").addEventListener("wheel", designWheelListener); // 가로 휠 추가
+            }, 1000);
         }
-    });
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-        dragElement.classList.remove('grabbing');
-    });
+        
+
+    };
+    designBox.querySelector(".slide-box").addEventListener("wheel", designWheelListener); // 가로 휠 추가
+
 }; initPage();
 
 const headerBar = document.querySelector('header');
 const mainBottom = document.querySelector("main").getBoundingClientRect().bottom;
+const profileBottom = document.querySelector("#profile").getBoundingClientRect().bottom;
+const publishingBottom = document.querySelector("#web-publishing").getBoundingClientRect().bottom;
 const designBottom = document.querySelector("#design").getBoundingClientRect().bottom;
+const designList = designBox.querySelector(".project-list");
 let prevScrollpos = 0;
 let skillToggle = 0;
+
 window.addEventListener('scroll', event => {
     event.preventDefault();
+    console.log(window.scrollY)
     const currentScrollPos = window.scrollY;
     if(prevScrollpos < currentScrollPos){
         headerBar.classList.add('hidden');
     }
     else{
         headerBar.classList.remove('hidden');
-    }
+    }    
     if (!publishingBox.classList.contains("open")) {
         if (window.scrollY >= mainBottom - designBottom / 2 && skillToggle === 0) {
             skillLoading();
@@ -684,6 +693,7 @@ window.addEventListener('scroll', event => {
         } else if (window.scrollY < mainBottom - designBottom / 2 && skillToggle === 1) {
             skillLoadRemove();
             skillToggle = 0;
+            designBox.querySelector(".slide-box").addEventListener("wheel", designWheelListener); // 가로 휠 추가
         }
     }
     prevScrollpos = currentScrollPos;

@@ -66,8 +66,7 @@ $skill-color: (
     transform: translate(-50%, -50%);
 }
 @mixin wp-project-box {
-    width: 70vmin;
-    height: fit-content;
+    width: 46vw;
 }
 @mixin dg-project-box {
     width: 45vmin;
@@ -132,11 +131,19 @@ $skill-color: (
     font-size: var(--small-text-size);
     line-height: 1.4;
 }
-html {
-    scroll-behavior: smooth;
-}
 body {
     overflow-y: scroll;
+    &::-webkit-scrollbar { /* 스크롤바의 너비 */
+        width: 1vmin;
+    }
+    &::-webkit-scrollbar-thumb {
+        height: 30%; /* 스크롤바의 길이 */
+        background-color: var(--tailed-n0);
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: var(--grayScale-n2);
+    }
     background-color: var(--grayScale-n1);
     header {
         position: fixed;
@@ -532,7 +539,7 @@ body {
                     }
                 }
             }
-            &.web-publishing { /* 웹 퍼블리싱 섹션 */
+            &.web-publishing { /* 웹 퍼블리싱 섹션 */                
                 &:not(.open) {
                     background-image: url(../images/publishing-0.png);
                     background-color: var(--grayScale-n4);
@@ -584,7 +591,7 @@ body {
                                 > .title { /* 프로젝트 제목 */
                                     @include main-title;
                                     color: var(--grayScale-n5);
-                                    border: 1px solid #fff;
+                                    border: 1px solid var(--grayScale-n5);
                                 }
                                 > ul {  /* 프로젝트 설명 */
                                     display: flex;
@@ -631,22 +638,20 @@ body {
                     }
                 }
                 .slide-box {
-                    @include flex-center;
                     @include contentBox-size;
+                    @include wp-project-box;
                     position: relative;
-                    width: 70vmin;
                     overflow: hidden;
                     margin: 0 auto;
                     .project-list { /* 프로젝트 리스트 (영화 필름 띠) */
                         display: flex;
                         position: absolute;
-                        transform: translateX(-140vmin);
                         width: inherit;
                         .project-film { /* 프로젝트 (영화 필름 칸) */
                             display: flex;
                             position: relative;
                             flex-flow: column nowrap;
-                            width: auto;
+                            width: auto;                            
                             cursor: pointer;
                             > ul {
                                 width: auto;
@@ -654,7 +659,7 @@ body {
                                 display: flex;
                                 flex-flow: row;
                                 align-items: center;
-                                > li {
+                                > li { /* 필름 사이드 모양 생성 */
                                     --window-ml: 30%;
                                     --window-mt: 25%;
                                     --window-mb: 75%;
@@ -694,17 +699,18 @@ body {
                                     background-color: var(--grayScale-n1);
                                     &:nth-of-type(1) {
                                         justify-content: center;
-                                        > img {
-                                            width: 100%;
-                                            height: auto;
+                                        height: 50vh;
+                                        > img { /* 프로젝트 이미지 */
+                                            width: auto;
+                                            height: 100%;
                                         }
                                     }
                                     &:nth-of-type(2) {
                                         padding: 1%;
-                                        > h3 {
-                                            @include subject-title;
+                                        > h3 { /* 프로젝트 제목 */
+                                            @include sub-title;
                                         }
-                                        > p {
+                                        > p { /* 사용 툴 */
                                             @include sub-tag;
                                             width: 100%;
                                             height: auto;
@@ -715,8 +721,36 @@ body {
                             }
                         }
                     }
+                    .pagination{ /* 프로젝트 슬라이드 페이지네이션 */
+                        &-box{ 
+                            padding: 1% 0%;
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0%;
+                        }
+                        &-list {
+                            @include flex-center;
+                            margin: 0 auto;    
+                            width: fit-content;
+                            > li{
+                                display: inline-block;
+                                width: 1.8vmin;
+                                height: 1.8vmin;
+                                margin: auto 1.2vmin;
+                                border-radius: 50%;
+                                background-color: var(--grayScale-n5);
+                                cursor: pointer;
+                                &.active { /* 프로젝트 슬라이드 페이지네이션 액티브 */                                
+                                    opacity: 1;
+                                    width: 4.8vmin;
+                                    border-radius: 2.4vmin;                                
+                                    background-color: var(--tailed-n0);
+                                }                
+                            }
+                        }            
+                    }
                 }
-                .direction {                    
+                .direction { /* 슬라이드 버튼 */
                     display: inline-block;
                     position: absolute;
                     top: 50%;                        
@@ -726,49 +760,29 @@ body {
                     color: var(--theme-text);
                     cursor: pointer;
                     text-shadow: 0 1px 0 var(--grayScale-n1), 0 2px 0 var(--grayScale-n1), 0 3px 0 var(--grayScale-n1), 0 4px 0 var(--grayScale-n1), 0 5px 0 var(--grayScale-n1), 0 6px 0 var(--grayScale-n1), 0 7px 0 var(--grayScale-n1), 0 8px 0 var(--grayScale-n1), 0 9px 0 var(--grayScale-n1), 0 50px 30px rgba(0, 0, 0, 0.3);
-                    &.prev-left {
+                    &.prev-left { /* 왼쪽/이전 버튼 */
                         left: 0;
                     }
-                    &.next-right {
+                    &.next-right { /* 오른쪽/다음 버튼 */
                         right: 0;
                     }
-                }
-                .pagination{ /* 프로젝트 슬라이드 페이지네이션 */
-                    &-box{                        
-                        position: relative;
-                    }
-                    &-list {
-                        @include flex-center;
-                        margin: 0 auto;    
-                        width: fit-content;
-                        > li{
-                            display: inline-block;
-                            width: 1.8vmin;
-                            height: 1.8vmin;
-                            margin: auto 1.2vmin;
-                            border-radius: 50%;
-                            background-color: var(--grayScale-n5);
-                            cursor: pointer;
-                            &.active { /* 프로젝트 슬라이드 페이지네이션 액티브 */                                
-                                opacity: 1;
-                                width: 4.8vmin;
-                                border-radius: 2.4vmin;                                
-                                background-color: var(--tailed-n0);
-                            }                
-                        }
-                    }            
                 }
             }
             &.design { /* 디자인 섹션 */
                 .slide-box {
                     @include flex-center;
                     @include contentBox-size;
-                    overflow: hidden;
                     .project-list { /* 프로젝트 리스트 (카드 모양) */
                         display: flex;
-                        position: relative;                        
+                        position: relative;
+                        width: auto;
+                        height: 100%;                        
                         cursor: grab;
                         user-select: none;
+                        overflow-x: scroll;
+                        &::-webkit-scrollbar { /* 스크롤바의 너비 */
+                            width: 0vmin;
+                        }
                         &.grabbing {
                             cursor: grabbing;
                         }
@@ -776,7 +790,6 @@ body {
                             margin: auto 1%;
                             .project-item {
                                 @include dg-project-box;
-
                                 display: flex;
                                 flex-flow: column;
                                 position: relative;

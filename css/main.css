@@ -1,12 +1,19 @@
 @charset "UTF-8";
 @import url(./common.css);
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   overflow-y: scroll;
   background-color: var(--grayScale-n1);
+}
+body::-webkit-scrollbar { /* 스크롤바의 너비 */
+  width: 1vmin;
+}
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background-color: var(--tailed-n0);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: var(--grayScale-n2);
 }
 body header {
   position: fixed;
@@ -505,7 +512,7 @@ body #portfolio section.web-publishing.open .publishing-detail-box .description 
   font-size: var(--large-text-size);
   line-height: 2.4;
   color: var(--grayScale-n5);
-  border: 1px solid #fff;
+  border: 1px solid var(--grayScale-n5);
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > ul { /* 프로젝트 설명 */
   display: flex;
@@ -550,20 +557,16 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-image i
   height: 100%;
 }
 body #portfolio section.web-publishing .slide-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 80%;
+  width: 46vw;
   position: relative;
-  width: 70vmin;
   overflow: hidden;
   margin: 0 auto;
 }
 body #portfolio section.web-publishing .slide-box .project-list { /* 프로젝트 리스트 (영화 필름 띠) */
   display: flex;
   position: absolute;
-  transform: translateX(-140vmin);
   width: inherit;
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film { /* 프로젝트 (영화 필름 칸) */
@@ -580,7 +583,7 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film > 
   flex-flow: row;
   align-items: center;
 }
-body #portfolio section.web-publishing .slide-box .project-list .project-film > ul > li {
+body #portfolio section.web-publishing .slide-box .project-list .project-film > ul > li { /* 필름 사이드 모양 생성 */
   --window-ml: 30%;
   --window-mt: 25%;
   --window-mb: 75%;
@@ -592,8 +595,7 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film > 
   box-shadow: 0px -1vmax 0px 1vmax var(--grayScale-n1);
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item { /* 프로젝트 아이템 */
-  width: 70vmin;
-  height: fit-content;
+  width: 46vw;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -611,21 +613,22 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film .p
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(1) {
   justify-content: center;
+  height: 50vh;
 }
-body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(1) > img {
-  width: 100%;
-  height: auto;
+body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(1) > img { /* 프로젝트 이미지 */
+  width: auto;
+  height: 100%;
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) {
   padding: 1%;
 }
-body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > h3 {
+body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > h3 { /* 프로젝트 제목 */
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
-  font-size: var(--regular-text-size);
+  font-size: var(--medium-text-size);
   line-height: 1.4;
 }
-body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > p {
+body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > p { /* 사용 툴 */
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: var(--small-text-size);
@@ -634,7 +637,36 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film .p
   height: auto;
   color: var(--theme-text);
 }
-body #portfolio section.web-publishing .direction {
+body #portfolio section.web-publishing .slide-box .pagination { /* 프로젝트 슬라이드 페이지네이션 */ }
+body #portfolio section.web-publishing .slide-box .pagination-box {
+  padding: 1% 0%;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+}
+body #portfolio section.web-publishing .slide-box .pagination-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: fit-content;
+}
+body #portfolio section.web-publishing .slide-box .pagination-list > li {
+  display: inline-block;
+  width: 1.8vmin;
+  height: 1.8vmin;
+  margin: auto 1.2vmin;
+  border-radius: 50%;
+  background-color: var(--grayScale-n5);
+  cursor: pointer;
+}
+body #portfolio section.web-publishing .slide-box .pagination-list > li.active { /* 프로젝트 슬라이드 페이지네이션 액티브 */
+  opacity: 1;
+  width: 4.8vmin;
+  border-radius: 2.4vmin;
+  background-color: var(--tailed-n0);
+}
+body #portfolio section.web-publishing .direction { /* 슬라이드 버튼 */
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -645,37 +677,11 @@ body #portfolio section.web-publishing .direction {
   cursor: pointer;
   text-shadow: 0 1px 0 var(--grayScale-n1), 0 2px 0 var(--grayScale-n1), 0 3px 0 var(--grayScale-n1), 0 4px 0 var(--grayScale-n1), 0 5px 0 var(--grayScale-n1), 0 6px 0 var(--grayScale-n1), 0 7px 0 var(--grayScale-n1), 0 8px 0 var(--grayScale-n1), 0 9px 0 var(--grayScale-n1), 0 50px 30px rgba(0, 0, 0, 0.3);
 }
-body #portfolio section.web-publishing .direction.prev-left {
+body #portfolio section.web-publishing .direction.prev-left { /* 왼쪽/이전 버튼 */
   left: 0;
 }
-body #portfolio section.web-publishing .direction.next-right {
+body #portfolio section.web-publishing .direction.next-right { /* 오른쪽/다음 버튼 */
   right: 0;
-}
-body #portfolio section.web-publishing .pagination { /* 프로젝트 슬라이드 페이지네이션 */ }
-body #portfolio section.web-publishing .pagination-box {
-  position: relative;
-}
-body #portfolio section.web-publishing .pagination-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: fit-content;
-}
-body #portfolio section.web-publishing .pagination-list > li {
-  display: inline-block;
-  width: 1.8vmin;
-  height: 1.8vmin;
-  margin: auto 1.2vmin;
-  border-radius: 50%;
-  background-color: var(--grayScale-n5);
-  cursor: pointer;
-}
-body #portfolio section.web-publishing .pagination-list > li.active { /* 프로젝트 슬라이드 페이지네이션 액티브 */
-  opacity: 1;
-  width: 4.8vmin;
-  border-radius: 2.4vmin;
-  background-color: var(--tailed-n0);
 }
 body #portfolio section.design { /* 디자인 섹션 */ }
 body #portfolio section.design .slide-box {
@@ -684,13 +690,18 @@ body #portfolio section.design .slide-box {
   justify-content: center;
   width: 100%;
   height: 80%;
-  overflow: hidden;
 }
 body #portfolio section.design .slide-box .project-list { /* 프로젝트 리스트 (카드 모양) */
   display: flex;
   position: relative;
+  width: auto;
+  height: 100%;
   cursor: grab;
   user-select: none;
+  overflow-x: scroll;
+}
+body #portfolio section.design .slide-box .project-list::-webkit-scrollbar { /* 스크롤바의 너비 */
+  width: 0vmin;
 }
 body #portfolio section.design .slide-box .project-list.grabbing {
   cursor: grabbing;
