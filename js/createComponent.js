@@ -404,13 +404,13 @@ createDesign = () => {
             </div>
         `
         /* 
-            designModalLayer.innerHTML = designContent;
-            designModalLayer.classList.add("active");
-            document.body.style.overflow = "hidden";
             document.querySelector(".head-title").addEventListener("mouseover", ()=>{
                 document.querySelector(".bottom-contents").innerHTML = designProject[idx].contents;
             });
         */
+        designModalLayer.innerHTML = designContent;
+        designModalLayer.classList.add("active");
+        document.body.style.overflow = "hidden";
         designModalLayer.querySelector(".close").addEventListener('click', () => {
             designModalLayer.classList.remove("active");
             designModalLayer.innerHTML = "";
