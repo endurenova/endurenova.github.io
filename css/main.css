@@ -487,6 +487,7 @@ body #portfolio section.web-publishing.open::-webkit-scrollbar-track {
 body #portfolio section.web-publishing.open .publishing-detail-box {
   display: flex;
   flex-flow: row;
+  width: fit-content;
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .description { /* 디테일 설명 */
   width: 50vw;
@@ -553,6 +554,16 @@ body #portfolio section.web-publishing.open .publishing-detail-box .description 
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .main-image img {
   display: block;
+  position: relative;
+  height: 100%;
+}
+body #portfolio section.web-publishing.open .publishing-detail-box .contents-image {
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
+}
+body #portfolio section.web-publishing.open .publishing-detail-box .contents-image img {
+  display: inline-block;
   position: relative;
   height: 100%;
 }
@@ -911,21 +922,88 @@ body .designModal__window .window-body {
 body .designModal__window .window-body::-webkit-scrollbar { /* 스크롤바의 너비 */
   width: 0vmin;
 }
-body .designModal__window .window-body > img {
+body .designModal__window .window-body > img { /* 메인 이미지 */
   display: block;
   width: 100%;
   height: auto;
 }
-body .designModal__window .window-body .windo__inner {
-  display: block;
+body .designModal__window .window-body .window__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   position: relative;
-  width: 100%;
-  height: 1000px;
+  margin: 0 auto;
+  width: var(--wrapper-width);
 }
-body .designModal__window .window-body .window-body__inner {
+body .designModal__window .window-body .window__inner .head-title { /* 타이틀과 툴 */
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   position: relative;
   width: 100%;
-  height: 1000px;
+  padding: 10% 5%;
+}
+body .designModal__window .window-body .window__inner .head-title > h2 { /* 타이틀 */
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--large-text-size);
+  line-height: 2.4;
+  line-height: 1.8;
+}
+body .designModal__window .window-body .window__inner .head-title > span { /* 툴 목록 */
+  margin: 0 auto;
+}
+body .designModal__window .window-body .window__inner .head-title > span > img {
+  height: 3vmin;
+}
+body .designModal__window .window-body .window__inner .middle-description {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+  padding: 0% 5%;
+}
+body .designModal__window .window-body .window__inner .middle-description > h3 {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--medium-text-size);
+  line-height: 1.4;
+  font-weight: 500;
+}
+body .designModal__window .window-body .window__inner .middle-description > p {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--regular-text-size);
+  line-height: 1.4;
+  font-weight: 400;
+  text-align: center;
+  word-break: keep-all;
+  padding: 2% 10%;
+}
+body .designModal__window .window-body .window__inner .middle-description > span {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: var(--normal-text-size);
+  line-height: 1.4;
+  background-color: var(--tailed-n0);
+  padding: 1% 3%;
+  margin-top: 2%;
+}
+body .designModal__window .window-body .window__inner .bottom-contents {
+  padding: 10% 0%;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+}
+body .designModal__window .window-body .window__inner .bottom-contents > img {
+  width: 100%;
+}
+body .designModal__window .window-body .window__inner .bottom-contents > iframe {
+  width: 48vw;
+  height: 27vw;
 }
 body .designModal__tool {
   position: absolute;
@@ -952,4 +1030,41 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* 툴팁 기본 스타일 설정 */
+.tooltip {
+  display: block;
+  position: relative;
+}
+.tooltip:hover .tooltip__left {
+  visibility: visible;
+}
+.tooltip__left {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  visibility: hidden;
+  width: 120px;
+  text-align: center;
+  color: var(--grayScale-n1);
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  top: 50%;
+  right: 110%;
+  transform: translate(0, -50%);
+  background-color: var(--tailed-n0);
+  z-index: 1;
+}
+.tooltip__left::after { /* 툴팁 화살표 기본 스타일 설정 */
+  content: " ";
+  position: absolute;
+  border-style: solid;
+  border-width: 6px;
+  top: 50%;
+  left: 100%;
+  transform: translate(0, -50%);
+  border-color: transparent transparent transparent var(--tailed-n0);
 }

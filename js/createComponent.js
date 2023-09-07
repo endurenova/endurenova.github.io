@@ -175,22 +175,27 @@ createPublishing = () => {
         {
             title: 'ROOM-3D',
             imgSrc: './images/project-room3d-main.png',
-            tool: 'HTML　CSS　JavaScript',
+            toolText: 'HTML　CSS　JavaScript',            
+            contents: `
+                <img src="./images/project-room3d-contents-1.png" alt="디자인 모달 달력 컨텐츠 이미지-1" /> 
+                <img src="./images/project-room3d-contents-2.png" alt="디자인 모달 달력 컨텐츠 이미지-2" /> 
+                <img src="./images/project-room3d-contents-3.png" alt="디자인 모달 달력 컨텐츠 이미지-3" /> 
+            `
         },
         {
             title:'BNSYSTEM',
             imgSrc: './images/project-bnsystem-main.png',
-            tool:'HTML　CSS　JavaScript　Photoshop'
+            toolText:'HTML　CSS　JavaScript　Photoshop'
         },
         {
             title: 'SINGLETOGETHER',
             imgSrc: './images/project-singletogether-main.png',
-            tool: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
+            toolText: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
         },
         {
             title: 'PINTJOB',
             imgSrc: './images/project-pintjob-main.png',
-            tool: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
+            toolText: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
         },
     ];
     let publishing = '';    
@@ -261,6 +266,14 @@ createDesign = () => {
                 toolList: `
                     <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" /> 
                     <img src=${badgeList[8].tool} alt="툴 뱃지 이미지-${8}" />                  
+                `,
+                subject: "달력 만들기",
+                description: "창작한 캐릭터로 일러스트레이터를 활용해 드로잉하고 포토샵으로 목업을 한 작업",
+                author: "개인작업",
+                contents: `
+                    <img src="./images/design-calendar-contents-1.png" alt="디자인 모달 달력 컨텐츠 이미지-1" /> 
+                    <img src="./images/design-calendar-contents-2.png" alt="디자인 모달 달력 컨텐츠 이미지-2" /> 
+                    <img src="./images/design-calendar-contents-3.png" alt="디자인 모달 달력 컨텐츠 이미지-3" /> 
                 `
             },
             {
@@ -268,6 +281,13 @@ createDesign = () => {
                 mainImg:  './images/design-overtones-mockup.png', 
                 toolList: `
                     <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
+                `,
+                subject: "모바일 쇼핑몰 디자인",
+                description: "피그마로 인터렉션 쇼핑몰 디자인 작업",
+                author: "개인작업",
+                contents: `                
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FRCtkhZYuzwpPOdVDnfnoXd%2FOvertones%3Fnode-id%3D1-187%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A187%26mode%3Ddesign%26t%3DCqoSILLQRChvbxjp-1" allowfullscreen></iframe>
+                    <iframe src="https://docs.google.com/gview?url=https://endurenova.github.io//images/Overtones.pdf&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
                 `
             },
             {
@@ -275,16 +295,29 @@ createDesign = () => {
                 mainImg: './images/design-dotorisup-mockup.png', 
                 toolList: `
                     <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
+                `,
+                subject: "도토리숲 쇼핑몰 모작",
+                description: "피그마로 도토리숲 쇼핑몰 인터렉션 모작 연습 작업",
+                author: "개인작업",
+                contents: `
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FdsbjHyHbFKXqLlseWJ6uqY%2FDotorisup%3Fnode-id%3D57-2175%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D57%253A2175%26mode%3Ddesign%26t%3Dq0YGCuGxVd88nXSH-1" allowfullscreen></iframe>
+                    <iframe src="https://docs.google.com/gview?url=https://endurenova.github.io//images/Dotorisup.pdf&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
                 `
             },
             {
-                title: 'Totoro',
+                title: 'TOTORO',
                 mainImg: './images/design-totoro-mockup.png', 
                 toolList: `
                     <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
                     <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
                     <img src=${badgeList[5].tool} alt="툴 뱃지 이미지-${5}" />                    
+                `,
+                subject: "제이쿼리 애니메이션",
+                description: "제이쿼리를 활용해 애니메이션 효과 만들기",
+                author: "개인작업",
+                contents: `
+                    <iframe src="./images/totoro/totoro.html" ></iframe>
                 `
             },
             {
@@ -292,6 +325,12 @@ createDesign = () => {
                 mainImg: './images/design-hanatour-mockup.png',
                 toolList: `
                     <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
+                `,
+                subject: "포토샵 기능 연습",
+                description: "포토샵 기능을 활용한 다양한 효과 다루는 연습",
+                author: "개인작업",
+                contents: `
+                    <img src="./images/design-hanatour-contents-1.png" alt="디자인 모달 하나투어 컨텐츠 이미지-1" /> 
                 `
             },
             {
@@ -299,6 +338,12 @@ createDesign = () => {
                 mainImg: './images/design-lequipshop-mockup.png',
                 toolList: `
                     <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
+                `,
+                subject: "UI/UX 디자인 연습",
+                description: "실제 쇼핑몰을 참고하여 포토샵으로 UI/UX 배치 연습",
+                author: "개인작업",
+                contents: `
+                    <img src="./images/design-lequipshop-contents-1.png" alt="디자인 모달 하나투어 컨텐츠 이미지-1" /> 
                 `
             }
     ];
@@ -315,7 +360,7 @@ createDesign = () => {
                         <img src=${deg.mainImg} alt="디자인 프로젝트 이미지-${idx}" />
                     </div>
                     <div>
-                        <button  onclick="designModal()" class="design-modal-btn" data-design-index="${idx}">DETAIL</button>
+                        <button onclick="designModal()" class="design-modal-btn" data-design-index="${idx}">DETAIL</button>
                     </div>
                 </div>
             </li>
@@ -337,11 +382,20 @@ createDesign = () => {
             <div class="exit-layer"></div>
             <div class="designModal__window">
                 <div class="window-body">
-                    <img src=${designProject[idx].mainImg} alt="">
-                    <div class="windo__inner">
-                        작업중
-                    </div>
-                    <div class="window-body__inner">
+                    <img src=${designProject[idx].mainImg} alt="디자인 팝업 이미지-${idx}">
+                    <div class="window__inner">
+                        <div class="head-title">
+                            <h2>${designProject[idx].title}</h2>
+                            <span>${designProject[idx].toolList}</span>
+                        </div>
+                        <div class="middle-description">
+                            <h3>${designProject[idx].subject}</h3>
+                            <p>${designProject[idx].description}</p>
+                            <span>${designProject[idx].author}</span>
+                        </div>
+                        <div class="bottom-contents">
+                            ${designProject[idx].contents}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -349,10 +403,14 @@ createDesign = () => {
                 <span class="close">&times;</span>
             </div>
         `
-        designModalLayer.innerHTML = designContent;
-        designModalLayer.classList.add("active");
-        document.body.style.overflow = "hidden";
-        
+        /* 
+            designModalLayer.innerHTML = designContent;
+            designModalLayer.classList.add("active");
+            document.body.style.overflow = "hidden";
+            document.querySelector(".head-title").addEventListener("mouseover", ()=>{
+                document.querySelector(".bottom-contents").innerHTML = designProject[idx].contents;
+            });
+        */
         designModalLayer.querySelector(".close").addEventListener('click', () => {
             designModalLayer.classList.remove("active");
             designModalLayer.innerHTML = "";
@@ -448,15 +506,20 @@ openPublishing = (itemIdx) => {
                 title: 'ROOM-3D',
                 period: '2023.07 - 2023.08',
                 mainImg: './images/project-room3d-main.png',            
-                tool: `
+                toolList: `
                     <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
                     <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
                 `,
-                percent: '100%',
+                percent: '100%'
             },
             {
-
+                description: "transform3D를 활용한 페이지로 라이브러리 없이 제작하였습니다.",
+                contents: `
+                    <img src="./images/project-room3d-contents-1.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-1" /> 
+                    <img src="./images/project-room3d-contents-2.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-2" /> 
+                    <img src="./images/project-room3d-contents-3.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-3" /> 
+                `
             }
         ],
         [
@@ -464,7 +527,7 @@ openPublishing = (itemIdx) => {
                 title: 'BNSYSTEM',
                 period: '2023.06 - 2023.06',
                 mainImg: './images/project-bnsystem-main.png',            
-                tool: `
+                toolList: `
                     <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
                     <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
@@ -480,7 +543,7 @@ openPublishing = (itemIdx) => {
                 title: 'SINGLETOGETHER',
                 period: '2023.01 - 2023.01',
                 mainImg: './images/project-singletogether-main.png',            
-                tool: `
+                toolList: `
                     <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
                     <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
@@ -498,7 +561,7 @@ openPublishing = (itemIdx) => {
                 title: 'PINTJOB',
                 period: '2023.01 - 2023.01',
                 mainImg: './images/project-pintjob-main.png',            
-                tool: `
+                toolList: `
                     <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
                     <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
@@ -529,7 +592,7 @@ openPublishing = (itemIdx) => {
                                     </li>
                                     <li>
                                         <span>사용 툴</span>
-                                        <span>${projectMain[itemIdx][i].tool}</span>
+                                        <span>${projectMain[itemIdx][i].toolList}</span>
                                     </li>
                                     <li>
                                         <span>기여도</span>
@@ -550,11 +613,11 @@ openPublishing = (itemIdx) => {
                         <div class="description">
                             <div class="wrap">
                                 <h3 class="subject">PORTFOLIO - WEB PUBLISHING</h3>
-                                <p class="explanation"></p>
+                                <p class="description">${projectMain[itemIdx][i].description}</p>
                             </div>
                         </div>
-                        <div class="main-image">
-                            <img src='' alt="">
+                        <div class="contents-image">
+                            ${projectMain[itemIdx][i].contents}
                         </div>
                     </div>
                 </div>
@@ -644,17 +707,13 @@ initPage = ()=>{
             } 
         });
     });
-    const dragElement = document.getElementById('drag-element');
 
     let checkScrollLeft = 0;
     const designWheelListener = (event) => {
         event.preventDefault();
         designList.scrollLeft += event.deltaY;
         checkScrollLeft = designList.scrollLeft + event.deltaY;
-        console.log(designList.scrollLeft += event.deltaY)
-        console.log(checkScrollLeft)
         if (checkScrollLeft === designList.scrollLeft + event.deltaY) {
-            console.log(2)
             designBox.querySelector(".slide-box").removeEventListener("wheel", designWheelListener);
             setTimeout(() => {
                 designBox.querySelector(".slide-box").addEventListener("wheel", designWheelListener); // 가로 휠 추가
@@ -678,7 +737,6 @@ let skillToggle = 0;
 
 window.addEventListener('scroll', event => {
     event.preventDefault();
-    console.log(window.scrollY)
     const currentScrollPos = window.scrollY;
     if(prevScrollpos < currentScrollPos){
         headerBar.classList.add('hidden');
