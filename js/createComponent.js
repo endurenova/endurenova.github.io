@@ -219,7 +219,7 @@ createPublishing = () => {
                     </div>
                     <div>
                         <h3>${pub.title}</h3>
-                        <p>${pub.tool}</p>
+                        <p>${pub.toolText}</p>
                     </div>
                 </div>
                 <ul>
@@ -274,6 +274,7 @@ createDesign = () => {
                     <img src="./images/design-calendar-contents-1.png" alt="디자인 모달 달력 컨텐츠 이미지-1" /> 
                     <img src="./images/design-calendar-contents-2.png" alt="디자인 모달 달력 컨텐츠 이미지-2" /> 
                     <img src="./images/design-calendar-contents-3.png" alt="디자인 모달 달력 컨텐츠 이미지-3" /> 
+                    <img src="./images/design-calendar-contents-4.png" alt="디자인 모달 달력 컨텐츠 이미지-4" /> 
                 `
             },
             {
@@ -513,12 +514,17 @@ openPublishing = (itemIdx) => {
                 `,
                 percent: '100%'
             },
-            {
-                description: "transform3D를 활용한 페이지로 라이브러리 없이 제작하였습니다.",
+            {                
                 contents: `
-                    <img src="./images/project-room3d-contents-1.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-1" /> 
-                    <img src="./images/project-room3d-contents-2.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-2" /> 
-                    <img src="./images/project-room3d-contents-3.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-3" /> 
+                    <div class="col">                        
+                        <img src="./images/project-room3d-contents-1.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-1" /> 
+                        <p>라이브러리나 목업 없이 CSS스타일로 형성한 모니터</p>
+                    </div>
+                    <div class="col">
+                        <img src="./images/project-room3d-contents-2-1.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-2-1" /> 
+                        <p>책 넘기는 효과를 구현한 JavaScript</p>
+                        <img src="./images/project-room3d-contents-2-2.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-2-2" /> 
+                    </div>
                 `
             }
         ],
@@ -536,6 +542,28 @@ openPublishing = (itemIdx) => {
                 percent: '100%',
             },
             {
+                contents: `
+                    <div class="col">
+                        <img src="./images/project-bnsystem-contents-1-1.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-1-1" /> 
+                        <p>헤더 메뉴에 상황에 따른 레이아웃</p>
+                        <img src="./images/project-bnsystem-contents-1-2.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-1-2" />                         
+                    </div>
+                    <div class="col">
+                        <img src="./images/project-bnsystem-contents-2-1.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-2-1" /> 
+                        <p>테마 토글 기능으로 라이트/다크 모드</p>
+                        <img src="./images/project-bnsystem-contents-2-2.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-2-2" />                         
+                    </div>
+                    <div class="col">
+                        <img src="./images/project-bnsystem-contents-3-1.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-3-1" /> 
+                        <p>입체적 인터렉션과 정규식을 활용한 문의 모달창</p>
+                        <img src="./images/project-bnsystem-contents-3-2.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-3-2" />                         
+                    </div>
+                    <div class="row">
+                        <img src="./images/project-bnsystem-contents-4-1.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-3-1" /> 
+                        <p>반응형 레이아웃</p>
+                        <img src="./images/project-bnsystem-contents-4-2.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-3-2" />                         
+                    </div>
+                `
             }
         ],
         [
@@ -575,13 +603,13 @@ openPublishing = (itemIdx) => {
             }
         ]
     ];
-
+    // <div class='drp-selected' set-></div>
     let detailMain ='';
     Array.from(projectMain[itemIdx]).forEach((e, i) =>{
         if (i === 0) { // 메인 디스크립션 (기본)
             detailMain += `
                     <div class="publishing-detail-box">
-                        <div class="description">
+                        <div class="main-description">
                             <div class="wrap">
                                 <h3 class="subject">PORTFOLIO - WEB PUBLISHING</h3>
                                 <h1 class="title">${projectMain[itemIdx][i].title}</h1>
@@ -610,14 +638,12 @@ openPublishing = (itemIdx) => {
         } else {
             detailMain += `
                     <div class="publishing-detail-box">
-                        <div class="description">
+                        <div class="sub-description">
                             <div class="wrap">
-                                <h3 class="subject">PORTFOLIO - WEB PUBLISHING</h3>
-                                <p class="description">${projectMain[itemIdx][i].description}</p>
+                                <div class="contents">
+                                    ${projectMain[itemIdx][i].contents}
+                                </div>
                             </div>
-                        </div>
-                        <div class="contents-image">
-                            ${projectMain[itemIdx][i].contents}
                         </div>
                     </div>
                 </div>
@@ -628,9 +654,9 @@ openPublishing = (itemIdx) => {
         <span id="project-first"></span>
         ${detailMain}
     `;
-    publishingBox.style.cssText = `background-image: unset;`    
+    publishingBox.style.cssText = `background-image: unset;`;
+    publishingBox.scrollLeft = publishingBox.getBoundingClientRect().left;
 };
-
 
 initPage = ()=>{
     createProfile();

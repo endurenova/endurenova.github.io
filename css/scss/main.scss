@@ -234,6 +234,9 @@ body {
     aside {
         @include quick-menu;
         transition: var(--transition-normal) cubic-bezier(0, 0, 0.2, 1);
+        .open-detail {
+            display: none;
+        }
         .quick-sidebar {
             width: fit-content;
             .quick-sidebar {
@@ -358,15 +361,42 @@ body {
                 display: none;
             }
             .open-detail {
-                .toggle-box { /* 퍼스트 버튼 */
-                    @include flex-center;
+                display: unset;
+                .tooltip { /* 퍼스트 버튼 */
+                    position: relative;
                     padding: map-get($map: $qMenu-gap, $key: updown-gap);
+                    &:hover .tooltip__left {
+                        opacity: 1;
+                    }
+                    &__left {
+                        @include sub-tag;
+                        opacity: 0.5;
+                        width: 120px;
+                        text-align: center;
+                        color: var(--grayScale-n1);
+                        border-radius: 6px;
+                        padding: 5px 0;
+                        position: absolute;
+                        top: 50%;
+                        right: 110%;
+                        transform: translate(0, -50%);
+                        background-color: var(--tailed-n0);
+                        z-index: 1;
+                        &::after { /* 툴팁 화살표 기본 스타일 설정 */
+                            content: " ";
+                            position: absolute;
+                            border-style: solid;
+                            border-width: 6px;
+                            top: 50%;
+                            left: 100%;
+                            transform: translate(0, -50%);
+                            border-color: transparent transparent transparent var(--tailed-n0);
+                        }
+                    }
                     .toggle {
-                        display: flex;
+                        @include flex-center;
                         position: relative;
                         flex-flow: column;
-                        align-items: center;
-                        justify-content: center;
                         width: 6vmin;
                         height: 6vmin;
                         background-color: var(--grayScale-n5);
@@ -574,9 +604,10 @@ body {
                     height: 100vh;
                     .publishing-detail-box {
                         display: flex;
+                        position: relative;
                         flex-flow: row;
                         width: fit-content;
-                        .description { /* 디테일 설명 */                            
+                        .main-description { /* 디테일 설명 */
                             width: 50vw;
                             > .wrap {
                                 display: flex;
@@ -625,7 +656,7 @@ body {
                                                 margin-right: 1%;
                                             }
                                         }
-                                    }
+                                    }                                    
                                 }
                             }
                         }
@@ -636,14 +667,59 @@ body {
                                 height: 100%;
                             }
                         }
-                        .contents-image {
-                            display: flex;
-                            position: relative;
-                            flex-flow: row nowrap;
-                            img {
-                                display: inline-block;
+                        .sub-description { /* 디테일 설명 */
+                            > .wrap {
+                                display: flex;
                                 position: relative;
+                                flex-flow: row nowrap;
+                                align-items: center;
+                                width: fit-content;
                                 height: 100%;
+                                > .contents {
+                                    display: flex;
+                                    position: relative;
+                                    flex-flow: row nowrap;
+                                    align-items: center;
+                                    height: 100%;
+                                    .col {
+                                        display: flex;
+                                        position: relative;
+                                        flex-flow: column;
+                                        justify-content: center;
+                                        width: fit-content;
+                                        height: 100%;
+                                        margin: 0 1%;
+                                        padding: 0 3%;
+                                        > img {
+                                            display: block;
+                                            position: relative;
+                                            max-width: 75vw;
+                                            width: auto;
+                                            max-height: 42vh;
+                                        }
+                                        > p {
+                                            @include subject-sub-title;
+                                            width: 100%;
+                                            color: var(--theme-text);
+                                            padding: 3% 0;
+                                            text-align: center;
+                                        }
+                                    }                                    
+                                    .row {
+                                        display: flex;
+                                        position: relative;
+                                        flex-flow: row;
+                                        align-items: center;
+                                        width: fit-content;
+                                        > p {
+                                            @include subject-sub-title;
+                                            width: 18vh;
+                                            color: var(--theme-text);
+                                            padding: 0 3%;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -1082,41 +1158,6 @@ body {
                     cursor: pointer;
                 }
             }
-        }
-    }
-}
-
-
-/* 툴팁 기본 스타일 설정 */
-.tooltip {
-    display: block;
-    position: relative;
-    &:hover .tooltip__left {
-        visibility: visible;
-    }
-    &__left {
-        @include sub-tag;
-        visibility: hidden;
-        width: 120px;
-        text-align: center;
-        color: var(--grayScale-n1);
-        border-radius: 6px;
-        padding: 5px 0;
-        position: absolute;
-        top: 50%;
-        right: 110%;
-        transform: translate(0, -50%);
-        background-color: var(--tailed-n0);
-        z-index: 1;
-        &::after { /* 툴팁 화살표 기본 스타일 설정 */
-            content: " ";
-            position: absolute;
-            border-style: solid;
-            border-width: 6px;
-            top: 50%;
-            left: 100%;
-            transform: translate(0, -50%);
-            border-color: transparent transparent transparent var(--tailed-n0);
         }
     }
 }

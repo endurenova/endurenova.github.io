@@ -477,13 +477,13 @@ header {
     .mobile-menu__button {
         position: relative;
         text-align: left;
-        color: var(--color-n5-abs);
+        color: var(--color-n5);
         text-indent: 1em;
         line-height: 2.5em;
         width: 100%;
         border-radius: 0.5em 0.5em;
         overflow: hidden;
-        background-color:  var(--color-navy-footer);
+        background-color:  var(--color-navy);
     }
         .mobile-menu__drop {
             position: absolute;

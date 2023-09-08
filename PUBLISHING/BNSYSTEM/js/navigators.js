@@ -254,16 +254,19 @@ surveyCarouselRotate = () => {
         });
     }, 1);
 }
-
-const webSurvey3CardList = document.querySelectorAll(".survey3-card.web");
+const webSurvey3CardList = document.querySelectorAll(".survey3-card");
 const mobileSurvey3CardList = document.querySelectorAll(".survey3-card.mobile");
 Array.from(webSurvey3CardList).forEach((e) =>{
-    e.addEventListener('mouseenter', (event)=>{        
+    e.addEventListener('mouseover', (event)=>{ 
+        event.preventDefault();       
         Array.from(survey3CardList).forEach((ee) =>{
             ee.classList.remove("active");
         });
         e.classList.add("active");
-        event.stopPropagation();
+        e.addEventListener('mouseleave', (event)=>{ 
+            event.preventDefault();
+            e.classList.remove("active");
+        });
     });
 });
 Array.from(mobileSurvey3CardList).forEach((e) =>{

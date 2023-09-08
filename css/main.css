@@ -107,6 +107,9 @@ body aside {
   z-index: 100;
   transition: var(--transition-normal) cubic-bezier(0, 0, 0.2, 1);
 }
+body aside .open-detail {
+  display: none;
+}
 body aside .quick-sidebar {
   width: fit-content;
 }
@@ -242,40 +245,72 @@ body aside.detail-active { /* 프로젝트 디테일 오픈 시 */ }
 body aside.detail-active .quick-sidebar {
   display: none;
 }
-body aside.detail-active .open-detail .toggle-box { /* 퍼스트 버튼 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body aside.detail-active .open-detail {
+  display: unset;
+}
+body aside.detail-active .open-detail .tooltip { /* 퍼스트 버튼 */
+  position: relative;
   padding: 5% 0%;
 }
-body aside.detail-active .open-detail .toggle-box .toggle {
+body aside.detail-active .open-detail .tooltip:hover .tooltip__left {
+  opacity: 1;
+}
+body aside.detail-active .open-detail .tooltip__left {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  opacity: 0.5;
+  width: 120px;
+  text-align: center;
+  color: var(--grayScale-n1);
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  top: 50%;
+  right: 110%;
+  transform: translate(0, -50%);
+  background-color: var(--tailed-n0);
+  z-index: 1;
+}
+body aside.detail-active .open-detail .tooltip__left::after { /* 툴팁 화살표 기본 스타일 설정 */
+  content: " ";
+  position: absolute;
+  border-style: solid;
+  border-width: 6px;
+  top: 50%;
+  left: 100%;
+  transform: translate(0, -50%);
+  border-color: transparent transparent transparent var(--tailed-n0);
+}
+body aside.detail-active .open-detail .tooltip .toggle {
   display: flex;
-  position: relative;
-  flex-flow: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  flex-flow: column;
   width: 6vmin;
   height: 6vmin;
   background-color: var(--grayScale-n5);
   border: 0.0625vmin solid var(--grayScale-n3);
   border-radius: 1vmin;
 }
-body aside.detail-active .open-detail .toggle-box .toggle::before {
+body aside.detail-active .open-detail .tooltip .toggle::before {
   content: "";
   display: block;
   width: 5vmin;
   height: var(--normal-text-size);
   background-color: var(--grayScale-n2);
 }
-body aside.detail-active .open-detail .toggle-box .toggle.qhome-toggle::before {
+body aside.detail-active .open-detail .tooltip .toggle.qhome-toggle::before {
   mask: url(../icon/home-btn.svg) no-repeat center;
   -webkit-mask: url(../icon/home-btn.svg) no-repeat center;
 }
-body aside.detail-active .open-detail .toggle-box .toggle.qlink-toggle::before {
+body aside.detail-active .open-detail .tooltip .toggle.qlink-toggle::before {
   mask: url(../icon/link-btn.svg) no-repeat center;
   -webkit-mask: url(../icon/link-btn.svg) no-repeat center;
 }
-body aside.detail-active .open-detail .toggle-box .toggle.qfirst-toggle::before {
+body aside.detail-active .open-detail .tooltip .toggle.qfirst-toggle::before {
   mask: url(../icon/first-btn.svg) no-repeat center;
   -webkit-mask: url(../icon/first-btn.svg) no-repeat center;
 }
@@ -486,13 +521,14 @@ body #portfolio section.web-publishing.open::-webkit-scrollbar-track {
 }
 body #portfolio section.web-publishing.open .publishing-detail-box {
   display: flex;
+  position: relative;
   flex-flow: row;
   width: fit-content;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description { /* 디테일 설명 */
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description { /* 디테일 설명 */
   width: 50vw;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap {
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -500,14 +536,14 @@ body #portfolio section.web-publishing.open .publishing-detail-box .description 
   height: 100%;
   padding: 3% 0;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > .subject { /* 주제 */
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > .subject { /* 주제 */
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: var(--regular-text-size);
   line-height: 1.4;
   color: var(--theme-text);
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > .title { /* 프로젝트 제목 */
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > .title { /* 프로젝트 제목 */
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--large-text-size);
@@ -515,23 +551,23 @@ body #portfolio section.web-publishing.open .publishing-detail-box .description 
   color: var(--grayScale-n5);
   border: 1px solid var(--grayScale-n5);
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > ul { /* 프로젝트 설명 */
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul { /* 프로젝트 설명 */
   display: flex;
   flex-flow: column;
   justify-content: space-evenly;
   height: 24vmin;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > ul > li {
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li {
   display: flex;
   position: relative;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > ul > li > span {
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--normal-text-size);
   line-height: 1.4;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > ul > li > span:nth-of-type(1) {
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span:nth-of-type(1) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -540,15 +576,15 @@ body #portfolio section.web-publishing.open .publishing-detail-box .description 
   border: 1px solid var(--grayScale-n5);
   margin-right: 3vmin;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > ul > li > span:nth-of-type(2) {
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span:nth-of-type(2) {
   display: flex;
   flex-flow: row;
   align-items: center;
   width: 100%;
   padding: 0 1%;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > ul > li:nth-of-type(2) { /* 사용 툴 뱃지 */ }
-body #portfolio section.web-publishing.open .publishing-detail-box .description > .wrap > ul > li:nth-of-type(2) img {
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li:nth-of-type(2) { /* 사용 툴 뱃지 */ }
+body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li:nth-of-type(2) img {
   height: 3vmin;
   margin-right: 1%;
 }
@@ -557,15 +593,65 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-image i
   position: relative;
   height: 100%;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .contents-image {
+body #portfolio section.web-publishing.open .publishing-detail-box .sub-description { /* 디테일 설명 */ }
+body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap {
   display: flex;
   position: relative;
   flex-flow: row nowrap;
-}
-body #portfolio section.web-publishing.open .publishing-detail-box .contents-image img {
-  display: inline-block;
-  position: relative;
+  align-items: center;
+  width: fit-content;
   height: 100%;
+}
+body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents {
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 100%;
+}
+body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .col {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  justify-content: center;
+  width: fit-content;
+  height: 100%;
+  margin: 0 1%;
+  padding: 0 3%;
+}
+body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .col > img {
+  display: block;
+  position: relative;
+  max-width: 75vw;
+  width: auto;
+  max-height: 42vh;
+}
+body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .col > p {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--regular-text-size);
+  line-height: 1.4;
+  width: 100%;
+  color: var(--theme-text);
+  padding: 3% 0;
+  text-align: center;
+}
+body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .row {
+  display: flex;
+  position: relative;
+  flex-flow: row;
+  align-items: center;
+  width: fit-content;
+}
+body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .row > p {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--regular-text-size);
+  line-height: 1.4;
+  width: 18vh;
+  color: var(--theme-text);
+  padding: 0 3%;
+  text-align: center;
 }
 body #portfolio section.web-publishing .slide-box {
   width: 100%;
@@ -1030,41 +1116,4 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
-}
-
-/* 툴팁 기본 스타일 설정 */
-.tooltip {
-  display: block;
-  position: relative;
-}
-.tooltip:hover .tooltip__left {
-  visibility: visible;
-}
-.tooltip__left {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
-  font-weight: 500;
-  font-size: var(--small-text-size);
-  line-height: 1.4;
-  visibility: hidden;
-  width: 120px;
-  text-align: center;
-  color: var(--grayScale-n1);
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  top: 50%;
-  right: 110%;
-  transform: translate(0, -50%);
-  background-color: var(--tailed-n0);
-  z-index: 1;
-}
-.tooltip__left::after { /* 툴팁 화살표 기본 스타일 설정 */
-  content: " ";
-  position: absolute;
-  border-style: solid;
-  border-width: 6px;
-  top: 50%;
-  left: 100%;
-  transform: translate(0, -50%);
-  border-color: transparent transparent transparent var(--tailed-n0);
 }
