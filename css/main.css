@@ -1122,8 +1122,9 @@ body .designModal__window .window-body .window__inner .bottom-contents .link-box
   position: relative;
   justify-content: space-between;
   line-height: var(--normal-text-size);
-  color: #fff;
   word-break: keep-all;
+  text-align: center;
+  color: #fff;
 }
 body .designModal__tool {
   position: absolute;
