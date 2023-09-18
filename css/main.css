@@ -798,7 +798,7 @@ body #portfolio section.design .slide-box .project-list { /* 프로젝트 리스
   overflow-x: scroll;
 }
 body #portfolio section.design .slide-box .project-list::-webkit-scrollbar { /* 스크롤바의 너비 */
-  height: 0.8vmin;
+  height: 1.5vmin;
 }
 body #portfolio section.design .slide-box .project-list::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */

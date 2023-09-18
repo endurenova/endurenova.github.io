@@ -868,7 +868,7 @@ body {
                         user-select: none;
                         overflow-x: scroll;
                         &::-webkit-scrollbar { /* 스크롤바의 너비 */
-                            height: 0.8vmin;
+                            height: 1.5vmin;
                             &-thumb {
                                 height: 30%; /* 스크롤바의 길이 */
                                 background-color: var(--tailed-n0);
