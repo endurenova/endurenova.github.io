@@ -283,11 +283,17 @@ createDesign = () => {
                 description: "피그마로 인터렉션 쇼핑몰 디자인 작업",
                 author: "개인작업",
                 link: `
-                    <a href='https://www.figma.com/proto/RCtkhZYuzwpPOdVDnfnoXd/Overtones?node-id=1-187&starting-point-node-id=1%3A187&mode=design&t=Pnvr684Hra0KjVOu-1'>
-                        <span>프로토타입 링크</span>
-                    </a>`,
+                    <div class="link-box">
+                        <a href='https://www.figma.com/file/RCtkhZYuzwpPOdVDnfnoXd/Overtones?type=design&node-id=0%3A1&mode=design&t=v0toPbXL14Uypsfc-1' target='_blank'>
+                            <span>와이어프레임 바로가기</span>
+                        </a>
+                        <a href='https://www.figma.com/proto/RCtkhZYuzwpPOdVDnfnoXd/Overtones?node-id=1-187&starting-point-node-id=1%3A187&mode=design&t=Pnvr684Hra0KjVOu-1' target='_blank'>
+                            <span>프로토타입 바로가기</span>
+                        </a>
+                    </div>
+                `,
                 contents: `
-                    <img src="./images/design-overtones-contents-1.png" alt="오버톤즈 전체 컨텐츠 이미지" />', 
+                    <img src="./images/design-overtones-contents-1.png" alt="오버톤즈 전체 컨텐츠 이미지" /> 
                 `
             },
             {
@@ -299,10 +305,18 @@ createDesign = () => {
                 subject: "도토리숲 쇼핑몰 모작",
                 description: "피그마로 도토리숲 쇼핑몰 인터렉션 모작 연습 작업",
                 author: "개인작업",
-                link: "",
+                link:  `
+                    <div class="link-box">
+                        <a href='https://www.figma.com/file/dsbjHyHbFKXqLlseWJ6uqY/Dotorisup?type=design&node-id=0%3A1&mode=design&t=FfSBRPctXg5GbtZP-1' target='_blank'>
+                            <span>와이어프레임 바로가기</span>
+                        </a>
+                        <a href='https://www.figma.com/proto/dsbjHyHbFKXqLlseWJ6uqY/Dotorisup?node-id=57-2175&starting-point-node-id=57%3A2175&mode=design&t=I32VJIEY1rW9Vlaz-1' target='_blank'>
+                            <span>프로토타입 바로가기</span>
+                        </a>
+                    </div>
+                `,
                 contents: `
-                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FdsbjHyHbFKXqLlseWJ6uqY%2FDotorisup%3Fnode-id%3D57-2175%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D57%253A2175%26mode%3Ddesign%26t%3Dq0YGCuGxVd88nXSH-1" allowfullscreen></iframe>
-                    <iframe src="https://docs.google.com/gview?url=https://endurenova.github.io//images/Dotorisup.pdf&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
+                    <img src="./images/design-dotorisup-contents-1.png" alt="도토리숲 전체 컨텐츠 이미지" />
                 `
             },
             {

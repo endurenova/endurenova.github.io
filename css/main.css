@@ -1028,7 +1028,8 @@ body .designModal__window .window-body .window__inner .head-title { /* 타이틀
   align-items: center;
   position: relative;
   width: 100%;
-  padding: 10% 5%;
+  height: fit-content;
+  padding: 8% 5% 0% 5%;
 }
 body .designModal__window .window-body .window__inner .head-title > h2 { /* 타이틀 */
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
@@ -1049,6 +1050,7 @@ body .designModal__window .window-body .window__inner .middle-description {
   align-items: center;
   position: relative;
   padding: 0% 5%;
+  margin: 5% 0%;
 }
 body .designModal__window .window-body .window__inner .middle-description > h3 {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
@@ -1074,10 +1076,8 @@ body .designModal__window .window-body .window__inner .middle-description > span
   line-height: 1.4;
   background-color: var(--tailed-n0);
   padding: 1% 3%;
-  margin-top: 2%;
 }
 body .designModal__window .window-body .window__inner .bottom-contents {
-  padding: 10% 0%;
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -1092,40 +1092,38 @@ body .designModal__window .window-body .window__inner .bottom-contents > iframe 
   width: 48vw;
   height: 27vw;
 }
-body .designModal__window .window-body .window__inner .bottom-contents > a {
+body .designModal__window .window-body .window__inner .bottom-contents .link-box {
   display: flex;
   position: relative;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: center;
-  width: fit-content;
-  background-color: #F24E1E;
-  padding: 1% 3%;
-  margin-top: 5%;
+  justify-content: space-around;
+  width: 100%;
+  height: 20vh;
+  padding: 5% 0;
 }
-body .designModal__window .window-body .window__inner .bottom-contents > a > span {
+body .designModal__window .window-body .window__inner .bottom-contents .link-box > a {
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #F24E1E;
+  width: 30%;
+  height: 50%;
+  border-radius: 1vh;
+}
+body .designModal__window .window-body .window__inner .bottom-contents .link-box > a > span {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
-  font-weight: 500;
-  font-size: var(--small-text-size);
+  font-weight: 700;
+  font-size: var(--normal-text-size);
   line-height: 1.4;
   display: flex;
   position: relative;
-  align-items: center;
-  flex-flow: row nowrap;
+  justify-content: space-between;
   line-height: var(--normal-text-size);
   color: #fff;
-  padding-right: 1%;
   word-break: keep-all;
-}
-body .designModal__window .window-body .window__inner .bottom-contents > a > span::after {
-  content: "";
-  display: inline-block;
-  position: relative;
-  width: var(--normal-text-size);
-  height: var(--normal-text-size);
-  background-color: #fff;
-  mask: url(../icon/link-btn.svg) no-repeat center;
-  -webkit-mask: url(../icon/link-btn.svg) no-repeat center;
 }
 body .designModal__tool {
   position: absolute;
