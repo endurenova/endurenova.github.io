@@ -282,12 +282,12 @@ createDesign = () => {
                 subject: "모바일 쇼핑몰 디자인",
                 description: "피그마로 인터렉션 쇼핑몰 디자인 작업",
                 author: "개인작업",
-                link: `<a href='https://www.figma.com/proto/RCtkhZYuzwpPOdVDnfnoXd/Overtones?node-id=1-187&starting-point-node-id=1%3A187&mode=design&t=Pnvr684Hra0KjVOu-1'>
+                link: `
+                    <a href='https://www.figma.com/proto/RCtkhZYuzwpPOdVDnfnoXd/Overtones?node-id=1-187&starting-point-node-id=1%3A187&mode=design&t=Pnvr684Hra0KjVOu-1'>
                         <span>프로토타입 링크</span>
                     </a>`,
-                contents: `                
-                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FRCtkhZYuzwpPOdVDnfnoXd%2FOvertones%3Fnode-id%3D1-187%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A187%26mode%3Ddesign%26t%3DCqoSILLQRChvbxjp-1" allowfullscreen></iframe>
-                    <iframe src="https://docs.google.com/gview?url=https://endurenova.github.io//images/Overtones.pdf&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
+                contents: `
+                    <img src="./images/design-overtones-contents-1.png" alt="오버톤즈 전체 컨텐츠 이미지" />', 
                 `
             },
             {
