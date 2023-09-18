@@ -769,11 +769,9 @@ body #portfolio section.web-publishing .direction { /* 슬라이드 버튼 */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 8vmin;
+  font-size: 7vmin;
   font-weight: 900;
-  color: var(--theme-text);
   cursor: pointer;
-  text-shadow: 0 1px 0 var(--grayScale-n1), 0 2px 0 var(--grayScale-n1), 0 3px 0 var(--grayScale-n1), 0 4px 0 var(--grayScale-n1), 0 5px 0 var(--grayScale-n1), 0 6px 0 var(--grayScale-n1), 0 7px 0 var(--grayScale-n1), 0 8px 0 var(--grayScale-n1), 0 9px 0 var(--grayScale-n1), 0 50px 30px rgba(0, 0, 0, 0.3);
 }
 body #portfolio section.web-publishing .direction.prev-left { /* 왼쪽/이전 버튼 */
   left: 0;
