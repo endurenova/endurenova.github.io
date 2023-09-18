@@ -191,12 +191,7 @@ createPublishing = () => {
             title: 'SINGLETOGETHER',
             imgSrc: './images/project-singletogether-main.png',
             toolText: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
-        },
-        {
-            title: 'PINTJOB',
-            imgSrc: './images/project-pintjob-main.png',
-            toolText: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
-        },
+        }
     ];
     let publishing = '';    
     let pagination = '';
@@ -270,6 +265,7 @@ createDesign = () => {
                 subject: "달력 만들기",
                 description: "창작한 캐릭터로 일러스트레이터를 활용해 드로잉하고 포토샵으로 목업을 한 작업",
                 author: "개인작업",
+                link: "",
                 contents: `
                     <img src="./images/design-calendar-contents-1.png" alt="디자인 모달 달력 컨텐츠 이미지-1" /> 
                     <img src="./images/design-calendar-contents-2.png" alt="디자인 모달 달력 컨텐츠 이미지-2" /> 
@@ -286,6 +282,9 @@ createDesign = () => {
                 subject: "모바일 쇼핑몰 디자인",
                 description: "피그마로 인터렉션 쇼핑몰 디자인 작업",
                 author: "개인작업",
+                link: `<a href='https://www.figma.com/proto/RCtkhZYuzwpPOdVDnfnoXd/Overtones?node-id=1-187&starting-point-node-id=1%3A187&mode=design&t=Pnvr684Hra0KjVOu-1'>
+                        <span>프로토타입 링크</span>
+                    </a>`,
                 contents: `                
                     <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FRCtkhZYuzwpPOdVDnfnoXd%2FOvertones%3Fnode-id%3D1-187%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A187%26mode%3Ddesign%26t%3DCqoSILLQRChvbxjp-1" allowfullscreen></iframe>
                     <iframe src="https://docs.google.com/gview?url=https://endurenova.github.io//images/Overtones.pdf&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
@@ -300,6 +299,7 @@ createDesign = () => {
                 subject: "도토리숲 쇼핑몰 모작",
                 description: "피그마로 도토리숲 쇼핑몰 인터렉션 모작 연습 작업",
                 author: "개인작업",
+                link: "",
                 contents: `
                     <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FdsbjHyHbFKXqLlseWJ6uqY%2FDotorisup%3Fnode-id%3D57-2175%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D57%253A2175%26mode%3Ddesign%26t%3Dq0YGCuGxVd88nXSH-1" allowfullscreen></iframe>
                     <iframe src="https://docs.google.com/gview?url=https://endurenova.github.io//images/Dotorisup.pdf&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
@@ -317,6 +317,7 @@ createDesign = () => {
                 subject: "제이쿼리 애니메이션",
                 description: "제이쿼리를 활용해 애니메이션 효과 만들기",
                 author: "개인작업",
+                link: "",
                 contents: `
                     <iframe src="./images/totoro/totoro.html" ></iframe>
                 `
@@ -330,6 +331,7 @@ createDesign = () => {
                 subject: "포토샵 기능 연습",
                 description: "포토샵 기능을 활용한 다양한 효과 다루는 연습",
                 author: "개인작업",
+                link: "",
                 contents: `
                     <img src="./images/design-hanatour-contents-1.png" alt="디자인 모달 하나투어 컨텐츠 이미지-1" /> 
                 `
@@ -343,6 +345,7 @@ createDesign = () => {
                 subject: "UI/UX 디자인 연습",
                 description: "실제 쇼핑몰을 참고하여 포토샵으로 UI/UX 배치 연습",
                 author: "개인작업",
+                link: "",
                 contents: `
                     <img src="./images/design-lequipshop-contents-1.png" alt="디자인 모달 하나투어 컨텐츠 이미지-1" /> 
                 `
@@ -396,6 +399,7 @@ createDesign = () => {
                         </div>
                         <div class="bottom-contents">
                             ${designProject[idx].contents}
+                            ${designProject[idx].link}
                         </div>
                     </div>
                 </div>
@@ -559,9 +563,9 @@ openPublishing = (itemIdx) => {
                         <img src="./images/project-bnsystem-contents-3-2.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-3-2" />                         
                     </div>
                     <div class="row">
-                        <img src="./images/project-bnsystem-contents-4-1.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-3-1" /> 
+                        <img src="./images/project-bnsystem-contents-4-1.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-4-1" /> 
                         <p>반응형 레이아웃</p>
-                        <img src="./images/project-bnsystem-contents-4-2.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-3-2" />                         
+                        <img src="./images/project-bnsystem-contents-4-2.png" alt="퍼블리싱 디테일 BNSYSTEM 컨텐츠 이미지-4-2" />                         
                     </div>
                 `
             }
@@ -582,24 +586,22 @@ openPublishing = (itemIdx) => {
                 percent: '100%',
             },
             {
-            }
-        ],
-        [
-            {
-                title: 'PINTJOB',
-                period: '2023.01 - 2023.01',
-                mainImg: './images/project-pintjob-main.png',            
-                toolList: `
-                    <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
-                    <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
-                    <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
-                    <img src=${badgeList[5].tool} alt="툴 뱃지 이미지-${5}" />
-                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
-                    <img src=${badgeList[8].tool} alt="툴 뱃지 이미지-${8}" />
-                `,
-                percent: '50%',
-            },
-            {
+                contents: `
+                    <div class="col">
+                        <img src="./images/project-singletogether-contents-1-1.gif" alt="퍼블리싱 디테일 SINGLETOGETHER 컨텐츠 이미지-1-1" /> 
+                        <p>초기 스플래쉬 레이아웃 표현</p>
+                    </div>
+                    <div class="col">
+                        <img src="./images/project-singletogether-contents-2-1.png" alt="퍼블리싱 디테일 SINGLETOGETHER 컨텐츠 이미지-2-1" /> 
+                        <p>테마 토글 기능으로 라이트/다크 모드</p>
+                        <img src="./images/project-singletogether-contents-2-2.png" alt="퍼블리싱 디테일 SINGLETOGETHER 컨텐츠 이미지-2-2" />                         
+                    </div>
+                    <div class="col">
+                        <img src="./images/project-singletogether-contents-3-1.png" alt="퍼블리싱 디테일 SINGLETOGETHER 컨텐츠 이미지-3-1" /> 
+                        <p>검색창 기능 구현과 테마에 따른 변화 표현</p>
+                        <img src="./images/project-singletogether-contents-3-2.png" alt="퍼블리싱 디테일 SINGLETOGETHER 컨텐츠 이미지-3-2" />                         
+                    </div>
+                `
             }
         ]
     ];

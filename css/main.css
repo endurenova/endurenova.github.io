@@ -550,6 +550,7 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-descrip
   line-height: 2.4;
   color: var(--grayScale-n5);
   border: 1px solid var(--grayScale-n5);
+  text-indent: 1vw;
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul { /* 프로젝트 설명 */
   display: flex;
@@ -1090,6 +1091,41 @@ body .designModal__window .window-body .window__inner .bottom-contents > img {
 body .designModal__window .window-body .window__inner .bottom-contents > iframe {
   width: 48vw;
   height: 27vw;
+}
+body .designModal__window .window-body .window__inner .bottom-contents > a {
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  background-color: #F24E1E;
+  padding: 1% 3%;
+  margin-top: 5%;
+}
+body .designModal__window .window-body .window__inner .bottom-contents > a > span {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: var(--small-text-size);
+  line-height: 1.4;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-flow: row nowrap;
+  line-height: var(--normal-text-size);
+  color: #fff;
+  padding-right: 1%;
+  word-break: keep-all;
+}
+body .designModal__window .window-body .window__inner .bottom-contents > a > span::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: var(--normal-text-size);
+  height: var(--normal-text-size);
+  background-color: #fff;
+  mask: url(../icon/link-btn.svg) no-repeat center;
+  -webkit-mask: url(../icon/link-btn.svg) no-repeat center;
 }
 body .designModal__tool {
   position: absolute;
