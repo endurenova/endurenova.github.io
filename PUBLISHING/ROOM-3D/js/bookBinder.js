@@ -258,13 +258,16 @@ bookSliderToggle.addEventListener('mouseup', () => {
     currentPage = bookSliderToggle.getAttribute('value');
 });
 const indexMain = 'C8C3B3';
-const singleMain = '31AF79';
+// const singleMain = '31AF79';
+const singleMain = '6C5F5B';
 const pintMain = '7DBBAD';
 const overMain = '794C4C';
 const dotoriMain = '50661E';
 const calMain = 'B8A292';
 const bnMain = '040214';
-const fairyMain = '646496';
+// const fairyMain = '646496';
+const fairyMain = '706233';
+
 const mainHexColor = [indexMain, singleMain, pintMain, overMain, dotoriMain, calMain, bnMain, fairyMain];
 
 hex2dec = (hexString) => {
