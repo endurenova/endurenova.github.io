@@ -688,7 +688,7 @@ initPage = ()=>{
 
         $nextBtn = () => { // 이전 버튼 이벤트
             $(".web-publishing .project-list").animate({left:"-=" + swipeItemWidth},"fast", function(){
-                $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
+                $(".web-publishing .project-film").last().appendTo($(".web-publishing .project-list"));
                 $(".web-publishing .project-list").css("left", (-swipeItemWidth));
             });
         }
