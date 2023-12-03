@@ -24,31 +24,41 @@ const badgeList = [
         progress: 80
     },
     { // 4
+        name: "PHP",
+        tool: 'https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white',
+        progress: 20
+    },  
+    { // 5
+        name: "MySQL",
+        tool: 'https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white',
+        progress: 30
+    },
+    { // 6
         name: "React",
         tool: 'https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white',
-        progress: 50
+        progress: 20
     },
-    { // 5
+    { // 7
         name: "jQuery",
         tool: 'https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white',
         progress: 70
     },
-    { // 6
+    { // 8
         name: "Python",
         tool: 'https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white',
         progress: 80
     },
-    { // 7
+    { // 9
         name: "Photoshop",
         tool: 'https://img.shields.io/badge/Photoshop-31A8FF?style=flat&logo=adobephotoshop&logoColor=white',
         progress: 85
     }, 
-    { // 8
+    { // 10
         name: "Illustrator",
         tool: 'https://img.shields.io/badge/Illustrator-FF9A00?style=flat&logo=adobeillustrator&logoColor=white',
         progress: 85
     }, 
-    { // 9
+    { // 11
         name: "Figma",
         tool: 'https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white',
         progress: 90
@@ -86,19 +96,9 @@ createProfile = () => {
             subject: '기계설계 2D/3D 실기 양성과정 수료',
         },
         {
-            period: '2018.03 - 2018.06 &#40;72h&#41;',
-            institution: '인덕대학교',
-            subject: 'GOM 취업역량 Skill-up 아카데미 11기 심화반 이수',
-        },
-        {
             period: '2018.01 - 2018.01',
             institution: '인덕대학교',
             subject: '솔리드웍스 CSWA, CSWP 이수',
-        },
-        {
-            period: '2017.12 - 2018.01 &#40;33h&#41;',
-            institution: '인덕대학교',
-            subject: 'GOM 취업역량 Skill-up 아카데미 11기 기초반 이수',
         },
         {
             period: '2017.01 - 2017.05 &#40;96h&#41;',
@@ -124,11 +124,6 @@ createProfile = () => {
             period: '2011.03 - 2012.01',
             institution: '아현산업정보학교',
             subject: '화훼조경디자인 수료',
-        },
-        {
-            period: '2010.08 - 2010.12 &#40;94h&#41;',
-            institution: '경복고등학교',
-            subject: '음악영재학급 작곡 수료',
         },
     ];
     let experience = '';
@@ -259,8 +254,8 @@ createDesign = () => {
                 title: 'CALENDAR',
                 mainImg: './images/design-calendar-main.png', 
                 toolList: `
-                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" /> 
-                    <img src=${badgeList[8].tool} alt="툴 뱃지 이미지-${8}" />                  
+                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" /> 
+                    <img src=${badgeList[10].tool} alt="툴 뱃지 이미지-${10}" />                  
                 `,
                 subject: "달력 만들기",
                 description: "창작한 캐릭터로 일러스트레이터를 활용해 드로잉하고 포토샵으로 목업을 한 작업",
@@ -277,7 +272,7 @@ createDesign = () => {
                 title: 'OVERTONES',
                 mainImg:  './images/design-overtones-mockup.png', 
                 toolList: `
-                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
+                    <img src=${badgeList[11].tool} alt="툴 뱃지 이미지-${11}" />
                 `,
                 subject: "모바일 쇼핑몰 디자인",
                 description: "피그마로 인터렉션 쇼핑몰 디자인 작업",
@@ -300,7 +295,7 @@ createDesign = () => {
                 title: 'DOTORISUP',
                 mainImg: './images/design-dotorisup-mockup.png', 
                 toolList: `
-                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
+                    <img src=${badgeList[11].tool} alt="툴 뱃지 이미지-${11}" />
                 `,
                 subject: "도토리숲 쇼핑몰 모작",
                 description: "피그마로 도토리숲 쇼핑몰 인터렉션 모작 연습 작업",
@@ -326,7 +321,7 @@ createDesign = () => {
                     <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
                     <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
-                    <img src=${badgeList[5].tool} alt="툴 뱃지 이미지-${5}" />                    
+                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />                    
                 `,
                 subject: "제이쿼리 애니메이션",
                 description: "제이쿼리를 활용해 애니메이션 효과 만들기",
@@ -340,7 +335,7 @@ createDesign = () => {
                 title: 'HANATOUR',
                 mainImg: './images/design-hanatour-mockup.png',
                 toolList: `
-                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
+                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
                 `,
                 subject: "포토샵 기능 연습",
                 description: "포토샵 기능을 활용한 다양한 효과 다루는 연습",
@@ -354,7 +349,7 @@ createDesign = () => {
                 title: 'LEQUIPSHOP',
                 mainImg: './images/design-lequipshop-mockup.png',
                 toolList: `
-                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
+                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
                 `,
                 subject: "UI/UX 디자인 연습",
                 description: "실제 쇼핑몰을 참고하여 포토샵으로 UI/UX 배치 연습",
@@ -555,7 +550,7 @@ openPublishing = (itemIdx) => {
                     <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
                     <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
-                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
+                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
                 `,
                 percent: '100%',
             },
@@ -594,8 +589,8 @@ openPublishing = (itemIdx) => {
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
                     <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
                     <img src=${badgeList[5].tool} alt="툴 뱃지 이미지-${5}" />
-                    <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />
-                    <img src=${badgeList[8].tool} alt="툴 뱃지 이미지-${8}" />
+                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
+                    <img src=${badgeList[10].tool} alt="툴 뱃지 이미지-${10}" />
                 `,
                 percent: '100%',
             },
@@ -686,17 +681,19 @@ initPage = ()=>{
         $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
         $(".web-publishing .project-list").css("left", (-swipeItemWidth));
 
-        $nextBtn = () => { // 이전 버튼 이벤트
-            $(".web-publishing .project-list").animate({left:"-=" + swipeItemWidth},"fast", function(){
-                $(".web-publishing .project-film").last().appendTo($(".web-publishing .project-list"));
-                $(".web-publishing .project-list").css("left", (-swipeItemWidth));
-            });
-        }
-
-        $prevBtn = () => { // 다음 버튼 이벤트
+        $prevBtn = () => {  // 이전 버튼 이벤트
             $(".web-publishing .project-list").animate({left:"+=" + swipeItemWidth},"fast", function(){
                 $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
                 $(".web-publishing .project-list").css("left", (-swipeItemWidth));
+                console.log('next_right')
+            });
+        }
+
+        $nextBtn = () => { // 다음 버튼 이벤트
+            $(".web-publishing .project-list").animate({left:"-=" + swipeItemWidth},"fast", function(){
+                $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
+                $(".web-publishing .project-list").css("left", (-swipeItemWidth));
+                console.log('prev_left')
             });
         }
 
@@ -716,6 +713,7 @@ initPage = ()=>{
         }
 
         // 슬라이드 버튼
+        let backImg = 0;
         $("span.direction").on("click",function(){
             itemIdx = document.querySelector(".web-publishing .project-list").children[2].dataset.itemIndex;
             if ($(this).hasClass("prev-left")) {
@@ -766,8 +764,14 @@ initPage = ()=>{
     };
     designBox.querySelector(".slide-box").addEventListener("wheel", designWheelListener); // 가로 휠 추가
 
-}; initPage();
-
+}; 
+document.addEventListener('DOMContentLoaded', () => {
+    initPage();
+});
+document.addEventListener('resize', () => {
+    
+    createPublishing();
+});
 const headerBar = document.querySelector('header');
 const mainBottom = document.querySelector("main").getBoundingClientRect().bottom;
 const profileBottom = document.querySelector("#profile").getBoundingClientRect().bottom;
