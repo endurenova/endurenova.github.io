@@ -685,7 +685,6 @@ initPage = ()=>{
             $(".web-publishing .project-list").animate({left:"+=" + swipeItemWidth},"fast", function(){
                 $(".web-publishing .project-film").last().prependTo($(".web-publishing .project-list"));
                 $(".web-publishing .project-list").css("left", (-swipeItemWidth));
-                console.log('next_right')
             });
         }
 
@@ -693,7 +692,6 @@ initPage = ()=>{
             $(".web-publishing .project-list").animate({left:"-=" + swipeItemWidth},"fast", function(){
                 $(".web-publishing .project-film").first().appendTo($(".web-publishing .project-list"));
                 $(".web-publishing .project-list").css("left", (-swipeItemWidth));
-                console.log('prev_left')
             });
         }
 
@@ -713,16 +711,23 @@ initPage = ()=>{
         }
 
         // 슬라이드 버튼
-        let backImg = 0;
         $("span.direction").on("click",function(){
-            itemIdx = document.querySelector(".web-publishing .project-list").children[2].dataset.itemIndex;
             if ($(this).hasClass("prev-left")) {
                 $prevBtn();
-                paginateActive();                
+                paginateActive();
             } else if ($(this).hasClass("next-right")) {
                 $nextBtn();
                 paginateActive();
-            }        
+            }
+                
+            setTimeout(() => {
+                document.querySelector(".web-publishing .project-list").children[0].classList.remove("fff");
+                document.querySelector(".web-publishing .project-list").children[1].classList.add("fff");
+                document.querySelector(".web-publishing .project-list").children[2].classList.remove("fff");
+                itemIdx = document.querySelector(".project-film.fff").dataset.itemIndex;
+                $(".web-publishing").css("backgroundImage", `url(../images/publishing-${itemIdx}.png)`);
+            }, 300);
+            
         });
         
         // 페이지 자동 액티브
@@ -731,7 +736,6 @@ initPage = ()=>{
             itemIdx = document.querySelector(".web-publishing .project-list").children[2].dataset.itemIndex;
             $(".pagination-list li").siblings().removeClass("active");
             $(".pagination-list li").eq(itemIdx).addClass("active");
-            $(".web-publishing").css("backgroundImage", `url(../images/publishing-${itemIdx}.png)`);
         }
 
         // 페이지네이션 버튼 이벤트
