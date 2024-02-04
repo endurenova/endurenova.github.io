@@ -92,9 +92,8 @@ body header .header-bar .header__menu-box .header__menu-list > li > a {
   height: inherit;
 }
 body header .header-bar .header__menu-box .header__menu-list > li > a > span {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
-  font-size: var(--normal-text-size);
+  font-size: var(--regular-text-size);
   line-height: 1.4;
   color: var(--theme-text);
 }
@@ -116,7 +115,6 @@ body aside .quick-sidebar {
 }
 body aside .quick-sidebar .quick-sidebar__menu {
   /* 메뉴 리스트 */
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 900;
   font-size: var(--mini-text-size);
   text-align: center;
@@ -129,8 +127,8 @@ body aside .quick-sidebar .quick-sidebar__menu .qMenu-toggle {
   display: none;
 }
 body aside .quick-sidebar .quick-sidebar__menu .qMenu-label {
-  width: 11vmin;
-  height: 11vmin;
+  width: 10vmin;
+  height: 10vmin;
   border-radius: 100%;
   order: 2;
   cursor: pointer;
@@ -157,8 +155,8 @@ body aside .quick-sidebar .quick-sidebar__menu-list {
 }
 body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu {
   /* 퀵 메뉴 버튼 */
-  width: 11vmin;
-  height: 11vmin;
+  width: 10vmin;
+  height: 10vmin;
   border-radius: 100%;
   display: flex;
   position: absolute;
@@ -190,8 +188,8 @@ body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu__btn {
   position: relative;
 }
 body aside .quick-sidebar .quick-sidebar__menu-list .quick-menu__btn img {
-  width: 11vmin;
-  height: 11vmin;
+  width: 10vmin;
+  height: 10vmin;
   border-radius: 100%;
   position: relative;
   z-index: 2;
@@ -232,7 +230,6 @@ body aside .quick-sidebar .quick-sidebar__top .qTop-toggle {
   border-radius: 1vmin;
 }
 body aside .quick-sidebar .quick-sidebar__top .qTop-toggle span {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--normal-text-size);
   text-align: center;
@@ -267,7 +264,6 @@ body aside.detail-active .open-detail .tooltip:hover .tooltip__left {
   opacity: 1;
 }
 body aside.detail-active .open-detail .tooltip__left {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: var(--small-text-size);
   line-height: 1.4;
@@ -343,92 +339,106 @@ body #portfolio section {
   /* 공통 섹션 */
   display: flex;
   position: relative;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   background-color: var(--grayScale-n1);
   color: var(--grayScale-n5);
-  transition: var(--normal-speed);
 }
 body #portfolio section .wrap {
   position: relative;
   margin: 0 auto;
   width: var(--wrapper-width);
 }
-body #portfolio section .wrap h1 {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+body #portfolio section > .wrap {
+  position: relative;
+  margin: 0 auto;
+  width: var(--wrapper-width);
+  height: 80%;
+}
+body #portfolio section > .wrap > h1 {
   font-weight: 700;
   font-size: var(--large-text-size);
-  line-height: 2.4;
+  height: 12%;
 }
 body #portfolio section.profile {
   /* 프로필 섹션 */
   flex-flow: column;
 }
 body #portfolio section.profile h2 {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--medium-text-size);
   line-height: 1.4;
-  line-height: 2;
+  line-height: 1.6;
 }
 body #portfolio section.profile .article-box {
-  display: flex;
-  flex-flow: row;
-  position: relative;
   width: 100%;
-  height: 75%;
+  height: 88%;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
   border: 1px solid var(--theme-text);
   overflow: hidden;
 }
 body #portfolio section.profile .article-box .about-box {
+  width: 30%;
+  height: 100%;
+}
+body #portfolio section.profile .article-box .about-box .wrap {
   display: flex;
   flex-flow: column;
   position: relative;
   justify-content: center;
-  padding-left: 4%;
   margin: 0 auto;
-  width: 40%;
+  width: 70%;
   height: 100%;
 }
-body #portfolio section.profile .article-box .about-box > img {
-  width: 50%;
+body #portfolio section.profile .article-box .about-box .wrap .about-list {
+  width: 100%;
+  text-wrap: nowrap;
 }
-body #portfolio section.profile .article-box .about-box .about-name strong {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+body #portfolio section.profile .article-box .about-box .wrap .about-list .about-name {
+  margin: 1% 0;
+}
+body #portfolio section.profile .article-box .about-box .wrap > img {
+  width: 100%;
+  margin-bottom: 4%;
+}
+body #portfolio section.profile .article-box .about-box .wrap .about-name strong {
   font-weight: 700;
-  font-size: var(--medium-text-size);
+  font-size: var(--regular-text-size);
   line-height: 1.6;
   display: inline-block;
 }
-body #portfolio section.profile .article-box .about-box .about-name span {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+body #portfolio section.profile .article-box .about-box .wrap .about-name span {
   font-weight: 500;
   font-size: var(--small-text-size);
   line-height: 1.4;
   color: var(--theme-text);
   margin: 0% 2%;
 }
-body #portfolio section.profile .article-box .about-box .about-info ol li span:nth-of-type(1) {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
-  font-weight: 700;
+body #portfolio section.profile .article-box .about-box .wrap .about-info ol li span:nth-of-type(1) {
+  font-weight: 600;
   font-size: var(--normal-text-size);
   line-height: 1.4;
   display: inline-block;
-  width: 20%;
-  margin: 0% 2%;
+  width: 25%;
+  text-indent: calc(var(--normal-text-size) / 3);
 }
-body #portfolio section.profile .article-box .about-box .about-info ol li span:nth-of-type(2) {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+body #portfolio section.profile .article-box .about-box .wrap .about-info ol li span:nth-of-type(2) {
   font-weight: 400;
   font-size: var(--small-text-size);
   line-height: 1.4;
   color: var(--theme-text);
 }
+body #portfolio section.profile .article-box > .resume-divider {
+  display: none;
+}
 body #portfolio section.profile .article-box .history-box {
   position: relative;
-  border: 1px solid var(--theme-text);
-  width: 60%;
-  height: 80vmin;
+  border-left: 1px solid var(--theme-text);
+  width: 70%;
+  height: 100%;
   overflow-y: scroll;
 }
 body #portfolio section.profile .article-box .history-box::-webkit-scrollbar {
@@ -443,42 +453,42 @@ body #portfolio section.profile .article-box .history-box::-webkit-scrollbar-thu
 body #portfolio section.profile .article-box .history-box::-webkit-scrollbar-track {
   background-color: var(--grayScale-n2);
 }
-body #portfolio section.profile .article-box .history-box ol.experience-list,
-body #portfolio section.profile .article-box .history-box ol.education-list {
+body #portfolio section.profile .article-box .history-box .resume-divider {
+  border-color: var(--theme-text);
+}
+body #portfolio section.profile .article-box .history-box .list-box {
+  margin: 2% auto;
+}
+body #portfolio section.profile .article-box .history-box .list-box ol.experience-list,
+body #portfolio section.profile .article-box .history-box .list-box ol.education-list {
   /* 경험 & 교육 리스트 */
   display: grid;
   position: relative;
   width: 100%;
-  row-gap: 1vmin;
+  row-gap: 2vmin;
   padding: 1%;
 }
-body #portfolio section.profile .article-box .history-box ol.experience-list > li,
-body #portfolio section.profile .article-box .history-box ol.education-list > li {
+body #portfolio section.profile .article-box .history-box .list-box ol.experience-list > li,
+body #portfolio section.profile .article-box .history-box .list-box ol.education-list > li {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
   width: inherit;
 }
-body #portfolio section.profile .article-box .history-box ol.experience-list > li span,
-body #portfolio section.profile .article-box .history-box ol.education-list > li span {
-  padding: 0.5%;
-}
-body #portfolio section.profile .article-box .history-box ol.experience-list > li span:nth-of-type(1),
-body #portfolio section.profile .article-box .history-box ol.education-list > li span:nth-of-type(1) {
+body #portfolio section.profile .article-box .history-box .list-box ol.experience-list > li span:nth-of-type(1),
+body #portfolio section.profile .article-box .history-box .list-box ol.education-list > li span:nth-of-type(1) {
   /* 기간 */
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: var(--small-text-size);
   line-height: 1.4;
   grid-area: 1/1/2/4;
 }
-body #portfolio section.profile .article-box .history-box ol.experience-list > li span:nth-of-type(2),
-body #portfolio section.profile .article-box .history-box ol.education-list > li span:nth-of-type(2) {
+body #portfolio section.profile .article-box .history-box .list-box ol.experience-list > li span:nth-of-type(2),
+body #portfolio section.profile .article-box .history-box .list-box ol.education-list > li span:nth-of-type(2) {
   /* 기관 */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: var(--small-text-size);
   line-height: 1.4;
@@ -486,8 +496,8 @@ body #portfolio section.profile .article-box .history-box ol.education-list > li
   text-align: center;
   grid-area: 1/4/3/6;
 }
-body #portfolio section.profile .article-box .history-box ol.experience-list > li span:nth-of-type(2)::after,
-body #portfolio section.profile .article-box .history-box ol.education-list > li span:nth-of-type(2)::after {
+body #portfolio section.profile .article-box .history-box .list-box ol.experience-list > li span:nth-of-type(2)::after,
+body #portfolio section.profile .article-box .history-box .list-box ol.education-list > li span:nth-of-type(2)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -495,10 +505,9 @@ body #portfolio section.profile .article-box .history-box ol.education-list > li
   width: 100%;
   border-left: 0.1px solid var(--theme-text-op);
 }
-body #portfolio section.profile .article-box .history-box ol.experience-list > li span:nth-of-type(3),
-body #portfolio section.profile .article-box .history-box ol.education-list > li span:nth-of-type(3) {
+body #portfolio section.profile .article-box .history-box .list-box ol.experience-list > li span:nth-of-type(3),
+body #portfolio section.profile .article-box .history-box .list-box ol.education-list > li span:nth-of-type(3) {
   /* 내용 */
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: var(--small-text-size);
   line-height: 1.4;
@@ -562,18 +571,15 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-descrip
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > .subject {
   /* 주제 */
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: var(--regular-text-size);
-  line-height: 1.4;
+  line-height: 1.6;
   color: var(--theme-text);
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > .title {
   /* 프로젝트 제목 */
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--large-text-size);
-  line-height: 2.4;
   color: var(--grayScale-n5);
   border: 1px solid var(--grayScale-n5);
   text-indent: 1vw;
@@ -590,9 +596,8 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-descrip
   position: relative;
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
-  font-size: var(--normal-text-size);
+  font-size: var(--regular-text-size);
   line-height: 1.4;
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span:nth-of-type(1) {
@@ -623,10 +628,10 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-image i
   position: relative;
   height: 100%;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .sub-description {
+body #portfolio section.web-publishing.open .publishing-detail-box .small-description {
   /* 디테일 설명 */
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap {
+body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap {
   display: flex;
   position: relative;
   flex-flow: row nowrap;
@@ -634,14 +639,14 @@ body #portfolio section.web-publishing.open .publishing-detail-box .sub-descript
   width: fit-content;
   height: 100%;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents {
+body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents {
   display: flex;
   position: relative;
   flex-flow: row nowrap;
   align-items: center;
   height: 100%;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .col {
+body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col {
   display: flex;
   position: relative;
   flex-flow: column;
@@ -651,35 +656,33 @@ body #portfolio section.web-publishing.open .publishing-detail-box .sub-descript
   margin: 0 1%;
   padding: 0 3%;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .col > img {
+body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > img {
   display: block;
   position: relative;
   max-width: 75vw;
   width: auto;
   max-height: 42vh;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .col > p {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > p {
   font-weight: 500;
   font-size: var(--regular-text-size);
-  line-height: 1.4;
+  line-height: 1.6;
   width: 100%;
   color: var(--theme-text);
   padding: 3% 0;
   text-align: center;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .row {
+body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row {
   display: flex;
   position: relative;
   flex-flow: row;
   align-items: center;
   width: fit-content;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .sub-description > .wrap > .contents .row > p {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row > p {
   font-weight: 500;
   font-size: var(--regular-text-size);
-  line-height: 1.4;
+  line-height: 1.6;
   width: 18vh;
   color: var(--theme-text);
   padding: 0 3%;
@@ -687,7 +690,7 @@ body #portfolio section.web-publishing.open .publishing-detail-box .sub-descript
 }
 body #portfolio section.web-publishing .slide-box {
   width: 100%;
-  height: 80%;
+  height: 88%;
   width: 46vw;
   position: relative;
   overflow: hidden;
@@ -758,14 +761,12 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film .p
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > h3 {
   /* 프로젝트 제목 */
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--medium-text-size);
   line-height: 1.4;
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > p {
   /* 사용 툴 */
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: var(--small-text-size);
   line-height: 1.4;
@@ -827,20 +828,21 @@ body #portfolio section.design {
   /* 디자인 섹션 */
 }
 body #portfolio section.design .slide-box {
+  width: 100%;
+  height: 88%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 80%;
+  flex-flow: column;
+  justify-content: space-around;
+  padding: 0 3px;
 }
 body #portfolio section.design .slide-box .project-list {
   /* 프로젝트 리스트 (카드 모양) */
   display: flex;
+  align-items: center;
   position: relative;
-  width: auto;
-  height: 100%;
-  user-select: none;
-  overflow-x: scroll;
+  width: 100%;
+  height: 85%;
 }
 body #portfolio section.design .slide-box .project-list::-webkit-scrollbar {
   /* 스크롤바의 너비 */
@@ -856,20 +858,16 @@ body #portfolio section.design .slide-box .project-list::-webkit-scrollbar-track
 }
 body #portfolio section.design .slide-box .project-list li {
   /* 프로젝트 리스트 (카드 모양) */
-  margin: auto 1%;
 }
 body #portfolio section.design .slide-box .project-list li .project-item {
-  width: 45vmin;
-  height: 60vmin;
-  padding: 1vw;
   display: flex;
   flex-flow: column;
   position: relative;
   justify-content: center;
   background-color: var(--grayScale-n2);
-  width: 38vw;
-  height: 70vh;
-  box-shadow: 0px 0px 3px 4px var(--grayScale-n3);
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 3px 3px var(--grayScale-n3);
   padding: 0% 5%;
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div {
@@ -886,7 +884,6 @@ body #portfolio section.design .slide-box .project-list li .project-item > div:n
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > h3 {
   /* 디자인 타이틀 */
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--medium-text-size);
   line-height: 1.4;
@@ -905,7 +902,7 @@ body #portfolio section.design .slide-box .project-list li .project-item > div:n
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) {
   /* 디자인 메인 이미지 */
-  height: 64%;
+  height: fit-content;
   overflow: hidden;
   background-color: var(--grayScale-n1);
 }
@@ -915,10 +912,10 @@ body #portfolio section.design .slide-box .project-list li .project-item > div:n
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) {
   /* 디테일 버튼 */
-  height: 18%;
+  margin-top: 5%;
+  align-items: end;
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) button.design-modal-btn {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: var(--small-text-size);
   line-height: 1.4;
@@ -933,12 +930,28 @@ body #portfolio section.design .slide-box .project-list li .project-item > div:n
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) button.design-modal-btn:hover {
   color: var(--grayScale-n5);
 }
+body #portfolio section.design .slide-box .swiper-pagination {
+  position: relative;
+}
+body #portfolio section.design .slide-box .swiper-pagination .swiper-pagination-bullet {
+  width: 1.8vmin;
+  height: 1.8vmin;
+  margin: auto 1.2vmin;
+  border-radius: 50%;
+  background-color: var(--grayScale-n5);
+  opacity: 1;
+}
+body #portfolio section.design .slide-box .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 4.8vmin;
+  border-radius: 2.4vmin;
+  background-color: var(--tailed-n0);
+}
 body #portfolio section.skill {
   /* 스킬 섹션 */
 }
 body #portfolio section.skill .skill-box {
   width: 100%;
-  height: 80%;
+  height: 88%;
 }
 body #portfolio section.skill .skill-box .skill-list {
   /* 스킬 리스트 */
@@ -954,19 +967,20 @@ body #portfolio section.skill .skill-box .skill-list li {
   display: flex;
   position: relative;
   flex-flow: row;
-  width: 90%;
-  height: 5vmin;
-  margin: 0.5vmin 0;
+  align-items: center;
+  width: 95%;
+  height: 6%;
   overflow: hidden;
 }
 body #portfolio section.skill .skill-box .skill-list li .skill-badge {
   /* 스킬 마크 */
+  height: 100%;
   z-index: 1;
 }
 body #portfolio section.skill .skill-box .skill-list li .skill-level {
   position: absolute;
   left: 0.2vmin;
-  width: 85%;
+  width: 95%;
   height: 100%;
 }
 body #portfolio section.skill .skill-box .skill-list li .skill-level__progress {
@@ -977,6 +991,9 @@ body #portfolio section.skill .skill-box .skill-list li .skill-level__progress {
   border-top-right-radius: 1.5vmin;
   border-bottom-right-radius: 1.5vmin;
   transition: 2s;
+}
+body #portfolio section.skill .skill-box .skill-list li .skill-level__progress {
+  left: 1%;
 }
 body #portfolio section.skill .skill-box .skill-list li:nth-of-type(1) .skill-level__progress {
   /* HTML5 */
@@ -1034,10 +1051,9 @@ body #portfolio section.skill .skill-box .skill-list li .skill-percent {
   right: 0;
   color: var(--grayScale-n5);
   height: inherit;
-  width: 15%;
+  width: 10%;
 }
 body #portfolio section.skill .skill-box .skill-list li .skill-percent__binder {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--regular-text-size);
   line-height: 1.4;
@@ -1113,10 +1129,8 @@ body .designModal__window .window-body .window__inner .head-title {
 }
 body .designModal__window .window-body .window__inner .head-title > h2 {
   /* 타이틀 */
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--large-text-size);
-  line-height: 2.4;
   line-height: 1.8;
 }
 body .designModal__window .window-body .window__inner .head-title > span {
@@ -1135,26 +1149,23 @@ body .designModal__window .window-body .window__inner .middle-description {
   margin: 5% 0%;
 }
 body .designModal__window .window-body .window__inner .middle-description > h3 {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--medium-text-size);
   line-height: 1.4;
   font-weight: 500;
 }
 body .designModal__window .window-body .window__inner .middle-description > p {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: var(--regular-text-size);
-  line-height: 1.4;
+  line-height: 1.6;
   font-weight: 400;
   text-align: center;
   word-break: keep-all;
   padding: 2% 10%;
 }
 body .designModal__window .window-body .window__inner .middle-description > span {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
-  font-size: var(--normal-text-size);
+  font-size: var(--regular-text-size);
   line-height: 1.4;
   background-color: var(--tailed-n0);
   padding: 1% 3%;
@@ -1196,9 +1207,8 @@ body .designModal__window .window-body .window__inner .bottom-contents .link-box
   border-radius: 1vh;
 }
 body .designModal__window .window-body .window__inner .bottom-contents .link-box > a > span {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
-  font-size: var(--normal-text-size);
+  font-size: var(--regular-text-size);
   line-height: 1.4;
   display: flex;
   position: relative;
@@ -1212,12 +1222,11 @@ body .designModal__tool {
   position: absolute;
   top: 0;
   right: 25%;
-  transform: translateX(11vmin);
-  width: 11vmin;
+  transform: translateX(10vmin);
+  width: 10vmin;
   background-color: var(--theme-text);
 }
 body .designModal__tool > .close {
-  font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-weight: 700;
   font-size: var(--medium-text-size);
   line-height: 1.4;
@@ -1233,4 +1242,79 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  body #portfolio {
+    /* 포트폴리오(메인) */
+  }
+  body #portfolio section {
+    /* 공통 섹션 */
+  }
+  body #portfolio section.profile .article-box {
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    border: 1px solid var(--theme-text);
+    overflow-y: scroll;
+  }
+  body #portfolio section.profile .article-box .about-box {
+    width: 100%;
+    height: 50%;
+    margin: 4% auto 2%;
+  }
+  body #portfolio section.profile .article-box .about-box .wrap {
+    position: relative;
+    margin: 0 auto;
+    flex-flow: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: var(--wrapper-width);
+  }
+  body #portfolio section.profile .article-box .about-box .wrap .about-list {
+    margin: auto 5%;
+  }
+  body #portfolio section.profile .article-box .about-box .wrap > img {
+    width: fit-content;
+    height: 100%;
+    margin-bottom: 0%;
+  }
+  body #portfolio section.profile .article-box .about-box .wrap .about-info ol li span:nth-of-type(1) {
+    font-weight: 600;
+    font-size: var(--normal-text-size);
+    line-height: 1.4;
+    display: inline-block;
+    width: 12%;
+    text-indent: calc(var(--normal-text-size) / 3);
+  }
+  body #portfolio section.profile .article-box .about-box .wrap .about-info ol li span:nth-of-type(2) {
+    font-weight: 400;
+    font-size: var(--small-text-size);
+    line-height: 1.4;
+    color: var(--theme-text);
+  }
+  body #portfolio section.profile .article-box > .resume-divider {
+    display: block;
+    width: 90%;
+    margin: 2% auto 0;
+  }
+  body #portfolio section.profile .article-box .history-box {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    border-left: none;
+    overflow-y: unset;
+  }
+  body #portfolio section.profile .article-box::-webkit-scrollbar {
+    /* 스크롤바의 너비 */
+    width: 1vmin;
+  }
+  body #portfolio section.profile .article-box::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background-color: var(--tailed-n0);
+    border-radius: 10px;
+  }
+  body #portfolio section.profile .article-box::-webkit-scrollbar-track {
+    background-color: var(--grayScale-n2);
+  }
 }

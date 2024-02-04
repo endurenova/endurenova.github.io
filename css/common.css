@@ -1,51 +1,50 @@
 :root {
-    --wrapper-width: 90%;
-    --inner-wrapper-width: 95%;
+  --wrapper-width: 90%;
+  --inner-wrapper-width: 95%;
 
-    --mini-text-size: 14px; /* quick-menu text */
-    --small-text-size: 16px;
-    --normal-text-size: 20px;
-    --regular-text-size: 28px; /* project-item title */
-    --medium-text-size: 36px; /* sub-title */
-    --big-text-size: 44px; /* strong,  sub-title */
-    --large-text-size: 60px; /* main-title (h1) */
+  --mini-text-size: 14px; /* quick-menu text */
+  --small-text-size: clamp(14px, 1.094vw, 18px);
+  --normal-text-size: clamp(16px, 1.25vw, 20px);
+  --regular-text-size: clamp(20px, 1.563vw, 24px); /* project-item title */
+  --medium-text-size: clamp(24px, 1.875vw, 36px); /* sub-title */
+  --large-text-size: clamp(36px, 2.813vw, 48px); /* main-title (h1) */
 
-    --slow-speed: 0.6s;
-    --normal-speed: 0.3s;
-    --fast-speed: 0.1s;
+  --slow-speed: 0.6s;
+  --normal-speed: 0.3s;
+  --fast-speed: 0.1s;
 
-    --tailed-n0: #cedb5b;
-    --tailed-n1: #eabecf;
-    --tailed-n2: #a3a8d6;
-    --tailed-n3: #ebc251;
-    --tailed-n4: #96a3ad;
+  --tailed-n0: #cedb5b;
+  --tailed-n1: #eabecf;
+  --tailed-n2: #a3a8d6;
+  --tailed-n3: #ebc251;
+  --tailed-n4: #96a3ad;
 
-    --color-navy1: #040214;
-    --color-navy2: #27374d;
-    --color-navy3: #526D82;
-    /* rgb (244, 186, 86) */
-    --theme-main: #fff5f3;
+  --color-navy1: #040214;
+  --color-navy2: #27374d;
+  --color-navy3: #526d82;
+  /* rgb (244, 186, 86) */
+  --theme-main: #fff5f3;
 
-    /* rgb (203, 109, 47) */
-    --theme-sub: #cfada3;
+  /* rgb (203, 109, 47) */
+  --theme-sub: #cfada3;
 
-    /* rgb (206, 218, 224) */
-    --theme-text: #cedae0;
+  /* rgb (206, 218, 224) */
+  --theme-text: #cedae0;
 
-    --grayScale-n5: #efefef;
-    --grayScale-n4: #d5d5d5;
-    --grayScale-n3: #808080;
-    --grayScale-n2: #2b2b2b;
-    --grayScale-n1: #111111;
+  --grayScale-n5: #efefef;
+  --grayScale-n4: #d5d5d5;
+  --grayScale-n3: #808080;
+  --grayScale-n2: #2b2b2b;
+  --grayScale-n1: #111111;
 
-    --abs-grayScale-n5: #efefef;
-    --abs-grayScale-n4: #d5d5d5;
-    --abs-grayScale-n3: #808080;
-    --abs-grayScale-n2: #2b2b2b;
-    --abs-grayScale-n1: #111111;
+  --abs-grayScale-n5: #efefef;
+  --abs-grayScale-n4: #d5d5d5;
+  --abs-grayScale-n3: #808080;
+  --abs-grayScale-n2: #2b2b2b;
+  --abs-grayScale-n1: #111111;
 
-    --blackLayer-opacity: rgba(0, 0, 0, 0.5);
-    /* 
+  --blackLayer-opacity: rgba(0, 0, 0, 0.5);
+  /* 
     싱글투게더
     background-color: #31AF79;
     background-color: #EAC99D;
@@ -98,14 +97,23 @@
 
 */
 }
+@media (max-width: 1280px) {
+  :root {
+    --small-text-size: clamp(14px, 1.367vw, 18px);
+    --normal-text-size: clamp(16px, 1.563vw, 20px);
+    --regular-text-size: clamp(20px, 1.953vw, 24px); /* project-item title */
+    --medium-text-size: clamp(24px, 2.344vw, 36px); /* sub-title */
+    --large-text-size: clamp(36px, 3.516vw, 48px); /* main-title (h1) */
+  }
+}
 body::-webkit-scrollbar {
-    width: 0.3vmin; /* 스크롤바의 너비 */
+  width: 0.3vmin; /* 스크롤바의 너비 */
 }
 body::-webkit-scrollbar-thumb {
-    height: 30%; /* 스크롤바의 길이 */
-    background-color: var(--theme-main);
-    border-radius: 10px;
+  height: 30%; /* 스크롤바의 길이 */
+  background-color: var(--theme-main);
+  border-radius: 10px;
 }
 body::-webkit-scrollbar-track {
-    background-color: var(--theme-text-op);
+  background-color: var(--theme-text-op);
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "title": "ROOM-3D",
+    "imgSrc": "./images/project-room3d-main.png",
+    "toolText": "HTML&nbsp;CSS&nbsp;JavaScript",
+    "contents": [
+      { "src": "./images/project-room3d-contents-1.png" },
+      { "src": "./images/project-room3d-contents-2.png" },
+      { "src": "./images/project-room3d-contents-3.png" }
+    ]
+  },
+  {
+    "title": "BNSYSTEM",
+    "imgSrc": "./images/project-bnsystem-main.png",
+    "toolText": "HTML&nbsp;CSS&nbsp;JavaScript&nbsp;Photoshop"
+  },
+  {
+    "title": "SINGLETOGETHER",
+    "imgSrc": "./images/project-singletogether-main.png",
+    "toolText": "HTML&nbsp;CSS&nbsp;JavaScript&nbsp;jQuery&nbsp;Photoshop&nbsp;Illustrator"
+  }
+]

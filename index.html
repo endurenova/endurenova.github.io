@@ -1,173 +1,218 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="subject" content="포트폴리오" />
-        <meta name="title" content="[포트폴리오] 웹 퍼블리셔 최주원" />
-        <meta name="description" content="프론트 엔드를 꿈꾸는" />
-        <meta name="author" content="최주원" />
-        <meta name="keywords" content="웹퍼블리셔, 웹 퍼블리싱, 퍼블리싱, 프론트엔드, 포트폴리오" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="subject" content="포트폴리오" />
+    <meta name="title" content="[포트폴리오] 웹 퍼블리셔 최주원" />
+    <meta name="description" content="프론트 엔드를 꿈꾸는" />
+    <meta name="author" content="최주원" />
+    <meta name="keywords" content="웹퍼블리셔, 웹 퍼블리싱, 퍼블리싱, 프론트엔드, 포트폴리오" />
 
-        <meta property="og:locale" content="ko_KR" />
-        <meta property="og:type" content="Website" />
-        <meta property="og:title" content="[포트폴리오] 웹 퍼블리셔 최주원" />
-        <meta property="og:description" content="" />
-        <meta property="og:image" content="https://endurenova.github.io/images/shake-og.png" />
-        <meta property="og:image" content="./icon/png_siru.png" />
-        <meta property="og:image:width" content="2048" />
-        <meta property="og:image:height" content="2048" />
-        <meta property="og:url" content="https://endurenova.github.io/" />
-        <meta property="og:site_name" content="[포트폴리오] 웹 퍼블리셔 최주원" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="[포트폴리오] 웹 퍼블리셔 최주원" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://endurenova.github.io/images/shake-og.png" />
+    <meta property="og:image" content="./icon/png_siru.png" />
+    <meta property="og:image:width" content="2048" />
+    <meta property="og:image:height" content="2048" />
+    <meta property="og:url" content="https://endurenova.github.io/" />
+    <meta property="og:site_name" content="[포트폴리오] 웹 퍼블리셔 최주원" />
 
-        <title>[포트폴리오] 웹 퍼블리셔 최주원</title>
-        <link rel="icon" href="https://endurenova.github.io/images/shake-og.png" />
-        <link rel="stylesheet" href="./css/reset.css" />
-        <link rel="stylesheet" href="./css/common.css" />
-        <link rel="stylesheet" href="./css/main.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
-    </head>
-    <body>
-        <header>
-            <nav class="header-bar">
-                <div class="header__menu-box">
-                    <ul class="header__menu-list">
-                        <li>
-                            <a href="#profile">
-                                <span>Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#web-publishing">
-                                <span>Web-Publishing</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#design">
-                                <span>Design</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#skill">
-                                <span>Skill</span>
-                            </a>
-                        </li>
-                    </ul>
+    <title>[포트폴리오] 웹 퍼블리셔 최주원</title>
+    <link rel="icon" href="https://endurenova.github.io/images/shake-og.png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="header-bar">
+        <div class="header__menu-box">
+          <ul class="header__menu-list">
+            <li>
+              <a href="#profile">
+                <span>Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="#web-publishing">
+                <span>Publishing</span>
+              </a>
+            </li>
+            <li>
+              <a href="#design">
+                <span>Design</span>
+              </a>
+            </li>
+            <li>
+              <a href="#skill">
+                <span>Skill</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <aside>
+      <nav class="quick-sidebar">
+        <div class="quick-sidebar__menu">
+          <input class="qMenu-toggle" type="checkbox" id="qMenuToggle" />
+          <ul class="quick-sidebar__menu-list">
+            <li class="quick-menu">
+              <a class="quick-menu__btn" href="#profile">
+                <img src="./icon/tailed-1.gif" alt="퀵메뉴 프로필 아이콘" />
+                <span>PROFILE</span>
+              </a>
+            </li>
+            <li class="quick-menu">
+              <a class="quick-menu__btn quick-inquiry" href="#web-publishing">
+                <img src="./icon/tailed-2.gif" alt="퀵메뉴 웹퍼블리싱 아이콘" />
+                <span>PUBLISHING</span>
+              </a>
+            </li>
+            <li class="quick-menu">
+              <a class="quick-menu__btn" href="#design">
+                <img src="./icon/tailed-3.gif" alt="퀵메뉴 디자인 아이콘" />
+                <span>DESIGN</span>
+              </a>
+            </li>
+            <li class="quick-menu">
+              <a class="quick-menu__btn" href="#skill">
+                <img src="./icon/tailed-4.gif" alt="퀵메뉴 스킬 아이콘" />
+                <span>SKILL</span>
+              </a>
+            </li>
+          </ul>
+          <label class="qMenu-label" for="qMenuToggle"></label>
+        </div>
+        <div class="quick-sidebar__top">
+          <a class="qTop-toggle" href="#none" onclick="$('html,body').animate({scrollTop:0},'slow')">
+            <span>TOP</span>
+          </a>
+        </div>
+      </nav>
+      <nav class="open-detail">
+        <div class="open-detail__home tooltip">
+          <a class="qhome-toggle toggle" href="javascript:recoveryHome();">
+            <span></span>
+          </a>
+          <span class="tooltip__left">돌아가기</span>
+        </div>
+        <div class="open-detail__link tooltip">
+          <a class="qlink-toggle toggle" href="javascript:enterProject();">
+            <span></span>
+          </a>
+          <span class="tooltip__left">작업물 보기</span>
+        </div>
+        <div class="open-detail__first tooltip">
+          <a class="qfirst-toggle toggle" href="#project-first">
+            <span></span>
+          </a>
+          <span class="tooltip__left">맨 앞으로</span>
+        </div>
+      </nav>
+    </aside>
+    <main id="portfolio">
+      <!-- 프로필 -->
+      <section id="profile" class="profile">
+        <div class="wrap">
+          <h1>PROFILE</h1>
+          <div class="article-box">
+            <article class="about-box">
+              <div class="wrap">
+                <img src="./images/profile.jpg" alt="프로필 이미지" />
+                <!-- 개인정보 -->
+                <ul class="about-list">
+                  <li class="about-name"><strong>최주원</strong><span>Choi Juwon</span></li>
+                  <li class="about-info">
+                    <ol>
+                      <li><span>Birth</span><span>1993.10.26</span></li>
+                      <li><span>Phone</span><span>010-4593-8054</span></li>
+                      <li><span>E-mail</span><span>endurenova@gmail.com</span></li>
+                    </ol>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <!-- 경험 & 교육 -->
+            <hr class="resume-divider" />
+            <article class="history-box">
+              <div class="wrap">
+                <div class="list-box experience">
+                  <h2>Experience</h2>
                 </div>
-            </nav>
-        </header>
-        <aside>
-            <nav class="quick-sidebar">
-                <div class="quick-sidebar__menu">
-                    <input class="qMenu-toggle" type="checkbox" id="qMenuToggle" />
-                    <ul class="quick-sidebar__menu-list">
-                        <li class="quick-menu">
-                            <a class="quick-menu__btn" href="#profile">
-                                <img src="./icon/tailed-1.gif" alt="퀵메뉴 프로필 아이콘" />
-                                <span>PROFILE</span>
-                            </a>
-                        </li>
-                        <li class="quick-menu">
-                            <a class="quick-menu__btn quick-inquiry" href="#web-publishing">
-                                <img src="./icon/tailed-2.gif" alt="퀵메뉴 웹퍼블리싱 아이콘" />
-                                <span>PUBLISHING</span>
-                            </a>
-                        </li>
-                        <li class="quick-menu">
-                            <a class="quick-menu__btn" href="#design">
-                                <img src="./icon/tailed-3.gif" alt="퀵메뉴 디자인 아이콘" />
-                                <span>DESIGN</span>
-                            </a>
-                        </li>
-                        <li class="quick-menu">
-                            <a class="quick-menu__btn" href="#skill">
-                                <img src="./icon/tailed-4.gif" alt="퀵메뉴 스킬 아이콘" />
-                                <span>SKILL</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <label class="qMenu-label" for="qMenuToggle"></label>
+                <hr class="resume-divider" />
+                <div class="list-box education">
+                  <h2>Education</h2>
                 </div>
-                <div class="quick-sidebar__top">
-                    <a class="qTop-toggle" href="#">
-                        <span>TOP</span>
-                    </a>
-                </div>
-            </nav>
-            <nav class="open-detail">
-                <div class="open-detail__home tooltip">
-                    <a class="qhome-toggle toggle" href="javascript:recoveryHome();">
-                        <span></span>
-                    </a>
-                    <span class="tooltip__left">돌아가기</span>
-                </div>
-                <div class="open-detail__link tooltip">
-                    <a class="qlink-toggle toggle" href="javascript:enterProject();">
-                        <span></span>
-                    </a>
-                    <span class="tooltip__left">작업물 보기</span>
-                </div>
-                <div class="open-detail__first tooltip">
-                    <a class="qfirst-toggle toggle" href="#project-first">
-                        <span></span>
-                    </a>
-                    <span class="tooltip__left">맨 앞으로</span>
-                </div>
-            </nav>
-        </aside>
-        <main id="portfolio">
-            <!-- 프로필 -->
-            <section id="profile" class="profile">
-                <div class="wrap">
-                    <h1>PROFILE</h1>
-                    <div class="article-box">
-                        <article class="about-box">
-                            <h2 style="display: none;">　</h2>
-                            <img src="./images/profile.jpg" alt="프로필 이미지">
-                            <!-- 개인정보 -->
-                            <ul class="about-list">
-                                <li class="about-name">
-                                    <strong>최주원</strong><span>Choi Juwon</span>
-                                </li>
-                                <li class="about-info">
-                                    <ol>
-                                        <li>
-                                            <span>Birth</span><span>1993.10.26</span>
-                                        </li>
-                                        <li>
-                                            <span>Phone</span><span>010-4593-8054</span>
-                                        </li>
-                                        <li>
-                                            <span>E-mail</span><span>endurenova@gmail.com</span>
-                                        </li>
-                                    </ol>
-                                </li>
-                            </ul>
-                        </article>
-                        <!-- 경험 & 교육 -->
-                        <article class="history-box">
-                            <h2 style="display: none;">　</h2>
-                            <div class="wrap">
-                                <h2>Experience</h2>
-                                <div class="list-box experience"></div>
-                            </div>
-                            <hr class="resume-divider" />
-                            <div class="wrap">
-                                <h2>Education</h2>
-                                <div class="list-box education"></div>
-                            </div>
-                        </article>                        
-                    </div>
-                </div>
-            </section>
-            <!-- 웹 퍼블리싱 -->
-            <section id="web-publishing" class="web-publishing"></section>
-            <!-- 디자인 -->
-            <section id="design" class="design"></section>
-            <!-- 스킬 -->
-            <section id="skill" class="skill"></section>
-        </main>
-        <div class="designModal__layer"></div>
-        <script src="./js/createComponent.js"></script>
-    </body>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- 웹 퍼블리싱 -->
+      <section id="web-publishing" class="web-publishing"></section>
+      <!-- 디자인 -->
+      <section id="design" class="design"></section>
+      <!-- 스킬 -->
+      <section id="skill" class="skill">
+        <div class="wrap">
+          <h1>SKILL</h1>
+          <div class="skill-box"></div>
+        </div>
+      </section>
+    </main>
+    <div class="designModal__layer"></div>
+    <script src="./js/createComponent.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const swiper = new Swiper('.swiper.slide-box', {
+          on: {
+            init: function () {
+              console.log('swiper 초기화 될때 실행');
+            },
+            imagesReady: function () {
+              // 모든 내부 이미지 로드후 이벤트 시작
+              console.log('슬라이드 이미지 로드 후 실행');
+            },
+          },
+          direction: 'horizontal',
+          allowTouchMove: true,
+          grabCursor: true,
+          slidesPerView: 'auto',
+          observer: true,
+          loop: true,
+          observeParents: true,
+          // slidesOffsetBefore: 20,
+          // slidesOffsetAfter: 20,
+          mousewheel: {
+            forceToAxis: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            1280: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            767: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+          },
+        });
+      });
+    </script>
+  </body>
 </html>
