@@ -96,9 +96,11 @@ createProfile = () => {
           'beforeend',
           `
             <li>
-                <span>${e.period}</span>
-                <span>${e.institution}</span>
-                <span>${e.subject}</span>
+                <p>
+                  <span>${e.period}</span>
+                  <span>${e.subject}</span>
+                </p>
+                <strong>${e.institution}</strong>
             </li>
           `,
         );
@@ -113,9 +115,11 @@ createProfile = () => {
           'beforeend',
           `
             <li>
-                <span>${e.period}</span>
-                <span>${e.institution}</span>
-                <span>${e.subject}</span>
+                <p>
+                  <span>${e.period}</span>
+                  <span>${e.subject}</span>
+                </p>
+                <strong>${e.institution}</strong>
             </li>
           `,
         );

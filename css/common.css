@@ -100,6 +100,21 @@
     --large-text-size: clamp(36px, 3.516vw, 48px); /* main-title (h1) */
   }
 }
+@media (max-width: 767px) {
+  :root {
+    --small-text-size: clamp(12px, 2.5vw, 14px);
+    --normal-text-size: clamp(14px, 2.917vw, 16px);
+    --regular-text-size: clamp(16px, 3.333vw, 20px); /* project-item title */
+    --medium-text-size: clamp(18px, 3.75vw, 24px); /* sub-title */
+    --large-text-size: clamp(24px, 5vw, 36px); /* main-title (h1) */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --wrapper-width: 95%;
+  }
+}
 body::-webkit-scrollbar {
   width: 0.3vmin; /* 스크롤바의 너비 */
 }
