@@ -31,17 +31,11 @@
   /* rgb (206, 218, 224) */
   --theme-text: #cedae0;
 
-  --grayScale-n5: #efefef;
-  --grayScale-n4: #d5d5d5;
-  --grayScale-n3: #808080;
-  --grayScale-n2: #2b2b2b;
-  --grayScale-n1: #111111;
-
-  --abs-grayScale-n5: #efefef;
-  --abs-grayScale-n4: #d5d5d5;
-  --abs-grayScale-n3: #808080;
-  --abs-grayScale-n2: #2b2b2b;
-  --abs-grayScale-n1: #111111;
+  --grayScale-N5: #efefef;
+  --grayScale-N4: #d5d5d5;
+  --grayScale-N3: #808080;
+  --grayScale-N2: #2b2b2b;
+  --grayScale-N1: #111111;
 
   --blackLayer-opacity: rgba(0, 0, 0, 0.5);
   /* 

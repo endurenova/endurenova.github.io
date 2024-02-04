@@ -58,7 +58,7 @@ aside {
         @include mini-text-center;
         display: flex;
         flex-flow: column;
-        color: var(--grayScale-n1);
+        color: var(--grayScale-N1);
         .qMenu-toggle {
           display: none;
         }
@@ -154,19 +154,19 @@ aside {
           width: 75%;
           height: 6vmin;
           padding: map-get($map: $qMenu-gap, $key: updown-gap);
-          background-color: var(--grayScale-n5);
-          border: 0.0625vmin solid var(--grayScale-n3);
+          background-color: var(--grayScale-N5);
+          border: 0.0625vmin solid var(--grayScale-N3);
           border-radius: 1vmin;
           span {
             @include normal-text-center;
-            color: var(--grayScale-n2);
+            color: var(--grayScale-N2);
             &::before {
               content: "";
               display: block;
               rotate: 180deg;
               height: var(--normal-text-size);
               margin: 0 auto;
-              background-color: var(--grayScale-n2);
+              background-color: var(--grayScale-N2);
               mask: url(../icon/top-btn.svg) no-repeat center;
               -webkit-mask: url(../icon/top-btn.svg) no-repeat center;
             }

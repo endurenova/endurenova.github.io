@@ -11,15 +11,15 @@ themeToggle.addEventListener('change', () => {
   const rootCSS = document.querySelector(':root');
   if (themeToggle.checked) {
     // dark mode
-    rootCSS.style.setProperty('--grayScale-n5', '#111111');
-    rootCSS.style.setProperty('--grayScale-n4', '#2b2b2b');
-    rootCSS.style.setProperty('--grayScale-n2', '#d5d5d5');
-    rootCSS.style.setProperty('--grayScale-n1', '#efefef');
+    rootCSS.style.setProperty('--grayScale-N5', '#111111');
+    rootCSS.style.setProperty('--grayScale-N4', '#2b2b2b');
+    rootCSS.style.setProperty('--grayScale-N2', '#d5d5d5');
+    rootCSS.style.setProperty('--grayScale-N1', '#efefef');
   } else {
     // light mode
-    rootCSS.style.setProperty('--grayScale-n5', '#efefef');
-    rootCSS.style.setProperty('--grayScale-n4', '#d5d5d5');
-    rootCSS.style.setProperty('--grayScale-n2', '#2b2b2b');
-    rootCSS.style.setProperty('--grayScale-n1', '#111111');
+    rootCSS.style.setProperty('--grayScale-N5', '#efefef');
+    rootCSS.style.setProperty('--grayScale-N4', '#d5d5d5');
+    rootCSS.style.setProperty('--grayScale-N2', '#2b2b2b');
+    rootCSS.style.setProperty('--grayScale-N1', '#111111');
   }
 });

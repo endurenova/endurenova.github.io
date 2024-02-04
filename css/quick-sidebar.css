@@ -17,7 +17,7 @@ aside .quick-sidebar .quick-sidebar__menu {
   line-height: 1.2;
   display: flex;
   flex-flow: column;
-  color: var(--grayScale-n1);
+  color: var(--grayScale-N1);
 }
 aside .quick-sidebar .quick-sidebar__menu .qMenu-toggle {
   display: none;
@@ -118,8 +118,8 @@ aside .quick-sidebar .quick-sidebar__top .qTop-toggle {
   width: 75%;
   height: 6vmin;
   padding: 5% 0%;
-  background-color: var(--grayScale-n5);
-  border: 0.0625vmin solid var(--grayScale-n3);
+  background-color: var(--grayScale-N5);
+  border: 0.0625vmin solid var(--grayScale-N3);
   border-radius: 1vmin;
 }
 aside .quick-sidebar .quick-sidebar__top .qTop-toggle span {
@@ -128,7 +128,7 @@ aside .quick-sidebar .quick-sidebar__top .qTop-toggle span {
   font-size: var(--normal-text-size);
   text-align: center;
   line-height: 1.2;
-  color: var(--grayScale-n2);
+  color: var(--grayScale-N2);
 }
 aside .quick-sidebar .quick-sidebar__top .qTop-toggle span::before {
   content: "";
@@ -136,7 +136,7 @@ aside .quick-sidebar .quick-sidebar__top .qTop-toggle span::before {
   rotate: 180deg;
   height: var(--normal-text-size);
   margin: 0 auto;
-  background-color: var(--grayScale-n2);
+  background-color: var(--grayScale-N2);
   mask: url(../icon/top-btn.svg) no-repeat center;
   -webkit-mask: url(../icon/top-btn.svg) no-repeat center;
 }

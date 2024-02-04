@@ -128,9 +128,9 @@ body {
     border-radius: 10px;
   }
   &::-webkit-scrollbar-track {
-    background-color: var(--grayScale-n2);
+    background-color: var(--grayScale-N2);
   }
-  background-color: var(--grayScale-n1);
+  background-color: var(--grayScale-N1);
   header {
     position: fixed;
     z-index: 100;
@@ -207,7 +207,7 @@ body {
                 }
                 &:hover {
                   > span {
-                    color: var(--grayScale-n5);
+                    color: var(--grayScale-N5);
                   }
                 }
               }
@@ -231,7 +231,7 @@ body {
           @include mini-text-center;
           display: flex;
           flex-flow: column;
-          color: var(--grayScale-n1);
+          color: var(--grayScale-N1);
           .qMenu-toggle {
             display: none;
           }
@@ -328,19 +328,19 @@ body {
             width: 75%;
             height: 6vmin;
             padding: map-get($map: $qMenu-gap, $key: updown-gap);
-            background-color: var(--grayScale-n5);
-            border: 0.0625vmin solid var(--grayScale-n3);
+            background-color: var(--grayScale-N5);
+            border: 0.0625vmin solid var(--grayScale-N3);
             border-radius: 1vmin;
             span {
               @include normal-text-center;
-              color: var(--grayScale-n2);
+              color: var(--grayScale-N2);
               &::before {
                 content: "";
                 display: block;
                 rotate: 180deg;
                 height: var(--normal-text-size);
                 margin: 0 auto;
-                background-color: var(--grayScale-n2);
+                background-color: var(--grayScale-N2);
                 mask: url(../icon/top-btn.svg) no-repeat center;
                 -webkit-mask: url(../icon/top-btn.svg) no-repeat center;
               }
@@ -368,7 +368,7 @@ body {
             opacity: 0.5;
             width: 120px;
             text-align: center;
-            color: var(--grayScale-n1);
+            color: var(--grayScale-N1);
             border-radius: 6px;
             padding: 5px 0;
             position: absolute;
@@ -395,15 +395,15 @@ body {
             flex-flow: column;
             width: 6vmin;
             height: 6vmin;
-            background-color: var(--grayScale-n5);
-            border: 0.0625vmin solid var(--grayScale-n3);
+            background-color: var(--grayScale-N5);
+            border: 0.0625vmin solid var(--grayScale-N3);
             border-radius: 1vmin;
             &::before {
               content: "";
               display: block;
               width: 5vmin;
               height: var(--normal-text-size);
-              background-color: var(--grayScale-n2);
+              background-color: var(--grayScale-N2);
             }
             &.qhome-toggle {
               &::before {
@@ -445,8 +445,8 @@ body {
       align-items: center;
       width: 100vw;
       height: 100vh;
-      background-color: var(--grayScale-n1);
-      color: var(--grayScale-n5);
+      background-color: var(--grayScale-N1);
+      color: var(--grayScale-N5);
       .wrap {
         position: relative;
         margin: 0 auto;
@@ -544,7 +544,7 @@ body {
               border-radius: 10px;
             }
             &::-webkit-scrollbar-track {
-              background-color: var(--grayScale-n2);
+              background-color: var(--grayScale-N2);
             }
             .resume-divider {
               border-color: var(--theme-text);
@@ -603,7 +603,7 @@ body {
         /* 웹 퍼블리싱 섹션 */
         &:not(.open) {
           background-image: url(../images/publishing-0.png);
-          background-color: var(--grayScale-n4);
+          background-color: var(--grayScale-N4);
           &::before {
             content: "";
             display: block;
@@ -618,7 +618,7 @@ body {
           flex-flow: row;
           position: relative;
           background-image: unset;
-          background-color: var(--grayScale-n1);
+          background-color: var(--grayScale-N1);
           overflow-x: scroll;
           overflow-y: hidden;
           &::-webkit-scrollbar {
@@ -630,7 +630,7 @@ body {
               border-radius: 10px;
             }
             &-track {
-              background-color: var(--grayScale-n2);
+              background-color: var(--grayScale-N2);
             }
           }
           height: 100vh;
@@ -657,8 +657,8 @@ body {
                 > .title {
                   /* 프로젝트 제목 */
                   @include main-title;
-                  color: var(--grayScale-n5);
-                  border: 1px solid var(--grayScale-n5);
+                  color: var(--grayScale-N5);
+                  border: 1px solid var(--grayScale-N5);
                   text-indent: 1vw;
                 }
                 > ul {
@@ -676,7 +676,7 @@ body {
                         @include flex-center;
                         width: 12.6vmin;
                         height: 5.4vmin;
-                        border: 1px solid var(--grayScale-n5);
+                        border: 1px solid var(--grayScale-N5);
                         margin-right: 3vmin;
                       }
                       &:nth-of-type(2) {
@@ -807,8 +807,8 @@ body {
                   );
                   width: 100%;
                   height: 100%;
-                  background-color: var(--grayScale-n1);
-                  box-shadow: 0px -1vmax 0px 1vmax var(--grayScale-n1);
+                  background-color: var(--grayScale-N1);
+                  box-shadow: 0px -1vmax 0px 1vmax var(--grayScale-N1);
                 }
               }
               .project-item {
@@ -817,8 +817,8 @@ body {
                 display: flex;
                 flex-flow: column;
                 align-items: center;
-                background-color: var(--grayScale-n2);
-                border: 1vmin solid var(--grayScale-n1);
+                background-color: var(--grayScale-N2);
+                border: 1vmin solid var(--grayScale-N1);
                 border-top: 0;
                 border-bottom: 0;
                 > div {
@@ -826,7 +826,7 @@ body {
                   display: flex;
                   position: relative;
                   flex-flow: column;
-                  background-color: var(--grayScale-n1);
+                  background-color: var(--grayScale-N1);
                   &:nth-of-type(1) {
                     justify-content: center;
                     height: 50vh;
@@ -872,7 +872,7 @@ body {
                 height: 1.8vmin;
                 margin: auto 1.2vmin;
                 border-radius: 50%;
-                background-color: var(--grayScale-n5);
+                background-color: var(--grayScale-N5);
                 cursor: pointer;
                 &.active {
                   /* 프로젝트 슬라이드 페이지네이션 액티브 */
@@ -931,7 +931,7 @@ body {
                 border-radius: 10px;
               }
               &-track {
-                background-color: var(--grayScale-n2);
+                background-color: var(--grayScale-N2);
               }
             }
             li {
@@ -942,17 +942,17 @@ body {
                 flex-flow: column;
                 position: relative;
                 justify-content: center;
-                background-color: var(--grayScale-n2);
+                background-color: var(--grayScale-N2);
                 width: 100%;
                 height: 100%;
-                box-shadow: 0px 0px 3px 3px var(--grayScale-n3);
+                box-shadow: 0px 0px 3px 3px var(--grayScale-N3);
                 padding: 0% 5%;
                 > div {
                   display: flex;
                   flex-flow: column;
                   position: relative;
                   justify-content: space-evenly;
-                  background-color: var(--grayScale-n2);
+                  background-color: var(--grayScale-N2);
                   &:nth-of-type(1) {
                     /* 디자인 타이틀 & 툴 */
                     height: 18%;
@@ -978,7 +978,7 @@ body {
                     /* 디자인 메인 이미지 */
                     height: fit-content;
                     overflow: hidden;
-                    background-color: var(--grayScale-n1);
+                    background-color: var(--grayScale-N1);
                     > img {
                       width: 100%;
                       height: auto;
@@ -995,10 +995,10 @@ body {
                       height: 5vmin;
                       margin: auto 0;
                       cursor: pointer;
-                      color: var(--grayScale-n4);
-                      border: 1px solid var(--grayScale-n5);
+                      color: var(--grayScale-N4);
+                      border: 1px solid var(--grayScale-N5);
                       &:hover {
-                        color: var(--grayScale-n5);
+                        color: var(--grayScale-N5);
                       }
                     }
                   }
@@ -1013,7 +1013,7 @@ body {
               height: 1.8vmin;
               margin: auto 1.2vmin;
               border-radius: 50%;
-              background-color: var(--grayScale-n5);
+              background-color: var(--grayScale-N5);
               opacity: 1;
               &.swiper-pagination-bullet-active {
                 width: 4.8vmin;
@@ -1122,7 +1122,7 @@ body {
                 position: absolute;
                 align-items: center;
                 right: 0;
-                color: var(--grayScale-n5);
+                color: var(--grayScale-N5);
                 height: inherit;
                 width: 10%;
                 &__binder {
@@ -1130,7 +1130,7 @@ body {
                   display: flex;
                   justify-content: flex-end;
                   width: 50%;
-                  text-shadow: 0.5px 0.5px 0 var(--grayScale-n2);
+                  text-shadow: 0.5px 0.5px 0 var(--grayScale-N2);
                 }
               }
             }
@@ -1294,7 +1294,7 @@ body {
         font-weight: 500;
         width: 100%;
         height: 100%;
-        color: var(--grayScale-n2);
+        color: var(--grayScale-N2);
         &:hover,
         &:focus {
           font-weight: 700;
@@ -1373,7 +1373,7 @@ body {
               border-radius: 10px;
             }
             &::-webkit-scrollbar-track {
-              background-color: var(--grayScale-n2);
+              background-color: var(--grayScale-N2);
             }
           }
         }

@@ -2,7 +2,7 @@
 @import url(./common.css);
 body {
   overflow-y: scroll;
-  background-color: var(--grayScale-n1);
+  background-color: var(--grayScale-N1);
 }
 body::-webkit-scrollbar {
   /* 스크롤바의 너비 */
@@ -14,7 +14,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 body::-webkit-scrollbar-track {
-  background-color: var(--grayScale-n2);
+  background-color: var(--grayScale-N2);
 }
 body header {
   position: fixed;
@@ -98,7 +98,7 @@ body header .header-bar .header__menu-box .header__menu-list > li > a > span {
   color: var(--theme-text);
 }
 body header .header-bar .header__menu-box .header__menu-list > li > a:hover > span {
-  color: var(--grayScale-n5);
+  color: var(--grayScale-N5);
 }
 body aside {
   position: fixed;
@@ -121,7 +121,7 @@ body aside .quick-sidebar .quick-sidebar__menu {
   line-height: 1.2;
   display: flex;
   flex-flow: column;
-  color: var(--grayScale-n1);
+  color: var(--grayScale-N1);
 }
 body aside .quick-sidebar .quick-sidebar__menu .qMenu-toggle {
   display: none;
@@ -225,8 +225,8 @@ body aside .quick-sidebar .quick-sidebar__top .qTop-toggle {
   width: 75%;
   height: 6vmin;
   padding: 5% 0%;
-  background-color: var(--grayScale-n5);
-  border: 0.0625vmin solid var(--grayScale-n3);
+  background-color: var(--grayScale-N5);
+  border: 0.0625vmin solid var(--grayScale-N3);
   border-radius: 1vmin;
 }
 body aside .quick-sidebar .quick-sidebar__top .qTop-toggle span {
@@ -234,7 +234,7 @@ body aside .quick-sidebar .quick-sidebar__top .qTop-toggle span {
   font-size: var(--normal-text-size);
   text-align: center;
   line-height: 1.2;
-  color: var(--grayScale-n2);
+  color: var(--grayScale-N2);
 }
 body aside .quick-sidebar .quick-sidebar__top .qTop-toggle span::before {
   content: "";
@@ -242,7 +242,7 @@ body aside .quick-sidebar .quick-sidebar__top .qTop-toggle span::before {
   rotate: 180deg;
   height: var(--normal-text-size);
   margin: 0 auto;
-  background-color: var(--grayScale-n2);
+  background-color: var(--grayScale-N2);
   mask: url(../icon/top-btn.svg) no-repeat center;
   -webkit-mask: url(../icon/top-btn.svg) no-repeat center;
 }
@@ -270,7 +270,7 @@ body aside.detail-active .open-detail .tooltip__left {
   opacity: 0.5;
   width: 120px;
   text-align: center;
-  color: var(--grayScale-n1);
+  color: var(--grayScale-N1);
   border-radius: 6px;
   padding: 5px 0;
   position: absolute;
@@ -299,8 +299,8 @@ body aside.detail-active .open-detail .tooltip .toggle {
   flex-flow: column;
   width: 6vmin;
   height: 6vmin;
-  background-color: var(--grayScale-n5);
-  border: 0.0625vmin solid var(--grayScale-n3);
+  background-color: var(--grayScale-N5);
+  border: 0.0625vmin solid var(--grayScale-N3);
   border-radius: 1vmin;
 }
 body aside.detail-active .open-detail .tooltip .toggle::before {
@@ -308,7 +308,7 @@ body aside.detail-active .open-detail .tooltip .toggle::before {
   display: block;
   width: 5vmin;
   height: var(--normal-text-size);
-  background-color: var(--grayScale-n2);
+  background-color: var(--grayScale-N2);
 }
 body aside.detail-active .open-detail .tooltip .toggle.qhome-toggle::before {
   mask: url(../icon/home-btn.svg) no-repeat center;
@@ -342,8 +342,8 @@ body #portfolio section {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: var(--grayScale-n1);
-  color: var(--grayScale-n5);
+  background-color: var(--grayScale-N1);
+  color: var(--grayScale-N5);
 }
 body #portfolio section .wrap {
   position: relative;
@@ -451,7 +451,7 @@ body #portfolio section.profile .article-box .history-box::-webkit-scrollbar-thu
   border-radius: 10px;
 }
 body #portfolio section.profile .article-box .history-box::-webkit-scrollbar-track {
-  background-color: var(--grayScale-n2);
+  background-color: var(--grayScale-N2);
 }
 body #portfolio section.profile .article-box .history-box .resume-divider {
   border-color: var(--theme-text);
@@ -519,7 +519,7 @@ body #portfolio section.web-publishing {
 }
 body #portfolio section.web-publishing:not(.open) {
   background-image: url(../images/publishing-0.png);
-  background-color: var(--grayScale-n4);
+  background-color: var(--grayScale-N4);
 }
 body #portfolio section.web-publishing:not(.open)::before {
   content: "";
@@ -534,7 +534,7 @@ body #portfolio section.web-publishing.open {
   flex-flow: row;
   position: relative;
   background-image: unset;
-  background-color: var(--grayScale-n1);
+  background-color: var(--grayScale-N1);
   overflow-x: scroll;
   overflow-y: hidden;
   height: 100vh;
@@ -549,7 +549,7 @@ body #portfolio section.web-publishing.open::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 body #portfolio section.web-publishing.open::-webkit-scrollbar-track {
-  background-color: var(--grayScale-n2);
+  background-color: var(--grayScale-N2);
 }
 body #portfolio section.web-publishing.open .publishing-detail-box {
   display: flex;
@@ -580,8 +580,8 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-descrip
   /* 프로젝트 제목 */
   font-weight: 700;
   font-size: var(--large-text-size);
-  color: var(--grayScale-n5);
-  border: 1px solid var(--grayScale-n5);
+  color: var(--grayScale-N5);
+  border: 1px solid var(--grayScale-N5);
   text-indent: 1vw;
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul {
@@ -606,7 +606,7 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-descrip
   justify-content: center;
   width: 12.6vmin;
   height: 5.4vmin;
-  border: 1px solid var(--grayScale-n5);
+  border: 1px solid var(--grayScale-N5);
   margin-right: 3vmin;
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span:nth-of-type(2) {
@@ -726,8 +726,8 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film > 
   clip-path: polygon(0% 0%, 0% 100%, var(--window-ml) 100%, var(--window-ml) var(--window-mt), var(--window-mr) var(--window-mt), var(--window-mr) var(--window-mb), var(--window-ml) var(--window-mb), var(--window-ml) 100%, 100% 100%, 100% 0%);
   width: 100%;
   height: 100%;
-  background-color: var(--grayScale-n1);
-  box-shadow: 0px -1vmax 0px 1vmax var(--grayScale-n1);
+  background-color: var(--grayScale-N1);
+  box-shadow: 0px -1vmax 0px 1vmax var(--grayScale-N1);
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item {
   /* 프로젝트 아이템 */
@@ -735,8 +735,8 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film .p
   display: flex;
   flex-flow: column;
   align-items: center;
-  background-color: var(--grayScale-n2);
-  border: 1vmin solid var(--grayScale-n1);
+  background-color: var(--grayScale-N2);
+  border: 1vmin solid var(--grayScale-N1);
   border-top: 0;
   border-bottom: 0;
 }
@@ -745,7 +745,7 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film .p
   display: flex;
   position: relative;
   flex-flow: column;
-  background-color: var(--grayScale-n1);
+  background-color: var(--grayScale-N1);
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(1) {
   justify-content: center;
@@ -796,7 +796,7 @@ body #portfolio section.web-publishing .slide-box .pagination-list > li {
   height: 1.8vmin;
   margin: auto 1.2vmin;
   border-radius: 50%;
-  background-color: var(--grayScale-n5);
+  background-color: var(--grayScale-N5);
   cursor: pointer;
 }
 body #portfolio section.web-publishing .slide-box .pagination-list > li.active {
@@ -854,7 +854,7 @@ body #portfolio section.design .slide-box .project-list::-webkit-scrollbar-thumb
   border-radius: 10px;
 }
 body #portfolio section.design .slide-box .project-list::-webkit-scrollbar-track {
-  background-color: var(--grayScale-n2);
+  background-color: var(--grayScale-N2);
 }
 body #portfolio section.design .slide-box .project-list li {
   /* 프로젝트 리스트 (카드 모양) */
@@ -864,10 +864,10 @@ body #portfolio section.design .slide-box .project-list li .project-item {
   flex-flow: column;
   position: relative;
   justify-content: center;
-  background-color: var(--grayScale-n2);
+  background-color: var(--grayScale-N2);
   width: 100%;
   height: 100%;
-  box-shadow: 0px 0px 3px 3px var(--grayScale-n3);
+  box-shadow: 0px 0px 3px 3px var(--grayScale-N3);
   padding: 0% 5%;
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div {
@@ -875,7 +875,7 @@ body #portfolio section.design .slide-box .project-list li .project-item > div {
   flex-flow: column;
   position: relative;
   justify-content: space-evenly;
-  background-color: var(--grayScale-n2);
+  background-color: var(--grayScale-N2);
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) {
   /* 디자인 타이틀 & 툴 */
@@ -904,7 +904,7 @@ body #portfolio section.design .slide-box .project-list li .project-item > div:n
   /* 디자인 메인 이미지 */
   height: fit-content;
   overflow: hidden;
-  background-color: var(--grayScale-n1);
+  background-color: var(--grayScale-N1);
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) > img {
   width: 100%;
@@ -924,11 +924,11 @@ body #portfolio section.design .slide-box .project-list li .project-item > div:n
   height: 5vmin;
   margin: auto 0;
   cursor: pointer;
-  color: var(--grayScale-n4);
-  border: 1px solid var(--grayScale-n5);
+  color: var(--grayScale-N4);
+  border: 1px solid var(--grayScale-N5);
 }
 body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) button.design-modal-btn:hover {
-  color: var(--grayScale-n5);
+  color: var(--grayScale-N5);
 }
 body #portfolio section.design .slide-box .swiper-pagination {
   position: relative;
@@ -938,7 +938,7 @@ body #portfolio section.design .slide-box .swiper-pagination .swiper-pagination-
   height: 1.8vmin;
   margin: auto 1.2vmin;
   border-radius: 50%;
-  background-color: var(--grayScale-n5);
+  background-color: var(--grayScale-N5);
   opacity: 1;
 }
 body #portfolio section.design .slide-box .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -1049,7 +1049,7 @@ body #portfolio section.skill .skill-box .skill-list li .skill-percent {
   position: absolute;
   align-items: center;
   right: 0;
-  color: var(--grayScale-n5);
+  color: var(--grayScale-N5);
   height: inherit;
   width: 10%;
 }
@@ -1060,7 +1060,7 @@ body #portfolio section.skill .skill-box .skill-list li .skill-percent__binder {
   display: flex;
   justify-content: flex-end;
   width: 50%;
-  text-shadow: 0.5px 0.5px 0 var(--grayScale-n2);
+  text-shadow: 0.5px 0.5px 0 var(--grayScale-N2);
 }
 body .designModal__layer {
   position: absolute;
@@ -1236,7 +1236,7 @@ body .designModal__tool > .close {
   font-weight: 500;
   width: 100%;
   height: 100%;
-  color: var(--grayScale-n2);
+  color: var(--grayScale-N2);
 }
 body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   font-weight: 700;
@@ -1315,6 +1315,6 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
     border-radius: 10px;
   }
   body #portfolio section.profile .article-box::-webkit-scrollbar-track {
-    background-color: var(--grayScale-n2);
+    background-color: var(--grayScale-N2);
   }
 }
