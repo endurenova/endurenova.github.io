@@ -288,7 +288,6 @@ createDesign = () => {
       toolList: `
                     <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
                     <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
-                    <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
                     <img src=${badgeList[7].tool} alt="툴 뱃지 이미지-${7}" />                    
                 `,
       subject: '제이쿼리 애니메이션',
@@ -333,16 +332,14 @@ createDesign = () => {
     design += `
             <li class="swiper-slide">
                 <div class="project-item">
-                    <div>
+                    <div class="project-item__head">
                         <h3>${deg.title}</h3>
                         <span>${deg.toolList}</span>
-                    </div>
-                    <div>
+                    </div> 
+                    <div class="project-item__body">
                         <img src=${deg.mainImg} alt="디자인 프로젝트 이미지-${idx}" />
                     </div>
-                    <div>
-                        <button onclick="designModal()" class="design-modal-btn" data-design-index="${idx}">DETAIL</button>
-                    </div>
+                    <button onclick="designModal()" class="design-modal-btn" data-design-index="${idx}">DETAIL</button>
                 </div>
             </li>
         `;

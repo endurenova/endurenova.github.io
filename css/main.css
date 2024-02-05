@@ -375,7 +375,7 @@ body #portfolio section.profile h2 {
 }
 body #portfolio section.profile .article-box {
   width: 100%;
-  height: 88%;
+  height: 90%;
   display: flex;
   flex-flow: row wrap;
   position: relative;
@@ -687,10 +687,9 @@ body #portfolio section.web-publishing.open .publishing-detail-box .small-descri
 }
 body #portfolio section.web-publishing .slide-box {
   width: 100%;
-  height: 88%;
+  height: 90%;
   width: 46vw;
   position: relative;
-  overflow: hidden;
   margin: 0 auto;
 }
 body #portfolio section.web-publishing .slide-box .project-list {
@@ -698,6 +697,8 @@ body #portfolio section.web-publishing .slide-box .project-list {
   display: flex;
   position: absolute;
   width: inherit;
+  top: 50%;
+  transform: translateY(-50%);
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film {
   /* 프로젝트 (영화 필름 칸) */
@@ -746,7 +747,7 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film .p
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(1) {
   justify-content: center;
-  height: 50vh;
+  height: 48vh;
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(1) > img {
   /* 프로젝트 이미지 */
@@ -754,7 +755,7 @@ body #portfolio section.web-publishing .slide-box .project-list .project-film .p
   height: 100%;
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) {
-  padding: 1%;
+  padding: 2% 1%;
 }
 body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > h3 {
   /* 프로젝트 제목 */
@@ -778,7 +779,7 @@ body #portfolio section.web-publishing .slide-box .pagination-box {
   padding: 1% 0%;
   width: 100%;
   position: absolute;
-  bottom: 0%;
+  bottom: -1%;
 }
 body #portfolio section.web-publishing .slide-box .pagination-list {
   display: flex;
@@ -826,7 +827,7 @@ body #portfolio section.design {
 }
 body #portfolio section.design .slide-box {
   width: 100%;
-  height: 88%;
+  height: 90%;
   display: flex;
   align-items: center;
   flex-flow: column;
@@ -839,7 +840,7 @@ body #portfolio section.design .slide-box .project-list {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 85%;
+  height: 80%;
 }
 body #portfolio section.design .slide-box .project-list::-webkit-scrollbar {
   /* 스크롤바의 너비 */
@@ -855,77 +856,73 @@ body #portfolio section.design .slide-box .project-list::-webkit-scrollbar-track
 }
 body #portfolio section.design .slide-box .project-list li {
   /* 프로젝트 리스트 (카드 모양) */
+  position: relative;
+  background-color: var(--grayScale-N2);
+  box-shadow: 0px 0px 3px 3px var(--grayScale-N3);
 }
 body #portfolio section.design .slide-box .project-list li .project-item {
   display: flex;
   flex-flow: column;
   position: relative;
-  justify-content: center;
-  background-color: var(--grayScale-N2);
-  width: 100%;
-  height: 100%;
-  box-shadow: 0px 0px 3px 3px var(--grayScale-N3);
-  padding: 0% 5%;
-}
-body #portfolio section.design .slide-box .project-list li .project-item > div {
-  display: flex;
-  flex-flow: column;
-  position: relative;
   justify-content: space-evenly;
-  background-color: var(--grayScale-N2);
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
 }
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) {
-  /* 디자인 타이틀 & 툴 */
-  height: 18%;
-  justify-content: center;
-}
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > h3 {
-  /* 디자인 타이틀 */
-  font-weight: 700;
-  font-size: var(--medium-text-size);
-  line-height: 1.4;
-}
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > span {
-  /* 툴 뱃지 리스트 */
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  width: 100%;
-  height: 35%;
-}
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > span > img {
-  margin-right: 2%;
-}
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) {
-  /* 디자인 메인 이미지 */
-  height: fit-content;
-  overflow: hidden;
-  background-color: var(--grayScale-N1);
-}
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) > img {
-  width: 100%;
-  height: auto;
-}
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) {
-  /* 디테일 버튼 */
-  margin-top: 5%;
-  align-items: end;
-}
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) button.design-modal-btn {
+body #portfolio section.design .slide-box .project-list li .project-item > .design-modal-btn {
   font-weight: 500;
   font-size: var(--small-text-size);
   line-height: 1.4;
   z-index: 20;
   width: fit-content;
   height: fit-content;
-  margin: auto 0;
+  width: 100%;
+  line-height: 2;
   cursor: pointer;
   color: var(--grayScale-N4);
   border: 1px solid var(--grayScale-N5);
-  padding: 2% 6%;
 }
-body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) button.design-modal-btn:hover {
+body #portfolio section.design .slide-box .project-list li .project-item > .design-modal-btn:hover {
   color: var(--grayScale-N5);
+}
+body #portfolio section.design .slide-box .project-list li .project-item > .project-item__head {
+  /* 디자인 타이틀 & 툴 & 디테일 버튼 */
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  justify-content: space-evenly;
+  background-color: var(--grayScale-N2);
+  width: 100%;
+  height: 15%;
+}
+body #portfolio section.design .slide-box .project-list li .project-item > .project-item__head > h3 {
+  /* 디자인 타이틀 */
+  font-weight: 700;
+  font-size: var(--medium-text-size);
+  line-height: 1.4;
+}
+body #portfolio section.design .slide-box .project-list li .project-item > .project-item__head > span {
+  /* 툴 뱃지 리스트 */
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+}
+body #portfolio section.design .slide-box .project-list li .project-item > .project-item__head > span > img {
+  margin-right: 2%;
+}
+body #portfolio section.design .slide-box .project-list li .project-item > .project-item__body {
+  /* 디자인 메인 이미지 */
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  background-color: var(--grayScale-N1);
+}
+body #portfolio section.design .slide-box .project-list li .project-item > .project-item__body > img {
+  width: 100%;
+  height: 100%;
 }
 body #portfolio section.design .slide-box .swiper-pagination {
   position: relative;
@@ -948,7 +945,7 @@ body #portfolio section.skill {
 }
 body #portfolio section.skill .skill-box {
   width: 100%;
-  height: 88%;
+  height: 90%;
 }
 body #portfolio section.skill .skill-box .skill-list {
   /* 스킬 리스트 */
@@ -1315,9 +1312,20 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
     background-color: var(--grayScale-N2);
   }
 }
+@media (max-width: 1024px) {
+  body #portfolio section.design {
+    /* 디자인 섹션 */
+  }
+  body #portfolio section.design .slide-box .project-list {
+    height: 75%;
+  }
+}
 @media (max-width: 767px) {
   body #portfolio {
     /* 포트폴리오(메인) */
+  }
+  body #portfolio section:not(.open) {
+    justify-content: center;
   }
   body #portfolio section {
     /* 공통 섹션 */
@@ -1356,5 +1364,361 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   }
   body #portfolio section.profile .article-box::-webkit-scrollbar-track {
     background-color: var(--grayScale-N2);
+  }
+  body #portfolio section.web-publishing {
+    /* 웹 퍼블리싱 섹션 */
+  }
+  body #portfolio section.web-publishing:not(.open) {
+    background-image: url(../images/publishing-0.png);
+    background-color: var(--grayScale-N4);
+  }
+  body #portfolio section.web-publishing:not(.open)::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blackLayer-opacity);
+  }
+  body #portfolio section.web-publishing.open {
+    display: flex;
+    flex-flow: row;
+    position: relative;
+    background-image: unset;
+    background-color: var(--grayScale-N1);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 100vh;
+  }
+  body #portfolio section.web-publishing.open::-webkit-scrollbar {
+    /* 스크롤바의 너비 */
+    height: 0.6vmin;
+  }
+  body #portfolio section.web-publishing.open::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background-color: var(--tailed-n0);
+    border-radius: 10px;
+  }
+  body #portfolio section.web-publishing.open::-webkit-scrollbar-track {
+    background-color: var(--grayScale-N2);
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box {
+    display: flex;
+    position: relative;
+    flex-flow: row;
+    width: fit-content;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description {
+    /* 디테일 설명 */
+    width: 50vw;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: var(--inner-wrapper-width);
+    height: 100%;
+    padding: 3% 0;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > .subject {
+    /* 주제 */
+    font-weight: 500;
+    font-size: var(--regular-text-size);
+    line-height: 1.6;
+    color: var(--theme-text);
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > .title {
+    /* 프로젝트 제목 */
+    font-weight: 700;
+    font-size: var(--large-text-size);
+    color: var(--grayScale-N5);
+    border: 1px solid var(--grayScale-N5);
+    text-indent: 1vw;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul {
+    /* 프로젝트 설명 */
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    height: 24vmin;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li {
+    display: flex;
+    position: relative;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span {
+    font-weight: 700;
+    font-size: var(--regular-text-size);
+    line-height: 1.4;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.6vmin;
+    height: 5.4vmin;
+    border: 1px solid var(--grayScale-N5);
+    margin-right: 3vmin;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span:nth-of-type(2) {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    padding: 0 1%;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li:nth-of-type(2) {
+    /* 사용 툴 뱃지 */
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li:nth-of-type(2) img {
+    height: 3vmin;
+    margin-right: 1%;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-image img {
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description {
+    /* 디테일 설명 */
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: fit-content;
+    height: 100%;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 100%;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col {
+    display: flex;
+    position: relative;
+    flex-flow: column;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    margin: 0 1%;
+    padding: 0 3%;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > img {
+    display: block;
+    position: relative;
+    max-width: 75vw;
+    width: auto;
+    max-height: 42vh;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > p {
+    font-weight: 500;
+    font-size: var(--regular-text-size);
+    line-height: 1.6;
+    width: 100%;
+    color: var(--theme-text);
+    padding: 3% 0;
+    text-align: center;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row {
+    display: flex;
+    position: relative;
+    flex-flow: row;
+    align-items: center;
+    width: fit-content;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row > p {
+    font-weight: 500;
+    font-size: var(--regular-text-size);
+    line-height: 1.6;
+    width: 18vh;
+    color: var(--theme-text);
+    padding: 0 3%;
+    text-align: center;
+  }
+  body #portfolio section.web-publishing .slide-box {
+    width: 100%;
+    height: 90%;
+    width: 80vw;
+    position: relative;
+    margin: 0 auto;
+  }
+  body #portfolio section.web-publishing .slide-box .project-list {
+    /* 프로젝트 리스트 (영화 필름 띠) */
+    display: flex;
+    position: absolute;
+    width: inherit;
+  }
+  body #portfolio section.web-publishing .slide-box .project-list .project-film {
+    /* 프로젝트 (영화 필름 칸) */
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    width: auto;
+    cursor: pointer;
+  }
+  body #portfolio section.web-publishing .slide-box .project-list .project-film > ul {
+    width: auto;
+    height: 8vmin;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+  }
+  body #portfolio section.web-publishing .slide-box .project-list .project-film > ul > li {
+    /* 필름 사이드 모양 생성 */
+    --window-ml: 30%;
+    --window-mt: 25%;
+    --window-mb: 75%;
+    --window-mr: 70%;
+    clip-path: polygon(0% 0%, 0% 100%, var(--window-ml) 100%, var(--window-ml) var(--window-mt), var(--window-mr) var(--window-mt), var(--window-mr) var(--window-mb), var(--window-ml) var(--window-mb), var(--window-ml) 100%, 100% 100%, 100% 0%);
+    width: 100%;
+    height: 100%;
+    background-color: var(--grayScale-N1);
+    box-shadow: 0px -1vmax 0px 1vmax var(--grayScale-N1);
+  }
+  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item {
+    /* 프로젝트 아이템 */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 80vw;
+    background-color: var(--grayScale-N2);
+    border: 1vmin solid var(--grayScale-N1);
+    border-top: 0;
+    border-bottom: 0;
+  }
+  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div {
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-flow: column;
+    background-color: var(--grayScale-N1);
+  }
+  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(1) > img {
+    /* 프로젝트 이미지 */
+    width: auto;
+    height: 100%;
+  }
+  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) {
+    padding: 1%;
+  }
+  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > h3 {
+    /* 프로젝트 제목 */
+    font-weight: 700;
+    font-size: var(--medium-text-size);
+    line-height: 1.4;
+  }
+  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > p {
+    /* 사용 툴 */
+    font-weight: 500;
+    font-size: var(--small-text-size);
+    line-height: 1.4;
+    width: 100%;
+    height: auto;
+    color: var(--theme-text);
+  }
+  body #portfolio section.web-publishing .slide-box .pagination {
+    /* 프로젝트 슬라이드 페이지네이션 */
+  }
+  body #portfolio section.web-publishing .slide-box .pagination-box {
+    padding: 1% 0%;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+  }
+  body #portfolio section.web-publishing .slide-box .pagination-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  body #portfolio section.web-publishing .slide-box .pagination-list > li {
+    display: inline-block;
+    width: 1.8vmin;
+    height: 1.8vmin;
+    margin: auto 1.2vmin;
+    border-radius: 50%;
+    background-color: var(--grayScale-N5);
+    cursor: pointer;
+  }
+  body #portfolio section.web-publishing .slide-box .pagination-list > li.active {
+    /* 프로젝트 슬라이드 페이지네이션 액티브 */
+    opacity: 1;
+    width: 4.8vmin;
+    border-radius: 2.4vmin;
+    background-color: var(--tailed-n0);
+  }
+  body #portfolio section.web-publishing .direction {
+    /* 슬라이드 버튼 */
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 7vmin;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  body #portfolio section.web-publishing .direction.prev-left {
+    /* 왼쪽/이전 버튼 */
+    left: 0;
+  }
+  body #portfolio section.web-publishing .direction.next-right {
+    /* 오른쪽/다음 버튼 */
+    right: 0;
+  }
+  body #portfolio section.design {
+    /* 디자인 섹션 */
+  }
+  body #portfolio section.design .slide-box .project-list {
+    /* 프로젝트 리스트 (카드 모양) */
+  }
+  body #portfolio section.design .slide-box .project-list li {
+    /* 프로젝트 리스트 (카드 모양) */
+    margin-right: 5%;
+  }
+  body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) {
+    /* 디자인 타이틀 & 툴 */
+  }
+  body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > h3 {
+    /* 디자인 타이틀 */
+  }
+  body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(1) > span {
+    /* 툴 뱃지 리스트 */
+  }
+  body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(2) {
+    /* 디자인 메인 이미지 */
+  }
+  body #portfolio section.design .slide-box .project-list li .project-item > div:nth-of-type(3) {
+    /* 디테일 버튼 */
+  }
+  body #portfolio section.skill {
+    /* 스킬 섹션 */
+  }
+  body #portfolio section.skill .skill-box .skill-list {
+    /* 스킬 리스트 */
+  }
+  body #portfolio section.skill .skill-box .skill-list li {
+    /* 스킬 아이템 */
+  }
+  body #portfolio section.skill .skill-box .skill-list li .skill-badge {
+    /* 스킬 마크 */
+  }
+  body #portfolio section.skill .skill-box .skill-list li .skill-level__progress {
+    /* 스킬 진행도 */
+  }
+  body #portfolio section.skill .skill-box .skill-list li .skill-level__progress .skill-percent {
+    /* 진행도 숫자 퍼센트 */
+  }
+}
+@media (max-width: 640px) {
+  body #portfolio section.design {
+    /* 디자인 섹션 */
+  }
+  body #portfolio section.design .slide-box .project-list {
+    height: 90%;
   }
 }
