@@ -1,5 +1,6 @@
 const publishingBox = document.querySelector('.web-publishing');
 const designBox = document.querySelector('.design');
+const illustrationBox = document.querySelector('.illustration');
 const skillBox = document.querySelector('.skill-box');
 const badgeList = [
   {
@@ -219,24 +220,6 @@ createPublishing = () => {
 createDesign = () => {
   const designProject = [
     {
-      title: 'CALENDAR',
-      mainImg: './images/design-calendar-main.png',
-      toolList: `
-                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" /> 
-                    <img src=${badgeList[10].tool} alt="툴 뱃지 이미지-${10}" />                  
-                `,
-      subject: '달력 만들기',
-      description: '창작한 캐릭터로 일러스트레이터를 활용해 드로잉하고 포토샵으로 목업을 한 작업',
-      author: '개인작업',
-      link: '',
-      contents: `
-                    <img src="./images/design-calendar-contents-1.png" alt="디자인 모달 달력 컨텐츠 이미지-1" /> 
-                    <img src="./images/design-calendar-contents-2.png" alt="디자인 모달 달력 컨텐츠 이미지-2" /> 
-                    <img src="./images/design-calendar-contents-3.png" alt="디자인 모달 달력 컨텐츠 이미지-3" /> 
-                    <img src="./images/design-calendar-contents-4.png" alt="디자인 모달 달력 컨텐츠 이미지-4" /> 
-                `,
-    },
-    {
       title: 'OVERTONES',
       mainImg: './images/design-overtones-mockup.png',
       toolList: `
@@ -401,9 +384,359 @@ createDesign = () => {
       designModalLayer.innerHTML = '';
       document.body.style.overflow = 'unset';
     });
+
+    const designSwiper = new Swiper('#design .swiper.slide-box', {
+      on: {
+        init: function () {
+          console.log('swiper 초기화 될때 실행');
+        },
+        imagesReady: function () {
+          // 모든 내부 이미지 로드후 이벤트 시작
+          console.log('슬라이드 이미지 로드 후 실행');
+        },
+      },
+      direction: 'horizontal',
+      slidesPerView: 2,
+      allowTouchMove: true,
+      slidesPerView: 'auto',
+      observer: true,
+      observeParents: true,
+      breakpoints: {
+        1280: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        767: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+      },
+    });
   };
 };
 
+createIllustration = () => {
+  // async function illustLoad() {
+  //   let illust = '';
+  //   await fetch('/json/illustration.json')
+  //     .then(res => res.json())
+  //     .then(data =>
+  //       data.forEach((e, idx) => {
+  //         illust += `
+  //         <li class="swiper-slide">
+  //             <div class="illust-item">
+  //               <div class="illust-item__image">
+  //                   <img src="/images/illust/${e.title[0]}/${e.mainImg}" alt="일러스트 이미지-${idx}" />
+  //               </div>
+  //               <div class="illust-item__description">
+  //                 <div class="post">
+  //                   <div class="post-wrap">
+  //                     <h3>${e.title[1]}</h3>
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //             </div>
+  //         </li>
+  //     `;
+  //       }),
+  //     );
+  //   await new Promise(() => {
+  //     illustrationBox.innerHTML = `
+  //       <div class="wrap">
+  //           <h1>Illustration</h1>
+  //           <div class="swiper slide-box" >
+  //               <ul class="swiper-wrapper illust-list">${illust}</ul>
+  //               <div class="swiper-pagination" >
+  //           </div>
+  //       </div>
+  //     `;
+  //     const illustSwiper = new Swiper('#illustration .swiper.slide-box', {
+  //       on: {
+  //         init: function () {
+  //           console.log('swiper 초기화 될때 실행');
+  //         },
+  //         imagesReady: function () {
+  //           // 모든 내부 이미지 로드후 이벤트 시작
+  //           console.log('슬라이드 이미지 로드 후 실행');
+  //         },
+  //       },
+  //       loop: true,
+  //       direction: 'horizontal',
+  //       slidesPerView: 1,
+  //       allowTouchMove: true,
+  //       slidesPerView: 'auto',
+  //       observer: true,
+  //       observeParents: true,
+  //       effect: 'cube',
+  //     });
+  //   });
+  // }
+  // illustLoad();
+  async function illustBookLoad() {
+    let illust = '';
+    let pageIdx = 0;
+    let flagTop = 6;
+    await fetch('/json/illustration.json')
+      .then(res => res.json())
+      .then(data =>
+        data.forEach((e, idx) => {
+          illust += `
+            <li data-page-index="${pageIdx}" class="binder__page flipPageRight right">
+              <div class="upper flag-tag" style="top:${flagTop}%; background-color: ${e.color[1]};">
+                <span class="flag-tag__white"></span>
+                <a href="#" class="flag-tag__name">
+                  <p>${e.title[1]}</p>
+                </a>
+              </div>
+              <div class="page upper page-odd">
+                <div class="contents-color" style="background-color: ${e.color[0]};">
+                  <div class="contents-title">
+                    <h2>${e.title[1]}</h2>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+              <div class="page page-even">
+                <div class="page-main left">
+                  <div class="page-main__image">
+                    <img src="/images/illust/${e.title[0]}/${e.mainImg}" alt="${
+            e.title[1]
+          } 일러스트 목업 이미지-${idx}" />
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li data-page-index="${pageIdx + 1}" class="binder__page flipPageRight right">
+              <div class="page upper page-odd">
+                <div class="page-content">
+                  <div class="page-content__image">
+                    <img src="/images/illust/${e.title[0]}/${e.imgList[0]}" alt="${
+            e.title[1]
+          } 일러스트 이미지-${idx}" />
+                  </div>
+                </div>
+              </div>
+              <div class="page page-even">
+                <div class="page-main left">
+                  <div class="page-main__title">
+                    <h1></h1>
+                  </div>
+                </div>
+              </div>
+            </li>
+          `;
+          flagTop += 8;
+          pageIdx += 2;
+        }),
+      );
+    await new Promise(() => {
+      document.querySelector('.book-page-list').innerHTML = illust;
+      const bookLayer = document.querySelector('.book-binder__box');
+      const bookExit = bookLayer.querySelector('.exit-layer');
+      const bookView = bookLayer.querySelector('.book-viewer');
+      const bookBinder = bookLayer.querySelector('.book-binder');
+      const bookCoverFr = bookBinder.querySelector('.book-cover.Fr');
+      const bookCoverRr = bookBinder.querySelector('.book-cover.Rr');
+      const bookCoverList = [bookCoverFr, bookCoverRr];
+      const bookSideTp = bookBinder.querySelector('.book-side__face--top');
+      const bookSideBt = bookBinder.querySelector('.book-side__face--bottom');
+      const bookBinderList = Array.from(bookBinder.children).slice(1, undefined);
+      const bookSide = bookBinder.querySelector('.book-side .cr-Side');
+      const bookPageList = bookBinder.querySelector('.book-page-list');
+      const bookPages = bookPageList.querySelectorAll('.binder__page');
+      let bookLeftPages = [];
+      let bookRightPages = [];
+      let bookPageWidth = Number(
+        getComputedStyle(document.documentElement).getPropertyValue('--book-page-width').split('vmin')[0],
+      );
+      let pageIndex;
+
+      (() => {
+        Array.from(bookPages).forEach((e, i) => {
+          e.style.cssText = `z-index: ${bookBinderList.length - i};`;
+        });
+        const bookSideCount = getComputedStyle(document.documentElement).getPropertyValue(
+          '--book-side-radius-face-count',
+        );
+        const bookSideDegree = 360 / bookSideCount;
+        for (var i = 0; i < bookSideCount / 2; i++) {
+          bookSide.insertAdjacentHTML('beforeend', `<span class="face side s${i}"></span>`);
+        }
+
+        let bookSideElement = bookSide.querySelectorAll('.side');
+        Array.from(bookSideElement).forEach((e, i) => {
+          if (i === 0) {
+            e.style.cssText = `transform: rotateY(${
+              -bookSideDegree / 2
+            }deg) translate3D(0, 0, calc(var(--book-cover-thick)));`;
+          } else {
+            e.style.cssText = `transform: rotateY(${
+              -i * bookSideDegree - bookSideDegree / 2
+            }deg) translate3D(0, 0, calc(var(--book-cover-thick)));`;
+          }
+        });
+      })();
+
+      resetPageSequence = () => {
+        // 오른편 페이지들 재정렬
+        const children = Array.from(bookPageList.children);
+        children.sort((a, b) => {
+          const indexA = parseInt(a.dataset.pageIndex);
+          const indexB = parseInt(b.dataset.pageIndex);
+          return indexA - indexB;
+        });
+        children.forEach(child => bookPageList.appendChild(child));
+        Array.from(bookPages).forEach(e => {
+          e.querySelector('.page-odd').classList.add('upper');
+          e.querySelector('.page-even').classList.remove('upper');
+        });
+      };
+
+      closeCoverPages = () => {
+        Array.from(bookPages).forEach((e, i) => {
+          e.style.cssText = `
+              z-index: ${bookPages.length - i};
+              width: ${bookPageWidth}vmin;
+              `;
+        });
+      };
+
+      refreshRight = () => {
+        // 오른편 페이지들 재정렬
+        bookRightPages = document.querySelectorAll('.binder__page.right'); // 페이지 플립 후의 오른쪽 페이지 양
+        Array.from(bookRightPages).forEach((e, i) => {
+          e.style.cssText = `z-index: ${bookRightPages.length - i}; width: ${
+            i * 0.2 + bookPageWidth - bookPages.length * 0.2
+          }vmin;`;
+        });
+      };
+
+      refreshLeft = () => {
+        // 왼편 페이지들 재정렬
+        bookLeftPages = document.querySelectorAll('.binder__page.left'); // 페이지 플립 후의 왼쪽 페이지 양
+        Array.from(bookLeftPages).forEach((e, i) => {
+          e.style.cssText = `z-index: ${i}; width: ${
+            (bookLeftPages.length - i) * 0.2 + bookPageWidth - bookPages.length * 0.2
+          }vmin;`;
+        });
+      };
+
+      resetBook = () => {
+        bookCoverFr.classList.remove('flipOpen');
+        bookCoverRr.classList.remove('flipClose');
+        bookBinder.classList.remove('open');
+        bookLayer.classList.remove('open');
+        bookCoverFr.removeEventListener(clickEventType, statusBookCover);
+        bookCoverRr.removeEventListener(clickEventType, statusBookCover);
+        Array.from(bookPages).forEach(e => {
+          // 페이지 넘기는 함수
+          if (e.classList.contains('left')) {
+            e.classList.remove('flipPageLeft', 'left');
+            e.classList.add('flipPageRight', 'right');
+          }
+        });
+        resetPageSequence();
+      };
+
+      setTimeout(() => {
+        bookExit.addEventListener(clickEventType, resetBook);
+      }, 300);
+
+      statusBookCover = () => {
+        bookLeftPages = document.querySelectorAll('.binder__page.left');
+        bookRightPages = document.querySelectorAll('.binder__page.right');
+        if (bookLeftPages.length === 0) {
+          // 앞 커버일 때
+          if (bookCoverFr.classList.contains('flipOpen')) {
+            // 앞 커버가 열려 있을 때
+            bookCoverFr.classList.remove('flipOpen');
+            bookBinder.classList.remove('open');
+            closeCoverPages();
+          } else {
+            // 앞 커버가 닫혀 있을 때
+            bookCoverFr.classList.add('flipOpen');
+            bookBinder.classList.add('open');
+            refreshRight();
+          }
+        } else if (bookRightPages.length === 0) {
+          // 뒷 커버일 때
+          if (bookCoverRr.classList.contains('flipClose')) {
+            // 뒷 커버가 닫혀 있을 때
+            bookCoverRr.classList.remove('flipClose');
+            bookBinder.classList.remove('close');
+            refreshLeft();
+          } else {
+            // 뒷 커버가 열려 있을 때
+            bookCoverRr.classList.add('flipClose');
+            bookBinder.classList.add('close');
+            closeCoverPages();
+          }
+        }
+      };
+      let clickEventType = 'click';
+      bookCoverFr.addEventListener('click', statusBookCover);
+      bookCoverRr.addEventListener('click', statusBookCover);
+
+      flipLeft = page => {
+        // Left <- Right
+        page.classList.add('flipPageLeft', 'left');
+        refreshLeft();
+        setTimeout(() => {
+          page.classList.remove('flipPageRight', 'right');
+          refreshRight();
+          setTimeout(() => {
+            if (page.querySelector('.flag-tag')) {
+              page.querySelector('.flag-tag').classList.remove('upper');
+            }
+            page.querySelector('.page-odd').classList.remove('upper');
+            page.querySelector('.page-even').classList.add('upper');
+            bookRightPages.length < 1
+              ? bookCoverRr.addEventListener(clickEventType, statusBookCover)
+              : bookCoverRr.removeEventListener(clickEventType, statusBookCover);
+          }, 50);
+        }, 50);
+      };
+      flipRight = page => {
+        // Left -> Right
+        page.classList.add('flipPageRight', 'right');
+        refreshRight();
+        setTimeout(() => {
+          page.classList.remove('flipPageLeft', 'left');
+          refreshLeft();
+          setTimeout(() => {
+            if (page.querySelector('.flag-tag')) {
+              page.querySelector('.flag-tag').classList.add('upper');
+            }
+            page.querySelector('.page-odd').classList.add('upper');
+            page.querySelector('.page-even').classList.remove('upper');
+            bookLeftPages.length < 1
+              ? bookCoverFr.addEventListener(clickEventType, statusBookCover)
+              : bookCoverFr.removeEventListener(clickEventType, statusBookCover);
+          }, 50);
+        }, 50);
+      };
+
+      Array.from(bookPages).forEach(e => {
+        // 페이지 넘기는 함수
+        e.addEventListener(clickEventType, event => {
+          event.preventDefault();
+          if (e.classList.contains('right')) {
+            // 해당 페이지 위치가 오른쪽인지
+            flipLeft(e);
+            bookLeftPages = document.querySelectorAll('.binder__page.left');
+          } else if (e.classList.contains('left')) {
+            // 왼쪽 인지 확인
+            flipRight(e);
+            bookLeftPages = document.querySelectorAll('.binder__page.left');
+          }
+          console.log(bookLeftPages.length + 'left');
+          console.log(bookRightPages.length + 'right');
+        });
+      });
+    });
+  }
+  illustBookLoad();
+};
 const headerBar = document.querySelector('header');
 const designOffsetTop = document.querySelector('#design').offsetTop;
 const designBottom = document.querySelector('#design').clientHeight;
@@ -675,6 +1008,7 @@ initPage = () => {
   createProfile();
   createPublishing();
   createDesign();
+  createIllustration();
   createSkill();
   $(document).ready(function () {
     let swipeItemWidth = document.querySelector('.web-publishing .project-film').clientWidth;
@@ -791,31 +1125,3 @@ recoveryHome = () => {
   initPage();
   window.scrollTo(0, publishingBox.getBoundingClientRect().top); // 퍼블리싱 섹션 위치로 이동
 };
-
-const swiper = new Swiper('.swiper.slide-box', {
-  on: {
-    init: function () {
-      console.log('swiper 초기화 될때 실행');
-    },
-    imagesReady: function () {
-      // 모든 내부 이미지 로드후 이벤트 시작
-      console.log('슬라이드 이미지 로드 후 실행');
-    },
-  },
-  direction: 'horizontal',
-  slidesPerView: 2,
-  allowTouchMove: true,
-  slidesPerView: 'auto',
-  observer: true,
-  observeParents: true,
-  breakpoints: {
-    1280: {
-      slidesPerView: 2,
-      spaceBetween: 10,
-    },
-    767: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-  },
-});

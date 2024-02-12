@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/illustBook.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -47,6 +48,11 @@
             <li>
               <a href="#design">
                 <span>Design</span>
+              </a>
+            </li>
+            <li>
+              <a href="#illustration">
+                <span>Illustration</span>
               </a>
             </li>
             <li>
@@ -82,8 +88,14 @@
               </a>
             </li>
             <li class="quick-menu">
-              <a class="quick-menu__btn" href="#skill">
+              <a class="quick-menu__btn" href="#illustration">
                 <img src="./icon/tailed-4.gif" alt="퀵메뉴 스킬 아이콘" />
+                <span>ILLUST</span>
+              </a>
+            </li>
+            <li class="quick-menu">
+              <a class="quick-menu__btn" href="#skill">
+                <img src="./icon/tailed-5.gif" alt="퀵메뉴 스킬 아이콘" />
                 <span>SKILL</span>
               </a>
             </li>
@@ -161,6 +173,54 @@
       <section id="web-publishing" class="web-publishing"></section>
       <!-- 디자인 -->
       <section id="design" class="design"></section>
+      <!-- 일러스트 -->
+      <!-- <section id="illustration" class="illustration"></section> -->
+      <section id="illustration">
+        <div class="book-binder__box">
+          <div class="exit-layer"></div>
+          <div class="scene">
+            <ul class="book-binder">
+              <!-- 0. side -->
+              <li class="book-side">
+                <div class="cr-Side">
+                  <div class="book-side__face book-side__face--top"></div>
+                  <div class="book-side__face book-side__face--bottom"></div>
+                </div>
+              </li>
+              <!-- 1. cover Front -->
+              <li class="book-cover Fr">
+                <div class="book-cover__face book-cover__face--front">
+                  <div class="book-title">
+                    <h1>Illustration</h1>
+                  </div>
+                </div>
+                <div class="book-cover__face book-cover__face--back"></div>
+                <div class="book-cover__face book-cover__face--right"></div>
+                <div class="book-cover__face book-cover__face--left"></div>
+                <div class="book-cover__face book-cover__face--top"></div>
+                <div class="book-cover__face book-cover__face--bottom"></div>
+                <ul class="cr cr-Tp-Rt"></ul>
+                <ul class="cr cr-Bt-Rt"></ul>
+              </li>
+              <!-- 2. page-->
+              <li class="book-page">
+                <ul class="book-page-list"></ul>
+              </li>
+              <!-- 8. cover Rear -->
+              <li class="book-cover Rr">
+                <div class="book-cover__face book-cover__face--front"></div>
+                <div class="book-cover__face book-cover__face--back"></div>
+                <div class="book-cover__face book-cover__face--right"></div>
+                <div class="book-cover__face book-cover__face--left"></div>
+                <div class="book-cover__face book-cover__face--top"></div>
+                <div class="book-cover__face book-cover__face--bottom"></div>
+                <ul class="cr cr-Tp-Lt"></ul>
+                <ul class="cr cr-Bt-Lt"></ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <!-- 스킬 -->
       <section id="skill" class="skill">
         <div class="wrap">
@@ -171,6 +231,7 @@
     </main>
     <div class="designModal__layer"></div>
     <script src="./js/createComponent.js"></script>
+    <!-- <script src="./js/bookBinder.js"></script> -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const swiper = new Swiper('.swiper.slide-box', {
