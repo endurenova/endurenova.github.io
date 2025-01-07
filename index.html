@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="subject" content="포트폴리오" />
+    <meta name="title" content="[포트폴리오] 웹 퍼블리셔 최주원" />
+    <meta name="description" content="프론트 엔드를 꿈꾸는" />
+    <meta name="author" content="최주원" />
+    <meta name="keywords" content="웹퍼블리셔, 웹 퍼블리싱, 퍼블리싱, 프론트엔드, 포트폴리오" />
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="[포트폴리오] 웹 퍼블리셔 최주원" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://endurenova.github.io/images/shake-og.png" />
+    <meta property="og:image" content="./icon/png_siru.png" />
+    <meta property="og:image:width" content="2048" />
+    <meta property="og:image:height" content="2048" />
+    <meta property="og:url" content="https://endurenova.github.io/" />
+    <meta property="og:site_name" content="[포트폴리오] 웹 퍼블리셔 최주원" />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/illustBook.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <aside>
+      <nav class="open-detail">
+        <div class="open-detail__home tooltip">
+          <a class="qhome-toggle toggle" href="javascript:recoveryHome();">
+            <span></span>
+          </a>
+          <span class="tooltip__left">돌아가기</span>
+        </div>
+        <div class="open-detail__link tooltip">
+          <a class="qlink-toggle toggle" href="javascript:enterProject();">
+            <span></span>
+          </a>
+          <span class="tooltip__left">작업물 보기</span>
+        </div>
+      </nav>
+    </aside>
+    <main id="portfolio" class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <section id="intro-page" class="intro-page swiper-slide">
+          <div class="introduce">
+            <h3>MULTIPERFORMANCE</h3>
+            <h3>WEB PUBLISHER</h3>
+          </div>
+          <div style="position: absolute; width: 100%; height: 100%; z-index: 1"></div>
+          <div style="padding: 56.25% 0 0 0">
+            <iframe
+              src="https://player.vimeo.com/video/1037780368?badge=0&amp;background=1&amp;muted=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              style="position: absolute; top: 0; left: 50%; width: 400%; height: 100%; transform: translate(-50%, 0%)"
+              title="gbros_train"
+            ></iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+        </section>
+        <section id="profile" class="profile swiper-slide">
+          <div class="wrap">
+            <h1>PROFILE</h1>
+            <div class="article-box">
+              <article class="about-box">
+                <div class="wrap">
+                  <img src="./images/profile.jpg" alt="프로필 이미지" />
+                  <!-- 개인정보 -->
+                  <ul class="about-list">
+                    <li class="about-name"><strong>최주원</strong><span>Choi Juwon</span></li>
+                    <li class="about-info">
+                      <ol>
+                        <li><span>Birth</span><span>1993.10.26</span></li>
+                        <li><span>Phone</span><span>010-4593-8054</span></li>
+                        <li><span>E-mail</span><span>endurenova@gmail.com</span></li>
+                      </ol>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+              <!-- 경험-->
+              <div class="wrap divider-wrap">
+                <hr class="resume-divider" />
+              </div>
+              <article class="history-box">
+                <div class="wrap">
+                  <div class="list-box experience">
+                    <h2>Experience</h2>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 웹 퍼블리싱 -->
+        <section id="web-publishing" class="web-publishing swiper-slide"></section>
+        <!-- 디자인 -->
+        <section id="design" class="design swiper-slide"></section>
+
+        <section id="skill" class="skill swiper-slide">
+          <div class="wrap">
+            <h1>SKILL</h1>
+            <div class="skill-box"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="designModal__layer"></div>
+    </main>
+
+    <script src="./js/createComponent.js"></script>
+
+    <!-- <script src="./js/bookBinder.js"></script> -->
+  </body>
+</html>

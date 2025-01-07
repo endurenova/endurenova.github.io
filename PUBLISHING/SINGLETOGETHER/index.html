@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>싱글투게더</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/singleTogether.css" />
+        <link rel="shortcut icon" size="16x16" href="images/favicon.png" />
+        <link rel="icon" href="images/favicon.png" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="./script/singleTogether.js"></script>
+    </head>
+    <body>
+        <div id="blankTop"></div>
+        <div id="layer_splash">
+            <div class="splash">
+                <img src="./images/splash_1.png" alt="" class="splash_logo_1" />
+                <img src="./images/splash_2.png" alt="" class="splash_logo_2" />
+            </div>
+        </div>
+        <header>
+            <nav id="nav_header">
+                <div id="area_header">
+                    <div id="wrapper" class="header-inner">
+                        <div class="header_logo">
+                            <a href="index.html"> 싱글투게더 </a>
+                        </div>
+                        <div class="header_menu">
+                            <ul>
+                                <li><a class="light_menu" href="#">공지사항</a></li>
+                                <li><a class="light_menu" href="#">이용안내</a></li>
+                                <li><a class="light_menu" href="#">싱투이야기</a></li>
+                                <li><a class="light_menu" href="#">고객센터</a></li>
+                            </ul>
+                        </div>
+                        <div id="header_toggle">
+                            <ul>
+                                <li class="toggle_lightness light_toggle_icon">
+                                    <div class="lightness_toggle_icon">
+                                        <img src="./images/dark_mode_icon.png" alt="" />
+                                    </div>
+                                </li>
+                                <li class="toggle_search light_toggle_icon">
+                                    <div class="search_toggle_icon">
+                                        <img src="./images/light_search_icon.png" alt="" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="area_search">
+                    <div id="wrapper">
+                        <div class="search_input">
+                            <div class="search-inner">
+                                <div class="search_box sb_light">
+                                    <img class="search_icon si_light" src="./images/dark_search_icon.png" alt="" />
+                                    <input
+                                        type="text"
+                                        class="search_text st_light"
+                                        name="searchWord"
+                                        placeholder="무엇이 궁금하느뇨?"
+                                    />
+                                </div>
+                                <ul id="search_hashtag">
+                                    <li><a class="hash tag0" href="#">#생활팁</a></li>
+                                    <li><a class="hash tag1" href="#">#취미공유</a></li>
+                                    <li><a class="hash tag2" href="#">#동네친구</a></li>
+                                    <li><a class="hash tag3" href="#">#요즘트렌드</a></li>
+                                    <li><a class="hash tag4" href="#">#1인가구정책</a></li>
+                                </ul>
+                            </div>
+                            <img class="search_character" src="./images/search_character.png" alt="" />
+                        </div>
+                    </div>
+                </div>                
+            </nav>
+        </header>
+        <div id="quickBar">
+            <div class="area_quickMenu">
+                <ul>
+                    <li>
+                        <a class="my_page s0" href="#blankTop">
+                            <img src="./images/g_ic0.png" alt="퀵메뉴 아이콘-1" />
+                            <span>싱투소개</span
+                            ><!--싱글투게더 소개-->
+                        </a>
+                        <div></div>
+                    </li>
+                    <li>
+                        <a class="my_page s1" href="#">
+                            <img src="./images/g_ic1.png" alt="퀵메뉴 아이콘-2" />
+                            <span>블로그</span
+                            ><!--블로그-->
+                        </a>
+                        <div></div>
+                    </li>
+                    <li>
+                        <a class="my_page s2" href="#">
+                            <img src="./images/g_ic2.png" alt="퀵메뉴 아이콘-3" />
+                            <span>갤러리</span
+                            ><!--갤러리-->
+                        </a>
+                        <div></div>
+                    </li>
+                    <li>
+                        <a class="my_page s3" href="#">
+                            <img src="./images/g_ic3.png" alt="퀵메뉴 아이콘-4" />
+                            <span>문의하기</span
+                            ><!--문의-->
+                        </a>
+                        <div></div>
+                    </li>
+                    <li>
+                        <a class="my_page s4" href="#">
+                            <img src="./images/g_ic4.png" alt="퀵메뉴 아이콘-5" />
+                            <span>오시는길</span
+                            ><!--오시는길-->
+                        </a>
+                        <div></div>
+                    </li>
+                </ul>
+                <div class="pop_window">
+                    <div class="pop_window__header">
+                        <span class="quick_close">×</span>
+                    </div>
+                    <div class="pop_window__body">
+                    </div>
+                </div>
+            </div>
+            <a class="scrollTop" href="#blankTop">
+                <span>▲Top</span>
+            </a>
+        </div>
+        <div id="layer_main">
+            <div class="frank">
+                <div class="area_pop">
+                    <a href="#">×</a>
+                    <img src="./images/fr.png" alt="" />
+                </div>
+            </div>
+            <div id="slideImg">
+                <div id="wrapper">
+                    <div class="area_slideImg">
+                        <div class="slide_contents">
+                            <div class="slide_txt">
+                                <p>혼자서도 잘해요<br />싱글들을 위한 정보</p>
+                                <h1>싱글투게더</h1>
+                            </div>
+                            <ul class="download_btn">
+                                <li>
+                                    <a class="db_light" href="#"> google Play </a>
+                                </li>
+                                <li>
+                                    <a class="db_light" href="#"> App Store </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="contents">
+                <article class="area_contents box_1">
+                    <div id="wrapper">
+                        <div class="txt_contents center">
+                            <div class="txt_box">
+                                <h3>왜 싱글투게더 일까요?</h3>
+                            </div>
+                        </div>
+                        <ul>
+                            <li class="review">
+                                <div class="balloon p0">
+                                    <p>1인가구에 대한 정책 정보를<br />늘 뒤늦게 알아서<br />손해 보는 기분이예요</p>
+                                </div>
+                            </li>
+                            <li class="review">
+                                <div class="balloon p1">
+                                    <p>동네 친구를 찾고 싶지만<br />다른 어플은 이성적 만남이<br />짙어서 부담스러워요</p>
+                                </div>
+                            </li>
+                            <li class="review">
+                                <div class="balloon p2">
+                                    <p>
+                                        문득 외로움이 스칠 때,<br />나 혼자 하는 취미가 질릴 때,<br />소통의 필요를 느껴요
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="area_contents box_2">
+                    <div class="txt_contents center">
+                        <div class="txt_box">
+                            <h3>매일 달라지는 트렌드</h3>
+                            <p>홈화면에서 사람들이 많이 찾는 트렌드를 간편하게 살펴볼 수 있어요.</p>
+                        </div>
+                        <div class="area_con_imgSlide">
+                            <div class="imgSlideWrap">
+                                <div class="imgDisplay">
+                                    <img src="./images/con_slide1.png" alt="" />
+                                </div>
+                                <ul>
+                                    <li><img src="./images/con_slide4.png" alt="" /></li>
+                                    <li><img src="./images/con_slide3.png" alt="" /></li>
+                                    <li><img src="./images/con_slide2.png" alt="" /></li>
+                                    <li><img src="./images/con_slide1.png" alt="" /></li>
+                                    <li><img src="./images/con_slide5.png" alt="" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="area_contents box_3">
+                    <div id="wrapper">
+                        <div class="box345_inner">
+                            <div class="txt_contents side left">
+                                <div class="txt_box">
+                                    <h3>혼자서도 잘해요!<br />싱글들을 위한 정보</h3>
+                                    <p>
+                                        1인 가구를 위한 살림 및 생활 팁<br />몰라서 놓치고 있는 정책정보<br />싱글투게더가
+                                        함께 찾아드릴게요!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="box_34_img">
+                                <img src="./images/con_img1.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="box345_inner">
+                            <div class="box_34_img">
+                                <img src="./images/con_img2.png" alt="" />
+                            </div>
+                            <div class="txt_contents side right">
+                                <div class="txt_box">
+                                    <h3>경험을 공유하는 즐거움</h3>
+                                    <p>
+                                        문득 외로움이 들 때면 커뮤니티에서<br />소통의 즐거움을 느껴보세요.<br />게시판과
+                                        채팅을 이용하면 따뜻함은 배가 된답니다!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="area_contents box_4">
+                    <div id="wrapper">
+                        <div class="box5_inner">
+                            <div class="txt_contents side left">
+                                <div class="txt_box">
+                                    <h3>나만의 취향을 <br />채워가는 재미!</h3>
+                                    <p>마음에 드는 게시물과 정보는 <br />스크랩으로 모아볼 수 있어요.</p>
+                                    <p>
+                                        나만의 취향을 채우는 기쁨을, <br />활동에 따라 변하는 등급으로 즐거움을
+                                        누려보세요.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="box_5_img">
+                                <img src="./images/con_img3.png" alt="" class="box_5_bg" />
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <footer>
+                <div id="wrapper">
+                    <div id="area_faq">
+                        <h3>FAQ</h3>
+                        <ul class="faq_list">
+                            <li>
+                                <h5>Q 유료 서비스인가요?</h5>
+                                <div class="answer">
+                                    <p>A</p>
+                                    <p>아니요. 싱글투게더는 무료로 이용하실 수 있어요.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h5>Q 어떤 서비스인가요?</h5>
+                                <div class="answer">
+                                    <p>A</p>
+                                    <p>
+                                        싱글들을 위한 정보와 소통을 지원하는 커뮤니케이션 App 입니다. 혼자 또 같이
+                                        해보세요. 그 모든 과정을 싱글투게더가 도와드릴게요.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h5>Q 어떤 기능을 제공하나요?</h5>
+                                <div class="answer">
+                                    <p>A</p>
+                                    <p>
+                                        1&#41; 트렌드: 실시간 검색어와 피드로 사람들이 많이 찾는 정보를 알 수 있어요.
+                                        <br />2&#41; 커뮤니티: 관심사에 맞는 게시글을 쓰고 확인할 수 있어요.
+                                        <br />3&#41; 메세지: 1:1 채팅 기능으로 따로 소통할 수 있어요. <br />4&#41;
+                                        생활팁: 1인가구를 위한 정보를 확인할 수 있어요. <br />5&#41; 등급: 활동량에 따라
+                                        쌓이는 경험치를 통해 내 등급을 확인할 수 있어요. <br />6&#41; 북마크: 마음에
+                                        드는 게시물을 한 곳에 모아 따로 볼 수 있어요.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h5>Q 어디서 다운로드 할 수 있나요?</h5>
+                                <div class="answer">
+                                    <p>A</p>
+                                    <p>
+                                        구글 플레이스토어나 IOS 앱스토어에서 '싱글투게더'를 검색해주세요. 모바일
+                                        홈페이지나 상하단에 위치한 '앱 다운로드' 버튼으로도 설치가 가능해요.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="area_footer">
+                        <div class="footer_contents">
+                            <div id="wrapper">
+                                <img src="./images/footer_logo.png" alt="" class="footer_logo" />
+                                <h4>혼자 또 같이!</h4>
+                                <h3>싱글들을 위한 싱글투게더</h3>
+                                <ul class="footer_download_btn">
+                                    <li>
+                                        <a href="#"> google Play </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> App Store </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer_copyright">
+                            <div id="wrapper">
+                                <ul class="footer_menu">
+                                    <li><a href="#">이용약관</a></li>
+                                    <li><a href="#">위치기반서비스이용약관</a></li>
+                                    <li><a href="#">개인정보처리방침</a></li>
+                                    <li><a href="#">권리침해신고안내</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li></li>
+                                </ul>
+                                <p class="copyright">Copyright© (주)구구 All rights reserved.</p>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+@import url(./common.css);
+body {
+  overflow: hidden;
+}
+#portfolio {
+  display: none;
+  perspective: 100vw;
+  transform-style: preserve-3d;
+}
+#intro {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  font-family: 'maplestory-bold';
+  background-color: var(--grayScale-N1);
+}
+#intro.remove {
+  display: none;
+}
+.intro-loading {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: inherit;
+  height: inherit;
+}
+.intro-loading > p {
+  font-size: 5vmin;
+  padding: 2vmin;
+  color: var(--theme-text);
+}
+.intro-loading > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 18vmin;
+  height: 5vmin;
+}
+@keyframes loadingAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+.intro-loading > ul > li {
+  display: inline-block;
+  width: 3vmin;
+  height: 3vmin;
+  border-radius: 50%;
+  animation: loadingAnimation 1s linear infinite;
+}
+.intro-loading > ul > li:nth-child(1) {
+  background-color: var(--theme-main);
+  animation-delay: 0s;
+}
+
+.intro-loading > ul > li:nth-child(2) {
+  background-color: var(--theme-sub);
+  animation-delay: 0.2s;
+}
+
+.intro-loading > ul > li:nth-child(3) {
+  background-color: var(--theme-text);
+  animation-delay: 0.4s;
+}

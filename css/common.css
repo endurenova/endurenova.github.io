@@ -1,0 +1,176 @@
+:root {
+  --wrapper-width: 90%;
+  --inner-wrapper-width: 90%;
+
+  --mini-text-size: 14px; /* quick-menu text */
+  --small-text-size: clamp(14px, 1.094vw, 18px);
+  --normal-text-size: clamp(16px, 1.25vw, 20px);
+  --regular-text-size: clamp(20px, 1.563vw, 24px); /* project-item title */
+  --medium-text-size: clamp(24px, 1.875vw, 36px); /* sub-title */
+  --large-text-size: clamp(36px, 2.813vw, 48px); /* main-title (h1) */
+
+  --slow-speed: 0.6s;
+  --normal-speed: 0.3s;
+  --fast-speed: 0.1s;
+
+  --tailed-n0: #cedb5b;
+  --tailed-n1: #eabecf;
+  --tailed-n2: #a3a8d6;
+  --tailed-n3: #ebc251;
+  --tailed-n4: #96a3ad;
+  --tailed-n5: #d1c4e9;
+
+  --color-navy1: #040214;
+  --color-navy2: #27374d;
+  --color-navy3: #526d82;
+  /* rgb (244, 186, 86) */
+  --theme-main: rgb(255, 245, 243);
+
+  /* rgb (203, 109, 47) */
+  --theme-sub: rgb(207, 173, 163);
+
+  /* rgb (206, 218, 224) */
+  --theme-text: #cedae0;
+
+  --grayScale-W: #ffffff;
+  --grayScale-N5: #efefef;
+  --grayScale-N4: #d5d5d5;
+  --grayScale-N3: #808080;
+  --grayScale-N2: #2b2b2b;
+  --grayScale-N1: #111111;
+
+  --blackLayer-opacity: rgba(0, 0, 0, 0.5);
+  /* 
+    싱글투게더
+    background-color: #31AF79;
+    background-color: #EAC99D;
+    background-color: #B8A292;
+    background-color: rgb(49, 175, 121);
+    background-color: rgb(234, 201, 157);
+    background-color: rgb(184, 162, 146);
+    
+    파인트잡
+    background-color: #7DBBAD;
+    background-color: #493630;
+    background-color: #B8A292;
+    background-color: rgb(125, 187, 173);
+    background-color: rgb(73, 54, 48);
+    background-color: rgb(184, 162, 146);
+    
+    오버톤즈
+    background-color: #794C4C;
+    background-color: #E1CAA7;
+    background-color: #E7DBC8; (50% E1CAA7)
+    background-color: rgb(121, 76, 76);
+    background-color: rgb(225, 202, 167);
+    background-color: rgb(231, 219, 200);
+
+    도토리숲
+    background-color: #50661E;
+    background-color: #543E23;
+    background-color: #C1512C;
+    background-color: rgb(80, 102, 30);
+    background-color: rgb(84, 62, 35);
+    background-color: rgb(193, 81, 44);
+
+    달력
+    background-color: #bf9589;
+    background-color: #fff5f3;
+    background-color: #c8c3b3;
+    background-color: #859a9d;
+    background-color: rgb(191, 149, 137);
+    background-color: rgb(255, 245, 243);
+    background-color: rgb(200, 195, 179);
+    background-color: rgb(133, 154, 157);
+
+    비엔시스템
+    background-color: #040214;
+    background-color: #B82120;
+    background-color: #C35C5C;
+    background-color: rgb(4, 2, 20);
+    background-color: rgb(184, 33, 32);
+    background-color: rgb(195, 92, 92);
+
+*/
+  /* 
+  rgba(208, 7, 104, 0.95)
+  rgba(208, 72, 104, 0.95)
+  rgba(218, 114, 137, 0.95) 
+  rgba(218, 149, 137, 0.95)
+  rgba(252, 231, 104, 0.95)
+  rgba(208, 72, 72, 0.95)
+*/
+  /* bookBinder root 시작 ---------------------------------------------------------------------- */
+  --book-shrink-scale: 0.3;
+  --book-width: 72vmin;
+  --book-height: 90vmin;
+  --book-page-width: 70vmin;
+  --book-page-height: 86vmin;
+  --book-cover-thick: 1vmin;
+  --book-pages: 0vmin;
+  /* --book-pages-thick: calc(0.1 * var(--book-pages)); */
+  --book-pages-thick: 0vmin;
+  --book-total-thick: calc((var(--book-cover-thick) * 2) + var(--book-pages-thick));
+  --book-side-thick: calc(0.5 * var(--book-total-thick));
+  --book-total-width: calc(var(--book-side-thick) + var(--book-width));
+  --book-perspective: calc(var(--book-height) + var(--book-width));
+
+  /* 커버 */
+  --book-cover-border-radius: 2vmin;
+  --book-cover-radius-corner-count: 30;
+  --book-radius-corner-degree: calc((360 / var(--book-cover-radius-corner-count)));
+  --book-radius-corner-width: calc(
+    2 * var(--book-cover-border-radius) * sin(var(--pi) / var(--book-cover-radius-corner-count))
+  );
+  /* 옆면 */
+  --book-side-radius-face-count: 30;
+  --book-side-degree: calc((360 / var(--book-side-radius-face-count)));
+  --book-side-radius-corner-width: calc(
+    2 * var(--book-cover-thick) * sin(var(--pi) / var(--book-side-radius-face-count))
+  );
+  --book-shrink-scale: 0.3;
+
+  /* 포스트잇 */
+  --post-it-width: calc(0.25 * var(--book-page-width));
+  --post-it-height: calc(0.25 * var(--book-page-height));
+  /* 플래그 태그 */
+  --flag-tag-width: calc(0.4 * var(--book-page-width));
+  --flag-tag-height: calc(0.07 * var(--book-page-height));
+
+  /* bookBinder root 끝 ---------------------------------------------------------------------- */
+}
+@media (max-width: 1280px) {
+  :root {
+    --small-text-size: clamp(14px, 1.367vw, 18px);
+    --normal-text-size: clamp(16px, 1.563vw, 20px);
+    --regular-text-size: clamp(20px, 1.953vw, 24px); /* project-item title */
+    --medium-text-size: clamp(24px, 2.344vw, 36px); /* sub-title */
+    --large-text-size: clamp(36px, 3.516vw, 48px); /* main-title (h1) */
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --small-text-size: clamp(12px, 2.5vw, 14px);
+    --normal-text-size: clamp(14px, 2.917vw, 16px);
+    --regular-text-size: clamp(16px, 3.333vw, 20px); /* project-item title */
+    --medium-text-size: clamp(18px, 3.75vw, 24px); /* sub-title */
+    --large-text-size: clamp(24px, 5vw, 36px); /* main-title (h1) */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --wrapper-width: 90%;
+  }
+}
+body::-webkit-scrollbar {
+  width: 0.3vmin; /* 스크롤바의 너비 */
+}
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background-color: var(--theme-main);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: var(--theme-text-op);
+}

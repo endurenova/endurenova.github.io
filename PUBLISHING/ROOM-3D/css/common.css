@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'maplestory-bold';
+  src: url('../font/Maplestory-Bold.ttf');
+}
+@font-face {
+  font-family: 'maplestory-light';
+  src: url('../font/Maplestory-Light.ttf');
+}
+@font-face {
+  font-family: 'Parisienne-Regular';
+  src: url('../font/Parisienne-Regular.ttf');
+}
+@font-face {
+  font-family: 'Pretendard-light';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-medium';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  /* rgb (43, 43, 43) */
+  --background-main: #2b2b2b;
+
+  /* rgb (244, 186, 86) */
+  --theme-main: #f4ba56;
+
+  /* rgb (203, 109, 47) */
+  --theme-sub: #cb6d2f;
+
+  /* rgb (206, 218, 224) */
+  --theme-text: #cedae0;
+  --theme-text-op: #cedae0cc;
+  --color-navy1: #040214;
+  --color-navy2: #27374d;
+  --color-navy3: #526d82;
+  --color-navy4: #9db2bf;
+  --color-navy5: #dde6ed;
+  /* rgb (68, 24, 16) */
+  --book-main: #441810;
+
+  --grayScale-N5: #efefef;
+  --grayScale-N4: #d5d5d5;
+  --grayScale-N3: #808080;
+  --grayScale-N2: #2b2b2b;
+  --grayScale-N1: #111111;
+
+  --blackLayer-opacity: rgba(0, 0, 0, 0.7);
+  --wrapper-width: 90%;
+
+  --info-font-size: 1vmin;
+
+  --pi: 3.14159265358979;
+  /* 다각형의 내각 n(변의 수) = (n - 2) * 180° / n */
+  /* 원에 내접하는 한 면의 길이 n(내각) = 2r * tan(π/n) */
+  /* 원에 외접하는 한 면의 길이 n(내각) = 2R * sin(π/n) */
+  /* 직각삼각형의 밑변과 빗변을 알때 높이 h = a(밑면)* tan *ab의각도 */
+  /* woodenTable root 시작 ---------------------------------------------------------------------- */
+  --table-width: 60vmax;
+  --table-height: 36vmax;
+  --table-perspective: var(--table-width);
+  --table-thick: 3vmin;
+  --table-leg-thick: 2.6vmin;
+  --table-leg-height: 36vmin;
+  --table-face-border-radius: 1vmax;
+  --table-face-radius-corner-count: 20;
+  --table-radius-corner-degree: calc((360 / var(--table-face-radius-corner-count)));
+  --table-radius-corner-width: calc(
+    2 * var(--table-face-border-radius) * sin(var(--pi) / var(--table-face-radius-corner-count))
+  );
+  --table-total-height: calc(var(--table-thick) + var(--table-leg-height));
+  /* woodenTable root 끝 ---------------------------------------------------------------------- */
+
+  /* bookBinder root 시작 ---------------------------------------------------------------------- */
+  --book-shrink-scale: 0.3;
+  --book-width: 72vmin;
+  --book-height: 90vmin;
+  --book-page-width: 70vmin;
+  --book-page-height: 86vmin;
+  --book-cover-thick: 1vmin;
+  --book-pages: 0vmin;
+  /* --book-pages-thick: calc(0.1 * var(--book-pages)); */
+  --book-pages-thick: 0vmin;
+  --book-total-thick: calc((var(--book-cover-thick) * 2) + var(--book-pages-thick));
+  --book-side-thick: calc(0.5 * var(--book-total-thick));
+  --book-total-width: calc(var(--book-side-thick) + var(--book-width));
+  --book-perspective: calc(var(--book-height) + var(--book-width));
+
+  /* 커버 */
+  --book-cover-border-radius: 2vmin;
+  --book-cover-radius-corner-count: 30;
+  --book-radius-corner-degree: calc((360 / var(--book-cover-radius-corner-count)));
+  --book-radius-corner-width: calc(
+    2 * var(--book-cover-border-radius) * sin(var(--pi) / var(--book-cover-radius-corner-count))
+  );
+  /* 옆면 */
+  --book-side-radius-face-count: 30;
+  --book-side-degree: calc((360 / var(--book-side-radius-face-count)));
+  --book-side-radius-corner-width: calc(
+    2 * var(--book-cover-thick) * sin(var(--pi) / var(--book-side-radius-face-count))
+  );
+  --book-shrink-scale: 0.3;
+
+  /* 포스트잇 */
+  --post-it-width: calc(0.25 * var(--book-page-width));
+  --post-it-height: calc(0.25 * var(--book-page-height));
+  /* 플래그 태그 */
+  --flag-tag-width: calc(0.34 * var(--book-page-width));
+  --flag-tag-height: calc(0.06 * var(--book-page-height));
+
+  /* bookBinder root 끝 ---------------------------------------------------------------------- */
+
+  /* monitorDisplay root 시작 ---------------------------------------------------------------------- */
+  /* 모니터 디스플레이 */
+  --monitor-display-width: 64vmin;
+  --monitor-display-height: 36vmin;
+  --monitor-display-thick: 2vmin;
+
+  /* 모니터 스탠드 */
+  --monitor-stand-width: 14vmin;
+  --monitor-stand-pillar-height: 20vmin;
+  --monitor-stand-pillar-degree: 75deg;
+  --monitor-stand-base-height: 15vmin;
+  --monitor-stand-thick: calc(var(--monitor-display-thick) / 3);
+  --monitor-stand-border-radius: 0.5vmin;
+  --monitor-connector-height: 24vmin * tan(var(--monitor-stand-pillar-degree));
+
+  /* 커버 */
+  --monitor-stand-radius-corner-count: 30;
+  --monitor-stand-corner-degree: calc((360 / var(--monitor-stand-radius-corner-count)));
+  --monitor-stand-radius-corner-width: calc(
+    2 * var(--monitor-stand-border-radius) * sin(var(--pi) / var(--monitor-stand-radius-corner-count))
+  );
+
+  /* 힌지 옆면 */
+  --monitor-hinge-radius-corner-count: 30;
+  --monitor-hinge-corner-degree: calc((360 / var(--monitor-hinge-radius-corner-count)));
+  --monitor-hinge-radius-corner-width: calc(
+    2 * (0.5 * var(--monitor-display-thick)) * sin(var(--pi) / var(--monitor-hinge-radius-corner-count))
+  );
+  /* monitorDisplay root 끝 ---------------------------------------------------------------------- */
+
+  /* window root 시작 ---------------------------------------------------------------------- */
+  /* 창문 사이즈 */
+  --window-ml: 32%;
+  --window-mt: 15%;
+  --window-mb: 70%;
+  --window-mr: 98%;
+
+  /* 창문 틀 두께 */
+  --window-frame-thick: 3vmin;
+  /* window root 끝 ---------------------------------------------------------------------- */
+}

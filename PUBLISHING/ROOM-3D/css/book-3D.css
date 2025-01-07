@@ -1,0 +1,920 @@
+@import url(./common.css);
+/* 책 바인더 공통 시작 ---------------------------------------------------------------------- */
+.book-binder__box {
+  display: flex;
+  position: absolute;
+  transform-style: preserve-3d;
+  width: var(--book-width);
+  height: calc(var(--book-height));
+  scale: var(--book-shrink-scale);
+  transform: rotateZ(-8deg);
+  transition: 0.3s;
+}
+.bookActive .book-binder__box {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  /* top 앞뒤 left 좌우*/
+  top: calc(50% + (0.5 * var(--table-height)));
+  left: 100%;
+  width: 150vmax;
+  height: 100vmin;
+  /* x: 좌우, y: 상하, z: 앞뒤 */
+  transform: rotateX(-90deg) translateX(calc(-100%)) translateY(calc(-50% + var(--table-total-height)))
+    translateZ(calc(100vmax - 50vmin - var(--table-height)));
+  scale: 1;
+}
+.book-binder__box > .scene {
+  order: 1;
+  width: var(--book-width);
+  height: var(--book-height);
+  transform-style: preserve-3d;
+  box-shadow: rgba(0, 0, 0, 1) -1vmin 1vmin 8vmin 1vmin;
+  transition: 1s;
+}
+.bookActive .book-binder__box > .scene {
+  box-shadow: rgba(0, 0, 0, 0) 0vmax 0vmax 0vmax 0vmax;
+}
+.book-binder__box > .exit-layer {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.bookActive .book-binder__box > .exit-layer {
+  display: unset;
+}
+.book-viewer {
+  position: absolute;
+  width: var(--book-width);
+  height: var(--book-height);
+  transform: translateZ(calc(1.01 * var(--book-total-thick)));
+}
+.bookActive .book-viewer {
+  display: none;
+}
+.book-binder {
+  order: 1;
+  width: var(--book-width);
+  height: var(--book-height);
+  transform: translateZ(calc(1 * var(--book-cover-thick)));
+  transform-style: preserve-3d;
+  transition: 0.3s;
+}
+.open.book-binder {
+  position: absolute;
+  transform: rotateX(0deg) rotateZ(0deg) translateX(50%) translateZ(var(--book-cover-thick));
+}
+/* 책 바인더 공통 끝 ---------------------------------------------------------------------- */
+
+/* 책 커버 시작 ---------------------------------------------------------------------- */
+.book-cover {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  transform-style: preserve-3d;
+  transform-origin: left;
+  position: absolute;
+  width: var(--book-width);
+  height: var(--book-height);
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.book-cover.Fr {
+  transform: rotateY(0deg) translate(0%, -50%);
+  border-top-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+  border-bottom-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+}
+.book-title {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, 0%);
+  font-family: 'Malgun Gothic';
+  font-weight: 700;
+  color: var(--grayScale-N5);
+  width: 80%;
+  /* letter-spacing: 0.1vmin; */
+  /* text-shadow: -0.2vmin -0.3vmin var(--background-main), 0.2vmin 0.2vmin  */
+}
+.book-title h1 {
+  font-size: 9vmin;
+  word-break: keep-all;
+  text-align: center;
+}
+.book-title h3 {
+  font-size: 2vmin;
+  padding: 2%;
+}
+.book-aunthor {
+  position: absolute;
+  right: 7%;
+  bottom: 5%;
+}
+.book-aunthor p {
+  font-family: 'Parisienne-Regular';
+  font-size: 4vmin;
+  color: var(--grayScale-N5);
+  rotate: -3deg;
+}
+.book-cover.Rr {
+  transform: rotateY(180deg) translate(-100%, -50%);
+  border-top-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+  border-bottom-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+}
+.flipOpen.book-cover.Fr {
+  /* 앞 커버 오픈 */
+  transform: rotateY(-180deg) translate3D(0, -50%, 0);
+}
+.flipClose.book-cover.Rr {
+  /* 뒷 커버 닫기 */
+  transform: rotateY(0deg) translate3d(-100%, -50%, 0);
+}
+.book-cover__face {
+  display: flex;
+  box-sizing: border-box;
+  position: absolute;
+}
+/* .open .Rr .book-cover__face--front,
+.open .Fr .book-cover__face--back {
+    right: 0;
+    width: calc((var(--book-width) - var(--book-side-thick)));
+}
+.open .Fr .book-cover__face--front,
+.open .Rr .book-cover__face--back {
+    left: 0;
+    width: calc((var(--book-width) - var(--book-side-thick)));
+} */
+.book-cover__face--front,
+.book-cover__face--back {
+  width: var(--book-width);
+  height: var(--book-height);
+}
+.Fr .book-cover__face--front,
+.Rr .book-cover__face--back {
+  border-top-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+  border-bottom-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+}
+.Fr .book-cover__face--back,
+.Rr .book-cover__face--front {
+  border-top-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+  border-bottom-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+}
+.Fr .book-cover__face--back {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* .Fr .book-cover__face--back::after {
+    content: '';
+    width: 96%;
+    height: 94%;
+    border-top-left-radius: calc(var(--book-cover-border-radius) / 2) calc(var(--book-cover-border-radius) / 2);
+    border-bottom-left-radius: calc(var(--book-cover-border-radius) / 2) calc(var(--book-cover-border-radius) / 2);
+    background-color: cornsilk;
+} */
+.Rr .book-cover__face--back {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+/* .Rr .book-cover__face--back::after {
+    content: '';
+    width: 96%;
+    height: 94%;
+    border-top-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+    border-bottom-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+    background-color: antiquewhite;
+} */
+.book-cover__face--front {
+  transform: translateZ(var(--book-cover-thick));
+}
+.book-cover__face--back {
+  transform: rotateY(180deg);
+}
+
+.book-cover__face--top,
+.book-cover__face--bottom {
+  width: calc(var(--book-width) - var(--book-cover-border-radius));
+  height: var(--book-cover-thick);
+}
+.book-cover__face--top {
+  transform-origin: top;
+  top: 0;
+  transform: rotateX(90deg);
+}
+.Fr .book-cover__face--top {
+  left: 0;
+}
+.Rr .book-cover__face--top {
+  right: 0;
+}
+
+.book-cover__face--bottom {
+  transform-origin: bottom;
+  bottom: 0;
+  transform: rotateX(-90deg);
+}
+.Fr .book-cover__face--bottom {
+  left: 0;
+}
+.Rr .book-cover__face--bottom {
+  right: 0;
+}
+
+.book-cover .cr-Tp-Rt .side::after,
+.book-cover .cr-Bt-Rt .side::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: calc(var(--book-cover-thick) * 0.6);
+  height: 100%;
+}
+.book-cover .cr-Tp-Lt .side::after,
+.book-cover .cr-Bt-Lt .side::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: calc(var(--book-cover-thick) * 0.6);
+  height: 100%;
+}
+.book-cover__face--top::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: calc(var(--book-cover-thick) * 0.6);
+  width: 100%;
+}
+.book-cover__face--bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: calc(var(--book-cover-thick) * 0.6);
+  width: 100%;
+}
+.Fr .book-cover__face--right::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: calc(var(--book-cover-thick) * 0.6);
+  height: 100%;
+}
+.Rr .book-cover__face--left::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: calc(var(--book-cover-thick) * 0.6);
+  height: 100%;
+}
+.book-cover__face--left,
+.book-cover__face--right {
+  width: var(--book-cover-thick);
+}
+.Fr .book-cover__face--left,
+.Rr .book-cover__face--right {
+  height: var(--book-height);
+}
+.Fr .book-cover__face--right,
+.Rr .book-cover__face--left {
+  height: calc(var(--book-height) - (2 * var(--book-cover-border-radius)));
+}
+.Fr .book-cover__face--right {
+  transform-origin: right;
+  top: 0;
+  right: 0;
+  transform: rotateY(90deg) translateY(var(--book-cover-border-radius));
+}
+.Rr .book-cover__face--left {
+  transform-origin: left;
+  top: 0;
+  left: 0;
+  transform: rotateY(-90deg) translateY(var(--book-cover-border-radius));
+}
+.Rr .book-cover__face--right {
+  transform-origin: right;
+  right: 0;
+  bottom: 0;
+  transform: rotateY(90deg);
+}
+.Fr .book-cover__face--left {
+  transform-origin: left;
+  top: 0;
+  left: 0;
+  transform: rotateY(-90deg);
+}
+.book-cover .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+  width: var(--book-cover-thick);
+  height: var(--book-cover-border-radius);
+}
+.cr-Bt-Rt {
+  transform-origin: right;
+  bottom: 0;
+  right: 0;
+  transform: rotateY(90deg) translateZ(calc(-1 * var(--book-cover-border-radius)));
+}
+
+.cr-Bt-Lt {
+  transform-origin: left;
+  bottom: 0;
+  left: 0;
+  transform: rotateY(-90deg) translateZ(calc(-1 * var(--book-cover-border-radius)));
+}
+.cr-Tp-Rt {
+  transform-origin: right;
+  top: 0;
+  right: 0;
+  transform: rotateY(90deg) translateZ(calc(-1 * var(--book-cover-border-radius)));
+}
+.cr-Tp-Lt {
+  transform-origin: left;
+  top: 0;
+  left: 0;
+  transform: rotateY(-90deg) translateZ(calc(-1 * var(--book-cover-border-radius)));
+}
+.book-cover .cr .side {
+  width: var(--book-cover-thick);
+  position: absolute;
+  height: var(--book-radius-corner-width);
+}
+.book-cover .cr-Tp-Rt .side,
+.book-cover .cr-Tp-Lt .side {
+  bottom: calc(-0.5 * var(--book-radius-corner-width));
+}
+.book-cover .cr-Bt-Rt .side,
+.book-cover .cr-Bt-Lt .side {
+  top: calc(-0.5 * var(--book-radius-corner-width));
+  /* bottom: calc(var(--book-cover-border-radius) - (0.5 * var(--book-radius-corner-width))); */
+}
+
+.book-cover .cr-Tp-Rt .s0,
+.book-cover .cr-Tp-Lt .s0 {
+  transform: rotateX(0deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Tp-Rt .s1,
+.book-cover .cr-Tp-Lt .s1 {
+  transform: rotateX(12deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Tp-Rt .s2,
+.book-cover .cr-Tp-Lt .s2 {
+  transform: rotateX(24deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Tp-Rt .s3,
+.book-cover .cr-Tp-Lt .s3 {
+  transform: rotateX(36deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Tp-Rt .s4,
+.book-cover .cr-Tp-Lt .s4 {
+  transform: rotateX(48deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Tp-Rt .s5,
+.book-cover .cr-Tp-Lt .s5 {
+  transform: rotateX(60deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Tp-Rt .s6,
+.book-cover .cr-Tp-Lt .s6 {
+  transform: rotateX(72deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Tp-Rt .s7,
+.book-cover .cr-Tp-Lt .s7 {
+  transform: rotateX(84deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Bt-Rt .s0,
+.book-cover .cr-Bt-Lt .s0 {
+  transform: rotateX(270deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Bt-Rt .s1,
+.book-cover .cr-Bt-Lt .s1 {
+  transform: rotateX(282deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Bt-Rt .s2,
+.book-cover .cr-Bt-Lt .s2 {
+  transform: rotateX(294deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Bt-Rt .s3,
+.book-cover .cr-Bt-Lt .s3 {
+  transform: rotateX(306deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Bt-Rt .s4,
+.book-cover .cr-Bt-Lt .s4 {
+  transform: rotateX(318deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Bt-Rt .s5,
+.book-cover .cr-Bt-Lt .s5 {
+  transform: rotateX(330deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Bt-Rt .s6,
+.book-cover .cr-Bt-Lt .s6 {
+  transform: rotateX(342deg) translateZ(var(--book-cover-border-radius));
+}
+.book-cover .cr-Bt-Rt .s7,
+.book-cover .cr-Bt-Lt .s7 {
+  transform: rotateX(354deg) translateZ(var(--book-cover-border-radius));
+}
+/* 책 커버 끝 ---------------------------------------------------------------------- */
+
+/* 책 옆면 시작 ---------------------------------------------------------------------- */
+.book-side {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transform-style: preserve-3d;
+  transition: 0.3s;
+  height: var(--book-height);
+}
+.book-side__face {
+  display: flex;
+  position: absolute;
+  transition: 0.3s;
+}
+.book-side__face--top,
+.book-side__face--bottom {
+  position: absolute;
+  width: var(--book-side-thick);
+  height: var(--book-total-thick);
+}
+.book-side__face--top {
+  transform-origin: top;
+  left: calc(-1 * var(--book-cover-thick));
+  top: 0;
+  transform: rotateX(90deg) translateY(calc(-1 * var(--book-side-thick)));
+  border-top-left-radius: var(--book-cover-thick) calc(var(--book-side-thick));
+  border-bottom-left-radius: calc(var(--book-side-thick)) calc(var(--book-side-thick));
+}
+.book-side__face--bottom {
+  transform-origin: bottom;
+  left: calc(-1 * var(--book-cover-thick));
+  bottom: 0;
+  transform: rotateX(90deg) translateY(calc(1 * var(--book-side-thick)));
+  border-top-left-radius: var(--book-cover-thick) var(--book-cover-thick);
+  border-bottom-left-radius: var(--book-cover-thick) var(--book-cover-thick);
+}
+.book-side .cr-Side {
+  transform-origin: left;
+  top: 0;
+  left: 0;
+  height: var(--book-height);
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: 0.3s;
+}
+.open.book-binder .cr-Side {
+  transform: rotateY(-90deg);
+}
+.close.book-binder .book-side .cr-Side {
+  transform: rotateY(-180deg);
+}
+.book-side .cr-Side .side {
+  transform-origin: top;
+  top: 0;
+  right: calc(-0.5 * var(--book-side-radius-corner-width));
+  position: absolute;
+  height: var(--book-height);
+  width: var(--book-side-radius-corner-width);
+}
+.open.book-binder .book-side .cr-Side span:first-of-type,
+.open.book-binder .book-side .cr-Side span:last-of-type {
+  opacity: 0;
+}
+.open.book-binder .book-side .book-side__face {
+  opacity: 0;
+}
+/* 책 옆면 끝 ---------------------------------------------------------------------- */
+
+/* 책 페이지 시작 ---------------------------------------------------------------------- */
+.book-page {
+  top: 50%;
+  transform: translate(0, -50%);
+  position: absolute;
+  width: calc(var(--book-page-width));
+  height: calc(var(--book-page-height));
+  z-index: 1;
+}
+.book-page-list {
+  position: relative;
+  width: inherit;
+  height: inherit;
+}
+.binder__page {
+  display: flex;
+  position: absolute;
+  flex-flow: column;
+  -ms-flex-flow: column;
+  justify-content: space-between;
+  width: calc(var(--book-page-width));
+  height: calc(var(--book-page-height));
+  transform-style: preserve-3d;
+  transition: 0.3s;
+}
+/* --------------------------------------------------------------------------------------- */
+.binder__page.flipPageRight {
+  transform-origin: left;
+  transform: rotateY(0deg);
+}
+.binder__page.flipPageLeft {
+  transform-origin: left;
+  transform: rotateY(-180deg);
+}
+.binder__page[data-page-index='0'] .flag-tag {
+  top: 6%;
+}
+.binder__page[data-page-index='1'] .flag-tag {
+  top: 14%;
+} /* 싱글투게더 */
+.binder__page[data-page-index='3'] .flag-tag {
+  top: 22%;
+} /* 파인트잡 */
+.binder__page[data-page-index='5'] .flag-tag {
+  top: 30%;
+} /* 오버톤즈 */
+.binder__page[data-page-index='7'] .flag-tag {
+  top: 38%;
+} /* 도토리숲 */
+.binder__page[data-page-index='9'] .flag-tag {
+  top: 46%;
+} /* 달력 */
+.binder__page[data-page-index='11'] .flag-tag {
+  top: 54%;
+} /* 비엔시스템 */
+.binder__page[data-page-index='13'] .flag-tag {
+  top: 62%;
+} /* 로또의요정 */
+.flag-tag {
+  display: flex;
+  position: absolute;
+  width: var(--flag-tag-width);
+  height: var(--flag-tag-height);
+  font-family: 'mapleStory-light';
+  font-size: 1.6vmin;
+  color: var(--grayScale-N5);
+  right: calc(-0.42 * var(--flag-tag-width));
+}
+.upper.flag-tag {
+  z-index: 2;
+}
+.flag-tag .flag-tag__white {
+  order: 1;
+  width: 58%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.flag-tag .flag-tag__name {
+  order: 2;
+  width: 42%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 4%;
+}
+.post-list {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-flow: row wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  padding: 3%;
+}
+.post-list > .post-it {
+  width: var(--post-it-width);
+  height: var(--post-it-height);
+  color: var(--grayScale-N5);
+  transform: rotate(-5deg);
+  clip-path: polygon(0 0%, 10% 0, 100% 0, 100% 10%, 100% 80%, 80% 100%, 10% 100%, 0% 100%, 0% 10%);
+  margin: 2%;
+  padding: 3%;
+}
+.post-list > .post-it:nth-of-type(1) {
+  order: 1;
+}
+.post-list > .post-it:nth-of-type(2) {
+  order: 2;
+}
+.post-list > .post-it:nth-of-type(3) {
+  order: 3;
+}
+.post-list > .post-it:nth-of-type(4) {
+  order: 4;
+}
+.post-list > .post-it:nth-of-type(5) {
+  order: 5;
+}
+.post-list > .post-it:nth-of-type(6) {
+  order: 6;
+}
+.post-list > .post-it:nth-of-type(7) {
+  order: 7;
+}
+.post-list > .post-it:nth-of-type(1):after {
+  background-color: rgb(108, 95, 71);
+}
+.post-list > .post-it:nth-of-type(2):after {
+  background-color: rgba(125, 167, 173, 1);
+}
+.post-list > .post-it:nth-of-type(3):after {
+  background-color: rgba(101, 76, 76, 1);
+}
+.post-list > .post-it:nth-of-type(4):after {
+  background-color: rgba(80, 82, 30, 1);
+}
+.post-list > .post-it:nth-of-type(5):after {
+  background-color: rgba(164, 162, 146, 1);
+}
+.post-list > .post-it:nth-of-type(6):after {
+  background-color: rgba(4, 2, 20, 1);
+}
+.post-list > .post-it:nth-of-type(7):after {
+  /* background-color: rgba(64, 64, 96, 1); */
+  background-color: rgb(112, 98, 111);
+}
+.post-list > .post-it:after {
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  right: 0;
+  bottom: 0;
+  box-shadow: rgba(0, 0, 0, 0.5) -0.1vmin 0.1vmin 8vmin 0.05vmin;
+}
+
+.post-it > a > h3 {
+  font-family: 'pretendard-bold';
+  font-size: 1em;
+  line-height: 1.2;
+  text-shadow: var(--grayScale-N3) 1px 0 5px;
+}
+.post-it > a > ol {
+  list-style: circle;
+  list-style-position: inside;
+  font-family: 'pretendard-light';
+  padding: 2% 0% 4% 2%;
+}
+.post-it > a > ol > li {
+  font-size: 0.8em;
+  line-height: 1.2;
+}
+.page {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  justify-content: space-between;
+  width: inherit;
+  height: inherit;
+  border: 0.1px solid var(--grayScale-N3);
+}
+.page-odd {
+  background-color: white;
+}
+.page-even {
+  position: absolute;
+  background-color: white;
+}
+.page.upper {
+  z-index: 1;
+}
+
+.contents-cover {
+  display: flex;
+  position: relative;
+}
+.contents-color {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 75%;
+  padding: 8%;
+}
+.contents-title {
+  bottom: 10%;
+  left: 10%;
+  color: var(--grayScale-N5);
+}
+.contents-title > h2 {
+  font-family: 'Malgun Gothic';
+  font-weight: 700;
+  font-size: 6vmin;
+  line-height: 1.3;
+}
+.contents-title > p {
+  font-family: 'Malgun Gothic';
+  font-weight: 600;
+  font-size: 3vmin;
+  line-height: 1.2;
+}
+.page-main {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-flow: column;
+  -ms-flex-flow: column;
+  width: 100%;
+  height: 100%;
+}
+.page-main h1 {
+  font-size: 15px;
+}
+.page-main span {
+  position: relative;
+  height: 50%;
+  width: 70%;
+}
+.page-bottom {
+  display: flex;
+  position: relative;
+  flex-flow: row;
+  -ms-flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 5%;
+}
+.page-bottom span {
+  width: calc(100% / 3);
+  text-align: center;
+}
+.left.page-main {
+  transform: rotateY(180deg);
+}
+.left.page-bottom {
+  transform: rotateY(180deg);
+}
+/* 책 페이지 끝 ---------------------------------------------------------------------- */
+/* 책 나가기 레이어 */
+.bookActive .book-binder__box .exit-layer {
+  background-color: var(--blackLayer-opacity);
+}
+/* 책 슬라이더 */
+.book-binder__box > .book-slider {
+  order: 2;
+  display: none;
+  position: relative;
+  width: var(--book-width);
+  height: calc((100% - var(--book-height)) / 2);
+}
+.book-binder__box > .active.book-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book-slider .book-slider__wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: fit-content;
+}
+.book-slider .range-slider {
+  appearance: none;
+  width: 100%;
+  height: 1vmin;
+  border-radius: 0.5vmin;
+  background-color: var(--theme-text);
+  outline: none;
+}
+.book-slider .range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2.6vmin;
+  height: 2.6vmin;
+  border-radius: 50%;
+  background-color: var(--theme-main);
+  cursor: pointer;
+}
+
+.book-slider .range-slider::-moz-range-thumb {
+  appearance: none;
+  width: 2.6vmin;
+  height: 2.6vmin;
+  border-radius: 50%;
+  background-color: var(--theme-main);
+  cursor: pointer;
+}
+/* 책 커버 */
+.book-side .cr-Side .side,
+.book-cover .cr .side,
+.book-cover__face {
+  /* background-image: url(../images/ORACLA_1.png);
+    background-size: cover; */
+  /* background: linear-gradient(180deg, rgba(32, 32, 2, .7), rgba(32, 32, 2, .9), rgba(32, 32, 2, 1), rgba(32, 32, 2, .9)); */
+
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+  background: linear-gradient(
+    180deg,
+    rgba(32, 32, 2, 0.7),
+    rgba(32, 32, 2, 0.9),
+    rgba(32, 32, 2, 1),
+    rgba(32, 32, 2, 0.9)
+  );
+}
+.book-side__face {
+  box-sizing: border-box;
+  border-top: calc(var(--book-cover-thick) * 0.5) solid var(--book-main);
+  border-left: calc(var(--book-cover-thick) * 0.5) solid var(--book-main);
+  border-bottom: calc(var(--book-cover-thick) * 0.5) solid var(--book-main);
+}
+.book-side__face,
+.book-cover__face--top::after,
+.book-cover__face--bottom::after,
+.Fr .book-cover__face--right::after,
+.Rr .book-cover__face--left::after,
+.book-cover .cr-Tp-Rt .side::after,
+.book-cover .cr-Bt-Rt .side::after,
+.book-cover .cr-Tp-Lt .side::after,
+.book-cover .cr-Bt-Lt .side::after {
+  background-color: #efefef;
+}
+.bookActive .book-side__face {
+  border: unset;
+}
+.bookActive .book-side__face,
+.bookActive .book-cover__face--top::after,
+.bookActive .book-cover__face--bottom::after,
+.bookActive .Fr .book-cover__face--right::after,
+.bookActive .Rr .book-cover__face--left::after,
+.bookActive .book-cover .cr-Tp-Rt .side::after,
+.bookActive .book-cover .cr-Bt-Rt .side::after,
+.bookActive .book-cover .cr-Tp-Lt .side::after,
+.bookActive .book-cover .cr-Bt-Lt .side::after {
+  background-color: unset;
+}
+/* 책 페이지 */
+.binder__page {
+  background-color: rgba(255, 255, 255, 1);
+}
+.binder__page::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 5%;
+  z-index: 5;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 2%,
+    rgba(0, 0, 0, 0.5) 4%,
+    rgba(0, 0, 0, 0.2) 10%,
+    rgba(0, 0, 0, 0.05) 20%,
+    rgba(255, 255, 255, 0) 26%
+  );
+}
+.page-bottom {
+  font-family: 'mapleStory-light';
+  font-size: 14px;
+  color: black;
+}
+/* 
+    싱글투게더
+    background-color: #31AF79;
+    background-color: #EAC99D;
+    background-color: #B8A292;
+    background-color: rgb(49, 175, 121);
+    background-color: rgb(234, 201, 157);
+    background-color: rgb(184, 162, 146);
+    
+    파인트잡
+    background-color: #7DBBAD;
+    background-color: #493630;
+    background-color: #B8A292;
+    background-color: rgb(125, 187, 173);
+    background-color: rgb(73, 54, 48);
+    background-color: rgb(184, 162, 146);
+    
+    오버톤즈
+    background-color: #794C4C;
+    background-color: #E1CAA7;
+    background-color: #E7DBC8; (50% E1CAA7)
+    background-color: rgb(121, 76, 76);
+    background-color: rgb(225, 202, 167);
+    background-color: rgb(231, 219, 200);
+
+    도토리숲
+    background-color: #50661E;
+    background-color: #543E23;
+    background-color: #C1512C;
+    background-color: rgb(80, 102, 30);
+    background-color: rgb(84, 62, 35);
+    background-color: rgb(193, 81, 44);
+
+    달력
+    background-color: #bf9589;
+    background-color: #fff5f3;
+    background-color: #c8c3b3;
+    background-color: #859a9d;
+    background-color: rgb(191, 149, 137);
+    background-color: rgb(255, 245, 243);
+    background-color: rgb(200, 195, 179);
+    background-color: rgb(133, 154, 157);
+
+    비엔시스템
+    background-color: #040214;
+    background-color: #B82120;
+    background-color: #C35C5C;
+    background-color: rgb(4, 2, 20);
+    background-color: rgb(184, 33, 32);
+    background-color: rgb(195, 92, 92);
+
+*/

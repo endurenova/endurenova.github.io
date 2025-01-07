@@ -1,0 +1,26 @@
+[
+  {
+    "title": ["CALENDAR", "CALENDAR"],
+    "mainImg": "main.png",
+    "imgList": ["content-1.png", "content-2.png", "content-3.png", "content-4.png"],
+    "color": ["#bf9589", "rgba(191, 149, 137, 0.95)"]
+  },
+  {
+    "title": ["KAWSSPONGEBOB", "Kaws-SpongeBob"],
+    "mainImg": "main.jpg",
+    "imgList": ["content-1.jpg", "content-2.png"],
+    "color": ["#D04848", "rgba(208, 72, 72, 0.95)"]
+  },
+  {
+    "title": ["SPACEMOLLY", "SPACE MOLLY"],
+    "mainImg": "main.jpg",
+    "imgList": ["content-1.jpg", "content-2.jpg"],
+    "color": ["#FAC8C7", "rgba(250, 200, 199, 0.95)"]
+  },
+  {
+    "title": ["BEARBRICK", "Bearbrick"],
+    "mainImg": "main.jpg",
+    "imgList": ["content-1.jpg", "content-2.jpg"],
+    "color": ["#DA7229", "rgba(218, 114, 41, 0.95)"]
+  }
+]

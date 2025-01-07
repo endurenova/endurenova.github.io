@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BNsystem - Survey Solution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://bn-system.com/survey.html">
+    <meta property="og:title" content="비엔시스템">
+    <meta property="og:image" content="./img/main_logo_b.svg">
+    <meta property="og:description" content="Description Here">
+    <meta property="og:site_name" content="비엔시스템 서베이솔루션">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="http://bnsys.keshsurvey.com/img/favicon.ico">
+    <link rel="stylesheet" href="css/styleSet.css">
+    <link rel="stylesheet" href="css/surveyHeader.css">
+    <link rel="stylesheet" href="css/surveyFooter.css">
+    <link rel="stylesheet" href="css/quickMenu.css">
+    <link rel="stylesheet" href="css/inquiryModal.css">
+    <link rel="stylesheet" href="css/mediaSurveyContents.css">
+    </head>
+    </head>
+    <body>        
+        <header class="header">
+            <div class="header-main">
+                <div class="header-wrapper">
+                    <div class="header-logo">
+                        <div class="header-logo__box">
+                            <a href="./index.php" class="header-logo__area">
+                                <img class="header-logo__img" src="./img/main_logo_w.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-menu-main">
+                        <ul class="menu-main__list">
+                            <li class="menu-main__link"><a href="#"><span><strong>BN</strong>SYSTEM</span></a></li>
+                            <li class="menu-main__link"><a href="#"><span>서비스소개</span></a></li>
+                            <li class="menu-main__link"><a href="#"><span>포트폴리오</span></a></li>                        
+                            <li class="menu-main__link"><a href="#"><span>무료상담신청</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="header-utility">
+                        <div class="header-utility__mobile">
+                            <span class="mobile-menu__toggle"></span>
+                        </div>                        
+                        <div class="header-utility__box">
+                            <span class="utility__item utility__search"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            <div class="header-sub">
+                <div class="header-wrapper">
+                    <div class="header-logo fake"></div>
+                    <div class="header-menu-sub">
+                        <div class="menu-sub__box">
+                            <ul class="menu-sub__list">
+                                <li class="menu-sub__link"><a href="./about.php"><span>회사소개</span></a></li>
+                            </ul> 
+                            <ul class="menu-sub__list">
+                                <li class="menu-sub__link"><a href="./index.php"><span>앱 / 웹 개발</span></a></li>
+                                <li class="menu-sub__link"><a href="./consulting.php"><span>IT창업컨설팅</span></a></li>
+                                <li class="menu-sub__link"><a href="./period.php"><span>긴급 납기 맞춤</span></a></li>
+                            </ul>
+                            <ul class="menu-sub__list">
+                                <li class="menu-sub__link"><a href="./portfolio.php"><span>포트폴리오 소개</span></a></li>
+                                <li class="menu-sub__link"><a href="./ai.php"><span>AI 시안</span></a></li>
+                            </ul>
+                            <ul class="menu-sub__list">
+                                <li class="menu-sub__link"><a href="./faq.php"><span>FAQ</span></a></li>
+                                <li class="menu-sub__link"><a href="./contact.php"><span>문의하기</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-search">
+                        <div class="header-search__box">
+                            <form class="search-form">
+                                <div class="search-input__box">
+                                    <input type="text" class="search-input" name="searchInput" placeholder="">
+                                </div>
+                                <div class="search-hashtag__box">
+                                    <ul class="search-hashtag__list">
+                                        <li class="search-hashtag__item"><a href="#">#웹페이지</a></li>
+                                        <li class="search-hashtag__item"><a href="#">#플랫폼구축</a></li>
+                                        <li class="search-hashtag__item"><a href="#">#IT창업</a></li>
+                                        <li class="search-hashtag__item"><a href="#">#솔루션</a></li>
+                                        <li class="search-hashtag__item"><a href="#">#유지보수</a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header-utility fake"></div>
+                </div>
+            </div>
+        </header>  
+        <nav class="mobile-sidebar">
+            <div class="exit-layer"></div>
+            <div class="mobile-sidebar__area">
+                <div class="inner-wrapper-col">
+                    <form class="mobile-search-form">
+                        <div class="mobile-search-input__box">
+                            <input type="text" class="mobile-search-input" name="searchInput" placeholder="">
+                        </div>
+                    </form>
+                    <div class="mobile-menu__box">
+                        <button class="mobile-menu__button"><strong><span style="color: var(--color-red);">BN</span>SYSTEM</strong><span class="mobile-menu__drop"></span></button>
+                        <ul class="mobile-menu__list">                        
+                            <li class="mobile-menu__link"><a href="./about.php">회사소개</a></li>                                
+                        </ul>
+                        <button class="mobile-menu__button"><strong>서비스 소개</strong><span class="mobile-menu__drop"></span></button>
+                        <ul class="mobile-menu__list">                        
+                            <li class="mobile-menu__link"><a href="./index.php">앱 / 웹 개발</a></li>
+                            <li class="mobile-menu__link"><a href="./consulting.php">IT창업컨설팅</a></li>
+                            <li class="mobile-menu__link"><a href="./period.php">긴급 납기 맞춤</a></li>
+                        </ul>
+                        <button class="mobile-menu__button"><strong>포트폴리오</strong><span class="mobile-menu__drop"></span></button>
+                        <ul class="mobile-menu__list">                        
+                            <li class="mobile-menu__link"><a href="./portfolio.php">포트폴리오 소개</a></li>
+                            <li class="mobile-menu__link"><a href="./ai.php">AI 시안</a></li>
+                        </ul>
+                        <button class="mobile-menu__button"><strong>무료상담신청</strong><span class="mobile-menu__drop"></span></button>
+                        <ul class="mobile-menu__list">                        
+                            <li class="mobile-menu__link"><a href="./faq.php">FAQ</a></li>
+                            <li class="mobile-menu__link"><a href="./contact.php">문의하기</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>      
+        <nav class="quick-sidebar">
+            <div class="quick-sidebar__menu">           
+                <ul class="quick-sidebar__menu-list">
+                    <li class="quick-menu">
+                        <a class="quick-menu__btn" href="http://bn-system.com/sub/location.html">
+                            <img src="./img/quick_ic_w4.png" alt="">
+                            <span>오시는길</span>
+                        </a>
+                    </li>
+                    <li class="quick-menu">
+                        <a class="quick-menu__btn quick-inquiry" href="javascript:inquiryModalOpen()">
+                            <img src="./img/quick_ic_w3.png" alt="">
+                            <span>문의하기</span>
+                        </a>
+                    </li>
+                    <li class="quick-menu">
+                        <a class="quick-menu__btn" href="http://bn-system.com/sub/services_it.html">
+                            <img src="./img/quick_ic_w2.png" alt="">
+                            <span>서비스</span>
+                        </a>
+                    </li>
+                    <li class="quick-menu">
+                        <a class="quick-menu__btn" href="http://bn-system.com/">
+                            <img src="./img/quick_ic_w1.png" alt="">
+                            <span>홈</span>
+                        </a>
+                    </li>
+                </ul>
+                <input class="quick-sidebar-menu__toggle"type="checkbox">
+            </div>
+            <div class="quick-sidebar__theme">
+                <div class="quick-sidebar__theme-toggle">                
+                    <input class="theme_toggle" type="checkbox" id="themeToggle">
+                    <label for="themeToggle" class="switch_label">
+                        <span class="onf_btn"></span>
+                        <img class="theme_toggle-icon" src="./img/theme_icon_w.svg" alt="">
+                    </label>
+                </div>
+                <div class="quick-sidebar__theme-status">                
+                    <span class="theme-status">Theme</span>
+                    <span class="theme-status-light">Light</span>
+                    <span class="theme-status-dark">Dark</span>
+                </div>
+            </div>
+            <div class="quick-sidebar__top">
+                <a class="quick-sidebar__top-toggle" href="#"></a>
+            </div>
+        </nav>
+        <!-- 모달 문의 팝업 -->
+        <div class="modal-inquiry">
+            <div class="modal-inquiry__window">
+                <div class="inquiry-header">
+                    <strong class="modal-header-title">문의하기</strong> 
+                    <span class="close">&times;</span>
+                </div>
+                <div class="inquiry-body">
+                    <div class="inquiry-body__inner">
+                        <form action="" name="inquiryForm" id="inquiryForm" class="inquiry-form" onsubmit="return checkSubmit()">                                
+                            <div class="inquiry-category">
+                                <button class="inquiry-category__selector active" onclick="inquirySelector(this)">문의 유형<span></span></button>
+                                <ul class="inquiry-category__list">
+                                    <li class="inquiry-category__index">웹페이지</li>
+                                    <li data-inquiry-category-index="w0" class="inquiry-category__item" onclick="inquiryTypeChoice(this)">디자인</li>
+                                    <li data-inquiry-category-index="w1" class="inquiry-category__item" onclick="inquiryTypeChoice(this)">앱</li>
+                                    <li data-inquiry-category-index="w2" class="inquiry-category__item" onclick="inquiryTypeChoice(this)">반응형웹</li>
+                                    <li class="inquiry-category__index">프로젝트</li>
+                                    <li data-inquiry-category-index="p0" class="inquiry-category__item" onclick="inquiryTypeChoice(this)">비용</li>
+                                    <li data-inquiry-category-index="p1" class="inquiry-category__item" onclick="inquiryTypeChoice(this)">맞춤 패키지</li>                                
+                                </ul>
+                            </div>
+                            <label for="inquiryEmail">이메일</label>
+                            <input type="email" name="inquiryEmail" id="inquiryEmail" class="inquiry-email" placeholder="이메일을 입력해주세요.">
+                            <label for="inquiryTitle">제목</label>
+                            <input type="text" name="inquiryTitle" id="inquiryTitle" class="inquiry-title" placeholder="제목을 입력해주세요.">
+                            <label for="inquiryDetail">내용</label>
+                            <textarea name="inquiryDetail" id="inquiryDetail" class="inquiry-textarea" placeholder="내용을 입력해주세요."></textarea>
+                            <button class="inquiry-submit" type="submit" name="inquirySubmit" id="inquirySubmit"value="">문의 등록</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="main-survey">
+            <section class="survey1 survey__section">
+                <div class="main-survey__visual">
+                    <video src="./video/surveyMain.mp4" type="video/mp4" class="main-survey__video" autoplay playsinline muted loop id="surveyVideo"></video>
+                </div>
+                <div class="main-survey__title">
+                    <div class="main-title__box">
+                        <div class="main-title__upper">
+                            <div class="inner-wrapper-col">
+                                <h2>NEW</h2>
+                                <h2>EXPERIENCE</h2>
+                                <h5>새로운 경험이 필요하신가요?</h5>
+                            </div>
+                        </div>
+                        <div class="main-title__lower">
+                            <div class="inner-wrapper-col">
+                                <h3>SURVEY SOLUTION</h3>
+                                <h1><span style="color: #C82333;">BN</span>PLATFORM</h1>
+                                <h5>BN플랫폼과 함께 새로운 도약점을 찾아 떠나세요.</h5>
+                                <h5>든든한 파트너가 되어드리겠습니다.</h5>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="survey2 survey__section">
+                <div class="short-form__carousel">
+                    <div class="carousel__slider">
+                        <div class="carousel__slider__area">
+                            <div class="carousel__wrap">
+                                <ul class="carousel__list cl_1">
+                                    <li class="idxNum0 carousel-card" data-slide-item-index="0">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card1.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>객관식 조사</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="idxNum1 carousel-card" data-slide-item-index="1">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card2.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>점수/순위</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="idxNum2 carousel-card" data-slide-item-index="2">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card3.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>OX 퀴즈</h5>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="idxNum4 carousel-card" data-slide-item-index="4">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card4.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>가중치 선호도</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="idxNum5 carousel-card" data-slide-item-index="5">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card5.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>토너먼트 게임</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="idxNum6 carousel-card" data-slide-item-index="6">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card6.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>이미지 카드</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <ul class="carousel__list cl_2">
+                                    <li class="idxNum0 carousel-card" data-slide-item-index="0">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card1.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>객관식 조사</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="idxNum1 carousel-card" data-slide-item-index="1">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card2.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>점수/순위</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="idxNum2 carousel-card" data-slide-item-index="2">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card3.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>퀴즈</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="idxNum4 carousel-card" data-slide-item-index="4">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card4.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>가중치 선호도</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="idxNum5 carousel-card" data-slide-item-index="5">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card5.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>토너먼트 게임</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="idxNum6 carousel-card" data-slide-item-index="6">
+                                        <div class="carousel-card__header">
+                                            <div class="carousel-img__box">
+                                                <img src="./img/survey2_card6.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-card__body">
+                                            <div class="carousel-title__box">
+                                                <h5>이미지 카드</h5>                                                    
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <div class="survey2-titile__spread">
+                    <span>
+                        <h3><span>BN</span>플랫폼을 이용해야 하는 이유!</h3>
+                        <h5>참여형 숏폼<span>(Short-form)</span> 콘텐츠 특화 플랫폼</h5>
+                    </span>
+                    <span>
+                        <h5>다양한 숏폼 콘텐츠 제작이 가능한 에디터 툴</h5>
+                        <h5>사용자성향분석 (심리테스트 · 퀴즈 · 카드뉴스)</h5>
+                    </span>
+                    <span>
+                        <h5>BN플랫폼에서 제공하는 에디터 툴의 차별성을 느껴보세요.</h5>
+                        <h5>아이디어로 다양한 종류의 콘텐츠를 제작해보세요.</h5>
+                    </span>
+                </div>
+            </section>
+            <section class="survey3 survey__section">
+                <div class="inner-wrapper-row">
+                    <div class="survey3-card__box">
+                        <div class="survey3-card">
+                            <div class="survey3-card__title">
+                                <h4>누구나 제작 가능</h4>
+                            </div>
+                            <div class="survey3-card__img">
+                                <span></span>
+                            </div>
+                            <div class="survey3-card__label">
+                                <h6>구상만 하시면 BN이 도와드릴게요!</h6>
+                            </div>                            
+                            <div class="survey3-card__desc">
+                                <p>BN에서는 단기간의 투자로 장기간 활용할 수 있고 관리가 용이한 컨텐츠를 제작해 드립니다.</p>
+                            </div>
+                        </div>
+                        <div class="survey3-card">
+                            <div class="survey3-card__title">
+                                <h4>각종 데이터 분석</h4>
+                            </div>
+                            <div class="survey3-card__img">
+                                <span></span>
+                            </div>
+                            <div class="survey3-card__label">
+                                <h6>어디서나 데이터 수집을 하세요!</h6>
+                            </div>                            
+                            <div class="survey3-card__desc">
+                                <p>새로운 사업을 꿈꾸는 소상공인, 나에 대한 평가가 궁금한 개인, 타인의 의견이 궁금한 토론가 등 궁금한 것에 대한 컨텐츠를 제작하고 공유만 하면 끝! 콘텐츠를 통해 얻은 데이터 통계를 제공해드립니다.</p>
+                            </div>
+                        </div>
+                        <div class="survey3-card">
+                            <div class="survey3-card__title">
+                                <h4>데이터 축적 AI 학습</h4>
+                            </div>
+                            <div class="survey3-card__img">
+                                <span></span>
+                            </div>
+                            <div class="survey3-card__label">
+                                <h6>사용자들의 이용 패턴을 자동 분석!</h6>
+                            </div>                            
+                            <div class="survey3-card__desc">
+                                <p>고유 문자나 필기체 등에 대한 정보를 사용자에게 직접 입력 받거나 페이지에 머무는 시간 등 다양한 데이터를 수집 / 분석 / 통계 / 축적하여 AI학습에 활용 가능합니다</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-wrapper">
+                <div class="footer-main">
+                    <div class="footer-middle">
+                        <div class="footer-info">
+                            <div class="footer-info__service">
+                                <dl class="customer-service">
+                                    <dt>고객센터</dt>
+                                    <dd><a class="tel-number" href="tel:050-7737-4560">02-978-3140</a></dd>                                    
+                                </dl>
+                                <span>평일 10&#58;00 ~ 18&#58;00</span>
+                                <span>점심 13&#58;00 ~ 14&#58;00</span>
+                                <span>(주말 및 공휴일 휴무)</span>
+                            </div>
+                            <address class="footer-info__company">
+                                <dl class="company">
+                                    <dt>비엔시스템 (주)</dt>
+                                    <dd>서울시 노원구 화랑로 419-7, 3층</dd>
+                                </dl>
+                            </address>
+                        </div>                    
+                        <div class="footer-sitemap">
+                            <div class="sitemap-menu__box">
+                                <ul class="sitemap-menu__list">
+                                    <li class="sitemap-menu__link"><strong><a href="./about.php"><span>BN</span>SYSTEM</a></strong></li>
+                                    <li class="sitemap-menu__link"><a href="./about.php">회사소개</a></li>                                
+                                </ul>
+                                <ul class="sitemap-menu__list">
+                                    <li class="sitemap-menu__link"><strong><a href="./index.php">서비스 소개</a></strong></li>
+                                    <li class="sitemap-menu__link"><a href="./index.php">앱 / 웹 개발</a></li>
+                                    <li class="sitemap-menu__link"><a href="./consulting.php">IT창업컨설팅</a></li>
+                                    <li class="sitemap-menu__link"><a href="./period.php">긴급 납기 맞춤</a></li>
+                                </ul>
+                                <ul class="sitemap-menu__list">
+                                    <li class="sitemap-menu__link"><strong><a href="./portfolio.php">포트폴리오</a></strong></li>
+                                    <li class="sitemap-menu__link"><a href="./portfolio.php">포트폴리오 소개</a></li>
+                                    <li class="sitemap-menu__link"><a href="./ai.php">AI 시안</a></li>
+                                </ul>
+                                <ul class="sitemap-menu__list">
+                                    <li class="sitemap-menu__link"><strong><a href="./faq.php">무료상담신청</a></strong></li>                      
+                                    <li class="sitemap-menu__link"><a href="./faq.php">FAQ</a></li>
+                                    <li class="sitemap-menu__link"><a href="./contact.php">문의하기</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="footer-logo">
+                            <div class="footer-logo__box">
+                                <a href="./index.php" class="footer-logo__area">
+                                    <img class="footer-logo__img" src="./img/main_logo_b.svg" alt="주식회사 비엔시스템">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer-copyright">
+                            <span>Copyright © BNsystem Corp. All rights reserved.</span>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script src="./js/navigators.js"></script>
+    <script src="./js/inquiryModal.js"></script>
+</html>

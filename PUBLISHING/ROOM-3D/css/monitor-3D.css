@@ -1,0 +1,836 @@
+@import url(./common.css);
+/* 모니터 공통 시작 ---------------------------------------------------------------------- */
+.monitor-display__box {
+  display: flex;
+  position: absolute;
+  top: calc(0.5 * var(--monitor-display-height));
+  left: 0%;
+  transform: translate(0%, -50%);
+  transform-style: preserve-3d;
+  width: var(--monitor-display-width);
+  height: var(--monitor-display-height);
+  transition: 0.3s;
+}
+.monitor-display__box > .scene {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.3s;
+}
+/* 모니터 공통 끝 ---------------------------------------------------------------------- */
+
+/* 모니터 스탠드 시작 ---------------------------------------------------------------------- */
+.monitor-display__stand {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  width: var(--monitor-stand-width);
+  height: var(--monitor-stand-base-height);
+}
+.stand-base__face {
+  position: absolute;
+  width: var(--monitor-stand-corner-degree);
+  height: var(--monitor-stand-thick);
+}
+.stand-base__face.stand-base--front,
+.stand-base__face.stand-base--back {
+  width: calc(var(--monitor-stand-width) - (2 * var(--monitor-stand-border-radius)));
+  height: var(--monitor-stand-thick);
+  left: 50%;
+  transform: translateX(-50%) rotateX(90deg);
+}
+.stand-base__face.stand-base--front {
+  transform-origin: top;
+  top: 100%;
+}
+.stand-base__face.stand-base--back {
+  transform-origin: top;
+  top: 0%;
+}
+.stand-base__face.stand-base--left,
+.stand-base__face.stand-base--right {
+  top: 50%;
+  transform-origin: center;
+  width: calc(var(--monitor-stand-base-height) - (2 * var(--monitor-stand-border-radius)));
+  height: var(--monitor-stand-thick);
+}
+.stand-base__face.stand-base--left {
+  left: 0%;
+  transform: translate3D(-50%, -50%, calc(0.5 * var(--monitor-stand-thick))) rotateX(90deg) rotateY(90deg);
+}
+.stand-base__face.stand-base--right {
+  right: 0%;
+  transform: translate3D(50%, -50%, calc(0.5 * var(--monitor-stand-thick))) rotateX(90deg) rotateY(90deg);
+}
+.stand-base__face.stand-base--top,
+.stand-base__face.stand-base--bottom {
+  width: var(--monitor-stand-width);
+  height: var(--monitor-stand-base-height);
+  border-radius: var(--monitor-stand-border-radius) var(--monitor-stand-border-radius);
+}
+.stand-base__face.stand-base--top {
+  transform-style: preserve-3d;
+  transform: translateZ(var(--monitor-stand-thick));
+}
+.stand-base-cr {
+  /* x:좌우, y:앞뒤, z:상하 */
+  position: absolute;
+  transform-style: preserve-3d;
+  width: var(--monitor-stand-border-radius);
+  height: var(--monitor-stand-thick);
+}
+.stand-base-cr-Fr-Rt {
+  transform-origin: right;
+  bottom: 0;
+  right: 0;
+  transform: rotateX(90deg) translateY(50%) translateZ(calc(0.5 * var(--monitor-stand-border-radius)));
+}
+.stand-base-cr-Fr-Lt {
+  transform-origin: left;
+  bottom: 0;
+  left: 0;
+  transform: rotateX(90deg) translateX(calc(1 * var(--monitor-stand-border-radius))) translateY(50%)
+    translateZ(calc(0.5 * var(--monitor-stand-border-radius)));
+}
+.stand-base-cr-Bk-Rt {
+  transform-origin: right;
+  top: 0;
+  right: 0;
+  transform: rotateX(90deg) translateY(50%) translateZ(calc(-0.5 * var(--monitor-stand-border-radius)));
+}
+.stand-base-cr-Bk-Lt {
+  transform-origin: left;
+  top: 0;
+  left: 0;
+  transform: rotateX(90deg) translateX(calc(1 * var(--monitor-stand-border-radius))) translateY(50%)
+    translateZ(calc(-0.5 * var(--monitor-stand-border-radius)));
+}
+.monitor-display__stand .stand-base-cr .side {
+  position: absolute;
+  width: var(--monitor-stand-radius-corner-width);
+  height: var(--monitor-stand-thick);
+}
+/* 스탠드 기둥 */
+.stand-pillar {
+  top: 20%;
+  left: 50%;
+  position: absolute;
+  transform-origin: top;
+  transform: rotateX(var(--monitor-stand-pillar-degree)) translateX(-50%);
+  transform-style: preserve-3d;
+  width: var(--monitor-stand-width);
+  height: var(--monitor-stand-pillar-height);
+}
+.stand-pillar__face {
+  transform-origin: center;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.stand-pillar__face.stand-pillar--left,
+.stand-pillar__face.stand-pillar--right {
+  top: calc(50% - 0.1 * var(--monitor-stand-thick));
+  width: calc(var(--monitor-stand-pillar-height) + 0.2 * var(--monitor-display-thick));
+  height: var(--monitor-stand-thick);
+}
+
+.stand-pillar__face.stand-pillar--left {
+  left: 0%;
+  transform: translate3D(-50%, -50%, calc(0.5 * var(--monitor-stand-thick))) rotateX(90deg) rotateY(90deg);
+}
+.stand-pillar__face.stand-pillar--right {
+  right: 0%;
+  transform: translate3D(50%, -50%, calc(0.5 * var(--monitor-stand-thick))) rotateX(90deg) rotateY(90deg);
+}
+.stand-pillar__face.stand-pillar--front {
+  width: calc(var(--monitor-stand-width));
+  height: var(--monitor-stand-thick);
+  left: 50%;
+  transform: translateX(-50%) rotateX(90deg);
+}
+.stand-pillar__face.stand-pillar--front {
+  transform-origin: top;
+  top: 100%;
+}
+
+.stand-pillar__face.stand-pillar--top,
+.stand-pillar__face.stand-pillar--bottom {
+  bottom: 0;
+  width: var(--monitor-stand-width);
+}
+.stand-pillar__face.stand-pillar--top {
+  height: calc(var(--monitor-stand-pillar-height) + 0.66 * var(--monitor-display-thick));
+  transform: translateZ(var(--monitor-stand-thick));
+}
+.stand-pillar__face.stand-pillar--bottom {
+  top: 0;
+  height: calc(var(--monitor-stand-pillar-height) - 0.33 * var(--monitor-display-thick));
+}
+.monitor-hinge {
+  position: absolute;
+  transform-style: preserve-3d;
+  left: 50%;
+  bottom: 0;
+  transform: rotateY(90deg) rotateZ(0deg) translateX(50%);
+}
+.monitor-hinge__face {
+  bottom: 0%;
+  position: absolute;
+  border-radius: 100% 100%;
+}
+.monitor-hinge--left {
+  left: calc(-1 * var(--monitor-stand-thick));
+  width: var(--monitor-display-thick);
+  height: var(--monitor-display-thick);
+  transform: translateY(50%) translateZ(calc(-0.501 * var(--monitor-stand-width)));
+}
+.monitor-hinge--right {
+  left: calc(-1 * var(--monitor-stand-thick));
+  width: var(--monitor-display-thick);
+  height: var(--monitor-display-thick);
+  transform: translateY(50%) translateZ(calc(0.5 * var(--monitor-stand-width)));
+}
+.monitor-hinge--left::after,
+.monitor-hinge--right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 100% 100%;
+  background-color: #2b2b2b;
+}
+.monitor-hinge--pillar {
+  transform-style: preserve-3d;
+  left: calc(-1 * var(--monitor-stand-thick));
+  width: var(--monitor-display-thick);
+  height: var(--monitor-display-thick);
+  transform: translateY(50%) translateZ(calc(-0.5 * var(--monitor-stand-width)));
+}
+.monitor-hinge--pillar .side {
+  position: absolute;
+  transform-origin: right;
+  top: var(--monitor-stand-thick);
+  right: 50%;
+  height: var(--monitor-hinge-radius-corner-width);
+  width: var(--monitor-stand-width);
+}
+.monitor-connector {
+  position: absolute;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  width: var(--monitor-display-thick);
+  height: var(--monitor-stand-thick);
+  transform: rotateZ(15deg) translate(calc(-0.25 * var(--monitor-stand-thick)), -50%)
+    translateZ(calc(0.5 * var(--monitor-stand-width)));
+}
+.monitor-connector__face {
+  position: absolute;
+}
+.monitor-connector__face.connector--front {
+  height: var(--monitor-stand-thick);
+  width: calc(0.9 * var(--monitor-stand-width));
+  right: 0%;
+  transform-origin: right;
+  transform: rotateY(90deg) translateX(50%);
+  transform-style: preserve-3d;
+}
+.monitor-connector__face.connector--back {
+  height: var(--monitor-stand-thick);
+  width: calc(0.9 * var(--monitor-stand-width));
+  left: 0%;
+  transform-origin: left;
+  transform: rotateY(90deg) translateX(-50%);
+}
+.monitor-connector__face.connector--left {
+  width: inherit;
+  height: inherit;
+  transform: translateZ(calc(-0.45 * var(--monitor-stand-width)));
+}
+.monitor-connector__face.connector--right {
+  width: inherit;
+  height: inherit;
+  transform: translateZ(calc(0.45 * var(--monitor-stand-width)));
+}
+
+.monitor-connector__face.connector--top,
+.monitor-connector__face.connector--bottom {
+  transform-origin: top;
+  top: 0%;
+  width: var(--monitor-display-thick);
+  height: calc(0.9 * var(--monitor-stand-width));
+}
+.monitor-connector__face.connector--top {
+  transform: translateZ(calc(-0.45 * var(--monitor-stand-width))) rotateX(90deg);
+}
+.monitor-connector__face.connector--bottom {
+  top: 100%;
+  transform: translateZ(calc(-0.45 * var(--monitor-stand-width))) rotateX(90deg);
+}
+/* 모니터 스탠드 끝 ---------------------------------------------------------------------- */
+
+/* 모니터 디스플레이 시작 ---------------------------------------------------------------------- */
+.monitor-display {
+  position: absolute;
+  width: var(--monitor-display-width);
+  height: var(--monitor-display-height);
+  transform-style: preserve-3d;
+  transform-origin: center;
+  left: 50%;
+  transform: rotateZ(180deg) translate(50%, 20%);
+}
+.monitor-frame__face {
+  position: absolute;
+}
+.monitor-frame__face.frame--top,
+.monitor-frame__face.frame--bottom {
+  width: calc(var(--monitor-display-width) - (2 * var(--monitor-stand-border-radius)));
+  height: var(--monitor-display-thick);
+  left: 50%;
+  transform: translateX(-50%) rotateX(90deg);
+}
+.monitor-frame__face.frame--top {
+  transform-origin: top;
+  top: 100%;
+}
+.monitor-frame__face.frame--bottom {
+  transform-origin: top;
+  top: 0%;
+}
+.monitor-frame__face.frame--left,
+.monitor-frame__face.frame--right {
+  top: 50%;
+  height: var(--monitor-display-thick);
+  width: calc(var(--monitor-display-height) - (2 * var(--monitor-stand-border-radius)));
+}
+.monitor-frame__face.frame--left {
+  left: 0%;
+  transform: translate3D(-50%, -50%, calc(0.5 * var(--monitor-display-thick))) rotateX(90deg) rotateY(90deg);
+}
+.monitor-frame__face.frame--right {
+  right: calc(0.5 * var(--monitor-stand-radius-corner-width));
+  transform: translate3D(50%, -50%, calc(0.5 * var(--monitor-display-thick))) rotateX(90deg) rotateY(90deg);
+}
+.monitor-frame__face.frame--front,
+.monitor-frame__face.frame--back {
+  transform-style: preserve-3d;
+  width: var(--monitor-display-width);
+  height: var(--monitor-display-height);
+  border-radius: var(--monitor-stand-border-radius) var(--monitor-stand-border-radius);
+}
+.monitor-frame__face.frame--front {
+  transform: translateZ(var(--monitor-display-thick));
+}
+.monitor-display .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+  width: var(--monitor-display-thick);
+  height: var(--monitor-stand-border-radius);
+}
+.monitor-display .cr-Bt-Rt {
+  transform-origin: right;
+  bottom: 0;
+  right: calc(0.5 * var(--monitor-stand-radius-corner-width));
+  transform: rotateY(90deg)
+    translateZ(calc(-1 * var(--monitor-stand-border-radius) - 0.5 * var(--monitor-stand-radius-corner-width)));
+}
+.monitor-display .cr-Bt-Lt {
+  transform-origin: left;
+  bottom: 0;
+  left: 0;
+  transform: rotateY(-90deg) translateZ(calc(-1 * var(--monitor-stand-border-radius)));
+}
+.monitor-display .cr-Tp-Rt {
+  transform-origin: right;
+  top: 0;
+  right: calc(0.5 * var(--monitor-stand-radius-corner-width));
+  transform: rotateY(90deg)
+    translateZ(calc(-1 * var(--monitor-stand-border-radius) - 0.5 * var(--monitor-stand-radius-corner-width)));
+}
+.monitor-display .cr-Tp-Lt {
+  transform-origin: left;
+  top: 0;
+  left: 0;
+  transform: rotateY(-90deg) translateZ(calc(-1 * var(--monitor-stand-border-radius)));
+}
+.monitor-display .cr .side {
+  position: absolute;
+  width: var(--monitor-display-thick);
+  height: var(--monitor-stand-radius-corner-width);
+}
+.monitor-display .cr-Tp-Rt .side,
+.monitor-display .cr-Tp-Lt .side {
+  right: 0;
+  top: calc(var(--monitor-stand-border-radius) - 0.5 * var(--monitor-stand-radius-corner-width));
+}
+.monitor-display .cr-Bt-Rt .side {
+  right: 0;
+  top: calc(-1 * var(--monitor-stand-radius-corner-width));
+}
+.monitor-display .cr-Bt-Lt .side {
+  left: 0;
+  top: calc(-1 * var(--monitor-stand-radius-corner-width));
+}
+.monitor-display .cr-Tp-Rt .s0,
+.monitor-display .cr-Tp-Lt .s0 {
+  transform: rotateX(0deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Tp-Rt .s1,
+.monitor-display .cr-Tp-Lt .s1 {
+  transform: rotateX(12deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Tp-Rt .s2,
+.monitor-display .cr-Tp-Lt .s2 {
+  transform: rotateX(24deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Tp-Rt .s3,
+.monitor-display .cr-Tp-Lt .s3 {
+  transform: rotateX(36deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Tp-Rt .s4,
+.monitor-display .cr-Tp-Lt .s4 {
+  transform: rotateX(48deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Tp-Rt .s5,
+.monitor-display .cr-Tp-Lt .s5 {
+  transform: rotateX(60deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Tp-Rt .s6,
+.monitor-display .cr-Tp-Lt .s6 {
+  transform: rotateX(72deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Tp-Rt .s7,
+.monitor-display .cr-Tp-Lt .s7 {
+  transform: rotateX(84deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Bt-Rt .s0,
+.monitor-display .cr-Bt-Lt .s0 {
+  transform: rotateX(270deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Bt-Rt .s1,
+.monitor-display .cr-Bt-Lt .s1 {
+  transform: rotateX(282deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Bt-Rt .s2,
+.monitor-display .cr-Bt-Lt .s2 {
+  transform: rotateX(294deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Bt-Rt .s3,
+.monitor-display .cr-Bt-Lt .s3 {
+  transform: rotateX(306deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Bt-Rt .s4,
+.monitor-display .cr-Bt-Lt .s4 {
+  transform: rotateX(318deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Bt-Rt .s5,
+.monitor-display .cr-Bt-Lt .s5 {
+  transform: rotateX(330deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Bt-Rt .s6,
+.monitor-display .cr-Bt-Lt .s6 {
+  transform: rotateX(342deg) translateZ(var(--monitor-stand-border-radius));
+}
+.monitor-display .cr-Bt-Rt .s7,
+.monitor-display .cr-Bt-Lt .s7 {
+  transform: rotateX(354deg) translateZ(var(--monitor-stand-border-radius));
+}
+/* 모니터 디스플레이 끝 ---------------------------------------------------------------------- */
+
+/* 모니터 뷰 */
+.monitor-display > .exit-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--blackLayer-opacity);
+  z-index: 0;
+  width: 100vmax;
+  height: 100vmin;
+}
+.monitorActive .monitor-display > .exit-layer {
+  display: unset;
+}
+.monitor-viewer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 90%;
+  z-index: 10;
+}
+.monitorActive .monitor-viewer {
+  display: none;
+}
+#resume {
+  display: grid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 90%;
+  font-family: 'Pretendard-Regular';
+  color: var(--grayScale-N5);
+  background-color: var(--grayScale-N2);
+  overflow-y: hidden;
+}
+.monitorActive #resume {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+#resume::-webkit-scrollbar {
+  width: 0.3vmin; /* 스크롤바의 너비 */
+}
+#resume::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background-color: var(--theme-main);
+  border-radius: 10px;
+}
+#resume::-webkit-scrollbar-track {
+  background-color: var(--theme-text-op);
+}
+#resume > .resume-header {
+  position: sticky;
+  z-index: 100;
+  width: 100%;
+  height: calc(2.5 * var(--info-font-size));
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--blackLayer-opacity);
+  transition: 0.3s;
+}
+#resume > .resume-header.hidden {
+  top: calc(-2.5 * var(--info-font-size));
+}
+.resume-header-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: var(--wrapper-width);
+  height: inherit;
+}
+.resume-header__logo-box {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: fit-content;
+  height: inherit;
+}
+.logo-area {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.logo-area > img {
+  display: block;
+  object-fit: contain;
+}
+.resume-header__menu {
+  display: flex;
+  position: relative;
+  width: 70%;
+  height: inherit;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+.resume-header__menu-list {
+  display: flex;
+  position: relative;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.resume-header__menu-list > li {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: calc(100% / 4);
+}
+.resume-header__menu-list > li > a {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: inherit;
+}
+.resume-header__menu-list > li > a > span {
+  color: var(--grayScale-N4);
+}
+.monitorActive .resume-header__menu-list > li > a:hover > span {
+  color: var(--grayScale-N5);
+  font-family: 'Pretendard-medium';
+}
+
+.menu-main__link a span strong {
+  /* color: var(--color-red); */
+}
+/* 내 정보 시작 -------------------------------------------------------------------------------- */
+#resume > .resume-info {
+  width: 100%;
+  height: auto;
+  color: var(--grayScale-N5);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: var(--info-font-size);
+  padding: 1vmin 0;
+}
+.resume-info-wrapper {
+  display: grid;
+  position: relative;
+  row-gap: 0.5vmin;
+  margin: 0 auto;
+  width: var(--wrapper-width);
+}
+#resume article {
+  width: 100%;
+  padding: calc(1 * var(--info-font-size)) var(--info-font-size) calc(0.2 * var(--info-font-size)) var(--info-font-size);
+  margin: 0 auto;
+}
+#resume article > h2 {
+  font-family: 'Pretendard-bold';
+  font-size: calc(2 * var(--info-font-size));
+  line-height: 2;
+}
+#resume article > ul {
+  padding: 0 var(--info-font-size);
+}
+.resume-info ul li {
+  line-height: 1.4;
+}
+/* About 시작 -------------------------------------------------------------------------------- */
+.about-box .about-list {
+}
+.about-name strong {
+  font-family: 'Pretendard-bold';
+  font-size: calc(1.4 * var(--info-font-size));
+}
+.about-name span {
+  font-family: 'Pretendard-light';
+  color: var(--theme-text);
+}
+.about-info {
+  padding: 0.2vmin;
+}
+.about-info ul li span:nth-of-type(1) {
+  display: inline-block;
+  width: 15%;
+  font-family: 'Pretendard-medium';
+  font-size: calc(1.2 * var(--info-font-size));
+}
+.about-info ul li span:nth-of-type(2) {
+  font-family: 'Pretendard-light';
+  font-size: var(--info-font-size);
+  color: var(--theme-text);
+}
+/* About 끝 -------------------------------------------------------------------------------- */
+
+/* Experience & Education 시작 -------------------------------------------------------------------------------- */
+.experience-list,
+.education-list {
+  display: grid;
+  position: relative;
+  width: inherit;
+  row-gap: 1vmin;
+}
+.experience-list > li,
+.education-list > li {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  width: inherit;
+}
+.experience-list > li > span:nth-of-type(1),
+.education-list > li > span:nth-of-type(1) {
+  grid-area: 1 / 1 / 2 / 3;
+  font-family: 'Pretendard-Regular';
+  font-size: 11px;
+  line-height: 1.4;
+}
+.experience-list > li > span:nth-of-type(2),
+.education-list > li > span:nth-of-type(2) {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-area: 1 / 3 / 3 / 4;
+  font-family: 'Pretendard-Regular';
+  font-size: 10px;
+  line-height: 100%;
+}
+.experience-list > li > span:nth-of-type(2)::after,
+.education-list > li > span:nth-of-type(2)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 75%;
+  width: 100%;
+  border-left: 0.1px solid var(--theme-text-op);
+}
+.experience-list > li > span:nth-of-type(3),
+.education-list > li > span:nth-of-type(3) {
+  grid-area: 2 / 1 / 3 / 3;
+  font-family: 'Pretendard-light';
+  color: var(--theme-text);
+  font-size: 10px;
+}
+/* Experience & Education 끝 -------------------------------------------------------------------------------- */
+
+/* Skill 시작 -------------------------------------------------------------------------------- */
+.skill-box {
+  width: 100%;
+}
+.skill-list {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.skill-list li {
+  display: flex;
+  position: relative;
+  flex-flow: row;
+  width: 100%;
+  height: calc(1.4 * var(--info-font-size));
+  margin: calc(0.2 * var(--info-font-size)) 0;
+  overflow: hidden;
+}
+.skill-badge {
+  z-index: 1;
+}
+.skill-level {
+  position: absolute;
+  left: 0.2vmin;
+  width: calc(85% - 0.2vmin);
+  height: 100%;
+}
+.skill-level__progress {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  border-top-right-radius: 0.2vmin;
+  border-bottom-right-radius: 0.2vmin;
+  transition: 2s;
+}
+.skill-list li:nth-of-type(1) .skill-level__progress {
+  background: linear-gradient(to right, #e34f2688, #e34f26);
+}
+.skill-list li:nth-of-type(2) .skill-level__progress {
+  background: linear-gradient(to right, #1573b688, #1572b6);
+}
+.skill-list li:nth-of-type(3) .skill-level__progress {
+  background: linear-gradient(to right, #cc669988, #cc6699);
+}
+.skill-list li:nth-of-type(4) .skill-level__progress {
+  background: linear-gradient(to right, #f7df1e88, #f7df1e);
+}
+.skill-list li:nth-of-type(5) .skill-level__progress {
+  background: linear-gradient(to right, #0769ad88, #0769ad);
+}
+.skill-list li:nth-of-type(6) .skill-level__progress {
+  background: linear-gradient(to right, #3776ab88, #3776ab);
+}
+.skill-list li:nth-of-type(7) .skill-level__progress {
+  background: linear-gradient(to right, #31a8ff88, #31a8ff);
+}
+.skill-list li:nth-of-type(8) .skill-level__progress {
+  background: linear-gradient(to right, #ff9a0088, #ff9a00);
+}
+.skill-list li:nth-of-type(9) .skill-level__progress {
+  background: linear-gradient(to right, #f24e1e88, #f24e1e);
+}
+.skill-list li:nth-of-type(10) .skill-level__progress {
+  background: linear-gradient(to right, #b7472a88, #b7472a);
+}
+.skill-list li:nth-of-type(11) .skill-level__progress {
+  background: linear-gradient(to right, #21734688, #217346);
+}
+
+.skill-percent {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  right: 0;
+  color: var(--grayScale-N5);
+  font-size: var(--info-font-size);
+  height: inherit;
+  width: 15%;
+}
+.skill-percent .skill-percent__binder {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  font-family: 'pretendard-Regular';
+  text-shadow: 0.5px 0.5px 0 var(--grayScale-N2);
+}
+/* Skill 끝 -------------------------------------------------------------------------------- */
+.resume-divider {
+  margin: 0 auto;
+  width: 100%;
+  height: 0.5px;
+  background-color: var(--theme-text);
+  border: 0;
+}
+/* 내 정보 끝 -------------------------------------------------------------------------------- */
+
+/* 모니터 디스플레이 화면 */
+.monitor-frame__face.frame--front {
+  background-color: black;
+  transform: translateZ(var(--monitor-display-thick));
+}
+/* 모니터 프레임 */
+.monitor-frame__face,
+.monitor-display .cr .side,
+.monitor-connector__face {
+  border: 0.01px solid rgba(88, 88, 88, 1);
+  background-color: var(--grayScale-N4);
+}
+/* 모니터 스탠드 */
+.stand-base__face,
+.monitor-display__stand .stand-base-cr .side,
+.stand-pillar__face,
+.monitor-hinge--pillar .side,
+.monitor-hinge--left,
+.monitor-hinge--right {
+  border: 0.01px solid rgba(88, 88, 88, 1);
+  background-color: var(--grayScale-N4);
+}
+/* #resume > .resume-header {border: 0.5px solid #00ff73;} */
+
+/* #resume article:nth-of-type(1) {border:0.5px solid #2179f4;}
+#resume article:nth-of-type(2) {border:0.5px solid #ff0000;}
+#resume article:nth-of-type(3) {border:0.5px solid #00ff73;}
+#resume article:nth-of-type(4) {border:0.5px solid #eeff00;}
+
+#resume article:nth-of-type(1) {border:0.5px solid #80808096;}
+#resume article:nth-of-type(2) {border:0.5px solid #80808096;}
+#resume article:nth-of-type(3) {border:0.5px solid #00ff73;}
+#resume article:nth-of-type(4) {border:0.5px solid #eeff00;} */
+
+/* #resume article > h2 {border: 0.5px solid #ff0000;} */
+/* #resume article > ul {border: 0.5px solid forestgreen;} */
+
+/* .experience-list > li, .education-list > li {border: 0.5px solid saddlebrown;} */
+
+/* .experience-list > li > span:nth-of-type(1), .education-list > li > span:nth-of-type(1) {border: 0.5px solid olive;}
+.experience-list > li > span:nth-of-type(2), .education-list > li > span:nth-of-type(2) {border: 0.5px solid rosybrown;}
+.experience-list > li > span:nth-of-type(3), .education-list > li > span:nth-of-type(3) {border: 0.5px solid fuchsia;} */

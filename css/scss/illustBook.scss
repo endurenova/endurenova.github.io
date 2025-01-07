@@ -1,0 +1,450 @@
+.book-binder__box {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transform-style: preserve-3d;
+  width: var(--book-width);
+  height: calc(var(--book-height));
+  transition: 0.3s;
+  top: 50%;
+  left: 50%;
+  width: 150vmax;
+  height: 100vmin;
+  transform: translate(-50%, -50%);
+  scale: 1;
+  > .scene {
+    order: 1;
+    width: var(--book-width);
+    height: var(--book-height);
+    transform-style: preserve-3d;
+    box-shadow: rgba(0, 0, 0, 0) 0vmax 0vmax 0vmax 0vmax;
+    transition: 1s;
+    .book-viewer {
+      position: absolute;
+      width: var(--book-width);
+      height: var(--book-height);
+      transform: translateZ(calc(1.01 * var(--book-total-thick)));
+    }
+    .book-binder {
+      order: 1;
+      width: var(--book-width);
+      height: var(--book-height);
+      transform-style: preserve-3d;
+      transition: 0.3s;
+      position: absolute;
+      transform: rotateX(0deg) rotateZ(0deg) translateX(50%) translateZ(var(--book-cover-thick));
+      &.open {
+        .book-side {
+          .cr-Side {
+            transform: rotateY(-90deg);
+            span {
+              &:first-of-type,
+              &:last-of-type {
+                opacity: 0;
+              }
+            }
+          }
+          .book-side__face {
+            opacity: 0;
+          }
+        }
+      }
+      &.close {
+        .book-side {
+          .cr-Side {
+            transform: rotateY(-180deg);
+          }
+        }
+      }
+      .book-side {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        transform-style: preserve-3d;
+        transition: 0.3s;
+        height: var(--book-height);
+        &__face {
+          display: flex;
+          position: absolute;
+          transition: 0.3s;
+          &--top {
+            position: absolute;
+            width: var(--book-side-thick);
+            height: var(--book-total-thick);
+            transform-origin: top;
+            left: calc(-1 * var(--book-cover-thick));
+            top: 0;
+            transform: rotateX(90deg) translateY(calc(-1 * var(--book-side-thick)));
+            border-top-left-radius: var(--book-cover-thick) calc(var(--book-side-thick));
+            border-bottom-left-radius: calc(var(--book-side-thick)) calc(var(--book-side-thick));
+          }
+          &--bottom {
+            position: absolute;
+            width: var(--book-side-thick);
+            height: var(--book-total-thick);
+            transform-origin: bottom;
+            left: calc(-1 * var(--book-cover-thick));
+            bottom: 0;
+            transform: rotateX(90deg) translateY(calc(1 * var(--book-side-thick)));
+            border-top-left-radius: var(--book-cover-thick) var(--book-cover-thick);
+            border-bottom-left-radius: var(--book-cover-thick) var(--book-cover-thick);
+          }
+        }
+        .cr-Side {
+          transform-origin: left;
+          top: 0;
+          left: 0;
+          height: var(--book-height);
+          position: absolute;
+          transform-style: preserve-3d;
+          transform: rotateY(0deg);
+          transition: 0.3s;
+          .side {
+            transform-origin: top;
+            top: 0;
+            right: calc(-0.5 * var(--book-side-radius-corner-width));
+            position: absolute;
+            height: var(--book-height);
+            width: var(--book-side-radius-corner-width);
+          }
+        }
+      }
+      .book-cover {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        transform-style: preserve-3d;
+        transform-origin: left;
+        position: absolute;
+        width: var(--book-width);
+        height: var(--book-height);
+        transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        &.Fr {
+          transform: rotateY(0deg) translate(0%, -50%);
+          border-top-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+          border-bottom-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+          &.flipOpen {
+            /* 앞 커버 오픈 */
+            transform: rotateY(-180deg) translate3D(0, -50%, 0);
+          }
+          .book-cover__face {
+            &--top {
+              left: 0;
+            }
+            &--bottom {
+              left: 0;
+            }
+            &--front {
+              border-top-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+              border-bottom-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+            }
+            &--back {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              border-top-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+              border-bottom-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+            }
+            &--left {
+              height: var(--book-height);
+              transform-origin: left;
+              top: 0;
+              left: 0;
+              transform: rotateY(-90deg);
+              ::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: calc(var(--book-cover-thick) * 0.6);
+                height: 100%;
+              }
+            }
+            &--right {
+              height: calc(var(--book-height) - (2 * var(--book-cover-border-radius)));
+              transform-origin: right;
+              top: 0;
+              right: 0;
+              transform: rotateY(90deg) translateY(var(--book-cover-border-radius));
+              ::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                width: calc(var(--book-cover-thick) * 0.6);
+                height: 100%;
+              }
+            }
+          }
+          .book-title {
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%, 0%);
+            font-family: "Malgun Gothic";
+            font-weight: 700;
+            color: var(--grayScale-N5);
+            width: 80%;
+            /* letter-spacing: 0.1vmin; */
+            /* text-shadow: -0.2vmin -0.3vmin var(--background-main), 0.2vmin 0.2vmin  */
+            h1 {
+              font-size: 9vmin;
+              word-break: keep-all;
+              text-align: center;
+            }
+            h3 {
+              font-size: 2vmin;
+              padding: 2%;
+            }
+          }
+          .book-aunthor {
+            position: absolute;
+            right: 7%;
+            bottom: 5%;
+            p {
+              font-family: "Parisienne-Regular";
+              font-size: 4vmin;
+              color: var(--grayScale-N5);
+              rotate: -3deg;
+            }
+          }
+        }
+        &.Rr {
+          transform: rotateY(180deg) translate(-100%, -50%);
+          border-top-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+          border-bottom-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+          &.flipClose {
+            /* 뒷 커버 닫기 */
+            transform: rotateY(0deg) translate3d(-100%, -50%, 0);
+          }
+          .book-cover__face {
+            &--top {
+              right: 0;
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                height: calc(var(--book-cover-thick) * 0.6);
+                width: 100%;
+              }
+            }
+            &--bottom {
+              right: 0;
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                height: calc(var(--book-cover-thick) * 0.6);
+                width: 100%;
+              }
+            }
+            &--front {
+              border-top-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+              border-bottom-left-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+            }
+            &--back {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              border-top-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+              border-bottom-right-radius: var(--book-cover-border-radius) var(--book-cover-border-radius);
+            }
+            &--left {
+              height: calc(var(--book-height) - (2 * var(--book-cover-border-radius)));
+              transform-origin: left;
+              top: 0;
+              left: 0;
+              transform: rotateY(-90deg) translateY(var(--book-cover-border-radius));
+            }
+            &--right {
+              height: var(--book-height);
+              transform-origin: right;
+              right: 0;
+              bottom: 0;
+              transform: rotateY(90deg);
+            }
+          }
+        }
+        &__face {
+          display: flex;
+          box-sizing: border-box;
+          position: absolute;
+          &--front {
+            width: var(--book-width);
+            height: var(--book-height);
+            transform: translateZ(var(--book-cover-thick));
+          }
+          &--back {
+            width: var(--book-width);
+            height: var(--book-height);
+            transform: rotateY(180deg);
+          }
+          &--top {
+            width: calc(var(--book-width) - var(--book-cover-border-radius));
+            height: var(--book-cover-thick);
+            transform-origin: top;
+            top: 0;
+            transform: rotateX(90deg);
+          }
+          &--bottom {
+            width: calc(var(--book-width) - var(--book-cover-border-radius));
+            height: var(--book-cover-thick);
+          }
+          &--left {
+            width: var(--book-cover-thick);
+          }
+          &--right {
+            width: var(--book-cover-thick);
+          }
+        }
+        .cr {
+          position: absolute;
+          transform-style: preserve-3d;
+          width: var(--book-cover-thick);
+          height: var(--book-cover-border-radius);
+          .side {
+            width: var(--book-cover-thick);
+            position: absolute;
+            height: var(--book-radius-corner-width);
+          }
+          &.cr-Tp {
+            &-Rt {
+              transform-origin: right;
+              top: 0;
+              right: 0;
+              transform: rotateY(90deg) translateZ(calc(-1 * var(--book-cover-border-radius)));
+            }
+            &-Lt {
+              transform-origin: left;
+              top: 0;
+              left: 0;
+              transform: rotateY(-90deg) translateZ(calc(-1 * var(--book-cover-border-radius)));
+            }
+          }
+          &.cr-Bt {
+            &-Rt {
+              transform-origin: right;
+              bottom: 0;
+              right: 0;
+              transform: rotateY(90deg) translateZ(calc(-1 * var(--book-cover-border-radius)));
+            }
+            &-Lt {
+              transform-origin: left;
+              bottom: 0;
+              left: 0;
+              transform: rotateY(-90deg) translateZ(calc(-1 * var(--book-cover-border-radius)));
+            }
+          }
+        }
+      }
+      .book-page {
+        top: 50%;
+        transform: translate(0, -50%);
+        position: absolute;
+        width: calc(var(--book-page-width));
+        height: calc(var(--book-page-height));
+        z-index: 1;
+        .book-page-list {
+          position: relative;
+          width: inherit;
+          height: inherit;
+          .binder__page {
+            display: flex;
+            position: absolute;
+            flex-flow: column;
+            -ms-flex-flow: column;
+            justify-content: space-between;
+            width: calc(var(--book-page-width));
+            height: calc(var(--book-page-height));
+            transform-style: preserve-3d;
+            transition: 0.3s;
+            &.flipPageLeft {
+              transform-origin: left;
+              transform: rotateY(-180deg);
+            }
+            &.flipPageRight {
+              transform-origin: left;
+              transform: rotateY(0deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  > .exit-layer {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+/* 책 커버 */
+.book-side .cr-Side .side,
+.book-cover .cr .side,
+.book-cover__face {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+  background: linear-gradient(
+    180deg,
+    rgba(32, 32, 2, 0.7),
+    rgba(32, 32, 2, 0.9),
+    rgba(32, 32, 2, 1),
+    rgba(32, 32, 2, 0.9)
+  );
+}
+.book-side__face {
+  box-sizing: border-box;
+  border-top: calc(var(--book-cover-thick) * 0.5) solid var(--book-main);
+  border-left: calc(var(--book-cover-thick) * 0.5) solid var(--book-main);
+  border-bottom: calc(var(--book-cover-thick) * 0.5) solid var(--book-main);
+}
+.book-side__face,
+.book-cover__face--top::after,
+.book-cover__face--bottom::after,
+.Fr .book-cover__face--right::after,
+.Rr .book-cover__face--left::after,
+.book-cover .cr-Tp-Rt .side::after,
+.book-cover .cr-Bt-Rt .side::after,
+.book-cover .cr-Tp-Lt .side::after,
+.book-cover .cr-Bt-Lt .side::after {
+  background-color: #efefef;
+}
+.bookActive .book-side__face {
+  border: unset;
+}
+.bookActive .book-side__face,
+.bookActive .book-cover__face--top::after,
+.bookActive .book-cover__face--bottom::after,
+.bookActive .Fr .book-cover__face--right::after,
+.bookActive .Rr .book-cover__face--left::after,
+.bookActive .book-cover .cr-Tp-Rt .side::after,
+.bookActive .book-cover .cr-Bt-Rt .side::after,
+.bookActive .book-cover .cr-Tp-Lt .side::after,
+.bookActive .book-cover .cr-Bt-Lt .side::after {
+  background-color: unset;
+}
+/* 책 페이지 */
+.binder__page {
+  background-color: rgba(255, 255, 255, 1);
+}
+.binder__page::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 5%;
+  z-index: 5;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 2%,
+    rgba(0, 0, 0, 0.5) 4%,
+    rgba(0, 0, 0, 0.2) 10%,
+    rgba(0, 0, 0, 0.05) 20%,
+    rgba(255, 255, 255, 0) 26%
+  );
+}
+.page-bottom {
+  font-family: "mapleStory-light";
+  font-size: 14px;
+  color: black;
+}

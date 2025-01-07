@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/totoro.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="js/totoro.js"></script>
+
+</head>
+<body>
+    <section class="totoro">
+        <div class="toggle__area">
+            <img src="images/logo.png" alt="토글버튼">
+        </div>
+        <div class="wrapper contents">
+            <div class="toggle__menu">
+                <div class="totoro__title">
+                    <div class="title__wrap">
+                        <h2>My Neighbor</h2>
+                        <h1>Totoro</h1>
+                    </div>
+                </div>
+                <ul class="totoro__friends">
+                    <li><img src="images/1.png" alt=""></li>
+                    <li><img src="images/2.png" alt=""></li>
+                    <li><img src="images/3.png" alt=""></li>
+                    <li><img src="images/b3.png" alt=""></li>    
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        var fall;
+        var gap = 600;
+        var speed = 3000;
+
+        let totoroFriends = [
+            {name: "Totoro", color: "#B2A896"},
+            {name: "Zuku", color: "#8FCBE1"},
+            {name: "Chibi", color: "#dddddd"},
+            {name: "Kurosuke", color: "#333333"}
+        ];
+        fall = () => {
+            $(".totoro__title h2").text("My Neighbor").css({"color":"#3b3b3b"});
+            $(".totoro__title h1").text("Totoro").css({"color":"#3b3b3b"});
+            $(".totoro__friends img").each(function (index) {
+                if (!$(this).hasClass("go")){
+                    $(this).delay(gap * index).toggleClass("turn");
+                }
+                $(this).delay(gap * index).toggleClass("go", speed, "easeOutBounce");                                
+                $(this).click(function(e){
+                    e.preventDefault();
+                    $(".totoro__title h2").text(index);
+                    $(".totoro__title h1").text(totoroFriends[index].name).css("color", totoroFriends[index].color);
+                });
+            });
+        }
+        $(".toggle__area").on('click', (e) => {
+            e.stopImmediatePropagation();
+            fall();
+        });
+        window.addEventListener("load", () => {
+            $(".totoro").css("backgroundColor", "rgba(0, 173, 239, 0);")
+            setTimeout(() => {
+                $(".totoro__title h2").text("My Neighbor").css({"opacity":"1"});
+                $(".totoro__title h1").text("Totoro").css({"opacity":"1"});                
+                setTimeout(() => {
+                    $(".toggle__area").fadeIn(speed);
+                }, 1000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+img{
+    vertical-align: bottom;
+    cursor: pointer;
+}
+li {
+    list-style: none;
+    color: inherit;
+}
+body{
+    position: fixed;
+}
+.totoro {
+    position: relative;
+    width: 100vw;
+    background-color: rgba(0, 173, 239, 1);
+    transition: 3s;
+}
+.totoro::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/totoro_bg.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+    .toggle__area {
+        display: none;
+        position: absolute;
+        align-items: center;
+        justify-content: center;        
+        width: 14vw;
+        height: 24vh;
+        top: 25%;
+        right: 40%;        
+        transform: translate(9vw, -50%);
+        cursor: pointer;
+        z-index: 100;        
+    }
+        .toggle__area img{
+            display: block;
+            position: relative;
+            object-fit: contain;
+            margin: 0 auto;
+            width: auto;
+            height: 100%;
+            opacity: 1;
+            rotate: -3deg;            
+        }
+    .wrapper.contents{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+        /* 토토로 메뉴 */
+        .toggle__menu {
+            display: flex;
+            position: fixed;
+            justify-content: space-evenly;
+            left: 0;
+            flex-flow: column nowrap;
+            -ms-flex-flow: column nowrap;
+            width: 25vw;
+            height: 100%;
+        }
+            /* 토토로 타이틀 */
+            .totoro__title {
+                display: flex;    
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                width: 40vw;
+                height: 20vh;
+            }
+                .title__wrap{
+                    position: relative;
+                    width: 100%;
+                }
+                    .title__wrap h2{
+                        position: absolute;
+                        left: 50%;
+                        transform: translate(-50%, -100%);
+                        width: 100%;
+                        font-family: 'Nanum Pen Script', cursive;
+                        font-size: 7vh;
+                        color: #3b3b3b;
+                        opacity: 0;
+                        transition: 1s;
+                    }
+                    .title__wrap h1{
+                        position: absolute;
+                        left: 50%;
+                        transform: translate(-50%, -30%);
+                        font-family: 'Nanum Pen Script', cursive;
+                        font-size: 13vh;
+                        color: #3b3b3b;
+                        opacity: 0;
+                        transition: 1s;
+                    }
+
+            /* 토토로 친구들 이미지 */
+            .totoro__friends {
+                display: flex;
+                flex-flow: row nowrap;
+                -ms-flex-flow: row nowrap;
+                align-items: flex-end;
+            }
+            .totoro__friends li{
+                margin: 3% 0;
+                text-align: left;
+                width: 100%;
+            }
+                .totoro__friends li img{
+                    position: relative;
+                    left: 3000px;
+                    transform: rotateY(0deg);
+                }
+                    .totoro__friends li img.go{
+                        left: 0;                        
+                    }
+                    .totoro__friends li img.turn {
+                        transform: rotateY(180deg);
+                    }
+
