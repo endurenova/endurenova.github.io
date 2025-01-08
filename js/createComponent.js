@@ -550,13 +550,14 @@ openPublishing = itemIdx => {
       {
         contents: `
                     <div class="col">                        
-                        <img src="./images/project-room3d-contents-1.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-1" /> 
-                        <p>라이브러리나 목업 없이 CSS스타일로 형성한 모니터</p>
+                        <img src="./images/project-collector2030-contents-1.gif" alt="퍼블리싱 디테일 COLLECTOR2030 컨텐츠 이미지-1" /> 
+                        <p>캐릭터 회사다운 인터랙션</p>
                     </div>
                     <div class="col">
-                        <img src="./images/project-room3d-contents-2-1.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-2-1" /> 
-                        <p>책 넘기는 효과를 구현한 JavaScript</p>
-                        <img src="./images/project-room3d-contents-2-2.png" alt="퍼블리싱 디테일 ROOM-3D 컨텐츠 이미지-2-2" /> 
+                        <img src="./images/project-collector2030-contents-2-1.png" alt="퍼블리싱 디테일 COLLECTOR2030 컨텐츠 이미지-2-1" /> 
+                        <img src="./images/project-collector2030-contents-2-2.png" alt="퍼블리싱 디테일 COLLECTOR2030 컨텐츠 이미지-2-2" /> 
+                        <img src="./images/project-collector2030-contents-2-3.png" alt="퍼블리싱 디테일 COLLECTOR2030 컨텐츠 이미지-2-3" /> 
+                        <p>그림의 치수를 입력하면 가상으로 걸어보는 JavaScript 코딩</p>
                     </div>
                 `,
       },

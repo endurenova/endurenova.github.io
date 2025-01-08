@@ -93,7 +93,7 @@ body aside.detail-active .open-detail .tooltip .toggle::before {
   content: "";
   display: block;
   width: 5vmin;
-  height: var(--normal-text-size);
+  height: 5vmin;
   background-color: var(--grayScale-N2);
 }
 body aside.detail-active .open-detail .tooltip .toggle.qhome-toggle::before {
@@ -1142,6 +1142,21 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   }
 }
 @media (max-width: 1024px) {
+  body {
+    overflow-y: scroll;
+  }
+  body::-webkit-scrollbar {
+    /* 스크롤바의 너비 */
+    width: 0n;
+  }
+  body::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background-color: var(--tailed-n0);
+    border-radius: 10px;
+  }
+  body::-webkit-scrollbar-track {
+    background-color: var(--grayScale-N2);
+  }
   body #portfolio section.design {
     /* 디자인 섹션 */
   }
@@ -1167,17 +1182,29 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   body #portfolio section.web-publishing {
     /* 웹 퍼블리싱 섹션 */
   }
+  body #portfolio section.web-publishing.open {
+    flex-flow: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
   body #portfolio section.web-publishing.open::-webkit-scrollbar {
     /* 스크롤바의 너비 */
-    height: 0.6vmin;
   }
   body #portfolio section.web-publishing.open .publishing-detail-box {
     flex-flow: column;
+    width: 100%;
+    height: fit-content;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box:nth-of-type(2) {
+    margin: 5% 0;
   }
   body #portfolio section.web-publishing.open .publishing-detail-box .main-description {
     /* 디테일 설명 */
-    width: 100vw;
-    height: 100vw;
+    width: 100%;
+    height: 50vh;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap {
+    height: 100%;
   }
   body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > .subject {
     /* 주제 */
@@ -1198,66 +1225,44 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   body #portfolio section.web-publishing.open .publishing-detail-box .main-image img {
     display: block;
     position: relative;
+    width: 100%;
     height: 100%;
   }
   body #portfolio section.web-publishing.open .publishing-detail-box .small-description {
     /* 디테일 설명 */
   }
   body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap {
-    display: flex;
-    position: relative;
-    flex-flow: row nowrap;
-    align-items: center;
-    width: fit-content;
-    height: 100%;
+    width: 100%;
   }
   body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents {
-    display: flex;
-    position: relative;
-    flex-flow: row nowrap;
-    align-items: center;
-    height: 100%;
+    margin: 0 auto;
+    flex-flow: column;
+    padding: 5% 0;
   }
   body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col {
+    margin: 10% 0;
+    width: 100%;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > img {
+    width: 100%;
+    max-width: 100%;
+    max-height: unset;
+  }
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row {
     display: flex;
     position: relative;
     flex-flow: column;
-    justify-content: center;
-    width: fit-content;
-    height: 100%;
-    margin: 0 1%;
-    padding: 0 3%;
+    align-items: center;
+    width: 100%;
+    margin: 10% 0;
   }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > img {
-    display: block;
-    position: relative;
-    max-width: 75vw;
-    width: auto;
-    max-height: 42vh;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > p {
+  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row > p {
     font-weight: 500;
     font-size: var(--regular-text-size);
     line-height: 1.6;
     width: 100%;
     color: var(--theme-text);
     padding: 3% 0;
-    text-align: center;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row {
-    display: flex;
-    position: relative;
-    flex-flow: row;
-    align-items: center;
-    width: fit-content;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row > p {
-    font-weight: 500;
-    font-size: var(--regular-text-size);
-    line-height: 1.6;
-    width: 18vh;
-    color: var(--theme-text);
-    padding: 0 3%;
     text-align: center;
   }
   body #portfolio section.web-publishing .slide-box {
@@ -1298,7 +1303,6 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item {
     /* 프로젝트 아이템 */
     display: flex;
-    flex-flow: column;
     align-items: center;
     width: 80vw;
     background-color: var(--grayScale-N2);
@@ -1447,63 +1451,6 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   }
   body #portfolio section.web-publishing.open .publishing-detail-box .small-description {
     /* 디테일 설명 */
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap {
-    display: flex;
-    position: relative;
-    flex-flow: row nowrap;
-    align-items: center;
-    width: fit-content;
-    height: 100%;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents {
-    display: flex;
-    position: relative;
-    flex-flow: row nowrap;
-    align-items: center;
-    height: 100%;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col {
-    display: flex;
-    position: relative;
-    flex-flow: column;
-    justify-content: center;
-    width: fit-content;
-    height: 100%;
-    margin: 0 1%;
-    padding: 0 3%;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > img {
-    display: block;
-    position: relative;
-    max-width: 75vw;
-    width: auto;
-    max-height: 42vh;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > p {
-    font-weight: 500;
-    font-size: var(--regular-text-size);
-    line-height: 1.6;
-    width: 100%;
-    color: var(--theme-text);
-    padding: 3% 0;
-    text-align: center;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row {
-    display: flex;
-    position: relative;
-    flex-flow: row;
-    align-items: center;
-    width: fit-content;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .row > p {
-    font-weight: 500;
-    font-size: var(--regular-text-size);
-    line-height: 1.6;
-    width: 18vh;
-    color: var(--theme-text);
-    padding: 0 3%;
-    text-align: center;
   }
   body #portfolio section.web-publishing .slide-box {
     width: 100%;
