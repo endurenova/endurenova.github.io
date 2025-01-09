@@ -632,6 +632,7 @@ body #portfolio section.design .slide-box .project-list li .project-item {
   display: flex;
   flex-flow: column;
   position: relative;
+  align-items: center;
   justify-content: space-evenly;
   width: 90%;
   height: 100%;
@@ -894,7 +895,7 @@ body .designModal__window {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  width: 50%;
+  width: 70%;
   height: 100%;
   background-color: #fff;
 }
@@ -968,7 +969,7 @@ body .designModal__window .window-body .window__inner .middle-description > p {
   font-weight: 400;
   text-align: center;
   word-break: keep-all;
-  padding: 2% 10%;
+  padding: 10% 5%;
 }
 body .designModal__window .window-body .window__inner .middle-description > span {
   font-weight: 700;
@@ -1008,8 +1009,8 @@ body .designModal__window .window-body .window__inner .bottom-contents .link-box
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
-  background-color: #f24e1e;
-  width: 30%;
+  background-color: var(--tailed-n0);
+  width: 45%;
   height: 50%;
   border-radius: 1vh;
 }
@@ -1029,10 +1030,10 @@ body .designModal__window .window-body .window__inner .bottom-contents .link-box
 body .designModal__tool {
   position: absolute;
   top: 0;
-  right: 25%;
+  right: 15%;
   transform: translateX(10vmin);
   width: 10vmin;
-  background-color: var(--theme-text);
+  background-color: var(--grayScale-W);
 }
 body .designModal__tool > .close {
   font-weight: 700;
@@ -1390,37 +1391,6 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   body #portfolio section.web-publishing {
     /* 웹 퍼블리싱 섹션 */
   }
-  body #portfolio section.web-publishing.open::-webkit-scrollbar {
-    /* 스크롤바의 너비 */
-    height: 0.6vmin;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .main-description {
-    /* 디테일 설명 */
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > .subject {
-    /* 주제 */
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > .title {
-    /* 프로젝트 제목 */
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul {
-    /* 프로젝트 설명 */
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li {
-    display: flex;
-    position: relative;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li:nth-of-type(2) {
-    /* 사용 툴 뱃지 */
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .main-image img {
-    display: block;
-    position: relative;
-    height: 100%;
-  }
-  body #portfolio section.web-publishing.open .publishing-detail-box .small-description {
-    /* 디테일 설명 */
-  }
   body #portfolio section.web-publishing .slide-box {
     position: relative;
     margin: 0 auto;
@@ -1542,6 +1512,7 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   body #portfolio section.design .slide-box .project-list li {
     /* 프로젝트 리스트 (카드 모양) */
     height: 80%;
+    padding: 4% 0;
   }
   body #portfolio section.skill {
     /* 스킬 섹션 */
@@ -1563,6 +1534,135 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   }
   body #portfolio section.skill .skill-box .skill-list li .skill-level__progress .skill-percent {
     /* 진행도 숫자 퍼센트 */
+  }
+  body .designModal__layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  body .designModal__layer.active {
+    display: unset;
+  }
+  body .designModal__layer .exit-layer {
+    width: 100%;
+    height: 100%;
+    background-color: var(--blackLayer-opacity);
+  }
+  body .designModal__window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 70%;
+    height: 100%;
+    background-color: #fff;
+  }
+  body .designModal__window .window-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-flow: column;
+    overflow-y: scroll;
+  }
+  body .designModal__window .window-body::-webkit-scrollbar {
+    /* 스크롤바의 너비 */
+    width: 0vmin;
+  }
+  body .designModal__window .window-body > img {
+    /* 메인 이미지 */
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  body .designModal__window .window-body .window__inner {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    width: var(--wrapper-width);
+  }
+  body .designModal__window .window-body .window__inner .head-title {
+    /* 타이틀과 툴 */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    padding: 8% 5% 0% 5%;
+  }
+  body .designModal__window .window-body .window__inner .head-title > h2 {
+    /* 타이틀 */
+    font-weight: 700;
+    font-size: var(--medium-text-size);
+    line-height: 1.4;
+    line-height: 1.8;
+  }
+  body .designModal__window .window-body .window__inner .head-title > span {
+    /* 툴 목록 */
+    margin: 0 auto;
+  }
+  body .designModal__window .window-body .window__inner .head-title > span > img {
+    height: 3vmin;
+  }
+  body .designModal__window .window-body .window__inner .middle-description {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+    padding: 0% 5%;
+    margin: 5% 0%;
+  }
+  body .designModal__window .window-body .window__inner .middle-description > h3 {
+    font-weight: 600;
+    font-size: var(--normal-text-size);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  body .designModal__window .window-body .window__inner .middle-description > p {
+    font-weight: 400;
+    font-size: var(--small-text-size);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  body .designModal__window .window-body .window__inner .middle-description > span {
+    font-weight: 500;
+    font-size: var(--small-text-size);
+    line-height: 1.4;
+    background-color: var(--tailed-n0);
+    padding: 1% 3%;
+  }
+  body .designModal__window .window-body .window__inner .bottom-contents {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+  }
+  body .designModal__window .window-body .window__inner .bottom-contents > img {
+    width: 100%;
+  }
+  body .designModal__window .window-body .window__inner .bottom-contents > iframe {
+    width: 48vw;
+    height: 27vw;
+  }
+  body .designModal__window .window-body .window__inner .bottom-contents .link-box > a {
+    border-radius: 1vh;
+  }
+  body .designModal__window .window-body .window__inner .bottom-contents .link-box > a > span {
+    font-weight: 500;
+    font-size: var(--small-text-size);
+    line-height: 1.4;
   }
 }
 @media (max-width: 640px) {
