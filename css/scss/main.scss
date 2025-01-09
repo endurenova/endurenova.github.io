@@ -784,22 +784,6 @@ body {
               }
             }
           }
-          .swiper-pagination {
-            position: relative;
-            .swiper-pagination-bullet {
-              width: 2vh;
-              height: 2vh;
-              margin: auto 1vh;
-              border-radius: 50%;
-              background-color: var(--grayScale-N5);
-              opacity: 1;
-              &.swiper-pagination-bullet-active {
-                width: 5vh;
-                border-radius: 2.5vh;
-                background-color: var(--tailed-n0);
-              }
-            }
-          }
         }
       }
       &.illustration {
@@ -1109,6 +1093,7 @@ body {
                   @include subject-title;
                   display: flex;
                   position: relative;
+                  cursor: pointer;
                   justify-content: space-between;
                   line-height: var(--normal-text-size);
                   word-break: keep-all;
@@ -1248,39 +1233,12 @@ body {
           }
         }
 
-        .swiper-pagination {
-          position: relative;
-          .swiper-pagination-bullet {
-            width: 1vh;
-            height: 1vh;
-            margin: auto 0.5vh;
-            border-radius: 50%;
-            background-color: var(--grayScale-N5);
-            opacity: 1;
-            &.swiper-pagination-bullet-active {
-              width: 2.5vh;
-              border-radius: 1.25vh;
-              background-color: var(--tailed-n0);
-            }
-          }
-        }
         &.web-publishing {
           /* 웹 퍼블리싱 섹션 */
-          &:not(.open) {
-            &::before {
-            }
-          }
           &.open {
             flex-flow: column;
             overflow-x: hidden;
             overflow-y: scroll;
-            &::-webkit-scrollbar {
-              /* 스크롤바의 너비 */
-              &-thumb {
-              }
-              &-track {
-              }
-            }
             .publishing-detail-box {
               flex-flow: column;
               width: 100%;
@@ -1496,6 +1454,7 @@ body {
       section {
         /* 공통 섹션 */
         > .wrap {
+          justify-content: center;
           > h1 {
           }
         }
@@ -1616,11 +1575,10 @@ body {
             }
           }
           .slide-box {
-            @include contentBox-size;
-            width: 80vw;
             position: relative;
             margin: 0 auto;
             flex-flow: column-reverse;
+            height: 80%;
             .project-list {
               /* 프로젝트 리스트 (영화 필름 띠) */
               display: flex;
@@ -1744,39 +1702,6 @@ body {
               li {
                 /* 프로젝트 리스트 (카드 모양) */
                 height: 80%;
-                .project-item {
-                  > div {
-                    &:nth-of-type(1) {
-                      /* 디자인 타이틀 & 툴 */
-                      > h3 {
-                        /* 디자인 타이틀 */
-                      }
-                      > span {
-                        /* 툴 뱃지 리스트 */
-                        > img {
-                        }
-                      }
-                    }
-                    &:nth-of-type(2) {
-                      /* 디자인 메인 이미지 */
-                      > img {
-                      }
-                    }
-                    &:nth-of-type(3) {
-                      /* 디테일 버튼 */
-                      button.design-modal-btn {
-                        &:hover {
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            .swiper-pagination {
-              .swiper-pagination-bullet {
-                &.swiper-pagination-bullet-active {
-                }
               }
             }
           }

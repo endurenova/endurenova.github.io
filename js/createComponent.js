@@ -75,6 +75,18 @@ const badgeList = [
     tool: 'https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white',
     progress: 90,
   },
+  {
+    // 12
+    name: 'Blender',
+    tool: 'https://img.shields.io/badge/Blender-E87D0D?style=flat&logo=blender&logoColor=white',
+    progress: 90,
+  },
+  {
+    // 13
+    name: 'Unity',
+    tool: 'https://img.shields.io/badge/Unity-FFFFFF?style=flat&logo=unity&logoColor=black',
+    progress: 90,
+  },
 ];
 createProfile = () => {
   const experienceBox = document.querySelector('.list-box.experience');
@@ -187,7 +199,7 @@ createPublishing = () => {
         </div>
     `;
 
-  changPublishingBg = idx => {
+  changePublishingBg = idx => {
     document.querySelector('#web-publishing').style.cssText = `background-image: url(../images/publishing-${idx}.png);`;
   };
   const publishingSwiper = new Swiper('#web-publishing .swiper.slide-box', {
@@ -229,13 +241,40 @@ createPublishing = () => {
       },
       slideChangeTransitionEnd: index => {
         // console.log('now index :::', index.realIndex);
-        changPublishingBg(index.realIndex);
+        changePublishingBg(index.realIndex);
       },
     },
   });
 };
 createDesign = () => {
   const designProject = [
+    {
+      title: '3DWORKS',
+      mainImg: './images/design-3Dworks.png',
+      toolList: `
+                    <img src=${badgeList[12].tool} alt="툴 뱃지 이미지-${12}" />
+                    <img src=${badgeList[13].tool} alt="툴 뱃지 이미지-${13}" />
+                `,
+      subject: 'VR게임 아바타 악세서리',
+      description: '블렌더와 유니티를 이용한 VR게임 악세서리 모델링',
+      author: '개인작업',
+      link: `
+                    <div class="link-box">
+                        <a href='https://siru.booth.pm/' target='_blank'>
+                            <span>작업물 보기</span>
+                        </a>
+                    </div>
+                `,
+      contents: `
+                    <img src="./images/design-3Dworks-contents-1.png" alt="3Dworks 이미지 1" /> 
+                    <img src="./images/design-3Dworks-contents-2.png" alt="3Dworks 이미지 2" /> 
+                    <img src="./images/design-3Dworks-contents-3.png" alt="3Dworks 이미지 3" /> 
+                    <img src="./images/design-3Dworks-contents-4.png" alt="3Dworks 이미지 4" /> 
+                    <img src="./images/design-3Dworks-contents-5.png" alt="3Dworks 이미지 5" /> 
+                    <img src="./images/design-3Dworks-contents-6.png" alt="3Dworks 이미지 6" /> 
+
+                `,
+    },
     {
       title: 'OVERTONES',
       mainImg: './images/design-overtones-mockup.png',
