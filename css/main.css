@@ -68,7 +68,7 @@ body aside.detail-active .open-detail .tooltip__left {
 }
 body aside.detail-active .open-detail .tooltip__left::after {
   /* 툴팁 화살표 기본 스타일 설정 */
-  content: " ";
+  content: ' ';
   position: absolute;
   border-style: solid;
   border-width: 6px;
@@ -90,7 +90,7 @@ body aside.detail-active .open-detail .tooltip .toggle {
   border-radius: 1vmin;
 }
 body aside.detail-active .open-detail .tooltip .toggle::before {
-  content: "";
+  content: '';
   display: block;
   width: 5vmin;
   height: 5vmin;
@@ -131,7 +131,7 @@ body #portfolio section .swiper-pagination .swiper-pagination-bullet.swiper-pagi
   background-color: var(--tailed-n0);
 }
 body #portfolio section#intro-page::before {
-  content: "";
+  content: '';
   display: block;
   position: relative;
   width: 100%;
@@ -331,7 +331,7 @@ body #portfolio section.web-publishing:not(.open) {
   background-color: var(--grayScale-N4);
 }
 body #portfolio section.web-publishing:not(.open)::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: 100%;
@@ -411,7 +411,15 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-descrip
   font-size: var(--normal-text-size);
   line-height: 1.4;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span:nth-of-type(1) {
+body
+  #portfolio
+  section.web-publishing.open
+  .publishing-detail-box
+  .main-description
+  > .wrap
+  > ul
+  > li
+  > span:nth-of-type(1) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -420,7 +428,15 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-descrip
   border: 1px solid var(--grayScale-N5);
   margin-right: 3vmin;
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li > span:nth-of-type(2) {
+body
+  #portfolio
+  section.web-publishing.open
+  .publishing-detail-box
+  .main-description
+  > .wrap
+  > ul
+  > li
+  > span:nth-of-type(2) {
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -430,7 +446,15 @@ body #portfolio section.web-publishing.open .publishing-detail-box .main-descrip
 body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li:nth-of-type(2) {
   /* 사용 툴 뱃지 */
 }
-body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li:nth-of-type(2) img {
+body
+  #portfolio
+  section.web-publishing.open
+  .publishing-detail-box
+  .main-description
+  > .wrap
+  > ul
+  > li:nth-of-type(2)
+  img {
   height: 3vmin;
   margin-right: 1%;
 }
@@ -460,7 +484,7 @@ body #portfolio section.web-publishing.open .publishing-detail-box .small-descri
 body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col {
   display: flex;
   position: relative;
-  flex-flow: column;
+  flex-flow: column wrap;
   justify-content: center;
   width: fit-content;
   height: 100%;
@@ -472,7 +496,7 @@ body #portfolio section.web-publishing.open .publishing-detail-box .small-descri
   position: relative;
   max-width: 75vw;
   width: auto;
-  max-height: 42vh;
+  max-height: 70vh;
 }
 body #portfolio section.web-publishing.open .publishing-detail-box .small-description > .wrap > .contents .col > p {
   font-weight: 500;
@@ -536,7 +560,18 @@ body #portfolio section.web-publishing .slide-box .project-list > li > ul > li {
   --window-mt: 25%;
   --window-mb: 75%;
   --window-mr: 70%;
-  clip-path: polygon(0% 0%, 0% 100%, var(--window-ml) 100%, var(--window-ml) var(--window-mt), var(--window-mr) var(--window-mt), var(--window-mr) var(--window-mb), var(--window-ml) var(--window-mb), var(--window-ml) 100%, 100% 100%, 100% 0%);
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    var(--window-ml) 100%,
+    var(--window-ml) var(--window-mt),
+    var(--window-mr) var(--window-mt),
+    var(--window-mr) var(--window-mb),
+    var(--window-ml) var(--window-mb),
+    var(--window-ml) 100%,
+    100% 100%,
+    100% 0%
+  );
   width: 100%;
   height: 100%;
   border: 1px solid var(--grayScale-N1);
@@ -736,7 +771,7 @@ body #portfolio section.illustration .slide-box .illust-item__description .post 
   clip-path: polygon(0 0%, 10% 0, 100% 0, 100% 10%, 100% 80%, 80% 100%, 10% 100%, 0% 100%, 0% 10%);
 }
 body #portfolio section.illustration .slide-box .illust-item__description .post:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 20%;
   height: 20%;
@@ -1047,7 +1082,8 @@ body .designModal__tool > .close {
   height: 100%;
   color: var(--grayScale-N2);
 }
-body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
+body .designModal__tool > .close:hover,
+body .designModal__tool > .close:focus {
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
@@ -1186,7 +1222,14 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
     display: flex;
     position: relative;
   }
-  body #portfolio section.web-publishing.open .publishing-detail-box .main-description > .wrap > ul > li:nth-of-type(2) {
+  body
+    #portfolio
+    section.web-publishing.open
+    .publishing-detail-box
+    .main-description
+    > .wrap
+    > ul
+    > li:nth-of-type(2) {
     /* 사용 툴 뱃지 */
   }
   body #portfolio section.web-publishing.open .publishing-detail-box .main-image img {
@@ -1261,7 +1304,18 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
     --window-mt: 25%;
     --window-mb: 75%;
     --window-mr: 70%;
-    clip-path: polygon(0% 0%, 0% 100%, var(--window-ml) 100%, var(--window-ml) var(--window-mt), var(--window-mr) var(--window-mt), var(--window-mr) var(--window-mb), var(--window-ml) var(--window-mb), var(--window-ml) 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      var(--window-ml) 100%,
+      var(--window-ml) var(--window-mt),
+      var(--window-mr) var(--window-mt),
+      var(--window-mr) var(--window-mb),
+      var(--window-ml) var(--window-mb),
+      var(--window-ml) 100%,
+      100% 100%,
+      100% 0%
+    );
     width: 100%;
     height: 100%;
     background-color: var(--grayScale-N1);
@@ -1284,7 +1338,15 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
     flex-flow: column;
     background-color: var(--grayScale-N1);
   }
-  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(1) > img {
+  body
+    #portfolio
+    section.web-publishing
+    .slide-box
+    .project-list
+    .project-film
+    .project-item
+    > div:nth-of-type(1)
+    > img {
     /* 프로젝트 이미지 */
     width: auto;
     height: 100%;
@@ -1292,7 +1354,15 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) {
     padding: 1%;
   }
-  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > h3 {
+  body
+    #portfolio
+    section.web-publishing
+    .slide-box
+    .project-list
+    .project-film
+    .project-item
+    > div:nth-of-type(2)
+    > h3 {
     /* 프로젝트 제목 */
     font-weight: 700;
     font-size: var(--medium-text-size);
@@ -1424,7 +1494,18 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
     --window-mt: 25%;
     --window-mb: 75%;
     --window-mr: 70%;
-    clip-path: polygon(0% 0%, 0% 100%, var(--window-ml) 100%, var(--window-ml) var(--window-mt), var(--window-mr) var(--window-mt), var(--window-mr) var(--window-mb), var(--window-ml) var(--window-mb), var(--window-ml) 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      var(--window-ml) 100%,
+      var(--window-ml) var(--window-mt),
+      var(--window-mr) var(--window-mt),
+      var(--window-mr) var(--window-mb),
+      var(--window-ml) var(--window-mb),
+      var(--window-ml) 100%,
+      100% 100%,
+      100% 0%
+    );
     width: 100%;
     height: 100%;
     background-color: var(--grayScale-N1);
@@ -1448,7 +1529,15 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
     flex-flow: column;
     background-color: var(--grayScale-N1);
   }
-  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(1) > img {
+  body
+    #portfolio
+    section.web-publishing
+    .slide-box
+    .project-list
+    .project-film
+    .project-item
+    > div:nth-of-type(1)
+    > img {
     /* 프로젝트 이미지 */
     width: auto;
     height: 100%;
@@ -1456,7 +1545,15 @@ body .designModal__tool > .close:hover, body .designModal__tool > .close:focus {
   body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) {
     padding: 1%;
   }
-  body #portfolio section.web-publishing .slide-box .project-list .project-film .project-item > div:nth-of-type(2) > h3 {
+  body
+    #portfolio
+    section.web-publishing
+    .slide-box
+    .project-list
+    .project-film
+    .project-item
+    > div:nth-of-type(2)
+    > h3 {
     /* 프로젝트 제목 */
     font-weight: 700;
     font-size: var(--medium-text-size);

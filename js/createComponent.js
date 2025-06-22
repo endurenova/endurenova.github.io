@@ -122,9 +122,19 @@ createProfile = () => {
 createPublishing = () => {
   const publishingProject = [
     {
+      title: 'DongYangMetal',
+      imgSrc: './images/project-dym-main.png',
+      toolText: 'HTML　CSS　JavaScript　Photoshop　Illustrator',
+      contents: `
+                <img src="./images/project-room3d-contents-1.png" alt="디자인 모달 달력 컨텐츠 이미지-1" /> 
+                <img src="./images/project-room3d-contents-2.png" alt="디자인 모달 달력 컨텐츠 이미지-2" /> 
+                <img src="./images/project-room3d-contents-3.png" alt="디자인 모달 달력 컨텐츠 이미지-3" /> 
+            `,
+    },
+    {
       title: 'Collector 2030',
       imgSrc: './images/project-collector2030-main.png',
-      toolText: 'HTML　CSS　JavaScriptjQuery　Photoshop　Illustrator',
+      toolText: 'HTML　CSS　JavaScript　jQuery　Photoshop　Illustrator',
       contents: `
                 <img src="./images/project-room3d-contents-1.png" alt="디자인 모달 달력 컨텐츠 이미지-1" /> 
                 <img src="./images/project-room3d-contents-2.png" alt="디자인 모달 달력 컨텐츠 이미지-2" /> 
@@ -573,6 +583,35 @@ openPublishing = itemIdx => {
   const projectMain = [
     [
       {
+        title: 'DongYangMetal',
+        period: '2025.03 - 2025.06',
+        mainImg: './images/project-dym-main.png',
+        toolList: `
+                    <img src=${badgeList[0].tool} alt="툴 뱃지 이미지-${0}" />
+                    <img src=${badgeList[1].tool} alt="툴 뱃지 이미지-${1}" />
+                    <img src=${badgeList[3].tool} alt="툴 뱃지 이미지-${3}" />
+                    <img src=${badgeList[9].tool} alt="툴 뱃지 이미지-${9}" />
+                    <img src=${badgeList[10].tool} alt="툴 뱃지 이미지-${10}" />
+                `,
+        percent: '100%',
+      },
+      {
+        contents: `
+                    <div class="col">                        
+                        <img src="./images/project-dym-contents-1.gif" alt="퍼블리싱 디테일 DongYangMetal 컨텐츠 이미지-1" /> 
+                        <p>양식기 업체다운 깔끔한 레이아웃</p>
+                    </div>
+                    <div class="col">
+                        <img src="./images/project-dym-contents-2-1.png" alt="퍼블리싱 디테일 DongYangMetal 컨텐츠 이미지-2-1" /> 
+                        <img src="./images/project-dym-contents-2-2.png" alt="퍼블리싱 디테일 DongYangMetal 컨텐츠 이미지-2-2" /> 
+                        <img src="./images/project-dym-contents-2-3.png" alt="퍼블리싱 디테일 DongYangMetal 컨텐츠 이미지-2-3" /> 
+                        <p>패턴별 상세정보를 팝업으로 볼 수 있게 JavaScript 코딩</p>
+                    </div>
+                `,
+      },
+    ],
+    [
+      {
         title: 'Collector 2030',
         period: '2023.12 - 2024.03',
         mainImg: './images/project-collector2030-main.png',
@@ -771,10 +810,12 @@ publishingDetail = projectIdx => {
   publishingBox.classList.add('open'); // 디테일 오픈 생성
   openPublishing(projectIdx);
   enterProject = () => {
-    const link = ['COLLECTOR2030', 'ROOM-3D', 'BNSYSTEM', 'SINGLETOGETHER', 'PINTJOB'];
+    const link = ['DYM', 'COLLECTOR2030', 'ROOM-3D', 'BNSYSTEM', 'SINGLETOGETHER', 'PINTJOB'];
     console.log(link[projectIdx]);
     if (link[projectIdx] == 'COLLECTOR2030') {
-      window.location.href = 'https://collector2030.com/index_backup.html';
+      window.location.href = 'https://col2030.cafe24.com/index_backup.html';
+    } else if (link[projectIdx] == 'DYM') {
+      window.location.href = 'https://dongyangmetal.com/';
     } else {
       window.location.href = 'https://endurenova.github.io/PUBLISHING/' + link[projectIdx];
     }
