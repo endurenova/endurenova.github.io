@@ -156,6 +156,7 @@ body {
       }
       .open-detail {
         display: unset;
+        bottom: 5%;
         .tooltip {
           /* 퍼스트 버튼 */
           position: relative;
@@ -195,14 +196,16 @@ body {
             flex-flow: column;
             width: 6vmin;
             height: 6vmin;
+            min-width: 40px;
+            min-height: 40px;
             background-color: var(--grayScale-N5);
             border: 0.0625vmin solid var(--grayScale-N3);
             border-radius: 1vmin;
             &::before {
               content: "";
               display: block;
-              width: 5vmin;
-              height: 5vmin;
+              width: 80%;
+              height: 80%;
               background-color: var(--grayScale-N2);
             }
             &.qhome-toggle {
@@ -280,7 +283,7 @@ body {
         position: relative;
         margin: auto;
         width: var(--wrapper-width);
-        height: 90%;
+        height: 100%;
         > h1 {
           @include main-title;
           display: flex;
@@ -445,7 +448,7 @@ body {
           overflow-y: hidden;
           &::-webkit-scrollbar {
             /* 스크롤바의 너비 */
-            height: 0.6vmin;
+            height: 10px;
             &-thumb {
               height: 30%; /* 스크롤바의 길이 */
               background-color: var(--tailed-n0);
@@ -502,6 +505,7 @@ body {
                         height: 5.4vmin;
                         border: 1px solid var(--grayScale-N5);
                         margin-right: 3vmin;
+                        min-width: 20%;
                       }
                       &:nth-of-type(2) {
                         display: flex;
@@ -1191,7 +1195,7 @@ body {
             }
             &::-webkit-scrollbar {
               /* 스크롤바의 너비 */
-              width: 1vmin;
+              width: 10px;
             }
             &::-webkit-scrollbar-thumb {
               height: 30%; /* 스크롤바의 길이 */
@@ -1213,7 +1217,7 @@ body {
     overflow-y: scroll;
     &::-webkit-scrollbar {
       /* 스크롤바의 너비 */
-      width: 0n;
+      width: 0;
     }
     &::-webkit-scrollbar-thumb {
       height: 30%; /* 스크롤바의 길이 */
@@ -1236,6 +1240,10 @@ body {
 
         &.web-publishing {
           /* 웹 퍼블리싱 섹션 */
+          &::-webkit-scrollbar {
+            /* 스크롤바의 너비 */
+            width: 10px;
+          }
           &.open {
             flex-flow: column;
             overflow-x: hidden;
@@ -1486,7 +1494,7 @@ body {
             }
             &::-webkit-scrollbar {
               /* 스크롤바의 너비 */
-              width: 1vmin;
+              width: 10px;
             }
             &::-webkit-scrollbar-thumb {
               height: 30%; /* 스크롤바의 길이 */

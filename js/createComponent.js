@@ -259,7 +259,37 @@ createPublishing = () => {
 createDesign = () => {
   const designProject = [
     {
-      title: '3DWORKS',
+      title: '3D CHARACTER',
+      mainImg: './images/design-character.jpg',
+      toolList: `
+
+                `,
+      subject: '3D 캐릭터 디자인',
+      description: '노마드스컬프를 사용한 캐릭터 3D 디자인',
+      author: '회사 프로젝트',
+      link: `
+                `,
+      contents: `
+                    <img src="./images/design-character-contents-1.jpg" alt="3D CHARACTER 이미지 1" />
+                    <img src="./images/design-character-contents-2.jpg" alt="3D CHARACTER 이미지 2" />
+                    <img src="./images/design-character-contents-3.jpg" alt="3D CHARACTER 이미지 3" />
+                    <img src="./images/design-character-contents-4.jpg" alt="3D CHARACTER 이미지 4" />
+                    <img src="./images/design-character-contents-5.jpg" alt="3D CHARACTER 이미지 5" />
+                    <img src="./images/design-character-contents-6.jpg" alt="3D CHARACTER 이미지 6" />
+                    <img src="./images/design-character-contents-7.jpg" alt="3D CHARACTER 이미지 7" />
+                    <img src="./images/design-character-contents-8.jpg" alt="3D CHARACTER 이미지 8" />
+                    <img src="./images/design-character-contents-9.jpg" alt="3D CHARACTER 이미지 9" />
+                    <img src="./images/design-character-contents-10.jpg" alt="3D CHARACTER 이미지 10"/>
+                    <img src="./images/design-character-contents-11.jpg" alt="3D CHARACTER 이미지 11"/>
+                    <img src="./images/design-character-contents-12.jpg" alt="3D CHARACTER 이미지 12"/>
+                    <img src="./images/design-character-contents-13.jpg" alt="3D CHARACTER 이미지 13"/>
+                    <img src="./images/design-character-contents-14.jpg" alt="3D CHARACTER 이미지 14"/>
+                    <img src="./images/design-character-contents-15.jpg" alt="3D CHARACTER 이미지 15"/>
+
+                `,
+    },
+    {
+      title: '3D WORKS',
       mainImg: './images/design-3Dworks.png',
       toolList: `
                     <img src=${badgeList[12].tool} alt="툴 뱃지 이미지-${12}" />
@@ -420,6 +450,7 @@ createDesign = () => {
     observer: true,
     loop: true,
     observeParents: true,
+    spaceBetween: 20,
     mousewheel: {
       forceToAxis: true,
     },
