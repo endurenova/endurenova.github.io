@@ -1,104 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="./images/shake-og.png" />
-        <link rel="stylesheet" href="./css/reset.css" />
-        <link rel="stylesheet" href="./css/common.css" />
-        <link rel="stylesheet" href="./css/intro.css" />
-        <link rel="stylesheet" href="./css/room-3D.css" />
-        <link rel="stylesheet" href="./css/table-3D.css" />
-        <link rel="stylesheet" href="./css/monitor-3D.css" />
-        <link rel="stylesheet" href="./css/book-3D.css" />
-        <title>Room-3D</title>
-    </head>
-    <body>
-        <!-- 로딩 페이지 -->
-        <div id="intro">
-            <div class="intro-loading">
-                <p>잠시만 기다려주세요.</p>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-        </div>
-        <div id="portfolio">
-            <!-- 3D 룸 -->
-            <section class="room__box">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/shake-og.png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/intro.css" />
+    <link rel="stylesheet" href="./css/room-3D.css" />
+    <link rel="stylesheet" href="./css/table-3D.css" />
+    <link rel="stylesheet" href="./css/monitor-3D.css" />
+    <link rel="stylesheet" href="./css/book-3D.css" />
+    <title>Room-3D</title>
+  </head>
+  <body>
+    <!-- 로딩 페이지 -->
+    <div id="intro">
+      <div class="intro-loading">
+        <p>잠시만 기다려주세요.</p>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div id="portfolio">
+      <!-- 3D 룸 -->
+      <section class="room__box">
+        <div class="scene">
+          <div class="room">
+            <section class="room__face room__face--front"></section>
+            <section class="room__face room__face--back">
+              <!-- 창문 틀 -->
+              <div class="window__box">
+                <div class="window__face">
+                  <div class="window__frame window__frame--front"></div>
+                  <div class="window__frame window__frame--back"></div>
+                </div>
+                <div class="window__face">
+                  <div class="window__frame window__frame--front"></div>
+                  <div class="window__frame window__frame--back"></div>
+                </div>
+                <div class="window__face">
+                  <div class="window__frame window__frame--front"></div>
+                  <div class="window__frame window__frame--back"></div>
+                </div>
+              </div>
+            </section>
+            <section class="room__face room__face--left"></section>
+            <section class="room__face room__face--right"></section>
+            <section class="room__face room__face--top"></section>
+            <section class="room__face room__face--bottom">
+              <!-- 3D 테이블 -->
+              <div class="wooden-table__box">
                 <div class="scene">
-                    <div class="room">
-                        <section class="room__face room__face--front"></section>
-                        <section class="room__face room__face--back">
-                            <!-- 창문 틀 -->
-                            <div class="window__box">
-                                <div class="window__face">
-                                    <div class="window__frame window__frame--front"></div>
-                                    <div class="window__frame window__frame--back"></div>
-                                </div>
-                                <div class="window__face">
-                                    <div class="window__frame window__frame--front"></div>
-                                    <div class="window__frame window__frame--back"></div>
-                                </div>
-                                <div class="window__face">
-                                    <div class="window__frame window__frame--front"></div>
-                                    <div class="window__frame window__frame--back"></div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="room__face room__face--left"></section>
-                        <section class="room__face room__face--right"></section>
-                        <section class="room__face room__face--top"></section>
-                        <section class="room__face room__face--bottom">
-                            <!-- 3D 테이블 -->
-                            <div class="wooden-table__box">
-                                <div class="scene">
-                                    <div class="wooden-table">
-                                        <div class="table__face table__face--front"></div>
-                                        <div class="table__face table__face--back"></div>
-                                        <div class="table__face table__face--right"></div>
-                                        <div class="table__face table__face--left"></div>
-                                        <div class="table__face table__face--top">
-                                            <!-- 3D 모니터 -->
-                                            <div class="monitor-display__box">
-                                                <div class="scene">
-                                                    <div class="monitor-display__stand">
-                                                        <div class="stand-base__face stand-base--front"></div>
-                                                        <div class="stand-base__face stand-base--back"></div>
-                                                        <div class="stand-base__face stand-base--right"></div>
-                                                        <div class="stand-base__face stand-base--left"></div>
-                                                        <div class="stand-base__face stand-base--bottom"></div>
-                                                        <div class="stand-base__face stand-base--top">
-                                                            <div class="stand-pillar">
-                                                                <div class="stand-pillar__face stand-pillar--back"></div>
-                                                                <div class="stand-pillar__face stand-pillar--right"></div>
-                                                                <div class="stand-pillar__face stand-pillar--left"></div>
-                                                                <div class="stand-pillar__face stand-pillar--top"></div>
-                                                                <div class="stand-pillar__face stand-pillar--bottom"></div>
-                                                                <div class="monitor-hinge">
-                                                                    <div class="monitor-hinge__face monitor-hinge--right"></div>
-                                                                    <div class="monitor-hinge__face monitor-hinge--pillar">
-                                                                        <div class="monitor-connector">
-                                                                            <div class="monitor-connector__face connector--front">
-                                                                                <div class="monitor-display">
-                                                                                    <div class="exit-layer"></div>
-                                                                                    <div class="monitor-frame__face frame--left"></div>
-                                                                                    <div class="monitor-frame__face frame--right"></div>
-                                                                                    <div class="monitor-frame__face frame--top"></div>
-                                                                                    <div class="monitor-frame__face frame--bottom"></div>
-                                                                                    <div class="monitor-frame__face frame--front">
-                                                                                        <div class="monitor-viewer"></div>
-                                                                                        <section id="resume">
-                                                                                            <nav class="resume-header">
-                                                                                                <div class="resume-header-wrapper">
-                                                                                                    <div class="resume-header__logo-box" >
-                                                                                                        <a href="javascript:void(0);" onclick="monitorViewExit()" class="logo-area">
-                                                                                                            <img src="./images/shake-og.png" alt=""/>
-                                                                                                        </a>
-                                                                                                    </div>
-                                                                                                    <!-- <div class="resume-header__menu">
+                  <div class="wooden-table">
+                    <div class="table__face table__face--front"></div>
+                    <div class="table__face table__face--back"></div>
+                    <div class="table__face table__face--right"></div>
+                    <div class="table__face table__face--left"></div>
+                    <div class="table__face table__face--top">
+                      <!-- 3D 모니터 -->
+                      <div class="monitor-display__box">
+                        <div class="scene">
+                          <div class="monitor-display__stand">
+                            <div class="stand-base__face stand-base--front"></div>
+                            <div class="stand-base__face stand-base--back"></div>
+                            <div class="stand-base__face stand-base--right"></div>
+                            <div class="stand-base__face stand-base--left"></div>
+                            <div class="stand-base__face stand-base--bottom"></div>
+                            <div class="stand-base__face stand-base--top">
+                              <div class="stand-pillar">
+                                <div class="stand-pillar__face stand-pillar--back"></div>
+                                <div class="stand-pillar__face stand-pillar--right"></div>
+                                <div class="stand-pillar__face stand-pillar--left"></div>
+                                <div class="stand-pillar__face stand-pillar--top"></div>
+                                <div class="stand-pillar__face stand-pillar--bottom"></div>
+                                <div class="monitor-hinge">
+                                  <div class="monitor-hinge__face monitor-hinge--right"></div>
+                                  <div class="monitor-hinge__face monitor-hinge--pillar">
+                                    <div class="monitor-connector">
+                                      <div class="monitor-connector__face connector--front">
+                                        <div class="monitor-display">
+                                          <div class="exit-layer"></div>
+                                          <div class="monitor-frame__face frame--left"></div>
+                                          <div class="monitor-frame__face frame--right"></div>
+                                          <div class="monitor-frame__face frame--top"></div>
+                                          <div class="monitor-frame__face frame--bottom"></div>
+                                          <div class="monitor-frame__face frame--front">
+                                            <div class="monitor-viewer"></div>
+                                            <section id="resume">
+                                              <nav class="resume-header">
+                                                <div class="resume-header-wrapper">
+                                                  <div class="resume-header__logo-box">
+                                                    <a
+                                                      href="javascript:void(0);"
+                                                      onclick="monitorViewExit()"
+                                                      class="logo-area"
+                                                    >
+                                                      <img src="./images/shake-og.png" alt="" />
+                                                    </a>
+                                                  </div>
+                                                  <!-- <div class="resume-header__menu">
                                                                                                         <ul class="resume-header__menu-list">
                                                                                                             <li>
                                                                                                                 <a href="#resume-info-1">
@@ -122,9 +126,9 @@
                                                                                                             </li>
                                                                                                         </ul>
                                                                                                     </div> -->
-                                                                                                </div>
-                                                                                            </nav>
-                                                                                            <!-- <section class="resume-info" >
+                                                </div>
+                                              </nav>
+                                              <!-- <section class="resume-info" >
                                                                                                 <div class="resume-info-wrapper">
                                                                                                     <article id="resume-info-1" class="about-box">
                                                                                                         <h2>About</h2>
@@ -346,730 +350,751 @@
                                                                                                     </article>
                                                                                                 </div>
                                                                                             </section> -->
-                                                                                            <section class="resume-info" >                                                                                                
-                                                                                                <div class="resume-info-wrapper">
-                                                                                                    lucy twilight laptop charming laptop hello lovable hello banana flutter blossom seraphic haze laptop lucy like fascinating melody adorable cresent moonlight stella banana kitten fascinating like heimish baby ideale aurora adolescence milky lucy pure cresent moonlight lovesick serendipity heimish computer ice purity stella computer miracle milky marshmallow blush cream twilight.<br><br>
-                                                                                                    iris melody world honey eunoia lucy charming world blossom ice cherish florence kitten haze world like laptop purity marshmallow sunrise aurora laptop miracle world fascinating ice laptop twilight kitten miracle like cream way melody shine adolescence sunrise fabulous fascinating adolescence adorable cream twinkle way ideale blossom stella charming like kitten.<br><br>
-                                                                                                    requiem melody aurora blush adolescence flutter twilight apple laptop twilight baby cream adorable adorable fabulous iris banana moonlight ideale purity grapes bijou world melody melody florence carnival kitten computer shine seraphic destiny cresent cream carnival girlish destiny lucy kitten way masquerade fabulous cresent illusion ideale vanilla flora masquerade like laptop.<br><br>
-                                                                                                    blush banana aurora lovesick honey heimish kitten lucy blush serendipity seraphic blush florence carnival ideale florence lucid iris kitten miracle vanilla honey stella twilight masquerade kitten destiny flutter twinkle flora twinkle twilight eunoia baby pure laptop honey haze serendipity way girlish milky cherish charming serendipity fabulous miracle carnival haze girlish.<br><br>
-                                                                                                    you twinkle blush iris laptop miracle adorable honey fabulous twilight adolescence like like serendipity vanilla ideale world girlish cresent milky eunoia twinkle purity bijou droplet charming flora cherish blossom lovable cream blush cherish kitten kitten seraphic cream banana laptop adorable cream like lovable pure heimish eunoia bijou lovesick grapes droplet.
-                                                                                                </div>
-                                                                                            </section>
-                                                                                        </section>
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="monitor-frame__face frame--back"
-                                                                                    ></div>
-                                                                                    <ul class="cr cr-Tp-Rt"></ul>
-                                                                                    <ul class="cr cr-Bt-Rt"></ul>
-                                                                                    <ul class="cr cr-Tp-Lt"></ul>
-                                                                                    <ul class="cr cr-Bt-Lt"></ul>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="monitor-connector__face connector--back"></div>
-                                                                            <div class="monitor-connector__face connector--left"></div>
-                                                                            <div class="monitor-connector__face connector--right"></div>
-                                                                            <div class="monitor-connector__face connector--top"></div>
-                                                                            <div class="monitor-connector__face connector--bottom"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="monitor-hinge__face monitor-hinge--left"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="stand-base-cr stand-base-cr-Bk-Rt"></div>
-                                                        <div class="stand-base-cr stand-base-cr-Bk-Lt"></div>
-                                                        <div class="stand-base-cr stand-base-cr-Fr-Lt"></div>
-                                                        <div class="stand-base-cr stand-base-cr-Fr-Rt"></div>
-                                                    </div>
+                                              <section class="resume-info">
+                                                <div class="resume-info-wrapper">
+                                                  lucy twilight laptop charming laptop hello lovable hello banana
+                                                  flutter blossom seraphic haze laptop lucy like fascinating melody
+                                                  adorable cresent moonlight stella banana kitten fascinating like
+                                                  heimish baby ideale aurora adolescence milky lucy pure cresent
+                                                  moonlight lovesick serendipity heimish computer ice purity stella
+                                                  computer miracle milky marshmallow blush cream twilight.<br /><br />
+                                                  iris melody world honey eunoia lucy charming world blossom ice cherish
+                                                  florence kitten haze world like laptop purity marshmallow sunrise
+                                                  aurora laptop miracle world fascinating ice laptop twilight kitten
+                                                  miracle like cream way melody shine adolescence sunrise fabulous
+                                                  fascinating adolescence adorable cream twinkle way ideale blossom
+                                                  stella charming like kitten.<br /><br />
+                                                  requiem melody aurora blush adolescence flutter twilight apple laptop
+                                                  twilight baby cream adorable adorable fabulous iris banana moonlight
+                                                  ideale purity grapes bijou world melody melody florence carnival
+                                                  kitten computer shine seraphic destiny cresent cream carnival girlish
+                                                  destiny lucy kitten way masquerade fabulous cresent illusion ideale
+                                                  vanilla flora masquerade like laptop.<br /><br />
+                                                  blush banana aurora lovesick honey heimish kitten lucy blush
+                                                  serendipity seraphic blush florence carnival ideale florence lucid
+                                                  iris kitten miracle vanilla honey stella twilight masquerade kitten
+                                                  destiny flutter twinkle flora twinkle twilight eunoia baby pure laptop
+                                                  honey haze serendipity way girlish milky cherish charming serendipity
+                                                  fabulous miracle carnival haze girlish.<br /><br />
+                                                  you twinkle blush iris laptop miracle adorable honey fabulous twilight
+                                                  adolescence like like serendipity vanilla ideale world girlish cresent
+                                                  milky eunoia twinkle purity bijou droplet charming flora cherish
+                                                  blossom lovable cream blush cherish kitten kitten seraphic cream
+                                                  banana laptop adorable cream like lovable pure heimish eunoia bijou
+                                                  lovesick grapes droplet.
                                                 </div>
-                                            </div>
-                                            <!-- 3D 책 -->
-                                            <div class="book-binder__box">
-                                                <div class="exit-layer"></div>
-                                                <div class="scene">
-                                                    <div class="book-viewer"></div>
-                                                    <ul class="book-binder">
-                                                        <!-- 0. side -->
-                                                        <li class="book-side">
-                                                            <div class="cr-Side">
-                                                                <div class="book-side__face book-side__face--top"></div>
-                                                                <div class="book-side__face book-side__face--bottom"></div>
-                                                            </div>
-                                                        </li>
-                                                        <!-- 1. cover Front -->
-                                                        <li class="book-cover Fr">
-                                                            <div class="book-cover__face book-cover__face--front">
-                                                                <div class="book-title">
-                                                                    <h1>Lorem ipsum</h1>
-                                                                    <h3>Lorem ipsum</h3>
-                                                                </div>
-                                                                <div class="book-aunthor">
-                                                                    <p>Juwon Choi</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="book-cover__face book-cover__face--back"></div>
-                                                            <div class="book-cover__face book-cover__face--right"></div>
-                                                            <div class="book-cover__face book-cover__face--left"></div>
-                                                            <div class="book-cover__face book-cover__face--top"></div>
-                                                            <div class="book-cover__face book-cover__face--bottom"></div>
-                                                            <ul class="cr cr-Tp-Rt"></ul>
-                                                            <ul class="cr cr-Bt-Rt"></ul>
-                                                        </li>
-                                                        <!-- 2. page-->
-                                                        <li class="book-page">
-                                                            <ul class="book-page-list">
-                                                                <!-- 목차 -->
-                                                                <li data-page-index="0" class="binder__page flipPageRight right">
-                                                                    <div class="upper flag-tag">
-                                                                        <span class="flag-tag__white"></span>
-                                                                        <a href="#" class="flag-tag__name">
-                                                                            <p>Lorem</p>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="contents-cover page upper page-odd">
-                                                                        <div class="contents-color">
-                                                                            <div class="contents-title">
-                                                                                <h2>Lorem</h2>
-                                                                                <p>Lorem ipsum</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">1</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <ul class="post-list">
-                                                                                <li class="post-it">
-                                                                                    <a href="#">
-                                                                                        <h3>computer lovable</h3>
-                                                                                        <ol>
-                                                                                            <li>lovesick</li>
-                                                                                            <li>aurora</li>
-                                                                                            <li>serendipity</li>
-                                                                                            <li>computer</li>
-                                                                                        </ol>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="post-it">
-                                                                                    <a href="#">
-                                                                                        <h3>lucy requiem</h3>
-                                                                                        <ol>
-                                                                                            <li>haze</li>
-                                                                                            <li>masquerade</li>
-                                                                                            <li>lucy</li>
-                                                                                            <li>miracle</li>
-                                                                                        </ol>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="post-it">
-                                                                                    <a href="#">
-                                                                                        <h3>hello lovesick</h3>
-                                                                                        <ol>
-                                                                                            <li>cream</li>
-                                                                                            <li>fabulous</li>
-                                                                                            <li>droplet</li>
-                                                                                            <li>moonlight</li>
-                                                                                        </ol>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="post-it">
-                                                                                    <a href="#">
-                                                                                        <h3>purity sunrise</h3>
-                                                                                        <ol>
-                                                                                            <li>kitten</li>
-                                                                                            <li>masquerade</li>
-                                                                                            <li>apple</li>
-                                                                                            <li>carnival</li>
-                                                                                        </ol>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="post-it">
-                                                                                    <a href="#">
-                                                                                        <h3>lucy carnival</h3>
-                                                                                        <ol>
-                                                                                            <li>lovable</li>
-                                                                                            <li>haze</li>
-                                                                                            <li>kitten</li>
-                                                                                            <li>cherish</li>
-                                                                                        </ol>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="post-it">
-                                                                                    <a href="#">
-                                                                                        <h3>seraphic charming</h3>
-                                                                                        <ol>
-                                                                                            <li>cherish</li>
-                                                                                            <li>florence</li>
-                                                                                            <li>melody</li>
-                                                                                            <li>twinkle</li>
-                                                                                        </ol>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="post-it">
-                                                                                    <a href="#">
-                                                                                        <h3>destiny flora</h3>
-                                                                                        <ol>
-                                                                                            <li>cream</li>
-                                                                                            <li>lucy</li>
-                                                                                            <li>grapes</li>
-                                                                                            <li>cherish</li>
-                                                                                        </ol>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Intro</span>
-                                                                            <span class="page-bottom-title">Index</span>
-                                                                            <span class="page-index">2</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <!-- 싱글투게더 -->
-                                                                <li data-page-index="1"
-                                                                    class="binder__page flipPageRight right">
-                                                                    <div class="upper flag-tag">
-                                                                        <span class="flag-tag__white"></span>
-                                                                        <a href="#" class="flag-tag__name">
-                                                                            <p>lovable</p>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="contents-color">
-                                                                            <div class="contents-title">
-                                                                                <h2>lovable</h2>
-                                                                                <p>computer lovable</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title"
-                                                                                >ipsum</span
-                                                                            >
-                                                                            <span class="page-index">3</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title"
-                                                                                >ipsum</span
-                                                                            >
-                                                                            <span class="page-index">4</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="2" class="binder__page flipPageRight right">
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="page-main">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">5</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">6</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="3" class="binder__page flipPageRight right">
-                                                                    <div class="upper flag-tag">
-                                                                        <span class="flag-tag__white"></span>
-                                                                        <a href="#" class="flag-tag__name">
-                                                                            <p>requiem</p>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="contents-color">
-                                                                            <div class="contents-title">
-                                                                                <h2>requiem</h2>
-                                                                                <p>lucy requiem</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">7</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">8</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="4" class="binder__page flipPageRight right">
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="page-main">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title"
-                                                                                >ipsum</span
-                                                                            >
-                                                                            <span class="page-index">9</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title"
-                                                                                >ipsum</span
-                                                                            >
-                                                                            <span class="page-index">10</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="5"  class="binder__page flipPageRight right">
-                                                                    <div class="upper flag-tag">
-                                                                        <span class="flag-tag__white"></span>
-                                                                        <a href="#" class="flag-tag__name">
-                                                                            <p>lovesick</p>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="contents-color">
-                                                                            <div class="contents-title">
-                                                                                <h2>lovesick</h2>
-                                                                                <p>hello lovesick</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">11</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">12</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="6" class="binder__page flipPageRight right">
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="page-main">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">13</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">14</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="7" class="binder__page flipPageRight right">
-                                                                    <div class="upper flag-tag">
-                                                                        <span class="flag-tag__white"></span>
-                                                                        <a href="#" class="flag-tag__name">
-                                                                            <p>sunrise</p>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="contents-color">
-                                                                            <div class="contents-title">
-                                                                                <h2>sunrise</h2>
-                                                                                <p>purity sunrise</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">15</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">16</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="8" class="binder__page flipPageRight right">
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="page-main">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">17</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">18</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="9" class="binder__page flipPageRight right">
-                                                                    <div class="upper flag-tag">
-                                                                        <span class="flag-tag__white"></span>
-                                                                        <a href="#" class="flag-tag__name">
-                                                                            <p>carnival</p>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="contents-color">
-                                                                            <div class="contents-title">
-                                                                                <h2>carnival</h2>
-                                                                                <p>lucy carnival</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">19</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">20</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="10" class="binder__page flipPageRight right">
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="page-main">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">21</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">22</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="11" class="binder__page flipPageRight right">
-                                                                    <div class="upper flag-tag">
-                                                                        <span class="flag-tag__white"></span>
-                                                                        <a href="#" class="flag-tag__name">
-                                                                            <p>charming</p>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="contents-color">
-                                                                            <div class="contents-title">
-                                                                                <h2>charming</h2>
-                                                                                <p>seraphic charming</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">23</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">24</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="12" class="binder__page flipPageRight right">
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="page-main">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">25</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">26</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="13" class="binder__page flipPageRight right">
-                                                                    <div class="upper flag-tag">
-                                                                        <span class="flag-tag__white"></span>
-                                                                        <a href="#" class="flag-tag__name">
-                                                                            <p>flora</p>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="contents-color">
-                                                                            <div class="contents-title">
-                                                                                <h2>flora</h2>
-                                                                                <p>destiny flora</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">27</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">28</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li data-page-index="14" class="binder__page flipPageRight right">
-                                                                    <div class="page upper page-odd">
-                                                                        <div class="page-main">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">29</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="page page-even">
-                                                                        <div class="page-main left">
-                                                                            <div class="page-main__title">
-                                                                                <h1></h1>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="page-bottom left">
-                                                                            <span class="tempName">Lorem</span>
-                                                                            <span class="page-bottom-title">ipsum</span>
-                                                                            <span class="page-index">30</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <!-- 8. cover Rear -->
-                                                        <li class="book-cover Rr">
-                                                            <div class="book-cover__face book-cover__face--front"></div>
-                                                            <div class="book-cover__face book-cover__face--back"></div>
-                                                            <div class="book-cover__face book-cover__face--right"></div>
-                                                            <div class="book-cover__face book-cover__face--left"></div>
-                                                            <div class="book-cover__face book-cover__face--top"></div>
-                                                            <div class="book-cover__face book-cover__face--bottom"></div>
-                                                            <ul class="cr cr-Tp-Lt"></ul>
-                                                            <ul class="cr cr-Bt-Lt"></ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="book-slider">
-                                                    <div class="book-slider__wrap">
-                                                        <input type="range" min="0" value="0" class="range-slider" />
-                                                    </div>
-                                                </div>
-                                            </div>
+                                              </section>
+                                            </section>
+                                          </div>
+                                          <div class="monitor-frame__face frame--back"></div>
+                                          <ul class="cr cr-Tp-Rt"></ul>
+                                          <ul class="cr cr-Bt-Rt"></ul>
+                                          <ul class="cr cr-Tp-Lt"></ul>
+                                          <ul class="cr cr-Bt-Lt"></ul>
                                         </div>
-                                        <div class="table__face table__face--bottom">bottom</div>
-                                        <!-- 3D 테이블 면 코너 -->
-                                        <ul class="table-cr table-cr-Fr-Rt"></ul>
-                                        <ul class="table-cr table-cr-Bk-Rt"></ul>
-                                        <ul class="table-cr table-cr-Bk-Lt"></ul>
-                                        <ul class="table-cr table-cr-Fr-Lt"></ul>
-                                        <!-- 3D 테이블 다리 리스트 -->
-                                        <ul class="table__leg-list">
-                                            <li class="table__leg table__leg-front-left"> <!-- 3D 테이블 다리 ↙ -->
-                                                <div class="leg__face leg__face--front"></div>
-                                                <div class="leg__face leg__face--back"></div>
-                                                <div class="leg__face leg__face--right"></div>
-                                                <div class="leg__face leg__face--left"></div>
-                                                <div class="leg__face leg__face--top"></div>
-                                                <div class="leg__face leg__face--bottom"></div>
-                                            </li>
-                                            <li class="table__leg table__leg-front-right"> <!-- 3D 테이블 다리 ↘ -->
-                                                <div class="leg__face leg__face--front"></div>
-                                                <div class="leg__face leg__face--back"></div>
-                                                <div class="leg__face leg__face--right"></div>
-                                                <div class="leg__face leg__face--left"></div>
-                                                <div class="leg__face leg__face--top"></div>
-                                                <div class="leg__face leg__face--bottom"></div>
-                                            </li>
-                                            <li class="table__leg table__leg-back-left"> <!-- 3D 테이블 다리 ↖ -->
-                                                <div class="leg__face leg__face--front"></div>
-                                                <div class="leg__face leg__face--back"></div>
-                                                <div class="leg__face leg__face--right"></div>
-                                                <div class="leg__face leg__face--left"></div>
-                                                <div class="leg__face leg__face--top"></div>
-                                                <div class="leg__face leg__face--bottom"></div>
-                                            </li>
-                                            <li class="table__leg table__leg-back-right"> <!-- 3D 테이블 다리 ↗ -->
-                                                <div class="leg__face leg__face--front"></div>
-                                                <div class="leg__face leg__face--back"></div>
-                                                <div class="leg__face leg__face--right"></div>
-                                                <div class="leg__face leg__face--left"></div>
-                                                <div class="leg__face leg__face--top"></div>
-                                                <div class="leg__face leg__face--bottom"></div>
-                                            </li>
-                                        </ul>
+                                      </div>
+                                      <div class="monitor-connector__face connector--back"></div>
+                                      <div class="monitor-connector__face connector--left"></div>
+                                      <div class="monitor-connector__face connector--right"></div>
+                                      <div class="monitor-connector__face connector--top"></div>
+                                      <div class="monitor-connector__face connector--bottom"></div>
                                     </div>
+                                  </div>
+                                  <div class="monitor-hinge__face monitor-hinge--left"></div>
                                 </div>
+                              </div>
                             </div>
-                        </section>
+                            <div class="stand-base-cr stand-base-cr-Bk-Rt"></div>
+                            <div class="stand-base-cr stand-base-cr-Bk-Lt"></div>
+                            <div class="stand-base-cr stand-base-cr-Fr-Lt"></div>
+                            <div class="stand-base-cr stand-base-cr-Fr-Rt"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 3D 책 -->
+                      <div class="book-binder__box">
+                        <div class="exit-layer"></div>
+                        <div class="scene">
+                          <div class="book-viewer"></div>
+                          <ul class="book-binder">
+                            <!-- 0. side -->
+                            <li class="book-side">
+                              <div class="cr-Side">
+                                <div class="book-side__face book-side__face--top"></div>
+                                <div class="book-side__face book-side__face--bottom"></div>
+                              </div>
+                            </li>
+                            <!-- 1. cover Front -->
+                            <li class="book-cover Fr">
+                              <div class="book-cover__face book-cover__face--front">
+                                <div class="book-title">
+                                  <h1>Lorem ipsum</h1>
+                                  <h3>Lorem ipsum</h3>
+                                </div>
+                                <div class="book-aunthor">
+                                  <p>Juwon Choi</p>
+                                </div>
+                              </div>
+                              <div class="book-cover__face book-cover__face--back"></div>
+                              <div class="book-cover__face book-cover__face--right"></div>
+                              <div class="book-cover__face book-cover__face--left"></div>
+                              <div class="book-cover__face book-cover__face--top"></div>
+                              <div class="book-cover__face book-cover__face--bottom"></div>
+                              <ul class="cr cr-Tp-Rt"></ul>
+                              <ul class="cr cr-Bt-Rt"></ul>
+                            </li>
+                            <!-- 2. page-->
+                            <li class="book-page">
+                              <ul class="book-page-list">
+                                <!-- 목차 -->
+                                <li data-page-index="0" class="binder__page flipPageRight right">
+                                  <div class="upper flag-tag">
+                                    <span class="flag-tag__white"></span>
+                                    <a href="#" class="flag-tag__name">
+                                      <p>Lorem</p>
+                                    </a>
+                                  </div>
+                                  <div class="contents-cover page upper page-odd">
+                                    <div class="contents-color">
+                                      <div class="contents-title">
+                                        <h2>Lorem</h2>
+                                        <p>Lorem ipsum</p>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <ul class="post-list">
+                                        <li class="post-it">
+                                          <a href="#">
+                                            <h3>computer lovable</h3>
+                                            <ol>
+                                              <li>lovesick</li>
+                                              <li>aurora</li>
+                                              <li>serendipity</li>
+                                              <li>computer</li>
+                                            </ol>
+                                          </a>
+                                        </li>
+                                        <li class="post-it">
+                                          <a href="#">
+                                            <h3>lucy requiem</h3>
+                                            <ol>
+                                              <li>haze</li>
+                                              <li>masquerade</li>
+                                              <li>lucy</li>
+                                              <li>miracle</li>
+                                            </ol>
+                                          </a>
+                                        </li>
+                                        <li class="post-it">
+                                          <a href="#">
+                                            <h3>hello lovesick</h3>
+                                            <ol>
+                                              <li>cream</li>
+                                              <li>fabulous</li>
+                                              <li>droplet</li>
+                                              <li>moonlight</li>
+                                            </ol>
+                                          </a>
+                                        </li>
+                                        <li class="post-it">
+                                          <a href="#">
+                                            <h3>purity sunrise</h3>
+                                            <ol>
+                                              <li>kitten</li>
+                                              <li>masquerade</li>
+                                              <li>apple</li>
+                                              <li>carnival</li>
+                                            </ol>
+                                          </a>
+                                        </li>
+                                        <li class="post-it">
+                                          <a href="#">
+                                            <h3>lucy carnival</h3>
+                                            <ol>
+                                              <li>lovable</li>
+                                              <li>haze</li>
+                                              <li>kitten</li>
+                                              <li>cherish</li>
+                                            </ol>
+                                          </a>
+                                        </li>
+                                        <li class="post-it">
+                                          <a href="#">
+                                            <h3>seraphic charming</h3>
+                                            <ol>
+                                              <li>cherish</li>
+                                              <li>florence</li>
+                                              <li>melody</li>
+                                              <li>twinkle</li>
+                                            </ol>
+                                          </a>
+                                        </li>
+                                        <li class="post-it">
+                                          <a href="#">
+                                            <h3>destiny flora</h3>
+                                            <ol>
+                                              <li>cream</li>
+                                              <li>lucy</li>
+                                              <li>grapes</li>
+                                              <li>cherish</li>
+                                            </ol>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Intro</span>
+                                      <span class="page-bottom-title">Index</span>
+                                      <span class="page-index">2</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <!-- 싱글투게더 -->
+                                <li data-page-index="1" class="binder__page flipPageRight right">
+                                  <div class="upper flag-tag">
+                                    <span class="flag-tag__white"></span>
+                                    <a href="#" class="flag-tag__name">
+                                      <p>lovable</p>
+                                    </a>
+                                  </div>
+                                  <div class="page upper page-odd">
+                                    <div class="contents-color">
+                                      <div class="contents-title">
+                                        <h2>lovable</h2>
+                                        <p>computer lovable</p>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">3</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">4</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="2" class="binder__page flipPageRight right">
+                                  <div class="page upper page-odd">
+                                    <div class="page-main">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">5</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">6</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="3" class="binder__page flipPageRight right">
+                                  <div class="upper flag-tag">
+                                    <span class="flag-tag__white"></span>
+                                    <a href="#" class="flag-tag__name">
+                                      <p>requiem</p>
+                                    </a>
+                                  </div>
+                                  <div class="page upper page-odd">
+                                    <div class="contents-color">
+                                      <div class="contents-title">
+                                        <h2>requiem</h2>
+                                        <p>lucy requiem</p>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">7</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">8</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="4" class="binder__page flipPageRight right">
+                                  <div class="page upper page-odd">
+                                    <div class="page-main">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">9</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">10</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="5" class="binder__page flipPageRight right">
+                                  <div class="upper flag-tag">
+                                    <span class="flag-tag__white"></span>
+                                    <a href="#" class="flag-tag__name">
+                                      <p>lovesick</p>
+                                    </a>
+                                  </div>
+                                  <div class="page upper page-odd">
+                                    <div class="contents-color">
+                                      <div class="contents-title">
+                                        <h2>lovesick</h2>
+                                        <p>hello lovesick</p>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">11</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">12</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="6" class="binder__page flipPageRight right">
+                                  <div class="page upper page-odd">
+                                    <div class="page-main">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">13</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">14</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="7" class="binder__page flipPageRight right">
+                                  <div class="upper flag-tag">
+                                    <span class="flag-tag__white"></span>
+                                    <a href="#" class="flag-tag__name">
+                                      <p>sunrise</p>
+                                    </a>
+                                  </div>
+                                  <div class="page upper page-odd">
+                                    <div class="contents-color">
+                                      <div class="contents-title">
+                                        <h2>sunrise</h2>
+                                        <p>purity sunrise</p>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">15</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">16</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="8" class="binder__page flipPageRight right">
+                                  <div class="page upper page-odd">
+                                    <div class="page-main">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">17</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">18</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="9" class="binder__page flipPageRight right">
+                                  <div class="upper flag-tag">
+                                    <span class="flag-tag__white"></span>
+                                    <a href="#" class="flag-tag__name">
+                                      <p>carnival</p>
+                                    </a>
+                                  </div>
+                                  <div class="page upper page-odd">
+                                    <div class="contents-color">
+                                      <div class="contents-title">
+                                        <h2>carnival</h2>
+                                        <p>lucy carnival</p>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">19</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">20</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="10" class="binder__page flipPageRight right">
+                                  <div class="page upper page-odd">
+                                    <div class="page-main">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">21</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">22</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="11" class="binder__page flipPageRight right">
+                                  <div class="upper flag-tag">
+                                    <span class="flag-tag__white"></span>
+                                    <a href="#" class="flag-tag__name">
+                                      <p>charming</p>
+                                    </a>
+                                  </div>
+                                  <div class="page upper page-odd">
+                                    <div class="contents-color">
+                                      <div class="contents-title">
+                                        <h2>charming</h2>
+                                        <p>seraphic charming</p>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">23</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">24</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="12" class="binder__page flipPageRight right">
+                                  <div class="page upper page-odd">
+                                    <div class="page-main">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">25</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">26</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="13" class="binder__page flipPageRight right">
+                                  <div class="upper flag-tag">
+                                    <span class="flag-tag__white"></span>
+                                    <a href="#" class="flag-tag__name">
+                                      <p>flora</p>
+                                    </a>
+                                  </div>
+                                  <div class="page upper page-odd">
+                                    <div class="contents-color">
+                                      <div class="contents-title">
+                                        <h2>flora</h2>
+                                        <p>destiny flora</p>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">27</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">28</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li data-page-index="14" class="binder__page flipPageRight right">
+                                  <div class="page upper page-odd">
+                                    <div class="page-main">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">29</span>
+                                    </div>
+                                  </div>
+                                  <div class="page page-even">
+                                    <div class="page-main left">
+                                      <div class="page-main__title">
+                                        <h1></h1>
+                                      </div>
+                                    </div>
+                                    <div class="page-bottom left">
+                                      <span class="tempName">Lorem</span>
+                                      <span class="page-bottom-title">ipsum</span>
+                                      <span class="page-index">30</span>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                            <!-- 8. cover Rear -->
+                            <li class="book-cover Rr">
+                              <div class="book-cover__face book-cover__face--front"></div>
+                              <div class="book-cover__face book-cover__face--back"></div>
+                              <div class="book-cover__face book-cover__face--right"></div>
+                              <div class="book-cover__face book-cover__face--left"></div>
+                              <div class="book-cover__face book-cover__face--top"></div>
+                              <div class="book-cover__face book-cover__face--bottom"></div>
+                              <ul class="cr cr-Tp-Lt"></ul>
+                              <ul class="cr cr-Bt-Lt"></ul>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="book-slider">
+                          <div class="book-slider__wrap">
+                            <input type="range" min="0" value="0" class="range-slider" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    <div class="table__face table__face--bottom">bottom</div>
+                    <!-- 3D 테이블 면 코너 -->
+                    <ul class="table-cr table-cr-Fr-Rt"></ul>
+                    <ul class="table-cr table-cr-Bk-Rt"></ul>
+                    <ul class="table-cr table-cr-Bk-Lt"></ul>
+                    <ul class="table-cr table-cr-Fr-Lt"></ul>
+                    <!-- 3D 테이블 다리 리스트 -->
+                    <ul class="table__leg-list">
+                      <li class="table__leg table__leg-front-left">
+                        <!-- 3D 테이블 다리 ↙ -->
+                        <div class="leg__face leg__face--front"></div>
+                        <div class="leg__face leg__face--back"></div>
+                        <div class="leg__face leg__face--right"></div>
+                        <div class="leg__face leg__face--left"></div>
+                        <div class="leg__face leg__face--top"></div>
+                        <div class="leg__face leg__face--bottom"></div>
+                      </li>
+                      <li class="table__leg table__leg-front-right">
+                        <!-- 3D 테이블 다리 ↘ -->
+                        <div class="leg__face leg__face--front"></div>
+                        <div class="leg__face leg__face--back"></div>
+                        <div class="leg__face leg__face--right"></div>
+                        <div class="leg__face leg__face--left"></div>
+                        <div class="leg__face leg__face--top"></div>
+                        <div class="leg__face leg__face--bottom"></div>
+                      </li>
+                      <li class="table__leg table__leg-back-left">
+                        <!-- 3D 테이블 다리 ↖ -->
+                        <div class="leg__face leg__face--front"></div>
+                        <div class="leg__face leg__face--back"></div>
+                        <div class="leg__face leg__face--right"></div>
+                        <div class="leg__face leg__face--left"></div>
+                        <div class="leg__face leg__face--top"></div>
+                        <div class="leg__face leg__face--bottom"></div>
+                      </li>
+                      <li class="table__leg table__leg-back-right">
+                        <!-- 3D 테이블 다리 ↗ -->
+                        <div class="leg__face leg__face--front"></div>
+                        <div class="leg__face leg__face--back"></div>
+                        <div class="leg__face leg__face--right"></div>
+                        <div class="leg__face leg__face--left"></div>
+                        <div class="leg__face leg__face--top"></div>
+                        <div class="leg__face leg__face--bottom"></div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
             </section>
+          </div>
         </div>
-        <script>
-            const introPage = document.querySelector('#intro');
-            const portfolioPage = document.querySelector('#portfolio');
-            const room = document.querySelector('.room');
-            const roomCornerList = room.querySelectorAll('.cr');
-            const tableCornerList = room.querySelectorAll('.table-cr');
-            // settingDisplay = () => {
-            //     let defaultWidth =
-            //         window.innerWidth > window.innerHeight
-            //             ? (introPage.style.cssText = 'width: 100vmax; height: 100vmin;')
-            //             : window.innerWidth >= window.innerHeight
-            //             ? (introPage.style.cssText = 'width: 100vmax; height: 100vmax;')
-            //             : (introPage.style.cssText = 'width: 100vmin; height: 100vmax;');
-            // };
-            (() => {
-                window.addEventListener('load', () => {
-                    // settingDisplay();
-                    Array.from(roomCornerList).forEach((e, i) => { // 실험용 룸 코너 레디우스 script
-                        for (var i = 0; i <= 7; i++) {
-                            e.insertAdjacentHTML('beforeend', `<li class="face side s${i}"></li>`);
-                        }
-                    });                    
-                    Array.from(tableCornerList).forEach((e, i) => { // 실험용 테이블 코너 레디우스 script
-                        for (var i = 0; i <= 4; i++) {
-                            e.insertAdjacentHTML('beforeend', `<li class="face side s${i}"></li>`);
-                        }
-                    });
-                    setTimeout(() => {
-                        introPage.classList.add('remove');
-                        portfolioPage.style.display = 'unset';
-                        setTimeout(() => {
-                            room.classList.add('load');
-                        }, 100);
-                    }, 1000);
-                });
-            })();
-            // window.addEventListener('resize', settingDisplay); // 디바이스 체크
-            // function detectMobileDevice(agent) {
-            //     const mobileRegex = [/Android/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i];
-            //     return mobileRegex.some((mobile) => agent.match(mobile));
-            // }
-            // const checkMobile = detectMobileDevice(window.navigator.userAgent);
-            // let clickEventType = checkMobile ? 'touchend' : 'mouseup';
-            // console.log(checkMobile, clickEventType);
-        </script>
-        <script src="./js/bookBinder.js"></script>
-        <script src="./js/monitorDisplay.js"></script>
-        <!-- <script src="./js/phantomLine.js"></script> -->
-    </body>
+      </section>
+    </div>
+    <script>
+      const introPage = document.querySelector('#intro');
+      const portfolioPage = document.querySelector('#portfolio');
+      const room = document.querySelector('.room');
+      const roomCornerList = room.querySelectorAll('.cr');
+      const tableCornerList = room.querySelectorAll('.table-cr');
+
+      // settingDisplay = () => {
+      //     let defaultWidth =
+      //         window.innerWidth > window.innerHeight
+      //             ? (introPage.style.cssText = 'width: 100vmax; height: 100vmin;')
+      //             : window.innerWidth >= window.innerHeight
+      //             ? (introPage.style.cssText = 'width: 100vmax; height: 100vmax;')
+      //             : (introPage.style.cssText = 'width: 100vmin; height: 100vmax;');
+      // };
+      (() => {
+        window.addEventListener('load', () => {
+          // settingDisplay();
+          Array.from(roomCornerList).forEach((e, i) => {
+            // 실험용 룸 코너 레디우스 script
+            for (var i = 0; i <= 7; i++) {
+              e.insertAdjacentHTML('beforeend', `<li class="face side s${i}"></li>`);
+            }
+          });
+          Array.from(tableCornerList).forEach((e, i) => {
+            // 실험용 테이블 코너 레디우스 script
+            for (var i = 0; i <= 4; i++) {
+              e.insertAdjacentHTML('beforeend', `<li class="face side s${i}"></li>`);
+            }
+          });
+          setTimeout(() => {
+            introPage.classList.add('remove');
+            portfolioPage.style.display = 'unset';
+            setTimeout(() => {
+              room.classList.add('load');
+            }, 100);
+          }, 1000);
+        });
+      })();
+      // window.addEventListener('resize', settingDisplay); // 디바이스 체크
+      // function detectMobileDevice(agent) {
+      //     const mobileRegex = [/Android/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i];
+      //     return mobileRegex.some((mobile) => agent.match(mobile));
+      // }
+      // const checkMobile = detectMobileDevice(window.navigator.userAgent);
+      // let clickEventType = checkMobile ? 'touchend' : 'mouseup';
+      // console.log(checkMobile, clickEventType);
+    </script>
+    <script src="./js/bookBinder.js"></script>
+    <script src="./js/monitorDisplay.js"></script>
+    <!-- <script src="./js/phantomLine.js"></script> -->
+  </body>
 </html>
